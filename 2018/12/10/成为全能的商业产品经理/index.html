@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="什么是商业产品经理？商业产品经理该如何修炼？商业化的启动和模式该如何选择？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="成为全能的商业产品经理">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="什么是商业产品经理？商业产品经理该如何修炼？商业化的启动和模式该如何选择？">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/1.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/2.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/3.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/4.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/5.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/6.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/7.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/8.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/9.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/10.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/11.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/12.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/13.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/14.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/15.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/16.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/17.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/18.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/19.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/20.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/21.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/22.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/23.jpg">
+<meta property="article:published_time" content="2018-12-10T15:13:31.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:10:33.695Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/1.jpg">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>成为全能的商业产品经理 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          成为全能的商业产品经理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-10 23:13:31" itemprop="dateCreated datePublished" datetime="2018-12-10T23:13:31+08:00">2018-12-10</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">产品方法</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81/" itemprop="url" rel="index">
+                    <span itemprop="name">商业产品</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>什么是商业产品经理？商业产品经理该如何修炼？商业化的启动和模式该如何选择？</p>
+<a id="more"></a>
+
+<h1 id="什么是商业产品经理"><a href="#什么是商业产品经理" class="headerlink" title="什么是商业产品经理"></a>什么是商业产品经理</h1><p>商业产品经理是帮助公司发布，可销售给客户的，能进行收费的产品的人</p>
+<p>商业产品经理=产品经理+Seller</p>
+<h2 id="商业产品经理的日常"><a href="#商业产品经理的日常" class="headerlink" title="商业产品经理的日常"></a>商业产品经理的日常</h2><p>​         <img src="1.jpg" alt="img">       </p>
+<h3 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h3><p>​         <img src="2.jpg" alt="img">       </p>
+<p>售前：</p>
+<ul>
+<li>介绍信息：如何包装自己的产品</li>
+</ul>
+<p>售中：</p>
+<ul>
+<li><p>充值：怎么充值？在哪充值？支持什么充值？</p>
+</li>
+<li><p>享受特权：享受的特权有什么？</p>
+</li>
+<li><p>VIP协议：协议的内容要如何写能避免不必要的麻烦？</p>
+</li>
+</ul>
+<p>售后：</p>
+<ul>
+<li><p>多人登录：要不要给多人登录？给多少个设备同时登录？什么情况会封号？</p>
+</li>
+<li><p>续费：什么时候提醒续费？续费定价规则</p>
+</li>
+</ul>
+<hr>
+<p>​         <img src="3.jpg" alt="img">       </p>
+<p>售前：</p>
+<ul>
+<li>宣讲：找到目标用户群体的联系方式（地推、营销网站自主开户、其他）</li>
+</ul>
+<p>售中：</p>
+<ul>
+<li><p>销售CRM：销售线索的公海、私海，订单保护期</p>
+</li>
+<li><p>协助销售：展示demo</p>
+</li>
+</ul>
+<p>售后：</p>
+<ul>
+<li>效果优化：如何提高ROI</li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>掌握产品售卖全链条的能力就是，掌握设计支撑整个售卖过程（包括售前、售中、售后）产品以及相关业务规则的能力</p>
+<h1 id="商业产品经理的修炼功法"><a href="#商业产品经理的修炼功法" class="headerlink" title="商业产品经理的修炼功法"></a>商业产品经理的修炼功法</h1><ul>
+<li><p>产品定位：商业产品经理首先要清楚自己的产品定位，这帮我们想清楚产品向谁售卖以及产品如何包装</p>
+</li>
+<li><p>会讲故事：产品是销售给客户的，需要会“讲故事”打动客户</p>
+</li>
+<li><p>用户思维：在做商业化收入的同时还需要具有用户思维，才能有持续的可变现流量和更大的商业化价值</p>
+</li>
+<li><p>善用监控表：灵活运用监控表则可以帮我们及时了解业务推进情况和发展动态，发现问题</p>
+</li>
+</ul>
+<h2 id="产品定位"><a href="#产品定位" class="headerlink" title="产品定位"></a>产品定位</h2><p>产品定位是产品在客户心中的第一反应</p>
+<p>清晰的产品定位有利于一句话表达清楚产品，明确出有别于其他产品的产品特色，圈定出适合的售卖客户群体</p>
+<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><p>腾讯广点通：高效实现您的营销目标</p>
+<p>推广移动应用，推广本地生活服务，推广品牌活动，增加在线销量，获得潜在优质粉丝关注</p>
+<p>百度本地直通车：本地生活服务移动营销解决方案</p>
+<p>通过百度移动搜索推广与“手机百度”、“百度地图”、“百度糯米”三大应用推荐展示的方式，将商家信息精准地推广给周边有相应需求的客户，促使客户以在线支付、到店付等方式完成交易</p>
+<p>百度移动搜索推广：搜索APP，一键下载</p>
+<p>搜索结果页的推广结果直接显示APP下载按钮，一键点击即跳转到下载页面/应用商店详情页</p>
+<h3 id="产品定位需要回答的6个问题"><a href="#产品定位需要回答的6个问题" class="headerlink" title="产品定位需要回答的6个问题"></a>产品定位需要回答的6个问题</h3><p>以百度移动搜索推广为例</p>
+<ul>
+<li><p>什么行业什么类型的产品：各行业的帮助APP类产品进行推广的产品</p>
+</li>
+<li><p>目标用户群/客户群是谁：APP类客户</p>
+</li>
+<li><p>解决用户/客户什么问题：转化链条过长</p>
+</li>
+<li><p>给用户/客户带来什么价值：提高ROI</p>
+</li>
+<li><p>跟竞争对手的差异化在哪：更多APP用户，更高下载率</p>
+</li>
+<li><p>如何匹配和强化产品和用户/客户：一句话表达清楚产品</p>
+</li>
+</ul>
+<h2 id="会讲故事"><a href="#会讲故事" class="headerlink" title="会讲故事"></a>会讲故事</h2><h3 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h3><p>西游记的故事</p>
+<p>百度神农项目</p>
+<p>背景介绍：神农项目，就是在百度到的快照自然非付费结果中，陷入一些商业化模块，进而向客户收取一定费用。</p>
+<p>​         <img src="4.jpg" alt="img">       </p>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>商业产品经理讲的故事不是去讲一个人物、时间、地点、事件的故事，而是从客户的角度去阐述产品优势，客户使用后带来的收益，解决客户的哪些痛点问题，进而激发客户去购买和使用</p>
+<h2 id="用户思维"><a href="#用户思维" class="headerlink" title="用户思维"></a>用户思维</h2><p>用户就是媒体平台的使用者，商业产品虽然是为客户服务，但也不能忽略用户</p>
+<h3 id="案例-2"><a href="#案例-2" class="headerlink" title="案例"></a>案例</h3><p>​         <img src="5.jpg" alt="img">       </p>
+<p>​         <img src="6.jpg" alt="img">       </p>
+<h3 id="商业产品所需要的用户思维"><a href="#商业产品所需要的用户思维" class="headerlink" title="商业产品所需要的用户思维"></a>商业产品所需要的用户思维</h3><ul>
+<li><p>了解用户在什么场景下会被打动</p>
+</li>
+<li><p>了解用户在媒体平台的行为路径</p>
+</li>
+<li><p>了解用户在不同客户行业产品转化的决策路径</p>
+</li>
+</ul>
+<h3 id="商业产品中用户思维的利用"><a href="#商业产品中用户思维的利用" class="headerlink" title="商业产品中用户思维的利用"></a>商业产品中用户思维的利用</h3><p>点击、转化、付费</p>
+<p>提高用户互助热情，让用户不反感，让用户参与意愿更强</p>
+<h3 id="案例-3"><a href="#案例-3" class="headerlink" title="案例"></a>案例</h3><p>​         <img src="7.jpg" alt="img">       </p>
+<p>​         <img src="8.jpg" alt="img">       </p>
+<h3 id="用户思维挖掘的方法"><a href="#用户思维挖掘的方法" class="headerlink" title="用户思维挖掘的方法"></a>用户思维挖掘的方法</h3><ul>
+<li>马斯洛需求层次</li>
+</ul>
+<p>​         <img src="9.jpg" alt="img">       </p>
+<ul>
+<li>人性法</li>
+</ul>
+<p>好色、贪婪、懒惰······</p>
+<ul>
+<li>大数据</li>
+</ul>
+<p>​         <img src="10.jpg" alt="img">       </p>
+<h3 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h3><p>融合用户思维设计的商业产品，能更好的帮助客户增强品牌效果，获得更多潜在顾客</p>
+<h2 id="善用监控表"><a href="#善用监控表" class="headerlink" title="善用监控表"></a>善用监控表</h2><ul>
+<li><p>收入监控表：了解收入业绩的完成情况</p>
+</li>
+<li><p>客户监控表：帮助我们了解生意模式是否良性</p>
+</li>
+</ul>
+<h3 id="收入完成进度表"><a href="#收入完成进度表" class="headerlink" title="收入完成进度表"></a>收入完成进度表</h3><p>​         <img src="11.jpg" alt="img">       </p>
+<h3 id="分拆到货源维度"><a href="#分拆到货源维度" class="headerlink" title="分拆到货源维度"></a>分拆到货源维度</h3><p>​         <img src="12.jpg" alt="img">       </p>
+<h3 id="大分拆到客源来源维度"><a href="#大分拆到客源来源维度" class="headerlink" title="大分拆到客源来源维度"></a>大分拆到客源来源维度</h3><p>​         <img src="13.jpg" alt="img">       </p>
+<h3 id="细粒度的项目管理表"><a href="#细粒度的项目管理表" class="headerlink" title="细粒度的项目管理表"></a>细粒度的项目管理表</h3><p>​         <img src="14.jpg" alt="img">       </p>
+<h3 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h3><p>常用的客户维度监控表：</p>
+<ul>
+<li><p>流失率：了解进来的客户有多少回不再购买业务</p>
+</li>
+<li><p>续费率：了解客户的复购情况</p>
+</li>
+<li><p>新开户、留存、流失对比：产品新引入客户的情况</p>
+</li>
+<li><p>客户数=新开+留存-流失，新开&gt;流失才保证客户数是正增长的</p>
+</li>
+</ul>
+<h3 id="指标的应用——客户维度"><a href="#指标的应用——客户维度" class="headerlink" title="指标的应用——客户维度"></a>指标的应用——客户维度</h3><p>数据指标含义：</p>
+<p>​         <img src="15.jpg" alt="img">       </p>
+<p>​         <img src="16.jpg" alt="img">       </p>
+<ul>
+<li><p>蓝线是每周的新进入客户数比较，是增长的，还是平稳的，还是下降的</p>
+</li>
+<li><p>紫线是每周新开户数的有消费比例是怎样变化的，理论上是平稳的，或者提升的，如果变低了则要研究一下</p>
+</li>
+<li><p>黄线是新客户进入的第四周，即月留存率</p>
+</li>
+</ul>
+<h3 id="续费监控"><a href="#续费监控" class="headerlink" title="续费监控"></a>续费监控</h3><p>​         <img src="17.jpg" alt="img">       </p>
+<ul>
+<li>续费率1：需要通过运营来留存，提醒充值，建立预警机制</li>
+</ul>
+<h3 id="收入预期"><a href="#收入预期" class="headerlink" title="收入预期"></a>收入预期</h3><p>​         <img src="18.jpg" alt="img">       </p>
+<h3 id="小结-4"><a href="#小结-4" class="headerlink" title="小结"></a>小结</h3><p>好的监控表可以帮忙产品经理提早发现问题</p>
+<h2 id="商业化的启动时机和模式选择"><a href="#商业化的启动时机和模式选择" class="headerlink" title="商业化的启动时机和模式选择"></a>商业化的启动时机和模式选择</h2><p>有流量才能有收益，商业化的启动从我们能把用户留住开始</p>
+<h3 id="用户生命周期法"><a href="#用户生命周期法" class="headerlink" title="用户生命周期法"></a>用户生命周期法</h3><p>​         <img src="19.jpg" alt="img">       </p>
+<h3 id="定量分析看平台的用户增长"><a href="#定量分析看平台的用户增长" class="headerlink" title="定量分析看平台的用户增长"></a>定量分析看平台的用户增长</h3><ul>
+<li><p>用户新增率&gt;用户流失率</p>
+</li>
+<li><p>用户留存率&gt;40%</p>
+</li>
+<li><p>LTV（用户终身价值）&gt;CPA（每获取一个用户的成本）（至少），LTV&gt;3CPA（最好）</p>
+</li>
+</ul>
+<h3 id="商业模式怎么选"><a href="#商业模式怎么选" class="headerlink" title="商业模式怎么选"></a>商业模式怎么选</h3><p>​         <img src="20.jpg" alt="img">       </p>
+<h3 id="案例-4"><a href="#案例-4" class="headerlink" title="案例"></a>案例</h3><p>美团商业化步调</p>
+<ul>
+<li>美团抽佣（CPS）</li>
+</ul>
+<p>​         <img src="21.jpg" alt="img">       </p>
+<ul>
+<li>Banner广告CPT售卖（CPT）</li>
+</ul>
+<p>​         <img src="22.jpg" alt="img">       </p>
+<ul>
+<li>COC竞价广告（CPC）</li>
+</ul>
+<p>​         <img src="23.jpg" alt="img">       </p>
+<h3 id="小结-5"><a href="#小结-5" class="headerlink" title="小结"></a>小结</h3><p>先做和平台功能最相关的融合产品，从品牌到效果，给用户一个接受期</p>
+<ul>
+<li><p>非自营商品的线上流水交易类平台，可以先从CPS商家抽佣开始</p>
+</li>
+<li><p>精心设计的CPT品牌广告，会让用户更能接受广告</p>
+</li>
+<li><p>用户对广告有一定接受度&amp;有一定广告主资源基础后，CPC广告会是一个较长期的相对高效的商业化方式</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/10/%E6%88%90%E4%B8%BA%E5%85%A8%E8%83%BD%E7%9A%84%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/" title="成为全能的商业产品经理">http://alfredchen.cn/2018/12/10/成为全能的商业产品经理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%BA%94%E7%AB%A0/" rel="prev" title="《经济学通识》第五章：经济学随想">
+      <i class="fa fa-chevron-left"></i> 《经济学通识》第五章：经济学随想
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/11/%E5%A6%82%E4%BD%95%E6%90%AD%E5%BB%BA%E5%A5%BD%E7%9A%84dashboard/" rel="next" title="如何搭建好的dashboard">
+      如何搭建好的dashboard <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是商业产品经理"><span class="nav-number">1.</span> <span class="nav-text">什么是商业产品经理</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#商业产品经理的日常"><span class="nav-number">1.1.</span> <span class="nav-text">商业产品经理的日常</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#举例"><span class="nav-number">1.1.1.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.1.2.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#商业产品经理的修炼功法"><span class="nav-number">2.</span> <span class="nav-text">商业产品经理的修炼功法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#产品定位"><span class="nav-number">2.1.</span> <span class="nav-text">产品定位</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#案例"><span class="nav-number">2.1.1.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#产品定位需要回答的6个问题"><span class="nav-number">2.1.2.</span> <span class="nav-text">产品定位需要回答的6个问题</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#会讲故事"><span class="nav-number">2.2.</span> <span class="nav-text">会讲故事</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-1"><span class="nav-number">2.2.1.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#用户思维"><span class="nav-number">2.3.</span> <span class="nav-text">用户思维</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-2"><span class="nav-number">2.3.1.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#商业产品所需要的用户思维"><span class="nav-number">2.3.2.</span> <span class="nav-text">商业产品所需要的用户思维</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#商业产品中用户思维的利用"><span class="nav-number">2.3.3.</span> <span class="nav-text">商业产品中用户思维的利用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-3"><span class="nav-number">2.3.4.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用户思维挖掘的方法"><span class="nav-number">2.3.5.</span> <span class="nav-text">用户思维挖掘的方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-2"><span class="nav-number">2.3.6.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#善用监控表"><span class="nav-number">2.4.</span> <span class="nav-text">善用监控表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#收入完成进度表"><span class="nav-number">2.4.1.</span> <span class="nav-text">收入完成进度表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分拆到货源维度"><span class="nav-number">2.4.2.</span> <span class="nav-text">分拆到货源维度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#大分拆到客源来源维度"><span class="nav-number">2.4.3.</span> <span class="nav-text">大分拆到客源来源维度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#细粒度的项目管理表"><span class="nav-number">2.4.4.</span> <span class="nav-text">细粒度的项目管理表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-3"><span class="nav-number">2.4.5.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#指标的应用——客户维度"><span class="nav-number">2.4.6.</span> <span class="nav-text">指标的应用——客户维度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#续费监控"><span class="nav-number">2.4.7.</span> <span class="nav-text">续费监控</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#收入预期"><span class="nav-number">2.4.8.</span> <span class="nav-text">收入预期</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-4"><span class="nav-number">2.4.9.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#商业化的启动时机和模式选择"><span class="nav-number">2.5.</span> <span class="nav-text">商业化的启动时机和模式选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#用户生命周期法"><span class="nav-number">2.5.1.</span> <span class="nav-text">用户生命周期法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定量分析看平台的用户增长"><span class="nav-number">2.5.2.</span> <span class="nav-text">定量分析看平台的用户增长</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#商业模式怎么选"><span class="nav-number">2.5.3.</span> <span class="nav-text">商业模式怎么选</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例-4"><span class="nav-number">2.5.4.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-5"><span class="nav-number">2.5.5.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

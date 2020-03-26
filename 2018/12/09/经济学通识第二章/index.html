@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="一个是现实世界，在这里，一切都按照自然规律，有条不紊地进行着；另一个是观念世界，人们时刻在形成、比较、交换和修正对未来的预期，这些预期的变化直接决定着资源现值的变化">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《经济学通识》第二章：生命有限">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="一个是现实世界，在这里，一切都按照自然规律，有条不紊地进行着；另一个是观念世界，人们时刻在形成、比较、交换和修正对未来的预期，这些预期的变化直接决定着资源现值的变化">
+<meta property="article:published_time" content="2018-12-09T14:14:50.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:14:59.388Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>《经济学通识》第二章：生命有限 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《经济学通识》第二章：生命有限
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-09 22:14:50" itemprop="dateCreated datePublished" datetime="2018-12-09T22:14:50+08:00">2018-12-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%80%9A%E8%AF%86/" itemprop="url" rel="index">
+                    <span itemprop="name">通识</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%80%9A%E8%AF%86/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">经济学</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>一个是现实世界，在这里，一切都按照自然规律，有条不紊地进行着；另一个是观念世界，人们时刻在形成、比较、交换和修正对未来的预期，这些预期的变化直接决定着资源现值的变化</p>
+<a id="more"></a>
+
+<h1 id="1：利率的原理和应用"><a href="#1：利率的原理和应用" class="headerlink" title="1：利率的原理和应用"></a>1：利率的原理和应用</h1><h2 id="股价不可预测"><a href="#股价不可预测" class="headerlink" title="股价不可预测"></a>股价不可预测</h2><p>耐用品的现值，取决于人们对其未来效用的预期，主观估计发生变化，耐用品的现值就发生变化</p>
+<p>这是两个并行而独立的世界：一个是现实世界，在这里，一切都按照自然规律，有条不紊地进行着；另一个是观念世界，人们时刻在形成、比较、交换和修正对未来的预期，这些预期的变化直接决定着资源现值的变化</p>
+<p>从事物变化，到观念变化，再到价格变化，间隔可以是极短的</p>
+<ul>
+<li>在芝加哥有8亿美元的期货合同，比纽约提前了5-7毫秒率先入场。联邦储备金因此成立了特别小组调查消息泄露的可能</li>
+</ul>
+<p>法玛认为，资产价格已经反映了关于该资产的内在价值的所有可得信息，所以（1）去研究价格的历史对预测股价没有帮助，（2）去研究公开信息对预测股价可能也没有帮助，而（3）及时寻找内幕信息对预测股价也还是没有帮助。有效市场假说的含义是，所有的消息其实都早被泄露和消化了</p>
+<p>席勒的研究结论似乎相反：他指出资产的价格波动存在着大量非理性的现象；也就是说，价格并非总是反映资产价值的客观而准确的指标。</p>
+<p>人常常不理性，但不理性行为一旦被识别，这种识别就成了新的知识，就会被其他人理性地运用</p>
+<h2 id="利率由谁制定"><a href="#利率由谁制定" class="headerlink" title="利率由谁制定"></a>利率由谁制定</h2><p>利率也是价格中的一种，它是由无数人的“不耐”共同决定的</p>
+<p>若要达成“现货”与“期货”的交易，“期货”的数量就必须比”现货”的数量大，其中的差额便决定了利率的高低</p>
+<p>一个社会即使没有进步，投资即使没有回报，资源即使日渐贫乏，利率也仍然存在​    </p>
+<p>只要“不耐”程度不变，利率就不变，变得是“期望”与“现值”</p>
+<ul>
+<li>新技术会改变人们对未来猪肉产量的“期望”，这改变了的“期望”，会以不变的利率折现为新的“现值”，加到新技术所有者的腰包里去</li>
+</ul>
+<p>只有“不耐”增加，才会提高利率</p>
+<p>不耐程度决定了期货的现价，从而决定了真实利率</p>
+<p>我们比照一下“汇率”和“利率”。各国中央银行可以主宰货币发行量，结果是各国汇率参差不齐。假如，英镑兑人民币是以一当十，兑日元则是以一当百的水平。但利率是比率，它不受货币量水平的影响。事实上，市场上各种借贷的利率非常接近。若把条款和风险考虑进去，全球利率时刻都趋于相等</p>
+<h2 id="向费雪致敬"><a href="#向费雪致敬" class="headerlink" title="向费雪致敬"></a>向费雪致敬</h2><p>用金钱来买汽水，也同样可以看做是用汽水来买金钱。买家和卖家地位相同，需求与供给没有根本区别，这才是扎实的价格需求框架</p>
+<p>在没有货币的社会，或在禁止收取利息的社会，如何观察利率的变化？答案是：观察耐用品与易耗品比价的变化​    </p>
+<p>一项资产的价值，总是它未来收入川流的折现，而过去投入的成本是沉没成本，不论大小都不影响资产的现值</p>
+<h2 id="低碳之争"><a href="#低碳之争" class="headerlink" title="低碳之争"></a>低碳之争</h2><p>法律规定了污染者要负上侵权责任，那么污染者就可以做选择：要么停止业务，要么改造设备以减少污染，要么对受损害者提供补偿，要么把周边的产权都买下来，从而“内化”生产过程产生的“外部副作用”​    </p>
+<p>市场贴现率，恰恰是市场上无数人把自己的“眼前的享受和付出”与“未来的享受和付出”两者进行平衡而自发形成和汇总的结果，是最合理和准确的</p>
+<p>纯利率影响文化品位</p>
+<h1 id="2：保险的机制和实践"><a href="#2：保险的机制和实践" class="headerlink" title="2：保险的机制和实践"></a>2：保险的机制和实践</h1><h2 id="灾难预报与保险公司"><a href="#灾难预报与保险公司" class="headerlink" title="灾难预报与保险公司"></a>灾难预报与保险公司</h2><p>保险公司的职能，可以归结为三个环环相构的部分</p>
+<ul>
+<li><p>准确评估风险的或然率</p>
+</li>
+<li><p>对投保者提出合理的行为约束</p>
+</li>
+<li><p>分摊个别投保者遭遇的损失</p>
+</li>
+</ul>
+<h2 id="保险机制的演进"><a href="#保险机制的演进" class="headerlink" title="保险机制的演进"></a>保险机制的演进</h2><p>保险机制的实质，也是一种“株连”。</p>
+<p>一旦出现无人能事前准确预测的意外，那么意外的直接承受人可以得到与预先约定的金额补偿，而意外造成的损失，将“株连”所有参加同种保险的投保人——是他们共同承担了某个个别人本来要独立承担的损失</p>
+<ul>
+<li><p>重庆市民被高楼上坠落的花盘击伤</p>
+</li>
+<li><p>911事件的损失</p>
+</li>
+</ul>
+<p>保险机制的另一项功能是规范行为</p>
+<p>保险公司从不直接提醒司机要遵守交通规则，但他向投保人所取得歧视性保费，不折不扣表明了他的立场和分寸</p>
+<h2 id="中国医疗保险的特点和症结"><a href="#中国医疗保险的特点和症结" class="headerlink" title="中国医疗保险的特点和症结"></a>中国医疗保险的特点和症结</h2><p>医疗保险改革的四大特点是：独家、强制性、提前付款、指定消费​    </p>
+<p>放开行医执业后，如何让病人更易鉴别医疗服务的质量？办法之一是品牌。届时，市场上不仅有效性诊所和家庭医生，同时也有大型的“医疗百货商店”</p>
+<h2 id="“医疗税”并非“医疗险”"><a href="#“医疗税”并非“医疗险”" class="headerlink" title="“医疗税”并非“医疗险”"></a>“医疗税”并非“医疗险”</h2><p>保险是这样一种机制：他创造出若干可能的未来世界，不管投保人进入了哪个世界，他在这些世界里的财富状况都是一样的。购买保险的人，买到的是确定性，即不管他进入那个可能世界，他的财富状况都是相同的        </p>
+<p>保险公司要自给自足地维持下去，必须同时满足两个条件</p>
+<ul>
+<li>第一是“风险细分”</li>
+</ul>
+<p>保险公司要按意外风险概率的高低，尽量把投保人分到不同的组别里。组别分得越细，组内各投保人的风险相 似度就越高，高风险者占低风险者便宜的可能性就越低，线中的吸引力就越大</p>
+<ul>
+<li>第二是“人群聚集”</li>
+</ul>
+<p>在按照风险程度细分的组别内，保险公司招揽到的投保人越多，对意外发生概率的预测就越准确，而这个组别内分摊到个人的保费也就越低        </p>
+<p>弗里德曼曾经列举过四种效率递减的花钱模式</p>
+<ul>
+<li><p>一、花自己的钱替自己办事</p>
+</li>
+<li><p>二、花自己的钱替别人办事</p>
+</li>
+<li><p>三、花别人的钱替自己办事</p>
+</li>
+<li><p>四、花别人的钱替别人办事</p>
+</li>
+<li><p>奥巴马的医改计划是第四种</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/" title="《经济学通识》第二章：生命有限">http://alfredchen.cn/2018/12/09/经济学通识第二章/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/09/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E4%BB%8E0%E5%88%B01/" rel="prev" title="商业产品从0到1">
+      <i class="fa fa-chevron-left"></i> 商业产品从0到1
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%B8%89%E7%AB%A0/" rel="next" title="《经济学通识》第三章：相互依赖">
+      《经济学通识》第三章：相互依赖 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1：利率的原理和应用"><span class="nav-number">1.</span> <span class="nav-text">1：利率的原理和应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#股价不可预测"><span class="nav-number">1.1.</span> <span class="nav-text">股价不可预测</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利率由谁制定"><span class="nav-number">1.2.</span> <span class="nav-text">利率由谁制定</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#向费雪致敬"><span class="nav-number">1.3.</span> <span class="nav-text">向费雪致敬</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#低碳之争"><span class="nav-number">1.4.</span> <span class="nav-text">低碳之争</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2：保险的机制和实践"><span class="nav-number">2.</span> <span class="nav-text">2：保险的机制和实践</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#灾难预报与保险公司"><span class="nav-number">2.1.</span> <span class="nav-text">灾难预报与保险公司</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#保险机制的演进"><span class="nav-number">2.2.</span> <span class="nav-text">保险机制的演进</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#中国医疗保险的特点和症结"><span class="nav-number">2.3.</span> <span class="nav-text">中国医疗保险的特点和症结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#“医疗税”并非“医疗险”"><span class="nav-number">2.4.</span> <span class="nav-text">“医疗税”并非“医疗险”</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

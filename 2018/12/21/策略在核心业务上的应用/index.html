@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="本文主要讲了策略在【功能导向型】核心业务以及【业务导向型】核心业务上的应用。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="策略在核心业务上的应用">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="本文主要讲了策略在【功能导向型】核心业务以及【业务导向型】核心业务上的应用。">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/1.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/2.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/3.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/4.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/5.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/6.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/7.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/8.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/9.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/10.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/11.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/12.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/13.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/14.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/15.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/16.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/17.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/18.jpg">
+<meta property="article:published_time" content="2018-12-20T16:20:13.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:06:45.715Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/1.jpg">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>策略在核心业务上的应用 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          策略在核心业务上的应用
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-21 00:20:13" itemprop="dateCreated datePublished" datetime="2018-12-21T00:20:13+08:00">2018-12-21</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">产品方法</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81/" itemprop="url" rel="index">
+                    <span itemprop="name">策略产品</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文主要讲了策略在【功能导向型】核心业务以及【业务导向型】核心业务上的应用。</p>
+<a id="more"></a>
+
+<h1 id="策略的应用"><a href="#策略的应用" class="headerlink" title="策略的应用"></a>策略的应用</h1><p>策略的特质</p>
+<ul>
+<li><p>精细化的方案</p>
+</li>
+<li><p>自我进化</p>
+</li>
+</ul>
+<p>适合的方向</p>
+<ul>
+<li><p>个性化服务</p>
+</li>
+<li><p>效率</p>
+</li>
+</ul>
+<p>应用MAP</p>
+<ul>
+<li><p>核心业务：功能导向型（关注）、业务导向型（兼顾）</p>
+</li>
+<li><p>增长：拉新、留存</p>
+</li>
+<li><p>风控：反作弊、风险评估</p>
+</li>
+<li><p>数据：基础数据、画像标签</p>
+</li>
+</ul>
+<p>​         <img src="1.jpg" alt="img">       </p>
+<h1 id="策略在【功能导向型】核心业务上的应用"><a href="#策略在【功能导向型】核心业务上的应用" class="headerlink" title="策略在【功能导向型】核心业务上的应用"></a>策略在【功能导向型】核心业务上的应用</h1><p> 只需要考虑单一用户（群）的需求，可以给出相对明确的需求满足理想态，策略围绕该理想态努力</p>
+<h2 id="策略框架"><a href="#策略框架" class="headerlink" title="策略框架"></a>策略框架</h2><p>​         <img src="2.jpg" alt="img">       </p>
+<h3 id="需求理解"><a href="#需求理解" class="headerlink" title="需求理解"></a>需求理解</h3><p>定义衡量<strong>规则</strong>的标准，将其<strong>数字化</strong>（通常是准确率和召回率）——&gt;给出<strong>区分不同用户群/场景</strong>的规则</p>
+<h3 id="提供解决方案"><a href="#提供解决方案" class="headerlink" title="提供解决方案"></a>提供解决方案</h3><p>定义<strong>好的体验</strong>的标准，将其<strong>数字化</strong>（取决于具体产品类型，通常是产品核心指标）——&gt;给出针对每个用户群/场景，应该提供怎样的解决方案</p>
+<h3 id="资源支持"><a href="#资源支持" class="headerlink" title="资源支持"></a>资源支持</h3><p>定义衡量规则的标准，将其数字化（通常是准确率和召回率）——&gt;给出<strong>资源获取和预处理</strong>的规则</p>
+<h3 id="策略框架-1"><a href="#策略框架-1" class="headerlink" title="策略框架"></a>策略框架</h3><p>​         <img src="3.jpg" alt="img">       </p>
+<h1 id="案例：屏幕亮度策略思考方法"><a href="#案例：屏幕亮度策略思考方法" class="headerlink" title="案例：屏幕亮度策略思考方法"></a>案例：屏幕亮度策略思考方法</h1><p>产品目标：根据外界因素变化给出最佳亮度输出</p>
+<p>需求理解：由外部光源亮度、光源类型、系统时间、应用类型、用户历史行为等特征来区分</p>
+<p>衡量指标：各特征的召回率和准确率（能否正确判断光源类型）</p>
+<p>解决方案：触发条件、亮度变化基本原则、稳定性等考虑，通过示例case表达理想态，产出亮度计算的函数</p>
+<p>衡量指标：用户手动调节亮度的比例（从不满意的角度评逆向评估）、其他基于反馈的监控</p>
+<p>资源支撑：亮度传感器能实现数据收集、背光源提供亮度控制接口</p>
+<p>衡量指标：数据收集覆盖率、收集准确率，亮度控制接口精度</p>
+<h1 id="案例：目的地输入模块"><a href="#案例：目的地输入模块" class="headerlink" title="案例：目的地输入模块"></a>案例：目的地输入模块</h1><p>产品目标：帮助用户以最低成本完成目的地的输入</p>
+<p>需求理解：（对需求的预测）</p>
+<ul>
+<li><p>出发地</p>
+</li>
+<li><p>时间点</p>
+</li>
+<li><p>用户历史数据</p>
+</li>
+<li><p>用户正在输入的term</p>
+</li>
+</ul>
+<p>衡量指标：各推荐策略的召回率和准确率</p>
+<p>解决方案：（广义的推荐）</p>
+<ul>
+<li><p>目的地推荐模块</p>
+</li>
+<li><p>搜索推荐模块</p>
+</li>
+<li><p>搜索建议模块</p>
+</li>
+</ul>
+<p>衡量指标：</p>
+<p>用户输入成本越低越好</p>
+<ul>
+<li><p>更低成本的推荐的使用率越高越好</p>
+</li>
+<li><p>进一步拆解为各推荐的召回率和准确率</p>
+</li>
+</ul>
+<p>资源支撑：</p>
+<p>用户历史数据用于需求预测，地点数据作为推荐候选集合</p>
+<p>衡量指标：</p>
+<p>各类数据的召回和准确率（通常指清洗程度）</p>
+<p>​         <img src="4.jpg" alt="img">       </p>
+<h1 id="案例：公交线路推荐"><a href="#案例：公交线路推荐" class="headerlink" title="案例：公交线路推荐"></a>案例：公交线路推荐</h1><p>产品目标：</p>
+<p>给用户推荐最优的公交路线，<strong>最低代价（最少步行、最短时间、最低价格、最小风险）</strong>地从出发地到达目的地</p>
+<p>需求理解：</p>
+<ul>
+<li><p>出发时间（是否有强准时诉求）</p>
+</li>
+<li><p>目的地类型等</p>
+</li>
+<li><p>用户历史行为（是否有不行和价格倾向，普遍代价是什么）</p>
+</li>
+</ul>
+<p>判别当前主要代价</p>
+<p>衡量指标：</p>
+<p>各特征的召回率和准确率（增加【主动填写出发时间】的功能提升准确和召回。从排序点击情况逆向观察代价判断的准确率）</p>
+<p>解决方案：</p>
+<p>给出可到达的路线候选集合——根据需求判断的代价权重，给出候选路线的排序——给出排序依据（时长、步行、价格等数据）</p>
+<p>衡量指标：</p>
+<ul>
+<li><p>路线准确率和召回率。准确率：确实可到达（基于抽样评估可行性）。覆盖率：尤其是优质路线均覆盖</p>
+</li>
+<li><p>用户满意度。点击越少越好（摘要和引导足够满足），选用结果排序越高越好</p>
+</li>
+<li><p>其他基于反馈的监控</p>
+</li>
+</ul>
+<p>资源支撑：</p>
+<p>用于需求判断：用户相关数据、目的地类型数据</p>
+<p>用于路线规划：公交/地铁线路（站点、运营时间、班次间隔、票价等）</p>
+<p>用于路线规划：路网数据</p>
+<p>用于到达时间预测：路况历史数据（不同交通工具）</p>
+<p>​         <img src="5.jpg" alt="img">       </p>
+<h1 id="案例：网页搜索"><a href="#案例：网页搜索" class="headerlink" title="案例：网页搜索"></a>案例：网页搜索</h1><h2 id="产品目标"><a href="#产品目标" class="headerlink" title="产品目标"></a>产品目标</h2><p>高效地获取信息</p>
+<ul>
+<li><p>需求复杂又多变——从浩瀚的候选集合里找到正确的信息</p>
+</li>
+<li><p>不同用户输入同一query表达的需求可能不一致</p>
+</li>
+<li><p>同一用户在不同场景输入同一query表达的需求也可能不一致</p>
+</li>
+</ul>
+<h2 id="需求理解：（广义的query解析）"><a href="#需求理解：（广义的query解析）" class="headerlink" title="需求理解：（广义的query解析）"></a>需求理解：（广义的query解析）</h2><ul>
+<li>需求明确（查天气）</li>
+</ul>
+<p>结构简单清晰的query：经过切词处理即可进行后续检索（考虑切词紧密度）</p>
+<p>口语化的query：需要进行纠错、同义转换等语义处理</p>
+<p>​         <img src="6.jpg" alt="img">       </p>
+<p>表达方式很复杂的query：需要进行更加unique的语义处理（披星（）月）</p>
+<p>通常根据影响面从高到底，RD增加一些unqiue的处理规则</p>
+<ul>
+<li>需求明确，对答案有特殊需求（猪肉最新价格是多少）</li>
+</ul>
+<p>需求明确，对答案有特殊要求：除了统一的query变换外，需要将特定要求转化成搜索引擎可理解的特征</p>
+<p>猪肉最新价格——资源时效性</p>
+<p>猩球崛起2迅雷下载——考虑资源可用性</p>
+<p>PPT素材——可用性&amp;特定文件格式</p>
+<ul>
+<li>需求不明确，需要进行特殊扩展和预测（我想看杨幂）</li>
+</ul>
+<p>欢乐颂——欢乐颂视频、剧情介绍、演员表、评论······</p>
+<p>猩球崛起3——······、上映前需要预告片上映时间、上映中需要介绍评价在线购票、下映后需要介绍评论视频</p>
+<p>上下文数据：搜了欢乐颂后，用户是否主动更改query搜索欢乐颂视频</p>
+<p>类目数据：对于【欢乐颂】这种电视剧专名，天然就有视频、剧情等需求。pm可以提前梳理针对各类目的需求扩展list</p>
+<p>个性化数据：对于特定类目可以进行地域拓展，家乐福——北京家乐福。电影专名，有的用户更倾向看剧情、有的倾向看评论</p>
+<p>​         <img src="7.jpg" alt="img">       </p>
+<p>​         <img src="8.jpg" alt="img">       </p>
+<p>​         <img src="9.jpg" alt="img">       </p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><ul>
+<li><p>不同需求间根据需求强度（命中需求的概率）</p>
+</li>
+<li><p>同一需求间根据结果质量（相关性、权威性、时效性、可用性） </p>
+</li>
+<li><p>实际上，会把需求强度、结果质量、用户点击行为统一成【唯一指标】决定首页结果的排序</p>
+</li>
+<li><p>这整个过程在大的搜索引擎中，已经进化为LTR系统</p>
+</li>
+</ul>
+<h3 id="展现"><a href="#展现" class="headerlink" title="展现"></a>展现</h3><p>通用策略：将结果页中与query相关的信息提取为标题/摘要，进行飘红等处理帮助用户筛选信息</p>
+<p>（对于所有搜索引擎：都是将检索对象中用户最关心的内容提前至检索结果列表页，并根据情况以各种强化的样式展现）</p>
+<p>细化策略：针对不同需求，又有如下不同的细化策略</p>
+<ul>
+<li><p>对于单一明确信息需求，可以将答案信息直接在摘要中展现（天气、客服电话）</p>
+</li>
+<li><p>对于用户接下来路径相对收敛的需求，可以将下一步需求前置，缩短步骤（网易邮箱（登录）、欢乐颂视频（集数）、凡人歌（播放））</p>
+</li>
+<li><p>对于不同资源类型结果，可以针对性优化摘要（视频类、图片类、新闻类、地图类等）</p>
+</li>
+</ul>
+<h2 id="衡量指标"><a href="#衡量指标" class="headerlink" title="衡量指标"></a>衡量指标</h2><ul>
+<li><p>每个需求打分、质量打分、展现策略的召回率和准确率</p>
+</li>
+<li><p>用户角度的搜索的满足度</p>
+</li>
+</ul>
+<h3 id="搜索满足度"><a href="#搜索满足度" class="headerlink" title="搜索满足度"></a>搜索满足度</h3><p>基于用户行为的搜索满足度：</p>
+<ul>
+<li><p>摘取满足型需求——无/很少点击行为</p>
+</li>
+<li><p>单结果满足型需求——点击集中于首条结果</p>
+</li>
+<li><p>主动变换query比例低</p>
+</li>
+<li><p>翻页比例低等等</p>
+</li>
+</ul>
+<p>基于人为评估的搜索满足度：</p>
+<ul>
+<li><p>query前3/5/10结果相关性——基于人为需求判断，当前结果是否能满足；与竞品相比，是否有更好结果未收录、排序是否更优等</p>
+</li>
+<li><p>session满意度——从用户一个行为片段分析其是否得到满足</p>
+</li>
+</ul>
+<h2 id="资源支持-1"><a href="#资源支持-1" class="headerlink" title="资源支持"></a>资源支持</h2><h3 id="自然语言相关"><a href="#自然语言相关" class="headerlink" title="自然语言相关"></a>自然语言相关</h3><p>各类基础词库：用于query切词处理、同义转换、纠错等</p>
+<p>语义理解和处理规则：用于query解析</p>
+<h3 id="网页相关"><a href="#网页相关" class="headerlink" title="网页相关"></a>网页相关</h3><p>网页收录：</p>
+<ul>
+<li><p>保证各类网页收录覆盖度</p>
+</li>
+<li><p>保证各类网页收录时效性：根据网页类型定义更新频率，重要或时效性要求高的资源可选站长主动提交的方式</p>
+</li>
+</ul>
+<p>页面分析：</p>
+<p>对页面类型进行识别，页面中内容解析、为term赋权等</p>
+<h2 id="衡量指标-1"><a href="#衡量指标-1" class="headerlink" title="衡量指标"></a>衡量指标</h2><ul>
+<li><p>对于nlp相关，各类词库、处理策略的准确率、召回率等</p>
+</li>
+<li><p>对于网页收录，收录覆盖率、更新时效性等</p>
+</li>
+<li><p>对于页面分析，各类准确率、召回率等</p>
+</li>
+</ul>
+<p>​         <img src="10.jpg" alt="img">       </p>
+<h1 id="案例：内容推荐策略思考方法"><a href="#案例：内容推荐策略思考方法" class="headerlink" title="案例：内容推荐策略思考方法"></a>案例：内容推荐策略思考方法</h1><p>产品目标：kill time</p>
+<p>需求理解：</p>
+<ul>
+<li><p>基础特征（设备型号）</p>
+</li>
+<li><p>历史行为（杨幂相关新闻点击率90%）</p>
+</li>
+<li><p>实时特征（当前13点）</p>
+</li>
+</ul>
+<p>衡量指标：</p>
+<p>各特征的召回率和准确率</p>
+<p>解决方案：</p>
+<ul>
+<li>排序：根据需求预测和结果的各类特征综合排序，统一到ctr预估的机器学习模型上</li>
+</ul>
+<p>（基于用户：喜欢A的人也喜欢B，那么下一个看A的人可以给他推B）</p>
+<p>（基于内容：杨幂的绣春刀2，可以推绣春刀1、杨幂的其他内容）</p>
+<p>（规则很难细化、优化，容易达到瓶颈）</p>
+<p>（把需求打散到特征粒度，知识图谱）</p>
+<ul>
+<li>展现：为点击服务，同时避免标题党</li>
+</ul>
+<p>（头条号会自动推荐标题）</p>
+<p>衡量指标：</p>
+<p>ctr预估的准确率，进一步拆分为各策略的召回和准确率ctr和停留时间</p>
+<p>资源支撑：（网页资源和自然语言资源）</p>
+<ul>
+<li><p>网页资源：同样考虑优质内容的覆盖率和时效性、甚至以产品手段生产unique内容</p>
+</li>
+<li><p>自然语言：为网页分类、特征分析提供支持</p>
+</li>
+</ul>
+<p>衡量指标：</p>
+<p>内容的覆盖率和时效性</p>
+<p>各特征的召回率和准确率</p>
+<p>​         <img src="11.jpg" alt="img">       </p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>策略框架：</p>
+<p>细分好用户/场景requirement，设计好把什么资源给到什么用户的rule，准备好用来细分和满足的资源resource；</p>
+<p>定义好各环节的理想态，并将优化目标数字化；</p>
+<p>以指标驱动3个R的进化。</p>
+<h1 id="策略在【业务导向型】核心业务上的应用"><a href="#策略在【业务导向型】核心业务上的应用" class="headerlink" title="策略在【业务导向型】核心业务上的应用"></a>策略在【业务导向型】核心业务上的应用</h1><h2 id="【业务导向型】定义"><a href="#【业务导向型】定义" class="headerlink" title="【业务导向型】定义"></a>【业务导向型】定义</h2><p>需要考虑多个存在显著需求差异、甚至利益冲突的用户群，策略要在多个利益群之间寻找合适解决路径，使得群体利益最大化。</p>
+<p>随着阶段性目标变化，策略路径也会随之变化。</p>
+<p>（所谓双边/多边市场）</p>
+<h2 id="案例：美团外卖"><a href="#案例：美团外卖" class="headerlink" title="案例：美团外卖"></a>案例：美团外卖</h2><p>​         <img src="12.jpg" alt="img">       </p>
+<h3 id="策略框架-2"><a href="#策略框架-2" class="headerlink" title="策略框架"></a>策略框架</h3><p>单方利益——多边关系</p>
+<h3 id="策略框架——分析每个角色"><a href="#策略框架——分析每个角色" class="headerlink" title="策略框架——分析每个角色"></a>策略框架——分析每个角色</h3><p>针对每个角色，都是一个功能导向型的策略框架</p>
+<h3 id="策略框架——建立多边关系：平衡"><a href="#策略框架——建立多边关系：平衡" class="headerlink" title="策略框架——建立多边关系：平衡"></a>策略框架——建立多边关系：平衡</h3><ul>
+<li><p>将<strong>阶段性目标</strong>拆解为与各用户群利益相关的公式，寻求多方利益的最大化</p>
+</li>
+<li><p>在此过程中，任何一方的退让以<strong>边界值（给出每一个用户群可承受的最大化的伤害）</strong>为底线</p>
+</li>
+</ul>
+<p>背景：地主家里十亩地，两个儿子。大儿子种小麦，小儿子种玉米</p>
+<p>各方利益：每个儿子都希望自己名下的地更多</p>
+<p>平台利益：父亲希望所有地的产量最高</p>
+<p>平台利益到各方利益的拆解：</p>
+<p>产量=小麦亩产量<em>小麦亩数+玉米亩产量</em>玉米亩数</p>
+<p>边界值：每个儿子小于一亩地就要分家</p>
+<p>现阶段策略规则：大儿子九亩，小儿子一亩</p>
+<p>​         <img src="13.jpg" alt="img">       </p>
+<h2 id="案例：商品定价"><a href="#案例：商品定价" class="headerlink" title="案例：商品定价"></a>案例：商品定价</h2><h3 id="各利益体需求"><a href="#各利益体需求" class="headerlink" title="各利益体需求"></a>各利益体需求</h3><p>几个利益体：卖家、买家</p>
+<ul>
+<li><p>买家希望以最低价格买到自己需要的商品</p>
+</li>
+<li><p>卖家希望将商品售卖出最高价格</p>
+</li>
+</ul>
+<h3 id="定义每个利益体的利益边界值"><a href="#定义每个利益体的利益边界值" class="headerlink" title="定义每个利益体的利益边界值"></a>定义每个利益体的利益边界值</h3><p>边界值：</p>
+<ul>
+<li><p>买家购买价格低于心理价位</p>
+</li>
+<li><p>卖家售卖价格大于成本</p>
+</li>
+</ul>
+<h3 id="找到平衡的公式"><a href="#找到平衡的公式" class="headerlink" title="找到平衡的公式"></a>找到平衡的公式</h3><p>第一步：分析双方利益关系</p>
+<ul>
+<li>双方都是希望促成交易的，矛盾点在价格高低</li>
+</ul>
+<p>第二步：拆解交易过程</p>
+<ul>
+<li>背景定义：我们假设卖家只有一件商品来简化问题</li>
+</ul>
+<p>​         <img src="14.jpg" alt="img">       </p>
+<ul>
+<li>交易过程：每一个买家进店时，都存在一次定价环节</li>
+</ul>
+<p>​         <img src="15.jpg" alt="img">       </p>
+<p>第三步：定义不同目标下的定价策略</p>
+<p>​         <img src="16.jpg" alt="img">       </p>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>​         <img src="17.jpg" alt="img">       </p>
+<h2 id="案例：出行APP"><a href="#案例：出行APP" class="headerlink" title="案例：出行APP"></a>案例：出行APP</h2><h3 id="各利益体需求-1"><a href="#各利益体需求-1" class="headerlink" title="各利益体需求"></a>各利益体需求</h3><p>几个利益体：乘客、司机</p>
+<ul>
+<li><p>乘客希望最近的司机接单（等待时间最短）</p>
+</li>
+<li><p>司机希望最挣钱的订单（接驾最短、距离更长、更不堵车的订单）</p>
+</li>
+</ul>
+<h3 id="定义每个利益体的利益边界值-1"><a href="#定义每个利益体的利益边界值-1" class="headerlink" title="定义每个利益体的利益边界值"></a>定义每个利益体的利益边界值</h3><p>边界值：</p>
+<ul>
+<li><p>乘客能接受的最长等待时间是X分钟</p>
+</li>
+<li><p>司机能接受的最远接驾距离是Xkm</p>
+</li>
+</ul>
+<h3 id="找到平衡的公式-1"><a href="#找到平衡的公式-1" class="headerlink" title="找到平衡的公式"></a>找到平衡的公式</h3><p>第一步：分析双方利益关系</p>
+<ul>
+<li><p>双方都是希望促成交易的</p>
+</li>
+<li><p>矛盾点在每个人都渴望最优质的匹配对象，而优质资源是稀缺的</p>
+</li>
+</ul>
+<p>第二步：定义撮合规则</p>
+<ul>
+<li><p>阶段性目标：成交率最大（更偏向乘客利益），每一时刻的订单被最大程度地消化</p>
+</li>
+<li><p>撮合方案：</p>
+</li>
+</ul>
+<p>​         <img src="18.jpg" alt="img">       </p>
+<h2 id="产品进化"><a href="#产品进化" class="headerlink" title="产品进化"></a>产品进化</h2><p>在不同的阶段性目标下，产品是如何进化的</p>
+<h2 id="案例：出行APP的司乘撮合系统"><a href="#案例：出行APP的司乘撮合系统" class="headerlink" title="案例：出行APP的司乘撮合系统"></a>案例：出行APP的司乘撮合系统</h2><p>产品目标：实现平台上订单的高效分发。乘客打到车，司机挣到钱</p>
+<p>衡量指标：广义的成交率为核心指标</p>
+<p>如果让你设计一个给宠物上门洗澡的订单分发系统，你会怎么做？</p>
+<p>用户方、平台方、服务方</p>
+<p>用户发起订单——平台接受订单——平台分发订单——服务方接受订单——服务方上门服务——用户完成订单——平台给服务方转账</p>
+<p>平台接受的订单存放到订单分发系统</p>
+<p>订单分发系统分为两种分发模式——抢单和派发，根据服务方提供的信息进行匹配</p>
+<p>用户下单——找到就近的空闲的师傅——师傅上门服务</p>
+<h3 id="版本1-0：以乘客为中心"><a href="#版本1-0：以乘客为中心" class="headerlink" title="版本1.0：以乘客为中心"></a>版本1.0：以乘客为中心</h3><p>阶段现状：需求较低频和稀疏，w单/天</p>
+<p>乘客：加到车就好</p>
+<p>司机：对平台尚无依赖</p>
+<p>解决方案：</p>
+<ul>
+<li><p>以乘客为中心，由近及远播单</p>
+</li>
+<li><p>存在最大播单距离，以保证司机体验</p>
+</li>
+<li><p>司机在线多少小时给奖励</p>
+</li>
+<li><p>——需求分发优先</p>
+</li>
+</ul>
+<p>随着订单量增长，开始暴露问题：</p>
+<p>司机听到的订单是以订单生成为触发的，订单密度足够高时，多个订单无差别推给司机，司乘体验都出现了严重问题</p>
+<p>阶段现状：需求较密集，10w单/天</p>
+<p>乘客：打到车</p>
+<p>司机：希望更近更好的订单（市场上存在多个叫车平台）、</p>
+<h3 id="版本2-0：以司机为中心"><a href="#版本2-0：以司机为中心" class="headerlink" title="版本2.0：以司机为中心"></a>版本2.0：以司机为中心</h3><p>解决方案：</p>
+<ul>
+<li><p>以司机为中心，当司机需要订单时，由近及远选取周围未成交订单播单</p>
+</li>
+<li><p>存在最大播单距离，以保证司乘体验</p>
+</li>
+<li><p>——供给占用优先</p>
+</li>
+</ul>
+<p>随着订单量增长，开始暴露问题：</p>
+<p>司机周围订单变得越来越多，仅按距离排序难以将好订单筛选出来，需要进一步优化排序策略</p>
+<h3 id="版本2-n：以司机为中心的订单推荐系统"><a href="#版本2-n：以司机为中心的订单推荐系统" class="headerlink" title="版本2.n：以司机为中心的订单推荐系统"></a>版本2.n：以司机为中心的订单推荐系统</h3><p>阶段现状：需求继续密集，&gt;10w单/天</p>
+<p>解决方案：</p>
+<ul>
+<li><p>排序系统进化：开始引入订单长度、目的地特征、已被抢概率、取消概率、司机特征等因素，升级为基于ctr预估的推荐系统</p>
+</li>
+<li><p>以司机为中心，当司机需要订单时，选取周围订单，按ctr预估模型进行排序（用对核心目标硬影响更大的司机的价值观来作为多边关系的原则）</p>
+</li>
+<li><p>存在最大播单距离，以保证司乘体验</p>
+</li>
+<li><p>——供给占用优先</p>
+</li>
+</ul>
+<p>阶段现状：需求继续密集，100w单/天</p>
+<p>新问题：司乘存在明显的分布不均衡，出现了【离所有司机都很远无法被播出的P1】和【离很多司机都最近、被重复播放多次的P2】</p>
+<h3 id="版本3-0：以平台为中心的订单撮合系统"><a href="#版本3-0：以平台为中心的订单撮合系统" class="headerlink" title="版本3.0：以平台为中心的订单撮合系统"></a>版本3.0：以平台为中心的订单撮合系统</h3><p>阶段现状：需求继续密集，&gt;100w单/天</p>
+<p>解决方案：</p>
+<ul>
+<li><p>同时考虑整个区域内的所有乘客司机，以哪种组合方式可以达到所有人的体验最优（成交率最高）</p>
+</li>
+<li><p>存在最大播单距离，以保证司乘体验</p>
+</li>
+<li><p>订单价值稍低X抢单成功率高=期望还是高的</p>
+</li>
+<li><p>——群体利益最大化</p>
+</li>
+</ul>
+<h3 id="出行APP的司乘撮合系统的进化"><a href="#出行APP的司乘撮合系统的进化" class="headerlink" title="出行APP的司乘撮合系统的进化"></a>出行APP的司乘撮合系统的进化</h3><ul>
+<li><p>版本1.0（以乘客为中心，由近及远分发）（需求低频稀疏，需求分发优先）</p>
+</li>
+<li><p>版本2.0（以司机为中心，由近及远分发）（需求较密集，供给占用优先）</p>
+</li>
+<li><p>版本2.n（以司机为中心的订单推荐系统）（需求较密集，供给占用优先）</p>
+</li>
+<li><p>版本3.0（以平台为中心的订单撮合系统）（需求很密集，群体利益最大化）</p>
+</li>
+</ul>
+<p>随着平台规模的进化和供需变化，阶段性目标持续变化，业务导向的策略架架构也持续进化</p>
+<ul>
+<li><p>版本3.0<strong>指派系统</strong>（以平台为中心的订单撮合系统）（更强的确定性）</p>
+</li>
+<li><p>版本3.0指派系统、<strong>动态调价</strong>（提高绝对价值，退让多边关系）（更强的市场调控能力）</p>
+</li>
+<li><p>拼车······</p>
+</li>
+</ul>
+<h2 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h2><p>策略框架：</p>
+<p>是多个功能导向型框架的集合；</p>
+<p>寻求多个群体间共同的利益点，作为不同小框架的结合点；</p>
+<p>最终的目的是生态繁荣。</p>
+<p>平衡是一个生态系统的基础；各自成长是生态系统繁荣的必要条件。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/" title="策略在核心业务上的应用">http://alfredchen.cn/2018/12/21/策略在核心业务上的应用/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/" rel="prev" title="策略产品工作的通用方法论">
+      <i class="fa fa-chevron-left"></i> 策略产品工作的通用方法论
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/21/%E6%97%B6%E4%BA%8B%E5%95%86%E5%AD%A6%E9%99%A21%EF%BC%9A%E4%BA%94%E6%98%9F%E7%BA%A7%E9%85%92%E5%BA%97%E5%8D%AB%E7%94%9F%E4%B8%8EX-Y%E7%90%86%E8%AE%BA/" rel="next" title="时事商学院1：五星级酒店卫生与X-Y理论">
+      时事商学院1：五星级酒店卫生与X-Y理论 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#策略的应用"><span class="nav-number">1.</span> <span class="nav-text">策略的应用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#策略在【功能导向型】核心业务上的应用"><span class="nav-number">2.</span> <span class="nav-text">策略在【功能导向型】核心业务上的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#策略框架"><span class="nav-number">2.1.</span> <span class="nav-text">策略框架</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求理解"><span class="nav-number">2.1.1.</span> <span class="nav-text">需求理解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提供解决方案"><span class="nav-number">2.1.2.</span> <span class="nav-text">提供解决方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#资源支持"><span class="nav-number">2.1.3.</span> <span class="nav-text">资源支持</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#策略框架-1"><span class="nav-number">2.1.4.</span> <span class="nav-text">策略框架</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例：屏幕亮度策略思考方法"><span class="nav-number">3.</span> <span class="nav-text">案例：屏幕亮度策略思考方法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例：目的地输入模块"><span class="nav-number">4.</span> <span class="nav-text">案例：目的地输入模块</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例：公交线路推荐"><span class="nav-number">5.</span> <span class="nav-text">案例：公交线路推荐</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例：网页搜索"><span class="nav-number">6.</span> <span class="nav-text">案例：网页搜索</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#产品目标"><span class="nav-number">6.1.</span> <span class="nav-text">产品目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需求理解：（广义的query解析）"><span class="nav-number">6.2.</span> <span class="nav-text">需求理解：（广义的query解析）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#解决方案"><span class="nav-number">6.3.</span> <span class="nav-text">解决方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#排序"><span class="nav-number">6.3.1.</span> <span class="nav-text">排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#展现"><span class="nav-number">6.3.2.</span> <span class="nav-text">展现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#衡量指标"><span class="nav-number">6.4.</span> <span class="nav-text">衡量指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#搜索满足度"><span class="nav-number">6.4.1.</span> <span class="nav-text">搜索满足度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源支持-1"><span class="nav-number">6.5.</span> <span class="nav-text">资源支持</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自然语言相关"><span class="nav-number">6.5.1.</span> <span class="nav-text">自然语言相关</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网页相关"><span class="nav-number">6.5.2.</span> <span class="nav-text">网页相关</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#衡量指标-1"><span class="nav-number">6.6.</span> <span class="nav-text">衡量指标</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例：内容推荐策略思考方法"><span class="nav-number">7.</span> <span class="nav-text">案例：内容推荐策略思考方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">7.1.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#策略在【业务导向型】核心业务上的应用"><span class="nav-number">8.</span> <span class="nav-text">策略在【业务导向型】核心业务上的应用</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#【业务导向型】定义"><span class="nav-number">8.1.</span> <span class="nav-text">【业务导向型】定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例：美团外卖"><span class="nav-number">8.2.</span> <span class="nav-text">案例：美团外卖</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#策略框架-2"><span class="nav-number">8.2.1.</span> <span class="nav-text">策略框架</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#策略框架——分析每个角色"><span class="nav-number">8.2.2.</span> <span class="nav-text">策略框架——分析每个角色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#策略框架——建立多边关系：平衡"><span class="nav-number">8.2.3.</span> <span class="nav-text">策略框架——建立多边关系：平衡</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例：商品定价"><span class="nav-number">8.3.</span> <span class="nav-text">案例：商品定价</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#各利益体需求"><span class="nav-number">8.3.1.</span> <span class="nav-text">各利益体需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义每个利益体的利益边界值"><span class="nav-number">8.3.2.</span> <span class="nav-text">定义每个利益体的利益边界值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找到平衡的公式"><span class="nav-number">8.3.3.</span> <span class="nav-text">找到平衡的公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-1"><span class="nav-number">8.3.4.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例：出行APP"><span class="nav-number">8.4.</span> <span class="nav-text">案例：出行APP</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#各利益体需求-1"><span class="nav-number">8.4.1.</span> <span class="nav-text">各利益体需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义每个利益体的利益边界值-1"><span class="nav-number">8.4.2.</span> <span class="nav-text">定义每个利益体的利益边界值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#找到平衡的公式-1"><span class="nav-number">8.4.3.</span> <span class="nav-text">找到平衡的公式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产品进化"><span class="nav-number">8.5.</span> <span class="nav-text">产品进化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例：出行APP的司乘撮合系统"><span class="nav-number">8.6.</span> <span class="nav-text">案例：出行APP的司乘撮合系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#版本1-0：以乘客为中心"><span class="nav-number">8.6.1.</span> <span class="nav-text">版本1.0：以乘客为中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本2-0：以司机为中心"><span class="nav-number">8.6.2.</span> <span class="nav-text">版本2.0：以司机为中心</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本2-n：以司机为中心的订单推荐系统"><span class="nav-number">8.6.3.</span> <span class="nav-text">版本2.n：以司机为中心的订单推荐系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#版本3-0：以平台为中心的订单撮合系统"><span class="nav-number">8.6.4.</span> <span class="nav-text">版本3.0：以平台为中心的订单撮合系统</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#出行APP的司乘撮合系统的进化"><span class="nav-number">8.6.5.</span> <span class="nav-text">出行APP的司乘撮合系统的进化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-2"><span class="nav-number">8.7.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

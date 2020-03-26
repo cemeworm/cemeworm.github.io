@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="用户体验五要素、用户体验地图与峰终定律">
+<meta property="og:type" content="article">
+<meta property="og:title" content="梁宁·产品思维30讲学习笔记：用户体验">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="用户体验五要素、用户体验地图与峰终定律">
+<meta property="article:published_time" content="2018-12-11T03:24:54.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:31:49.669Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>梁宁·产品思维30讲学习笔记：用户体验 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          梁宁·产品思维30讲学习笔记：用户体验
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-11 11:24:54" itemprop="dateCreated datePublished" datetime="2018-12-11T11:24:54+08:00">2018-12-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B4/" itemprop="url" rel="index">
+                    <span itemprop="name">产品思维</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>用户体验五要素、用户体验地图与峰终定律 </p>
+<a id="more"></a>
+
+<h1 id="用户体验的五个层次"><a href="#用户体验的五个层次" class="headerlink" title="用户体验的五个层次"></a>用户体验的五个层次</h1><h2 id="用户体验的五层要素"><a href="#用户体验的五层要素" class="headerlink" title="用户体验的五层要素"></a>用户体验的五层要素</h2><ul>
+<li><p>感知层</p>
+</li>
+<li><p>角色框架层</p>
+</li>
+<li><p>框架就是框里每个页面需要有多少元素，它们的链接关系、调用规则分别是什么。你打开任何一个网页，你在感知层感知到的一切内容、功能，都是在这个框架内被框定的</p>
+</li>
+<li><p>资源结构层</p>
+</li>
+<li><p>毛泽东一句话定义了“资源”，就是“谁是我们的敌人，谁是我们的朋友”。</p>
+</li>
+<li><p>能力圈范围层</p>
+</li>
+<li><p>我们要做到哪些事，具体要提供什么样的确定性</p>
+</li>
+<li><p>我们不做那些事，对这些事坚决不碰</p>
+</li>
+<li><p>战略存在层</p>
+</li>
+<li><p>我们要通过这个产品得到什么？</p>
+</li>
+<li><p>我们的用户要通过这个产品得到什么，他们为什么会依赖我们？</p>
+</li>
+<li><p>你对自己的存在战略设计是什么？你能存在，不是因为你厉害，而是别人需要你，别人能持续依赖你。真正厉害的人，能清醒地认识到这一点</p>
+</li>
+</ul>
+<h2 id="百度和Google之争"><a href="#百度和Google之争" class="headerlink" title="百度和Google之争"></a>百度和Google之争</h2><ul>
+<li><p>你在百度上搜“顺丰快递”，搜索结果页的第一条就是顺丰单号查询框，至下依次是顺丰官网、百度贴吧的信息等</p>
+</li>
+<li><p>百度框架的意义就是能让用户在第二个动作得到他要的信息，绝不让用户多点一层</p>
+</li>
+<li><p>Google还在中国开展业务的时候，百度做了Google没有做的动作，自己着手在建设内容资源，做了百度贴吧和百度知道</p>
+</li>
+<li><p>当时的中国互联网搜索引擎的竞争还是资源量的竞争</p>
+</li>
+</ul>
+<h2 id="Yahoo为什么输给Google"><a href="#Yahoo为什么输给Google" class="headerlink" title="Yahoo为什么输给Google"></a>Yahoo为什么输给Google</h2><ul>
+<li>在资源一直的情况下，Yahoo在表层的框架层就输了。三个搜索引擎，感知层差别不大，用户体验的差别其实是分别在框架层、资源层和能力圈层</li>
+</ul>
+<h2 id="看人的五层要素"><a href="#看人的五层要素" class="headerlink" title="看人的五层要素"></a>看人的五层要素</h2><ul>
+<li><p>如果你希望与一个人建立的是深层关系、长期关系、战略关系，那么你需要更深地了解一个人角色之内的另外三层</p>
+</li>
+<li><p>他的内心是什么？什么是他想要的存在感？</p>
+</li>
+<li><p>他为了自己的存在感，一直在怎样积蓄、打造他的能力圈</p>
+</li>
+<li><p>他在怎样积累和建设自己的资源，才会拥有今天的角色？</p>
+</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<li><p>做一个产品，就是我要做一个东西让它成为某些人生活中、工作中可以确定性依赖的存在</p>
+</li>
+<li><p>看一个人，则是我知道对方想成为一个什么样的存在，我是不是认同他想要的存在感，并且站在这个人的立场，接纳这个人的瑕疵，帮助他，成就他</p>
+</li>
+</ul>
+<h1 id="怎样绘制用户体验的地图"><a href="#怎样绘制用户体验的地图" class="headerlink" title="怎样绘制用户体验的地图"></a>怎样绘制用户体验的地图</h1><ul>
+<li><p>用户体验地图就是通过画一张图，用一种讲故事的方式，从一个特定用户的角度出发，记录下他与产品或者服务进行接触、进入、互动的完整过程</p>
+</li>
+<li><p>开始做产品经理的人容易犯的错误，就是用管理员的视角来规划产品</p>
+</li>
+</ul>
+<h2 id="怎么画用户体验地图"><a href="#怎么画用户体验地图" class="headerlink" title="怎么画用户体验地图"></a>怎么画用户体验地图</h2><ul>
+<li><p>1、一个画像完整的人物角色：需要对“第一只羊”有完整地了解</p>
+</li>
+<li><p>2、清晰描述用户的目标和预期：他为什么来到你的草地上？他要什么？</p>
+</li>
+<li><p>3、服务触点：用户从接触你的服务，到实现它的目标之间，会跟你在产品上有哪些接触，你需要在这些地方服务用户</p>
+</li>
+<li><p>4、用户使用路径：使用路径与服务触点的关系是什么？</p>
+</li>
+<li><p>用户在宜家逛的过程是使用路径；在宜家里向工作人员咨询，到盒子前拿免费的资料是服务触点</p>
+</li>
+<li><p>5、用户情绪曲线：场景是要触发情绪的。在整个过程中，用户的情绪是如何变化的？</p>
+</li>
+<li><p>把这个用户从接触你的服务开始，到达成自己的目标为止（或者放弃为止），整个流程画一个坐标图，横轴是用户的使用路径与触点；纵轴是用户情绪</p>
+</li>
+</ul>
+<h2 id="为什么要画用户体验地图"><a href="#为什么要画用户体验地图" class="headerlink" title="为什么要画用户体验地图"></a>为什么要画用户体验地图</h2><ul>
+<li>为了避免管理员视角，很多初级产品经理都是用管理员视角在设计产品，有什么产品罗列什么，而不是考虑用户要什么</li>
+</ul>
+<h3 id="有一个中医养生类的Keep，叫一体"><a href="#有一个中医养生类的Keep，叫一体" class="headerlink" title="有一个中医养生类的Keep，叫一体"></a>有一个中医养生类的Keep，叫一体</h3><ul>
+<li><p>用户画像：亚健康、需要自我调理的人，智能手机用户</p>
+</li>
+<li><p>我的目标是什么：我的目标是调整我的亚健康状态，我的问题是脖子疼、肩膀疼、后背疼，看着视频做动作，不是我的目标</p>
+</li>
+<li><p>Keep会对新进入的用户提问：你的目标是减肥、塑形，还是练出马甲线？</p>
+</li>
+<li><p>我的触点是什么：只有一个，看教学视频</p>
+</li>
+<li><p>我的使用路径是什么：因为我看不到自己的目标，除了自己搜索看视频，没有其他路径、</p>
+</li>
+<li><p>以Keep为例，有以下路径：选择减肥；选择能承受哪种负荷的运动；女生最热门的运动；1个月打造马甲线的专项等。多路径的设计，让用户更容易找到合适练习的方式</p>
+</li>
+<li><p>用户情绪曲线：在我需要的前提下打开它，首先没有看到我的目标和这些视频之间的关系。其次没有用户使用路径设计，导致我不知所措</p>
+</li>
+<li><p>虽然目前内容资源都有，但用户要知道该如何使用你的内容，达到自己的目标</p>
+</li>
+</ul>
+<h2 id="什么是用户故事"><a href="#什么是用户故事" class="headerlink" title="什么是用户故事"></a>什么是用户故事</h2><h3 id="开放大学做了什么改变？"><a href="#开放大学做了什么改变？" class="headerlink" title="开放大学做了什么改变？"></a>开放大学做了什么改变？</h3><ul>
+<li><p>从一开始，假定用户为大明用户，他们知道所有学院、课程的意义，提供干巴巴的课程信息，转化为了提供给笨笨用户可以理解的场景故事</p>
+</li>
+<li><p>在此之后，开放大学的宣传从“我们有什么老师和课程”，变成了“我们有什么用户”、“用户故事是什么”</p>
+</li>
+<li><p>如果我们只关注数据，而不关注用户故事，那么我们很容易做出的决策是让更多的羊进来。这批被导进来的用户肯定会有问题</p>
+</li>
+</ul>
+<h2 id="腾讯讲用户故事的原因"><a href="#腾讯讲用户故事的原因" class="headerlink" title="腾讯讲用户故事的原因"></a>腾讯讲用户故事的原因</h2><ul>
+<li><p>数据是水管里流的水，是一个常态，是一个结果</p>
+</li>
+<li><p>量子物理中有个定义很有趣，关系=信息</p>
+</li>
+<li><p>得到：超级用户的故事</p>
+</li>
+</ul>
+<h1 id="服务蓝图的核心要素：峰值、终值"><a href="#服务蓝图的核心要素：峰值、终值" class="headerlink" title="服务蓝图的核心要素：峰值、终值"></a>服务蓝图的核心要素：峰值、终值</h1><ul>
+<li>用户体验地图的价值让你真切地站在用户视角，来看自己的产品是不是满足了用户的目标。服务设计蓝图是为了解决资源结构和角色框架的问题</li>
+</ul>
+<h2 id="如何配置资源结构和角色框架"><a href="#如何配置资源结构和角色框架" class="headerlink" title="如何配置资源结构和角色框架"></a>如何配置资源结构和角色框架</h2><ul>
+<li><p>用户体验地图是讲“第一只羊”怎么在咱们这设计的”草地“上玩得开心，具体在哪个点爽，哪个点不爽</p>
+</li>
+<li><p>服务蓝图则是站在服务提供者的立场 ，怎么在总体成本控制的范畴内，给这只羊核心体体验，并且保证服务不崩溃</p>
+</li>
+</ul>
+<h2 id="服务蓝图到底要干什么？"><a href="#服务蓝图到底要干什么？" class="headerlink" title="服务蓝图到底要干什么？"></a>服务蓝图到底要干什么？</h2><h3 id="一眼"><a href="#一眼" class="headerlink" title="一眼"></a>一眼</h3><ul>
+<li>产品要第一时间让用户“一眼”看到自己的目标</li>
+</ul>
+<h3 id="一条路"><a href="#一条路" class="headerlink" title="一条路"></a>一条路</h3><ul>
+<li>产品要有一个清晰的路径，让用户能够知道如何使用你的服务，用来达到或者接近自己的目标。用户无法走下去，就是服务流程的崩溃点</li>
+</ul>
+<h3 id="三个点"><a href="#三个点" class="headerlink" title="三个点"></a>三个点</h3><ul>
+<li><p>峰值，终值和忍耐底线</p>
+</li>
+<li><p>体验一个事物或产品之后，所能记住的就只有在峰值与终值时的体验，而整个过程中每个点好与不好，时间长短，对记忆或者感受都没那么大影响，样板间体验就是宜家服务蓝图的峰值设计，终值就是出口处1块钱的冰淇淋</p>
+</li>
+<li><p>平庸的用户体验无法成就你</p>
+</li>
+</ul>
+<p>设计服务蓝图核心就是让你在资源有限的情况下，配置你的资源，在关节点上安排角色，保证整体服务路径不崩溃，尽量不压到用户的忍耐底线。然后尽量集中资源，打造体验的峰值，最后再做一个体验终值的美好小尾巴</p>
+<h2 id="亚朵酒店的服务节点"><a href="#亚朵酒店的服务节点" class="headerlink" title="亚朵酒店的服务节点"></a>亚朵酒店的服务节点</h2><p>亚朵酒店在设计服务蓝图的时候，是从客人第一次入住亚朵，到他再次入住亚朵的整个过程，中间有十二次端口，也就是亚朵服务的十二个节点</p>
+<ul>
+<li><p>第一个节点，预定</p>
+</li>
+<li><p>第二个节点，走进大堂的第一面</p>
+</li>
+<li><p>他会在大堂设一个图书馆，可以在那里看书、喝咖啡，也可以把书拿回房间看</p>
+</li>
+<li><p>第三个节点，到房间的第一眼</p>
+</li>
+<li><p>第四个节点，跟你联系，向酒店提供服务咨询的第一刻</p>
+</li>
+<li><p>第五个节点，吃早餐的那一刻</p>
+</li>
+<li><p>第六个节点，你在酒店等人或者等车，需要有个地方呆一下的那一刻</p>
+</li>
+<li><p>第七个节点，你中午或者晚上想吃夜宵的那一刻</p>
+</li>
+<li><p>第八个节点，你离店的那一刻</p>
+</li>
+<li><p>你在亚朵的终值体验是退房的时候，这是服务人员会给你一瓶矿泉水，如果是冬天就会给一瓶温热的矿泉水</p>
+</li>
+<li><p>第九个节点，离店之后，你点评的那一刻</p>
+</li>
+<li><p>第十个节点，第二次想起亚朵的那一刻</p>
+</li>
+<li><p>第十一个节点，你要跟朋友推广和介绍那一刻</p>
+</li>
+<li><p>第十二个节点，还有你第二次再预定的那一刻</p>
+</li>
+</ul>
+<h1 id="上瘾机制：用户激励系统"><a href="#上瘾机制：用户激励系统" class="headerlink" title="上瘾机制：用户激励系统"></a>上瘾机制：用户激励系统</h1><h2 id="什么是激励"><a href="#什么是激励" class="headerlink" title="什么是激励"></a>什么是激励</h2><ul>
+<li>完成预定动作，给他满足，并且让他清楚，完成预定动作，就能得到满足</li>
+</ul>
+<h2 id="怎么激励用户"><a href="#怎么激励用户" class="headerlink" title="怎么激励用户"></a>怎么激励用户</h2><ul>
+<li><p>​    游戏的动力，就是压力感突然被满足，压力释放的爽感、确定性的获得、激励的满足感合在一起，让一个人成瘾，停不下来</p>
+</li>
+<li><p>​    确定，就是依赖；不确定，就是伤害。一个确定性的丧失，不论大小，都是非常难受的</p>
+</li>
+<li><p>饿了么外卖</p>
+</li>
+<li><p>有红包时很爽，没红包时非常难受</p>
+</li>
+<li><p>像O2O类服务除非你拿到了垄断地位，否则你的补贴不能停</p>
+</li>
+</ul>
+<h2 id="内在激励与外在激励"><a href="#内在激励与外在激励" class="headerlink" title="内在激励与外在激励"></a>内在激励与外在激励</h2><h3 id="外在激励"><a href="#外在激励" class="headerlink" title="外在激励"></a>外在激励</h3><ul>
+<li>比如获得类似奖金、名誉等奖励</li>
+</ul>
+<h3 id="内在奖励"><a href="#内在奖励" class="headerlink" title="内在奖励"></a>内在奖励</h3><ul>
+<li>驱使一个人内心获得饥渴感、满足感、愉悦感的内部因素</li>
+</ul>
+<h2 id="《王者荣耀》如何降低激励门槛"><a href="#《王者荣耀》如何降低激励门槛" class="headerlink" title="《王者荣耀》如何降低激励门槛"></a>《王者荣耀》如何降低激励门槛</h2><ul>
+<li><p>操作简单易上手</p>
+</li>
+<li><p>对时间的要求低，6分钟就可以打一局</p>
+</li>
+<li><p>对设备的要求不高</p>
+</li>
+<li><p>每日任务</p>
+</li>
+<li><p>比如腾讯这家公司，比如《王者荣耀》这个游戏，更强的激励是营造了一个场，让用户彼此挤压，彼此激励</p>
+</li>
+</ul>
+<h1 id="名字是你的文化资产"><a href="#名字是你的文化资产" class="headerlink" title="名字是你的文化资产"></a>名字是你的文化资产</h1><h2 id="名字是召唤世界的咒语"><a href="#名字是召唤世界的咒语" class="headerlink" title="名字是召唤世界的咒语"></a>名字是召唤世界的咒语</h2><ul>
+<li><p>当你要起一个名字的时候，你要知道你是在寻找一句咒语。通过这个咒语，你和你的同伴一起召唤你的产品，把她从无到有召唤到这个世界上</p>
+</li>
+<li><p>人为什么要说话？说话就是咒语。舒舒服服的，干嘛要说话？说话是为了驱动别人，驱动世界</p>
+</li>
+<li><p>如果你不给我倒，我可以话一句咒语，比如“求求你了，我太渴了，给我倒杯水吧”，我又驱动了你。或者“给你十块钱，给我倒杯水”。用钱或者权力来做杠杆，咒语的力量就增强了</p>
+</li>
+</ul>
+<h2 id="名字里的文化势能"><a href="#名字里的文化势能" class="headerlink" title="名字里的文化势能"></a>名字里的文化势能</h2><ul>
+<li><p>判断一个名字是不是有力，在于能在对方心中召唤出一种什么样的感情</p>
+</li>
+<li><p>负面例子</p>
+</li>
+<li><p>丰田改名，凌志-&gt;雷克萨斯，陆地巡洋舰-&gt;兰德酷路泽，霸道-&gt;普拉多，麦当劳-&gt;金拱门</p>
+</li>
+<li><p>正面例子</p>
+</li>
+<li><p>阿里巴巴</p>
+</li>
+<li><p>百度</p>
+</li>
+</ul>
+<h2 id="什么是口碑"><a href="#什么是口碑" class="headerlink" title="什么是口碑"></a>什么是口碑</h2><h3 id="雷军说：“什么是口碑？口碑就是把事情做过头。”"><a href="#雷军说：“什么是口碑？口碑就是把事情做过头。”" class="headerlink" title="雷军说：“什么是口碑？口碑就是把事情做过头。”"></a>雷军说：“什么是口碑？口碑就是把事情做过头。”</h3><ul>
+<li><p>实例</p>
+</li>
+<li><p>买一瓶100块钱的精油，结果收到了7件赠品</p>
+</li>
+<li><p>她收到包裹第一感受是一小瓶精油还寄这么大一个盒子？拆了包裹，他一件一件往外拿赠品，拿到第三件赠品的时候，他已经忍不住说：“还有？”</p>
+</li>
+<li><p>满意与推荐是两个不同的概念。用雷军的话，只有超预期把事做过头，用户才会有深刻印象，才会有口碑转化的动力，也就是要从满意变成推荐</p>
+</li>
+</ul>
+<h3 id="华与华创始人华杉说：“口碑叫口碑，不叫眼碑。”"><a href="#华与华创始人华杉说：“口碑叫口碑，不叫眼碑。”" class="headerlink" title="华与华创始人华杉说：“口碑叫口碑，不叫眼碑。”"></a>华与华创始人华杉说：“口碑叫口碑，不叫眼碑。”</h3><ul>
+<li><p>华杉认为“碑”本来是视觉的，口碑却成为一个符号，活在口耳之间。所以口碑一定是听觉文案，一定是一句口语，直截了当，脱口而出，不绕弯子</p>
+</li>
+<li><p>口碑就是你把那些事情做过头，然后别人要口口相传的时候会说的话。口碑是你要替消费者说一句他要说的话，然后让他说出来</p>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li><p>从甄别自己的感觉，理解他人感受开始</p>
+</li>
+<li><p>我们学习价值判断，用户研究，建设系统能力。一个产品是一个系统能力的输出结果</p>
+</li>
+<li><p>用户体验有五个层次，就你的存在战略来规划积累自己的能力圈、资源，通过角色框架完成用户能够感知的服务</p>
+</li>
+<li><p>设置用户体验的峰值和终值，不断倾听，不断优化，设置用户激励系统</p>
+</li>
+<li><p>最后，给他一个名字，把他召唤出来，成为这个世界的一部分，与这个世界建立联系</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/" title="梁宁·产品思维30讲学习笔记：用户体验">http://alfredchen.cn/2018/12/11/梁宁·产品思维30讲学习笔记：用户体验/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%B3%BB%E7%BB%9F%E8%83%BD%E5%8A%9B/" rel="prev" title="梁宁·产品思维30讲学习笔记：系统能力">
+      <i class="fa fa-chevron-left"></i> 梁宁·产品思维30讲学习笔记：系统能力
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%9B%E6%96%B0%E6%A8%A1%E5%BC%8F/" rel="next" title="梁宁·产品思维30讲学习笔记：创新模式">
+      梁宁·产品思维30讲学习笔记：创新模式 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#用户体验的五个层次"><span class="nav-number">1.</span> <span class="nav-text">用户体验的五个层次</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#用户体验的五层要素"><span class="nav-number">1.1.</span> <span class="nav-text">用户体验的五层要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#百度和Google之争"><span class="nav-number">1.2.</span> <span class="nav-text">百度和Google之争</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Yahoo为什么输给Google"><span class="nav-number">1.3.</span> <span class="nav-text">Yahoo为什么输给Google</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#看人的五层要素"><span class="nav-number">1.4.</span> <span class="nav-text">看人的五层要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎样绘制用户体验的地图"><span class="nav-number">2.</span> <span class="nav-text">怎样绘制用户体验的地图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么画用户体验地图"><span class="nav-number">2.1.</span> <span class="nav-text">怎么画用户体验地图</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么要画用户体验地图"><span class="nav-number">2.2.</span> <span class="nav-text">为什么要画用户体验地图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#有一个中医养生类的Keep，叫一体"><span class="nav-number">2.2.1.</span> <span class="nav-text">有一个中医养生类的Keep，叫一体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是用户故事"><span class="nav-number">2.3.</span> <span class="nav-text">什么是用户故事</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#开放大学做了什么改变？"><span class="nav-number">2.3.1.</span> <span class="nav-text">开放大学做了什么改变？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#腾讯讲用户故事的原因"><span class="nav-number">2.4.</span> <span class="nav-text">腾讯讲用户故事的原因</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务蓝图的核心要素：峰值、终值"><span class="nav-number">3.</span> <span class="nav-text">服务蓝图的核心要素：峰值、终值</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#如何配置资源结构和角色框架"><span class="nav-number">3.1.</span> <span class="nav-text">如何配置资源结构和角色框架</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#服务蓝图到底要干什么？"><span class="nav-number">3.2.</span> <span class="nav-text">服务蓝图到底要干什么？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一眼"><span class="nav-number">3.2.1.</span> <span class="nav-text">一眼</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一条路"><span class="nav-number">3.2.2.</span> <span class="nav-text">一条路</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三个点"><span class="nav-number">3.2.3.</span> <span class="nav-text">三个点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#亚朵酒店的服务节点"><span class="nav-number">3.3.</span> <span class="nav-text">亚朵酒店的服务节点</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#上瘾机制：用户激励系统"><span class="nav-number">4.</span> <span class="nav-text">上瘾机制：用户激励系统</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是激励"><span class="nav-number">4.1.</span> <span class="nav-text">什么是激励</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#怎么激励用户"><span class="nav-number">4.2.</span> <span class="nav-text">怎么激励用户</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内在激励与外在激励"><span class="nav-number">4.3.</span> <span class="nav-text">内在激励与外在激励</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#外在激励"><span class="nav-number">4.3.1.</span> <span class="nav-text">外在激励</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#内在奖励"><span class="nav-number">4.3.2.</span> <span class="nav-text">内在奖励</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#《王者荣耀》如何降低激励门槛"><span class="nav-number">4.4.</span> <span class="nav-text">《王者荣耀》如何降低激励门槛</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#名字是你的文化资产"><span class="nav-number">5.</span> <span class="nav-text">名字是你的文化资产</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#名字是召唤世界的咒语"><span class="nav-number">5.1.</span> <span class="nav-text">名字是召唤世界的咒语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#名字里的文化势能"><span class="nav-number">5.2.</span> <span class="nav-text">名字里的文化势能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是口碑"><span class="nav-number">5.3.</span> <span class="nav-text">什么是口碑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#雷军说：“什么是口碑？口碑就是把事情做过头。”"><span class="nav-number">5.3.1.</span> <span class="nav-text">雷军说：“什么是口碑？口碑就是把事情做过头。”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#华与华创始人华杉说：“口碑叫口碑，不叫眼碑。”"><span class="nav-number">5.3.2.</span> <span class="nav-text">华与华创始人华杉说：“口碑叫口碑，不叫眼碑。”</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">5.4.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="本文主要涉及广告产品的SEM优化、分发机制和拍卖机制">
+<meta property="og:type" content="article">
+<meta property="og:title" content="广告产品知识进阶">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="本文主要涉及广告产品的SEM优化、分发机制和拍卖机制">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/1.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/2.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/3.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/4.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/5.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/6.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/7.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/8.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/9.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/10.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/11.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/12.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/13.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/14.jpg">
+<meta property="article:published_time" content="2018-12-31T03:29:19.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:14:15.736Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/1.jpg">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>广告产品知识进阶 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          广告产品知识进阶
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-31 11:29:19" itemprop="dateCreated datePublished" datetime="2018-12-31T11:29:19+08:00">2018-12-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">产品方法</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81/" itemprop="url" rel="index">
+                    <span itemprop="name">商业产品</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>本文主要涉及广告产品的SEM优化、分发机制和拍卖机制</p>
+<a id="more"></a>
+
+<h1 id="如何从客户视角，帮助客户做SEM优化"><a href="#如何从客户视角，帮助客户做SEM优化" class="headerlink" title="如何从客户视角，帮助客户做SEM优化"></a>如何从客户视角，帮助客户做SEM优化</h1><p>​         <img src="1.jpg" alt="img">       </p>
+<h2 id="SEM-账户结构"><a href="#SEM-账户结构" class="headerlink" title="SEM-账户结构"></a>SEM-账户结构</h2><p>​         <img src="2.jpg" alt="img">       </p>
+<h2 id="SEM-在哪投广告"><a href="#SEM-在哪投广告" class="headerlink" title="SEM-在哪投广告"></a>SEM-在哪投广告</h2><p>​         <img src="3.jpg" alt="img">       </p>
+<h2 id="SEM-给谁看广告"><a href="#SEM-给谁看广告" class="headerlink" title="SEM-给谁看广告"></a>SEM-给谁看广告</h2><p>​         <img src="4.jpg" alt="img">       </p>
+<h2 id="SEM-广告长什么样"><a href="#SEM-广告长什么样" class="headerlink" title="SEM-广告长什么样"></a>SEM-广告长什么样</h2><p>​         <img src="5.jpg" alt="img">       </p>
+<h3 id="广告创意四点建议"><a href="#广告创意四点建议" class="headerlink" title="广告创意四点建议"></a>广告创意四点建议</h3><ul>
+<li><p>飘红</p>
+</li>
+<li><p>相关</p>
+</li>
+<li><p>通顺</p>
+</li>
+<li><p>吸引</p>
+</li>
+</ul>
+<h2 id="SEM-选择着陆页"><a href="#SEM-选择着陆页" class="headerlink" title="SEM-选择着陆页"></a>SEM-选择着陆页</h2><p>​         <img src="6.jpg" alt="img">       </p>
+<h2 id="SEM-设定关键词价格"><a href="#SEM-设定关键词价格" class="headerlink" title="SEM-设定关键词价格"></a>SEM-设定关键词价格</h2><p>​         <img src="7.jpg" alt="img">       </p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><ul>
+<li><p>拓词</p>
+</li>
+<li><p>出价调整</p>
+</li>
+<li><p>着陆页优化</p>
+</li>
+<li><p>匹配方式</p>
+</li>
+<li><p>优胜劣汰</p>
+</li>
+</ul>
+<h1 id="产品分发机制"><a href="#产品分发机制" class="headerlink" title="产品分发机制"></a>产品分发机制</h1><p>业务逻辑理解，并转变为可见的操作系统</p>
+<h2 id="系统运作流程"><a href="#系统运作流程" class="headerlink" title="系统运作流程"></a>系统运作流程</h2><p>​         <img src="8.jpg" alt="img">       </p>
+<p>​         <img src="9.jpg" alt="img">       </p>
+<h2 id="分发机制"><a href="#分发机制" class="headerlink" title="分发机制"></a>分发机制</h2><h3 id="好的分发机制"><a href="#好的分发机制" class="headerlink" title="好的分发机制"></a>好的分发机制</h3><p>人——（优化体验）——&gt;广告&lt;——（提高效率）——信息</p>
+<h3 id="好的分发机制指标"><a href="#好的分发机制指标" class="headerlink" title="好的分发机制指标"></a>好的分发机制指标</h3><ul>
+<li><p>召回率（覆盖要多）</p>
+</li>
+<li><p>准确率（相关性，ctr，cvr）</p>
+</li>
+</ul>
+<h3 id="分发机制——搜索"><a href="#分发机制——搜索" class="headerlink" title="分发机制——搜索"></a>分发机制——搜索</h3><ul>
+<li><p>人=网民搜索词</p>
+</li>
+<li><p>信息=客户关键词+匹配方式</p>
+</li>
+</ul>
+<p>产品做什么：</p>
+<p>1、制定匹配产品规则</p>
+<ul>
+<li><p>覆盖面（召回）</p>
+</li>
+<li><p>客户接受度</p>
+</li>
+<li><p>相关性</p>
+</li>
+<li><p>默认OR主动</p>
+</li>
+</ul>
+<p>2、旧匹配产品规则的策略迭代</p>
+<ul>
+<li>搜鲜花有广告，搜xianhua没有广告——迭代中英文</li>
+</ul>
+<h3 id="分发机制——信息流"><a href="#分发机制——信息流" class="headerlink" title="分发机制——信息流"></a>分发机制——信息流</h3><ul>
+<li><p>人=不同标签（设备号、兴趣，。。。）</p>
+</li>
+<li><p>信息=被圈定选中的标签</p>
+</li>
+</ul>
+<p>​         <img src="10.jpg" alt="img">       </p>
+<p>​         <img src="11.jpg" alt="img">       </p>
+<h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p>广告分发环节要尽可能的做召回，用一定的门槛保证准确率；更精准的流量挑选可以用投放逻辑进行控制</p>
+<h1 id="产品拍卖机制"><a href="#产品拍卖机制" class="headerlink" title="产品拍卖机制"></a>产品拍卖机制</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>拍卖也称竞买，商业中的一种买卖方式，卖方把商品卖给出价最高的人</p>
+<h2 id="四种典型的拍卖机制"><a href="#四种典型的拍卖机制" class="headerlink" title="四种典型的拍卖机制"></a>四种典型的拍卖机制</h2><h3 id="一阶价格密封拍卖"><a href="#一阶价格密封拍卖" class="headerlink" title="一阶价格密封拍卖"></a>一阶价格密封拍卖</h3><p>竞拍各方价格保密，同时给出，价高者得</p>
+<h3 id="二阶价格密封拍卖"><a href="#二阶价格密封拍卖" class="headerlink" title="二阶价格密封拍卖"></a>二阶价格密封拍卖</h3><p>竞标成功者只需要支付第二高的价格</p>
+<h3 id="荷兰式拍卖"><a href="#荷兰式拍卖" class="headerlink" title="荷兰式拍卖"></a>荷兰式拍卖</h3><p>定高价，逐渐减</p>
+<h3 id="英国式拍卖"><a href="#英国式拍卖" class="headerlink" title="英国式拍卖"></a>英国式拍卖</h3><p>定低价，逐渐高</p>
+<h2 id="互联网广告拍卖机制"><a href="#互联网广告拍卖机制" class="headerlink" title="互联网广告拍卖机制"></a>互联网广告拍卖机制</h2><h3 id="广义第一价格GFP（Generalized-First-Price）"><a href="#广义第一价格GFP（Generalized-First-Price）" class="headerlink" title="广义第一价格GFP（Generalized First Price）"></a>广义第一价格GFP（Generalized First Price）</h3><p>price_i （实收价）= bid_(i)（实出价）</p>
+<p>现象：在博弈过程中，各方倾向于试探各广告位的最低价格，价格反复波动</p>
+<p>缺点：</p>
+<ul>
+<li><p>平台方收益会非常不稳定</p>
+</li>
+<li><p>竞价效率不高</p>
+</li>
+</ul>
+<h3 id="广义第二价格GSP"><a href="#广义第二价格GSP" class="headerlink" title="广义第二价格GSP"></a>广义第二价格GSP</h3><p>price_i（实收价）= bid_(i+1)（下一位出价）+0.01</p>
+<p>现象：后一名选手出紧逼上一名选手的价格，快速消耗前者的广告预算，同时自己的广告成本是由下一名选手决定的</p>
+<p>​         <img src="12.jpg" alt="img">       </p>
+<p>CPM的计费方式+GSP计费模式：</p>
+<p>price_i = bud_(i+1)+0.01</p>
+<p>CPC的计费方式+GSP计费模式：</p>
+<p>price_i = ctrq_(i+1)*bid_(i+1)/ctrq_i+0.01</p>
+<p>ctrq_i<em>price_i = ctrq_(i+1)</em>bid_(i+1)+0.01</p>
+<p>CPA的计费方式+GSP计费模式：</p>
+<p>price_i = cvr-a_(i+1)ctrq_(i+1)bid_(i+1)/ctrq_icvr-a_i+0.01</p>
+<p>​         <img src="13.jpg" alt="img">       </p>
+<h3 id="VCG（Vickrey-Clarke-Groves）竞价机制"><a href="#VCG（Vickrey-Clarke-Groves）竞价机制" class="headerlink" title="VCG（Vickrey-Clarke-Groves）竞价机制"></a>VCG（Vickrey-Clarke-Groves）竞价机制</h3><p>竞价者对其他竞价者造成的损失来计费的</p>
+<p>​         <img src="14.jpg" alt="img">       </p>
+<p>优点：</p>
+<p>稳定状态下，按自己的真实预期出价是每位竞价者的强占优策略</p>
+<p>缺点：</p>
+<ul>
+<li><p>不好解释</p>
+</li>
+<li><p>如何正确计算给其他广告主带来的价值损害，并验证</p>
+</li>
+</ul>
+<h2 id="市场保留价"><a href="#市场保留价" class="headerlink" title="市场保留价"></a>市场保留价</h2><h2 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h2><p>拍卖—定价机制：解决“在有一个位置和给定参与者的出价和预期期望收益后，如何对最后获取这个位置的广告主收取合适的费用”的问题</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/" title="广告产品知识进阶">http://alfredchen.cn/2018/12/31/广告产品知识进阶/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/" rel="prev" title="有效确认商业产品需求">
+      <i class="fa fa-chevron-left"></i> 有效确认商业产品需求
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/03/05/%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BASQL%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="《深入浅出SQL》学习笔记">
+      《深入浅出SQL》学习笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何从客户视角，帮助客户做SEM优化"><span class="nav-number">1.</span> <span class="nav-text">如何从客户视角，帮助客户做SEM优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SEM-账户结构"><span class="nav-number">1.1.</span> <span class="nav-text">SEM-账户结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SEM-在哪投广告"><span class="nav-number">1.2.</span> <span class="nav-text">SEM-在哪投广告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SEM-给谁看广告"><span class="nav-number">1.3.</span> <span class="nav-text">SEM-给谁看广告</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SEM-广告长什么样"><span class="nav-number">1.4.</span> <span class="nav-text">SEM-广告长什么样</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#广告创意四点建议"><span class="nav-number">1.4.1.</span> <span class="nav-text">广告创意四点建议</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SEM-选择着陆页"><span class="nav-number">1.5.</span> <span class="nav-text">SEM-选择着陆页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SEM-设定关键词价格"><span class="nav-number">1.6.</span> <span class="nav-text">SEM-设定关键词价格</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.7.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#产品分发机制"><span class="nav-number">2.</span> <span class="nav-text">产品分发机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#系统运作流程"><span class="nav-number">2.1.</span> <span class="nav-text">系统运作流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分发机制"><span class="nav-number">2.2.</span> <span class="nav-text">分发机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#好的分发机制"><span class="nav-number">2.2.1.</span> <span class="nav-text">好的分发机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#好的分发机制指标"><span class="nav-number">2.2.2.</span> <span class="nav-text">好的分发机制指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分发机制——搜索"><span class="nav-number">2.2.3.</span> <span class="nav-text">分发机制——搜索</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分发机制——信息流"><span class="nav-number">2.2.4.</span> <span class="nav-text">分发机制——信息流</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-1"><span class="nav-number">2.3.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#产品拍卖机制"><span class="nav-number">3.</span> <span class="nav-text">产品拍卖机制</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#定义"><span class="nav-number">3.1.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四种典型的拍卖机制"><span class="nav-number">3.2.</span> <span class="nav-text">四种典型的拍卖机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一阶价格密封拍卖"><span class="nav-number">3.2.1.</span> <span class="nav-text">一阶价格密封拍卖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二阶价格密封拍卖"><span class="nav-number">3.2.2.</span> <span class="nav-text">二阶价格密封拍卖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#荷兰式拍卖"><span class="nav-number">3.2.3.</span> <span class="nav-text">荷兰式拍卖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#英国式拍卖"><span class="nav-number">3.2.4.</span> <span class="nav-text">英国式拍卖</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网广告拍卖机制"><span class="nav-number">3.3.</span> <span class="nav-text">互联网广告拍卖机制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#广义第一价格GFP（Generalized-First-Price）"><span class="nav-number">3.3.1.</span> <span class="nav-text">广义第一价格GFP（Generalized First Price）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#广义第二价格GSP"><span class="nav-number">3.3.2.</span> <span class="nav-text">广义第二价格GSP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VCG（Vickrey-Clarke-Groves）竞价机制"><span class="nav-number">3.3.3.</span> <span class="nav-text">VCG（Vickrey-Clarke-Groves）竞价机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#市场保留价"><span class="nav-number">3.4.</span> <span class="nav-text">市场保留价</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-2"><span class="nav-number">3.5.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

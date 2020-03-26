@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="什么是策略？策略是如何诞生的？策略产品经理如何工作？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="了解策略和策略产品经理">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/12/%E4%BA%86%E8%A7%A3%E7%AD%96%E7%95%A5%E5%92%8C%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="什么是策略？策略是如何诞生的？策略产品经理如何工作？">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/12/%E4%BA%86%E8%A7%A3%E7%AD%96%E7%95%A5%E5%92%8C%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/1.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/12/%E4%BA%86%E8%A7%A3%E7%AD%96%E7%95%A5%E5%92%8C%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/2.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/12/%E4%BA%86%E8%A7%A3%E7%AD%96%E7%95%A5%E5%92%8C%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/3.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/12/%E4%BA%86%E8%A7%A3%E7%AD%96%E7%95%A5%E5%92%8C%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/4.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/12/%E4%BA%86%E8%A7%A3%E7%AD%96%E7%95%A5%E5%92%8C%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/5.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/12/%E4%BA%86%E8%A7%A3%E7%AD%96%E7%95%A5%E5%92%8C%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/6.jpg">
+<meta property="article:published_time" content="2018-12-12T10:20:36.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:22:07.343Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://alfredchen.cn/2018/12/12/%E4%BA%86%E8%A7%A3%E7%AD%96%E7%95%A5%E5%92%8C%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/1.jpg">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/12/%E4%BA%86%E8%A7%A3%E7%AD%96%E7%95%A5%E5%92%8C%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>了解策略和策略产品经理 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/12/%E4%BA%86%E8%A7%A3%E7%AD%96%E7%95%A5%E5%92%8C%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          了解策略和策略产品经理
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-12 18:20:36" itemprop="dateCreated datePublished" datetime="2018-12-12T18:20:36+08:00">2018-12-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">产品方法</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81/" itemprop="url" rel="index">
+                    <span itemprop="name">策略产品</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/12/%E4%BA%86%E8%A7%A3%E7%AD%96%E7%95%A5%E5%92%8C%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/12/%E4%BA%86%E8%A7%A3%E7%AD%96%E7%95%A5%E5%92%8C%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>什么是策略？策略是如何诞生的？策略产品经理如何工作？</p>
+<a id="more"></a>
+
+<h1 id="了解什么是策略"><a href="#了解什么是策略" class="headerlink" title="了解什么是策略"></a>了解什么是策略</h1><h2 id="策略的特性"><a href="#策略的特性" class="headerlink" title="策略的特性"></a>策略的特性</h2><p>新闻推荐策略、增长策略、反欺诈策略、价格策略、后台策略</p>
+<p>策略可以服务于任何一个行业、产品、形态，甚至只是一个目的</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>策略与功能、文案、活动一样，是一种解决问题的手段</p>
+<p>作为一种常见和有效的手段，策略时刻影响着我们每个人的生活</p>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><p>百度地图</p>
+<ul>
+<li><p>搜索策略</p>
+</li>
+<li><p>渲染策略</p>
+</li>
+<li><p>公交线路推荐</p>
+</li>
+<li><p>导航路线推荐</p>
+</li>
+<li><p>到达时间预估</p>
+</li>
+</ul>
+<p>美团</p>
+<ul>
+<li><p>搜索策略</p>
+</li>
+<li><p>推荐策略</p>
+</li>
+<li><p>广告策略</p>
+</li>
+<li><p>补贴策略</p>
+</li>
+<li><p>配送策略</p>
+</li>
+</ul>
+<p>便利店</p>
+<ul>
+<li><p>门店选址策略</p>
+</li>
+<li><p>选品策略</p>
+</li>
+<li><p>定价策略</p>
+</li>
+<li><p>促销策略</p>
+</li>
+<li><p>补货策略</p>
+</li>
+</ul>
+<p>汽车</p>
+<ul>
+<li><p>自动换挡策略</p>
+</li>
+<li><p>ESP（刹车和动力控制）策略</p>
+</li>
+<li><p>DSR（下坡车速控制）策略</p>
+</li>
+<li><p>Pre-Safe（安全预警）策略</p>
+</li>
+</ul>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>策略无处不在</p>
+<p>策略是一种实现目标的手段</p>
+<h1 id="策略的四要素"><a href="#策略的四要素" class="headerlink" title="策略的四要素"></a>策略的四要素</h1><h2 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h2><p>电子书阅读器的阅读屏幕体验不佳如何解决？</p>
+<h3 id="解决手段"><a href="#解决手段" class="headerlink" title="解决手段"></a>解决手段</h3><p>​         <img src="1.jpg" alt="img">       </p>
+<hr>
+<h2 id="策略四要素"><a href="#策略四要素" class="headerlink" title="策略四要素"></a>策略四要素</h2><ul>
+<li><p>待解决问题</p>
+</li>
+<li><p>输入：影响解决方案的因素</p>
+</li>
+<li><p>计算逻辑：将输入转换成输出的规则</p>
+</li>
+<li><p>输出：具体的解决方案</p>
+</li>
+</ul>
+<h2 id="案例-2"><a href="#案例-2" class="headerlink" title="案例"></a>案例</h2><p>今日头条的推荐策略</p>
+<h3 id="待解决的问题-目标"><a href="#待解决的问题-目标" class="headerlink" title="待解决的问题/目标"></a>待解决的问题/目标</h3><p>从大量候选内容中找到用户最喜欢的内容</p>
+<h3 id="输入（喜欢，这件事受哪些因素影响）"><a href="#输入（喜欢，这件事受哪些因素影响）" class="headerlink" title="输入（喜欢，这件事受哪些因素影响）"></a>输入（喜欢，这件事受哪些因素影响）</h3><ul>
+<li><p>该用户的特征（基础信息、历史行为）</p>
+</li>
+<li><p>候选内容的特征（类别、关键词）</p>
+</li>
+</ul>
+<h3 id="计算逻辑（主要由策略RD开发给出）"><a href="#计算逻辑（主要由策略RD开发给出）" class="headerlink" title="计算逻辑（主要由策略RD开发给出）"></a>计算逻辑（主要由策略RD开发给出）</h3><p>将这些特征通过一定的计算规则转化成唯一的【喜欢度】指标</p>
+<h3 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h3><p>按【喜欢度】从高到底排序的内容</p>
+<hr>
+<p>711的商品促销策略</p>
+<h3 id="待解决的问题-目标-1"><a href="#待解决的问题-目标-1" class="headerlink" title="待解决的问题/目标"></a>待解决的问题/目标</h3><p>制定怎样的促销规则使该商品当日销售额最大</p>
+<h3 id="输入（销售额，这件事受哪些因素影响）"><a href="#输入（销售额，这件事受哪些因素影响）" class="headerlink" title="输入（销售额，这件事受哪些因素影响）"></a>输入（销售额，这件事受哪些因素影响）</h3><ul>
+<li><p>有多少人会来买（当日各时段人流量、不同折扣下的购买转化率）</p>
+</li>
+<li><p>以怎样的价格买</p>
+</li>
+</ul>
+<h3 id="计算逻辑（主要有策略RD开发给出）"><a href="#计算逻辑（主要有策略RD开发给出）" class="headerlink" title="计算逻辑（主要有策略RD开发给出）"></a>计算逻辑（主要有策略RD开发给出）</h3><p>​         <img src="2.jpg" alt="img">       </p>
+<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出"></a>输出</h3><p>在几点（t惠）开始设置几折优惠（Price惠）可以使毛利最大</p>
+<h2 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h2><p>存在某类问题，该问题的最佳解决方案会受到多个因素的影响，不是恒定不变的。可以持续收集这些因素的变化，并根据变化随时调整解决方案，这种手段即为策略。</p>
+<h1 id="了解策略是如何诞生的"><a href="#了解策略是如何诞生的" class="headerlink" title="了解策略是如何诞生的"></a>了解策略是如何诞生的</h1><h2 id="屏幕阅读体验的解决方案"><a href="#屏幕阅读体验的解决方案" class="headerlink" title="屏幕阅读体验的解决方案"></a>屏幕阅读体验的解决方案</h2><p>​         <img src="3.jpg" alt="img">       </p>
+<h2 id="获取新闻的解决方案"><a href="#获取新闻的解决方案" class="headerlink" title="获取新闻的解决方案"></a>获取新闻的解决方案</h2><p>​         <img src="4.jpg" alt="img">       </p>
+<h2 id="产品进化"><a href="#产品进化" class="headerlink" title="产品进化"></a>产品进化</h2><ul>
+<li><p>硬件（实体产品）解决方案</p>
+</li>
+<li><p>互联网（软件产品）解决方案</p>
+</li>
+<li><p>看得见的功能——&gt;看不见的策略</p>
+</li>
+</ul>
+<p>可以更精细地、因事因人提供不同的解决方案</p>
+<h2 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h2><p>策略是产品持续进化的产物</p>
+<p>爱各类消费升级中，人们希望更好更个性化的服务，策略是降低成本实现个性化的一种有效手段</p>
+<h1 id="了解策略产品经理的工作流程"><a href="#了解策略产品经理的工作流程" class="headerlink" title="了解策略产品经理的工作流程"></a>了解策略产品经理的工作流程</h1><h2 id="功能与策略产品经理的差异"><a href="#功能与策略产品经理的差异" class="headerlink" title="功能与策略产品经理的差异"></a>功能与策略产品经理的差异</h2><h3 id="产品经理的基本工作流程"><a href="#产品经理的基本工作流程" class="headerlink" title="产品经理的基本工作流程"></a>产品经理的基本工作流程</h3><p>​         <img src="5.jpg" alt="img">       </p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>策略是一种面向更复杂多变问题的解决手段，工作流程不可避免存在与功能产品经理的差异</p>
+<h3 id="发现问题"><a href="#发现问题" class="headerlink" title="发现问题"></a>发现问题</h3><p>功能：一个人相对聚焦的需求</p>
+<p>策略：一群人更多样和更有统计意义的需求</p>
+<h3 id="撰写需求、发起项目"><a href="#撰写需求、发起项目" class="headerlink" title="撰写需求、发起项目"></a>撰写需求、发起项目</h3><p>功能：收敛的解决方案，通过流程和原型表达产品实现效果</p>
+<p>策略：发散的解决方案，通过逻辑描述和效果示例表达产品实现效果</p>
+<h3 id="跟进开发评估"><a href="#跟进开发评估" class="headerlink" title="跟进开发评估"></a>跟进开发评估</h3><p>功能：更关注结果，面对开发结果是验收的性质，更关注呈现效果、而非实现过程</p>
+<p>策略：更多参与过程，通过多轮评估深入参与开发过程，与策略rd一起发现各要素中的问题</p>
+<h3 id="上线后效果回归-amp-新的产品循环"><a href="#上线后效果回归-amp-新的产品循环" class="headerlink" title="上线后效果回归&amp;新的产品循环"></a>上线后效果回归&amp;新的产品循环</h3><p>功能：更快达到理想态，面对明确单一的问题，通常可以更好地达到较好效果，close该feature的产品循环</p>
+<p>策略：可能永无止境的产品循环，复杂且受很多因素影响的问题，需要多个产品循环才能达到较好的效果</p>
+<h2 id="小结-4"><a href="#小结-4" class="headerlink" title="小结"></a>小结</h2><p>​         <img src="6.jpg" alt="img">       </p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/12/%E4%BA%86%E8%A7%A3%E7%AD%96%E7%95%A5%E5%92%8C%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E7%BB%8F%E7%90%86/" title="了解策略和策略产品经理">http://alfredchen.cn/2018/12/12/了解策略和策略产品经理/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/12/%E6%9C%9D%E5%A4%95%E6%97%A5%E5%8E%86%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%EF%BC%9A%E8%8A%B1%E6%97%B6%E9%97%B4%E5%8E%BB%E7%AE%A1%E7%90%86%E6%97%B6%E9%97%B4%E6%98%AF%E5%8F%8D%E4%BA%BA%E6%80%A7%E7%9A%84/" rel="prev" title="朝夕日历产品分析报告：花时间去管理时间是反人性的">
+      <i class="fa fa-chevron-left"></i> 朝夕日历产品分析报告：花时间去管理时间是反人性的
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/13/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%8F%91%E7%8E%B0%E9%97%AE%E9%A2%98%E7%9A%84%E5%9B%9B%E4%B8%AA%E6%96%B9%E6%B3%95/" rel="next" title="策略产品发现问题的四个方法">
+      策略产品发现问题的四个方法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#了解什么是策略"><span class="nav-number">1.</span> <span class="nav-text">了解什么是策略</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#策略的特性"><span class="nav-number">1.1.</span> <span class="nav-text">策略的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.1.1.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例"><span class="nav-number">1.2.</span> <span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-1"><span class="nav-number">1.2.1.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#策略的四要素"><span class="nav-number">2.</span> <span class="nav-text">策略的四要素</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#案例-1"><span class="nav-number">2.1.</span> <span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#解决手段"><span class="nav-number">2.1.1.</span> <span class="nav-text">解决手段</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#策略四要素"><span class="nav-number">2.2.</span> <span class="nav-text">策略四要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例-2"><span class="nav-number">2.3.</span> <span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#待解决的问题-目标"><span class="nav-number">2.3.1.</span> <span class="nav-text">待解决的问题&#x2F;目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入（喜欢，这件事受哪些因素影响）"><span class="nav-number">2.3.2.</span> <span class="nav-text">输入（喜欢，这件事受哪些因素影响）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算逻辑（主要由策略RD开发给出）"><span class="nav-number">2.3.3.</span> <span class="nav-text">计算逻辑（主要由策略RD开发给出）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出"><span class="nav-number">2.3.4.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#待解决的问题-目标-1"><span class="nav-number">2.3.5.</span> <span class="nav-text">待解决的问题&#x2F;目标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输入（销售额，这件事受哪些因素影响）"><span class="nav-number">2.3.6.</span> <span class="nav-text">输入（销售额，这件事受哪些因素影响）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算逻辑（主要有策略RD开发给出）"><span class="nav-number">2.3.7.</span> <span class="nav-text">计算逻辑（主要有策略RD开发给出）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#输出-1"><span class="nav-number">2.3.8.</span> <span class="nav-text">输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-2"><span class="nav-number">2.4.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#了解策略是如何诞生的"><span class="nav-number">3.</span> <span class="nav-text">了解策略是如何诞生的</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#屏幕阅读体验的解决方案"><span class="nav-number">3.1.</span> <span class="nav-text">屏幕阅读体验的解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#获取新闻的解决方案"><span class="nav-number">3.2.</span> <span class="nav-text">获取新闻的解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#产品进化"><span class="nav-number">3.3.</span> <span class="nav-text">产品进化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-3"><span class="nav-number">3.4.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#了解策略产品经理的工作流程"><span class="nav-number">4.</span> <span class="nav-text">了解策略产品经理的工作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#功能与策略产品经理的差异"><span class="nav-number">4.1.</span> <span class="nav-text">功能与策略产品经理的差异</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#产品经理的基本工作流程"><span class="nav-number">4.1.1.</span> <span class="nav-text">产品经理的基本工作流程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注意"><span class="nav-number">4.1.2.</span> <span class="nav-text">注意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发现问题"><span class="nav-number">4.1.3.</span> <span class="nav-text">发现问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撰写需求、发起项目"><span class="nav-number">4.1.4.</span> <span class="nav-text">撰写需求、发起项目</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#跟进开发评估"><span class="nav-number">4.1.5.</span> <span class="nav-text">跟进开发评估</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上线后效果回归-amp-新的产品循环"><span class="nav-number">4.1.6.</span> <span class="nav-text">上线后效果回归&amp;新的产品循环</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-4"><span class="nav-number">4.2.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

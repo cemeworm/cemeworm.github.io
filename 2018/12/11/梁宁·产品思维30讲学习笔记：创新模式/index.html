@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="产品创新的发现、实现与衡量">
+<meta property="og:type" content="article">
+<meta property="og:title" content="梁宁·产品思维30讲学习笔记：创新模式">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%9B%E6%96%B0%E6%A8%A1%E5%BC%8F/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="产品创新的发现、实现与衡量">
+<meta property="article:published_time" content="2018-12-11T03:25:33.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:26:16.974Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%9B%E6%96%B0%E6%A8%A1%E5%BC%8F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>梁宁·产品思维30讲学习笔记：创新模式 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%9B%E6%96%B0%E6%A8%A1%E5%BC%8F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          梁宁·产品思维30讲学习笔记：创新模式
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-11 11:25:33" itemprop="dateCreated datePublished" datetime="2018-12-11T11:25:33+08:00">2018-12-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B4/" itemprop="url" rel="index">
+                    <span itemprop="name">产品思维</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%9B%E6%96%B0%E6%A8%A1%E5%BC%8F/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%9B%E6%96%B0%E6%A8%A1%E5%BC%8F/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>产品创新的发现、实现与衡量</p>
+<a id="more"></a>
+
+<h1 id="用“用户价值公式”衡量创新"><a href="#用“用户价值公式”衡量创新" class="headerlink" title="用“用户价值公式”衡量创新"></a>用“用户价值公式”衡量创新</h1><h2 id="没有创新的产品，根本不应该去做"><a href="#没有创新的产品，根本不应该去做" class="headerlink" title="没有创新的产品，根本不应该去做"></a>没有创新的产品，根本不应该去做</h2><h2 id="在增量市场里找机会"><a href="#在增量市场里找机会" class="headerlink" title="在增量市场里找机会"></a>在增量市场里找机会</h2><ul>
+<li>俞军对产品经理的定义是这样的：产品经理是以创造用户价值为工具，打破旧的利益平衡，建立对己方有利的新利益链，建立新平衡的过程</li>
+</ul>
+<h2 id="互联网不是存量竞争，而是增量竞争"><a href="#互联网不是存量竞争，而是增量竞争" class="headerlink" title="互联网不是存量竞争，而是增量竞争"></a>互联网不是存量竞争，而是增量竞争</h2><h2 id="从WPS的挑战，理解用户价值公式"><a href="#从WPS的挑战，理解用户价值公式" class="headerlink" title="从WPS的挑战，理解用户价值公式"></a>从WPS的挑战，理解用户价值公式</h2><h3 id="俞军的用户价值公式：用户价值-（新体验-旧体验）-替换成本"><a href="#俞军的用户价值公式：用户价值-（新体验-旧体验）-替换成本" class="headerlink" title="俞军的用户价值公式：用户价值=（新体验-旧体验）-替换成本"></a>俞军的用户价值公式：用户价值=（新体验-旧体验）-替换成本</h3><ul>
+<li><p>如果微软Office软件用户使用体验是90分，价格体验是50分，两项相乘，微软Office软件带给用户的旧体验算45分</p>
+</li>
+<li><p>金山WPS软件用户使用体验70分，价格体验90分，两项相乘，金山WPS软件带给用户的新体验算63分</p>
+</li>
+<li><p>用户的替换成本包括什么？品牌认知、获取成本、学习成本、使用成本，包括使用过程中遇到问题得到及时帮助的便利程度等，算20分</p>
+</li>
+<li><p>用户价值=WPS新体验63分-Office旧体验45分-用户替换成本20分=-2分</p>
+</li>
+</ul>
+<h3 id="真实情况是你付出63分，而用户得到的是-2分。你认为你做得很好，但用户视你为鸡肋"><a href="#真实情况是你付出63分，而用户得到的是-2分。你认为你做得很好，但用户视你为鸡肋" class="headerlink" title="真实情况是你付出63分，而用户得到的是-2分。你认为你做得很好，但用户视你为鸡肋"></a>真实情况是你付出63分，而用户得到的是-2分。你认为你做得很好，但用户视你为鸡肋</h3><h2 id="创新是小企业唯一的活路"><a href="#创新是小企业唯一的活路" class="headerlink" title="创新是小企业唯一的活路"></a>创新是小企业唯一的活路</h2><ul>
+<li><p>同纬度竞争，先发优势是很高的门槛</p>
+</li>
+<li><p>BAT的用户迁移成本极低，用大公司的体量优势，一点一点地优化用户体验，一点一点地挤压你、蚕食你</p>
+</li>
+<li><p>如果几个竞争者体量差不多呢？那就是红海战争，会有一场漫长的拉锯战。只有两种方式能终结这种同纬度乱战：要么有能降维攻击的企业出现，要么是资本意志强行合并。曾经的杀毒市场，千团大战、打车大战、外卖大战，莫不如此</p>
+</li>
+<li><p>小企业、创业者还有什么机会呢？小企业唯一的活路就是创新。小企业想改变宿命，飞跃龙门，唯一的路就是离开存量市场，寻找增量市场</p>
+</li>
+</ul>
+<h2 id="傅盛找到新机会"><a href="#傅盛找到新机会" class="headerlink" title="傅盛找到新机会"></a>傅盛找到新机会</h2><p>​            傅盛的动作是派了一个团队到美国，干什么？不知道。这个团队就是为了摆脱已知，把自己丢进未知里，在完全的陌生感里找方向、找空间。后来他们找到了猎豹清理大师这个项目，然后猎豹公司在美国上市了</p>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>​            存量市场，小企业正面仰攻，新体验做到80分，用户体验为零分。增量市场，在用户体验为零的地方，你只要做60分，用户就结结实实地觉得可以用了</p>
+<h1 id="怎样用交叉视角发现创新"><a href="#怎样用交叉视角发现创新" class="headerlink" title="怎样用交叉视角发现创新"></a>怎样用交叉视角发现创新</h1><h2 id="婴儿恒温箱的发明"><a href="#婴儿恒温箱的发明" class="headerlink" title="婴儿恒温箱的发明"></a>婴儿恒温箱的发明</h2><ul>
+<li><p>婴儿恒温箱的发明对公共健康有巨大的保护作用，超过20世纪其他任何一项发明。因为他是在生命之初提供帮助，让新生儿拥有了人生</p>
+</li>
+<li><p>这么伟大的发明，来自于一个医生去逛动物园，看到的小鸡孵化器</p>
+</li>
+</ul>
+<h2 id="未来已来，只是分布得不均匀"><a href="#未来已来，只是分布得不均匀" class="headerlink" title="未来已来，只是分布得不均匀"></a>未来已来，只是分布得不均匀</h2><ul>
+<li><p>相邻可能</p>
+</li>
+<li><p>我们需要的某种能力要素，他可能已经产生并成熟了，只是他正在另外的某个领域被使用着。就看这个已经存在的未来，他会不会撞到你眼睛里，让你起心动念。这就是灵感的瞬间</p>
+</li>
+</ul>
+<h2 id="婴儿恒温箱的迭代"><a href="#婴儿恒温箱的迭代" class="headerlink" title="婴儿恒温箱的迭代"></a>婴儿恒温箱的迭代</h2><ul>
+<li><p>很多案例表明，捐赠给不发达的发展中国家的各项技术设备中，大约有95%的设备会在前五年就因为故障而无法再投入使用</p>
+</li>
+<li><p>普莱斯罗就起心动念，为发展中国家研发一种新的婴儿恒温箱。育婴器流线型的外观和现代的婴儿恒温箱一样，但是它的内部则是用汽车的部件来拼接完成的</p>
+</li>
+</ul>
+<h1 id="怎样从新要素到新物种"><a href="#怎样从新要素到新物种" class="headerlink" title="怎样从新要素到新物种"></a>怎样从新要素到新物种</h1><p>如何利用不是本行业体验迭代产生的新要素，而是引用跨行业的新要素，让你的产品看起来依然是原来的产品，但是它已经成为了一个新物种</p>
+<h2 id="要素一：找到实体空间的好位置"><a href="#要素一：找到实体空间的好位置" class="headerlink" title="要素一：找到实体空间的好位置"></a>要素一：找到实体空间的好位置</h2><ul>
+<li><p>我们把互联网商业简单地抽象为三个要素，产品、流量和转化率。那么，实体商业可以简单地抽象成四个要素：产品、空间、流量和转化率</p>
+</li>
+<li><p>在亚朵的商业体系中，有两个核心角色系统，一个是亚朵酒店管理公司，一个是房东</p>
+</li>
+<li><p>在这个角色系统里，亚朵的核心工作有六项</p>
+</li>
+<li><p>1、定义亚朵的服务质量，包括但不限于软硬件要求（空调、暖气等等）</p>
+</li>
+<li><p>2、提供亚朵视觉系统的装修方案</p>
+</li>
+<li><p>3、为每个酒店输出总经理和人力资源经理</p>
+</li>
+<li><p>4、为所有员工提供培训和考核</p>
+</li>
+<li><p>5、全网打通亚朵网络预定通道，将酒店收入项及时向房东结算</p>
+</li>
+<li><p>6、对亚朵品牌及各店进行形象推广和公关宣传</p>
+</li>
+<li><p>房东有四个核心工作</p>
+</li>
+<li><p>1、找到当地合适开店的房子，适合开店有很多要求，地段、位置、房租价格等，这个由房东搞定</p>
+</li>
+<li><p>2、按照亚朵提供的装修方案进行装修</p>
+</li>
+<li><p>3、招聘该酒店除了总经理和人力资源经理外的所有员工，并按照亚朵给予的考核标准即时结算工资</p>
+</li>
+<li><p>4、先行支付前期所有因租房、装修、雇佣人员等发生的款项</p>
+</li>
+</ul>
+<h2 id="要素二：把”消费者”变成“投消者”"><a href="#要素二：把”消费者”变成“投消者”" class="headerlink" title="要素二：把”消费者”变成“投消者”"></a>要素二：把”消费者”变成“投消者”</h2><ul>
+<li><p>亚朵退出了众筹酒店的模式，把筹备中的酒店项目作为一个项目融资，在众筹平台上发起众筹。投资人可以出资1万元到10万元不等，参与新亚朵酒店的股权融资，并分得经营分红</p>
+</li>
+<li><p>为什么这么火？</p>
+</li>
+<li><p>第一，一个人的参与款是10万元，参与人数会更广泛</p>
+</li>
+<li><p>第二，除了投资收益外，参与众筹的投资人，还可以获得对应等级的酒店消费权益。这时就可以对朋友吹牛，“我是这个酒店的股东，报我名字能打折”，这个对于中国人来说很重要</p>
+</li>
+<li><p>第三，历次亚朵酒店发起众筹时，最热烈的支持者首先是亚朵酒店的用户和忠诚会员。他们是亚朵产品的体验者、消费者，现在经由众筹升格为投资者，这种“投消者”模式成了亚朵品牌扩张中最重要的盟友</p>
+</li>
+<li><p>亚朵在流量方面的创新</p>
+</li>
+<li><p>第一，亚朵使用了众筹这个新要素，不但让一批有能力搞定房子和关系的房东，不会因为没有2000万启动资金而被阻止开酒店</p>
+</li>
+<li><p>第二，通过众筹让上万人成为投资参与亚朵建设的小股东，这群人是亚朵真实的铁粉、死忠粉、带路粉</p>
+</li>
+</ul>
+<h2 id="要素三：IP酒店"><a href="#要素三：IP酒店" class="headerlink" title="要素三：IP酒店"></a>要素三：IP酒店</h2><ul>
+<li><p>他们把亚朵和吴晓波合作的亚朵·吴酒店定义为“社群酒店”</p>
+</li>
+<li><p>一、社群活动</p>
+</li>
+<li><p>二、阅读空间</p>
+</li>
+<li><p>三、场景电商，利用吴晓波的品牌场景和《吴晓波频道》已经建设的社群流量，优化入驻转化率</p>
+</li>
+</ul>
+<h2 id="要素四：场景电商"><a href="#要素四：场景电商" class="headerlink" title="要素四：场景电商"></a>要素四：场景电商</h2><ul>
+<li><p>你在亚朵酒店体验到的东西，例如枕头、床垫、洗发水都是可以买的</p>
+</li>
+<li><p>亚朵创始人说到将来亚朵开到1000家店的时候，一年会有至少600万独立用户，真实体验亚朵空间的各个产品，因此亚朵有机会成为一家巨大的电商公司</p>
+</li>
+</ul>
+<p>亚朵的空间定义不仅是休息空间，也不仅是基于用户体验地图优化的峰终体验，而且还是用户在不同的地方体验各种生活新产品、所见即所得的电商空间</p>
+<h2 id="新要素有两种"><a href="#新要素有两种" class="headerlink" title="新要素有两种"></a>新要素有两种</h2><ul>
+<li><p>第一种，在现有体验的基础上，运用最新科技等新要素，提升用户体验，或者改变成本结构</p>
+</li>
+<li><p>第二种，用整个社会经济升级、产业升级所产生的其他领域新要素，变革内在的商业逻辑</p>
+</li>
+</ul>
+<h1 id="三级火箭：深度讲解互联网降维打击"><a href="#三级火箭：深度讲解互联网降维打击" class="headerlink" title="三级火箭：深度讲解互联网降维打击"></a>三级火箭：深度讲解互联网降维打击</h1><h2 id="360的三级火箭"><a href="#360的三级火箭" class="headerlink" title="360的三级火箭"></a>360的三级火箭</h2><ul>
+<li><p>第一级火箭：免费杀毒工具</p>
+</li>
+<li><p>第二级火箭：从免费杀毒工具变为安全网络平台，进而推出360安全浏览器和360安全网址导航</p>
+</li>
+<li><p>第三级火箭：它最终承载的商业闭环，从安全浏览器和网址导航的广告收入，获取企业的经营利润、</p>
+</li>
+</ul>
+<h2 id="搜狗的三级火箭"><a href="#搜狗的三级火箭" class="headerlink" title="搜狗的三级火箭"></a>搜狗的三级火箭</h2><h3 id="旧三级火箭"><a href="#旧三级火箭" class="headerlink" title="旧三级火箭"></a>旧三级火箭</h3><ul>
+<li><p>第一级火箭：当时“番茄花园”、“雨林木风”这类盗版系统非常受欢迎，搜狗就请他们帮助做了内置</p>
+</li>
+<li><p>第二级火箭：利用一个大流量工具，推浏览器和搜索</p>
+</li>
+<li><p>第三级火箭：用这两个模式商业变现</p>
+</li>
+</ul>
+<h3 id="新三级火箭"><a href="#新三级火箭" class="headerlink" title="新三级火箭"></a>新三级火箭</h3><ul>
+<li><p>第一级火箭：头部流量，来自腾讯的流量</p>
+</li>
+<li><p>第二级火箭：内置搜索，用户在微信内、QQ内等不同的场景里的诉求，在浏览器之外通过庞大的使用场景去释放更多搜索的需求。搜狗内部称之为智慧战略</p>
+</li>
+<li><p>第三级火箭：商业变现</p>
+</li>
+</ul>
+<h2 id="罗辑思维的三级火箭"><a href="#罗辑思维的三级火箭" class="headerlink" title="罗辑思维的三级火箭"></a>罗辑思维的三级火箭</h2><ul>
+<li><p>第一级火箭：罗振宇坚持了多年的免费脱口秀，头部流量</p>
+</li>
+<li><p>第二级火箭：沉淀用户的商业场景，得到APP</p>
+</li>
+<li><p>第三级火箭：你今天付费听我讲课，这就是第三级火箭</p>
+</li>
+</ul>
+<h2 id="小米公司的三级火箭"><a href="#小米公司的三级火箭" class="headerlink" title="小米公司的三级火箭"></a>小米公司的三级火箭</h2><ul>
+<li><p>第一级火箭：手机</p>
+</li>
+<li><p>第二级火箭：他的一系列零售场景，小米商城、米家、小米之家、小米小店</p>
+</li>
+<li><p>第三级火箭：一个高利润的产品（未知）</p>
+</li>
+</ul>
+<h2 id="要玩三级火箭，有几个必备条件"><a href="#要玩三级火箭，有几个必备条件" class="headerlink" title="要玩三级火箭，有几个必备条件"></a>要玩三级火箭，有几个必备条件</h2><ul>
+<li><p>第一，第一级火箭一定是高频应用</p>
+</li>
+<li><p>三级递推一定是高频推低频</p>
+</li>
+<li><p>陌陌是个高频应用，陌陌推直播，直播变现，这就是陌陌的三级火箭</p>
+</li>
+<li><p>斗鱼是个非常火的直播平台，但它不能推短视频，如果它做游戏分发，也许可以</p>
+</li>
+<li><p>第二，通过第一级火箭获得大量用户之后，要快速展开一个能够沉淀用户的商业场景</p>
+</li>
+<li><p>如共享单车再这样一个头部流量很大的基础上，如何顺滑地建设出能够沉淀用户的商业场景</p>
+</li>
+<li><p>第三，操盘三级火箭的人，一定是一个势能积累到一定程度的人</p>
+</li>
+<li><p>首先，他要有强大的融资能力</p>
+</li>
+<li><p>其次，当一级火箭铺开头部流量，他需要快速张开，短时间聚拢资源的能力是要有一定的势能积累才能做到的</p>
+</li>
+<li><p>第四，操盘三级火箭的人，一定是个狠人</p>
+</li>
+<li><p>因为你的一级火箭就是抢流量，就是把别人河里的水都抢到自己的水渠里，成就自己的河流生态</p>
+</li>
+</ul>
+<h2 id="三级火箭的原理"><a href="#三级火箭的原理" class="headerlink" title="三级火箭的原理"></a>三级火箭的原理</h2><ul>
+<li><p>火箭技术越多，需要的燃料越少。但每增加一级，不可控程度越高。就好像咱们做商业，模型过于复杂，变现链条过长，就容易玩脱了</p>
+</li>
+<li><p>三级火箭是一个成本和可控性平衡后的选择</p>
+</li>
+</ul>
+<h2 id="在人类的天空放上星星"><a href="#在人类的天空放上星星" class="headerlink" title="在人类的天空放上星星"></a>在人类的天空放上星星</h2><ul>
+<li>火箭的目的不是飞得越高越好，而是为了放卫星，是为了把一颗星星放到星空上</li>
+</ul>
+<h1 id="颠覆式创新：成败价值网"><a href="#颠覆式创新：成败价值网" class="headerlink" title="颠覆式创新：成败价值网"></a>颠覆式创新：成败价值网</h1><h2 id="价值网与颠覆式创新"><a href="#价值网与颠覆式创新" class="headerlink" title="价值网与颠覆式创新"></a>价值网与颠覆式创新</h2><h3 id="什么叫价值网？"><a href="#什么叫价值网？" class="headerlink" title="什么叫价值网？"></a>什么叫价值网？</h3><ul>
+<li><p>《创新者的窘境》里有这样一段话，真正决定企业未来发展方向的是市场价值网，而非管理者；真正主导企业发展进程的是机构外的力量，而非机构内部的管理者。管理者只是扮演一个象征性的角色。</p>
+</li>
+<li><p>企业真正的管理者，就是识别自己赖以生存的价值网</p>
+</li>
+<li><p>一个好的组织结构，他的每一个组织部门，都是为了和某个社会价值网的分支进行对接而设计的</p>
+</li>
+<li><p>一个失败的企业的组织结构，是管理者按照自己需求设置的</p>
+</li>
+<li><p>很多没落的企业，也是什么错的都没有，只是他的价值网过时了</p>
+</li>
+</ul>
+<h2 id="计算机行业的价值网更迭"><a href="#计算机行业的价值网更迭" class="headerlink" title="计算机行业的价值网更迭"></a>计算机行业的价值网更迭</h2><ul>
+<li><p>IBM-&gt;UNIVAC</p>
+</li>
+<li><p>联想-&gt;IBM</p>
+</li>
+<li><p>97年中国市场占有率第一</p>
+</li>
+<li><p>04年收购IBM的PC业务，成为全球PC的老大</p>
+</li>
+</ul>
+<h2 id="价值网的三大要素"><a href="#价值网的三大要素" class="headerlink" title="价值网的三大要素"></a>价值网的三大要素</h2><ul>
+<li><p>价值网里，至少有三个角色：一是客户，而是对手，三是投资人，就是这三个核心力量，加上其他千丝万缕的牵制，牢牢的捆住一个大企业</p>
+</li>
+<li><p>客户是我们最重要的资产，但也可能是我们最重要的创新盲区</p>
+</li>
+</ul>
+<h3 id="资本所要求的增长是个魔咒"><a href="#资本所要求的增长是个魔咒" class="headerlink" title="资本所要求的增长是个魔咒"></a>资本所要求的增长是个魔咒</h3><ul>
+<li><p>故事是一个很丑陋的游戏，增长是一个魔咒，所有企业都丧失在里边，只有10%的企业能够维持良好的增长势头，而只有2%的企业长期超过市场绩效</p>
+</li>
+<li><p>在资本的增长压力下，大公司很难进入小市场。李彦宏说过，对于百度来讲，低于1%收入比例的市场是不看的</p>
+</li>
+<li><p>埃隆马斯克做特斯拉的时候，电动车的销售额占据大型汽车厂商销量的不到1%。所以，大型汽车厂商会因为增长魔咒的控制而眼睁睁地放任了特斯拉的崛起</p>
+</li>
+</ul>
+<h3 id="组织心智"><a href="#组织心智" class="headerlink" title="组织心智"></a>组织心智</h3><ul>
+<li><p>《创新者的窘境》的克里斯坦森的说法是，良好的管理恰恰是他们未能保持行业领先地位的最重要的原因</p>
+</li>
+<li><p>所谓管理得好的公司，往往是与现有价值网的紧密对接。响应现有客户需求，紧盯对手，满足投资人。所有的弦都绷得高效、流畅，没有冗余和浪费，管理得无比完美     </p>
+</li>
+<li><p>整个公司的管理设计，都是为了高效服务现有价值网，公司的资源配置如此，公司组织流程的设计也是类似，公司财务评估的方式更是如此</p>
+</li>
+<li><p>然后就这样长期循环下去。资源要这样安排，组织流程必须这样才合理，财务评估要按照这种价值判断，以上因素加在一起，这是什么？</p>
+</li>
+<li><p>这就形成了“组织心智”！</p>
+</li>
+<li><p>什么是非连续？</p>
+</li>
+<li><p>就是整个社会在发展，整体社会能力升级，新的需求被释放催生新的价值网</p>
+</li>
+<li><p>什么是颠覆式创新？</p>
+</li>
+<li><p>颠覆式创新最重要的标准就是，是否开启了一个新的价值网？你是不是到了“新大陆”？</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E5%88%9B%E6%96%B0%E6%A8%A1%E5%BC%8F/" title="梁宁·产品思维30讲学习笔记：创新模式">http://alfredchen.cn/2018/12/11/梁宁·产品思维30讲学习笔记：创新模式/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/" rel="prev" title="梁宁·产品思维30讲学习笔记：用户体验">
+      <i class="fa fa-chevron-left"></i> 梁宁·产品思维30讲学习笔记：用户体验
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E4%BA%A7%E5%93%81%E4%B8%96%E7%95%8C%E8%A7%82/" rel="next" title="梁宁·产品思维30讲学习笔记：产品世界观">
+      梁宁·产品思维30讲学习笔记：产品世界观 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#用“用户价值公式”衡量创新"><span class="nav-number">1.</span> <span class="nav-text">用“用户价值公式”衡量创新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#没有创新的产品，根本不应该去做"><span class="nav-number">1.1.</span> <span class="nav-text">没有创新的产品，根本不应该去做</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在增量市场里找机会"><span class="nav-number">1.2.</span> <span class="nav-text">在增量市场里找机会</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网不是存量竞争，而是增量竞争"><span class="nav-number">1.3.</span> <span class="nav-text">互联网不是存量竞争，而是增量竞争</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#从WPS的挑战，理解用户价值公式"><span class="nav-number">1.4.</span> <span class="nav-text">从WPS的挑战，理解用户价值公式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#俞军的用户价值公式：用户价值-（新体验-旧体验）-替换成本"><span class="nav-number">1.4.1.</span> <span class="nav-text">俞军的用户价值公式：用户价值&#x3D;（新体验-旧体验）-替换成本</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#真实情况是你付出63分，而用户得到的是-2分。你认为你做得很好，但用户视你为鸡肋"><span class="nav-number">1.4.2.</span> <span class="nav-text">真实情况是你付出63分，而用户得到的是-2分。你认为你做得很好，但用户视你为鸡肋</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创新是小企业唯一的活路"><span class="nav-number">1.5.</span> <span class="nav-text">创新是小企业唯一的活路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#傅盛找到新机会"><span class="nav-number">1.6.</span> <span class="nav-text">傅盛找到新机会</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.7.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎样用交叉视角发现创新"><span class="nav-number">2.</span> <span class="nav-text">怎样用交叉视角发现创新</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#婴儿恒温箱的发明"><span class="nav-number">2.1.</span> <span class="nav-text">婴儿恒温箱的发明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#未来已来，只是分布得不均匀"><span class="nav-number">2.2.</span> <span class="nav-text">未来已来，只是分布得不均匀</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#婴儿恒温箱的迭代"><span class="nav-number">2.3.</span> <span class="nav-text">婴儿恒温箱的迭代</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#怎样从新要素到新物种"><span class="nav-number">3.</span> <span class="nav-text">怎样从新要素到新物种</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#要素一：找到实体空间的好位置"><span class="nav-number">3.1.</span> <span class="nav-text">要素一：找到实体空间的好位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#要素二：把”消费者”变成“投消者”"><span class="nav-number">3.2.</span> <span class="nav-text">要素二：把”消费者”变成“投消者”</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#要素三：IP酒店"><span class="nav-number">3.3.</span> <span class="nav-text">要素三：IP酒店</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#要素四：场景电商"><span class="nav-number">3.4.</span> <span class="nav-text">要素四：场景电商</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#新要素有两种"><span class="nav-number">3.5.</span> <span class="nav-text">新要素有两种</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#三级火箭：深度讲解互联网降维打击"><span class="nav-number">4.</span> <span class="nav-text">三级火箭：深度讲解互联网降维打击</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#360的三级火箭"><span class="nav-number">4.1.</span> <span class="nav-text">360的三级火箭</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#搜狗的三级火箭"><span class="nav-number">4.2.</span> <span class="nav-text">搜狗的三级火箭</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#旧三级火箭"><span class="nav-number">4.2.1.</span> <span class="nav-text">旧三级火箭</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#新三级火箭"><span class="nav-number">4.2.2.</span> <span class="nav-text">新三级火箭</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#罗辑思维的三级火箭"><span class="nav-number">4.3.</span> <span class="nav-text">罗辑思维的三级火箭</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小米公司的三级火箭"><span class="nav-number">4.4.</span> <span class="nav-text">小米公司的三级火箭</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#要玩三级火箭，有几个必备条件"><span class="nav-number">4.5.</span> <span class="nav-text">要玩三级火箭，有几个必备条件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三级火箭的原理"><span class="nav-number">4.6.</span> <span class="nav-text">三级火箭的原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在人类的天空放上星星"><span class="nav-number">4.7.</span> <span class="nav-text">在人类的天空放上星星</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#颠覆式创新：成败价值网"><span class="nav-number">5.</span> <span class="nav-text">颠覆式创新：成败价值网</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#价值网与颠覆式创新"><span class="nav-number">5.1.</span> <span class="nav-text">价值网与颠覆式创新</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#什么叫价值网？"><span class="nav-number">5.1.1.</span> <span class="nav-text">什么叫价值网？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#计算机行业的价值网更迭"><span class="nav-number">5.2.</span> <span class="nav-text">计算机行业的价值网更迭</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#价值网的三大要素"><span class="nav-number">5.3.</span> <span class="nav-text">价值网的三大要素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#资本所要求的增长是个魔咒"><span class="nav-number">5.3.1.</span> <span class="nav-text">资本所要求的增长是个魔咒</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#组织心智"><span class="nav-number">5.3.2.</span> <span class="nav-text">组织心智</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="今天学习《华杉讲透孙子兵法》始计篇，收获之一是纠正了一直以来对于《孙子兵法》中“计”的误解；收获之二是跳出历史视角，结合《孙子兵法》分析了一下最近过山车一般的子弹短信，以此分享。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="产品模型思维之swot分析：从《孙子兵法》看子弹短信">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/02/%E4%BB%8E%E3%80%8A%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95%E3%80%8B%E7%9C%8B%E5%AD%90%E5%BC%B9%E7%9F%AD%E4%BF%A1/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="今天学习《华杉讲透孙子兵法》始计篇，收获之一是纠正了一直以来对于《孙子兵法》中“计”的误解；收获之二是跳出历史视角，结合《孙子兵法》分析了一下最近过山车一般的子弹短信，以此分享。">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/10/oh6TFx5Zl3BOqImKSsqF.png">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/10/UFuW6wCGz436ib6aMpk5.png">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/10/Rjhhu9aLOrIy5929tSAI.png">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/10/fKhg9zCwxqI2Zk1tgpqR.png">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/10/elQX53x35Fr5IxiiCeug.png">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/10/Uvq4VjObyN8rFBlyqaxi.png">
+<meta property="article:published_time" content="2018-12-02T09:50:47.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:10:38.623Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://image.woshipm.com/wp-files/2018/10/oh6TFx5Zl3BOqImKSsqF.png">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/02/%E4%BB%8E%E3%80%8A%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95%E3%80%8B%E7%9C%8B%E5%AD%90%E5%BC%B9%E7%9F%AD%E4%BF%A1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>产品模型思维之swot分析：从《孙子兵法》看子弹短信 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/02/%E4%BB%8E%E3%80%8A%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95%E3%80%8B%E7%9C%8B%E5%AD%90%E5%BC%B9%E7%9F%AD%E4%BF%A1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          产品模型思维之swot分析：从《孙子兵法》看子弹短信
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-02 17:50:47" itemprop="dateCreated datePublished" datetime="2018-12-02T17:50:47+08:00">2018-12-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B4/" itemprop="url" rel="index">
+                    <span itemprop="name">产品思维</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/02/%E4%BB%8E%E3%80%8A%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95%E3%80%8B%E7%9C%8B%E5%AD%90%E5%BC%B9%E7%9F%AD%E4%BF%A1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/02/%E4%BB%8E%E3%80%8A%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95%E3%80%8B%E7%9C%8B%E5%AD%90%E5%BC%B9%E7%9F%AD%E4%BF%A1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>今天学习《华杉讲透孙子兵法》始计篇，收获之一是纠正了一直以来对于《孙子兵法》中“计”的误解；收获之二是跳出历史视角，结合《孙子兵法》分析了一下最近过山车一般的子弹短信，以此分享。</p>
+<a id="more"></a>
+
+<h2 id="“计”非计谋，而是计算"><a href="#“计”非计谋，而是计算" class="headerlink" title="“计”非计谋，而是计算"></a>“计”非计谋，而是计算</h2><p>或许是受了《三十六计》的影响，人们通常也以为《孙子兵法》中的“计”是计谋之意，但这是一个误解。</p>
+<p>《孙子兵法》始计篇的主题是“计”，但是此“计”非计谋的计，而是计算的计，意在计算敌我双方的力量对比。原文中有“五事七计”之说，在此我便不再赘述，如果用现代理论解释，就是在打仗之前做一下SWOT分析。</p>
+<blockquote>
+<p>孙子曰：“多算胜，少算不胜，而况于无算乎！吾以此观之，胜负见矣。”</p>
+</blockquote>
+<p>要打造一款成功的互联网产品，绝无可能在策划时满脑子只想着通过各种计谋制造噱头，“此兵家之胜，不可先传也”；这样吸引来的用户就像流星，来了，让你看到许个愿，就走了，必须要回到第一性中直面《启示录》中著名的“产品十问”，踏踏实实地去计算到底能不能胜，有没有胜算。</p>
+<p>子弹短信在锤子发布会亮相之后，大IP+大噱头让媒体大肆宣扬它将会取代微信，我们不妨先对子弹短信做一个SWOT分析。</p>
+<p>根据黄金圈理论，我们先分析一下子弹短信的优势、劣势、机会和威胁分别是什么（WHAT）。</p>
+<h3 id="1-子弹短信的优势、劣势、机会和威胁（WHAT）"><a href="#1-子弹短信的优势、劣势、机会和威胁（WHAT）" class="headerlink" title="1. 子弹短信的优势、劣势、机会和威胁（WHAT）"></a>1. 子弹短信的优势、劣势、机会和威胁（WHAT）</h3><p><strong>（1）优势</strong></p>
+<ul>
+<li>沟通效率快如子弹，给人们提供更加高效的沟通方式可以说是子弹短信唯一的价值，无论是缩短操作步骤还是全局悬浮球将人-信息转变为信息-人的流程创新，都紧紧围绕着这个目标，也是其第一性原理所在。</li>
+<li>细节体验感动人心，子弹的产品经理深挖人们在使用微信时的不爽，从控制语音、稍后处理、引用回复等细节入手狠抓用户体验。</li>
+</ul>
+<p><strong>（2）劣势</strong></p>
+<ul>
+<li>通讯工具是一个强关系链的产品，连接沉淀得越深，产品才越有价值。</li>
+<li>微信已经发展成为嵌入社会网络的生态平台，根据俞军的用户体验公式=（新体验-旧体验）-用户替换成本，哪怕子弹短信的体验更好，但仍抵不过更为高昂的用户替换成本。</li>
+</ul>
+<p><strong>（3）机会</strong></p>
+<ul>
+<li>微信没有满足部分人对于沟通效率的追求。</li>
+<li>吃瓜群众乐意看到有人挑战微信的霸主地位，降低了产品冷启动的难度。</li>
+</ul>
+<p><strong>（4）威胁</strong></p>
+<ul>
+<li>被微信跟进，失去优势（当年米聊推出语音功能时，在论坛上说一周之内就会有一个叫微信的产品抄袭我们的功能）。</li>
+<li>腾讯通过收购子弹短信消灭任何可能的威胁。</li>
+</ul>
+<p><img src="http://image.woshipm.com/wp-files/2018/10/oh6TFx5Zl3BOqImKSsqF.png" alt="img"></p>
+<p>以上是对WHAT的分析，算是完成了SWOT分析中的“五事”。但这样还没能达到我们知胜的目的，我们还需要以“七计”论之——也就是回答黄金圈中怎么做（HOW）的问题。</p>
+<h3 id="2-子弹短信应该怎么做（HOW）"><a href="#2-子弹短信应该怎么做（HOW）" class="headerlink" title="2. 子弹短信应该怎么做（HOW）"></a>2. 子弹短信应该怎么做（HOW）</h3><p><strong>（1）优势+机会=增长型战略</strong></p>
+<p><img src="http://image.woshipm.com/wp-files/2018/10/UFuW6wCGz436ib6aMpk5.png" alt="img"></p>
+<p><strong>（2）劣势+机会=扭转型战略</strong></p>
+<p><img src="http://image.woshipm.com/wp-files/2018/10/Rjhhu9aLOrIy5929tSAI.png" alt="img"></p>
+<p><strong>（3）劣势+威胁=防御型战略</strong></p>
+<p><img src="http://image.woshipm.com/wp-files/2018/10/fKhg9zCwxqI2Zk1tgpqR.png" alt="img"></p>
+<p><strong>（4）优势+威胁=多元化战略</strong></p>
+<p><img src="http://image.woshipm.com/wp-files/2018/10/elQX53x35Fr5IxiiCeug.png" alt="img"></p>
+<p>至此，我们对子弹短信的“五事七计”进行了计算，相信对子弹短信也有了一个认识框架。</p>
+<p><img src="http://image.woshipm.com/wp-files/2018/10/Uvq4VjObyN8rFBlyqaxi.png" alt="img"></p>
+<h2 id="诸葛亮的“计”不如司马懿"><a href="#诸葛亮的“计”不如司马懿" class="headerlink" title="诸葛亮的“计”不如司马懿"></a>诸葛亮的“计”不如司马懿</h2><p>要说到中国历史上最会用计的人，大多数人都会想到诸葛亮。但是华杉老师却说《三国演义》里诸葛亮的“计”是不合格的，而且每次都被司马懿计得死死的。为何？</p>
+<p>把魏蜀两国做一个对比分析：</p>
+<ul>
+<li>魏国500多万人口，60万兵力</li>
+<li>蜀汉只有不到100万人口，不到10万兵力</li>
+</ul>
+<p>诸葛亮要以10万兵力，穿越崇山峻岭，耗费紧张的人力物力，主动去攻打魏国，怎么打得过去？</p>
+<p>可以说司马懿根本不需要打什么漂亮仗，只要他自己不因犯错误作死，等待诸葛亮掉进他自己挖的大坑（虽然诸葛亮也是不得已而为之），不败则胜。</p>
+<p>子弹短信的资讯流模块一直饱受诟病，或许是为了留住用户，又或许是为了往后的流量变现。但现在的资讯流就像是子弹短信立在那的一块板子：一则碍用户眼睛，拉低了用户体验，二则有根基不稳倒下来砸自己的危险。</p>
+<p>资讯流的新闻源可以说几经轮转，从一开始气势高昂的今日头条+腾讯新闻，到应要求取消腾讯新闻，再到现在拔凉拔凉的锤子阅读和把自己坑下架的网易新闻，可以说资讯流就是子弹短信给自己挖的大坑。</p>
+<p>最核心的IM还处在不断更新BUG的状态，无论是功能还是关系链都处于弱势无法与微信相争，奈何自己挖坑自己跳呢？</p>
+<p>虽然媒体叫嚣着子弹短信将会取代微信，对于子弹短信来说这场所谓的竞争是打不赢也要打，本质是要追求胜利。但是对于微信来说只是追求不败，不需要去打什么漂亮仗，等着子弹短信犯错，不败则胜。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>以上是我在学习《孙子兵法》时结合子弹短信做的一些输出，感受最深的是真正的认知是不会随时代减损的，这本两千多年前的兵书仍能够指导互联网时代的认知，我会继续去学习输出。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/02/%E4%BB%8E%E3%80%8A%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95%E3%80%8B%E7%9C%8B%E5%AD%90%E5%BC%B9%E7%9F%AD%E4%BF%A1/" title="产品模型思维之swot分析：从《孙子兵法》看子弹短信">http://alfredchen.cn/2018/12/02/从《孙子兵法》看子弹短信/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/02/%E4%B8%80%E6%AC%A1%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/" rel="prev" title="一次项目复盘">
+      <i class="fa fa-chevron-left"></i> 一次项目复盘
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/04/%E6%90%AD%E5%8D%9A%E5%AE%A2%E6%97%B6%E8%B8%A9%E7%9A%84%E5%9D%91/" rel="next" title="搭博客时踩的坑">
+      搭博客时踩的坑 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#“计”非计谋，而是计算"><span class="nav-number">1.</span> <span class="nav-text">“计”非计谋，而是计算</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-子弹短信的优势、劣势、机会和威胁（WHAT）"><span class="nav-number">1.1.</span> <span class="nav-text">1. 子弹短信的优势、劣势、机会和威胁（WHAT）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-子弹短信应该怎么做（HOW）"><span class="nav-number">1.2.</span> <span class="nav-text">2. 子弹短信应该怎么做（HOW）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#诸葛亮的“计”不如司马懿"><span class="nav-number">2.</span> <span class="nav-text">诸葛亮的“计”不如司马懿</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">3.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

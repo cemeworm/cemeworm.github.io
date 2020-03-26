@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="画一张图来帮助记忆机器学习相关知识">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习知识图谱">
+<meta property="og:url" content="http://alfredchen.cn/2020/03/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="画一张图来帮助记忆机器学习相关知识">
+<meta property="og:image" content="http://alfredchen.cn/2020/03/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/1.png">
+<meta property="article:published_time" content="2020-03-23T09:11:13.000Z">
+<meta property="article:modified_time" content="2020-03-25T12:25:30.686Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://alfredchen.cn/2020/03/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/1.png">
+
+<link rel="canonical" href="http://alfredchen.cn/2020/03/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>机器学习知识图谱 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2020/03/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          机器学习知识图谱
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-23 17:11:13" itemprop="dateCreated datePublished" datetime="2020-03-23T17:11:13+08:00">2020-03-23</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">产品方法</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/AI%E4%BA%A7%E5%93%81/" itemprop="url" rel="index">
+                    <span itemprop="name">AI产品</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>画一张图来帮助记忆机器学习相关知识</p>
+<a id="more"></a>
+
+<h2 id="知识图谱"><a href="#知识图谱" class="headerlink" title="知识图谱"></a>知识图谱</h2><p><img src="1.png" alt="img"></p>
+<h2 id="大类集合"><a href="#大类集合" class="headerlink" title="大类集合"></a>大类集合</h2><h3 id="深度学习"><a href="#深度学习" class="headerlink" title="深度学习"></a>深度学习</h3><p><a href="https://www.jianshu.com/p/df9a4473d6d4">浅谈深度学习基础（上） - 简书</a><br><a href="https://www.jianshu.com/p/3d1ddfce1563">浅谈深度学习基础（下） - 简书</a></p>
+<h3 id="机器学习"><a href="#机器学习" class="headerlink" title="机器学习"></a>机器学习</h3><p><a href="https://www.jianshu.com/p/ed9ae5385b89?utm_campaign=haruki&utm_content=note&utm_medium=reader_share&utm_source=weixin">浅谈机器学习基础（上） - 简书</a><br><a href="https://www.jianshu.com/p/0359e3b7bb1b">浅谈机器学习基础（下） - 简书</a><br><a href="https://shimo.im/docs/HvhvkPqtcpCWCrx8/read">团员分享<em>产品视角的14种常见算法简单总结</em>@haiqiao_20200210</a></p>
+<h3 id="NLP"><a href="#NLP" class="headerlink" title="NLP"></a>NLP</h3><p><a href="https://shimo.im/docs/eSrDCe2611wiwZUA/read">团员分享_NLP相关Deep Learning模型小结_Lily_20190427</a><br><a href="https://www.jianshu.com/p/c123c7534500">浅谈自然语言处理基础（上） - 简书</a><br><a href="https://www.jianshu.com/p/3bb214a200ca">浅谈自然语言处理基础（中） - 简书</a><br><a href="https://www.jianshu.com/p/872a72e861fd">浅谈自然语言处理基础（下） - 简书</a></p>
+<h2 id="辅助算法"><a href="#辅助算法" class="headerlink" title="辅助算法"></a>辅助算法</h2><p>EM算法：<br><a href="https://blog.csdn.net/zouxy09/article/details/8537620">从最大似然到EM算法浅解_网络_zouxy09的专栏-CSDN博客</a><br><a href="https://www.jianshu.com/p/1121509ac1dc">如何感性地理解EM算法？ - 简书</a></p>
+<p>BP算法：<br><a href="https://zhuanlan.zhihu.com/p/25609953">神经网络反向传播算法 - 知乎</a></p>
+<p>损失函数：<br><a href="https://zhuanlan.zhihu.com/p/58883095">常见的损失函数(loss function)总结 - 知乎</a><br><a href="https://zhuanlan.zhihu.com/p/38241764">简单的交叉熵损失函数，你真的懂了吗？ - 知乎</a><br><a href="https://www.jianshu.com/p/5d13bcd9d990">机器学习面试之MSE与CE的区别？ - 简书</a></p>
+<p>激活函数：<br><a href="https://blog.csdn.net/tyhj_sf/article/details/79932893">常用激活函数（激励函数）理解与总结_网络_StevenSun的博客空间-CSDN博客</a><br><a href="https://zhuanlan.zhihu.com/p/25723112">详解softmax函数以及相关求导过程 - 知乎</a></p>
+<p>word2vector：<br><a href="https://www.jianshu.com/p/1405932293ea">机器学习必须熟悉的算法之word2vector（一） - 简书</a><br><a href="https://www.jianshu.com/p/d0e2d00fb4f0">机器学习必须熟悉的算法之word2vector（二） - 简书</a></p>
+<p>Word Embedding：<br><a href="https://blog.csdn.net/baimafujinji/article/details/77836142">Word Embedding与Word2Vec_Python_白马负金羁-CSDN博客</a></p>
+<p>熵：<br><a href="https://www.jianshu.com/p/09b70253c840">机器学习面试之各种混乱的熵 - 简书</a></p>
+<p>核方法：<br><a href="https://zhuanlan.zhihu.com/p/61794781">核方法、核技巧和核函数 - 知乎</a></p>
+<p>偏差方差：<br><a href="https://www.jianshu.com/p/23550b50b6c1">机器学习面试之偏差方差 - 简书</a></p>
+<p>优化器：<br><a href="https://www.jianshu.com/p/ee39eca29117">机器学习面试之各种优化器的比较 - 简书</a></p>
+<p>归一化与标准化：<br><a href="https://www.jianshu.com/p/4c3081d40ca6">机器学习面试之归一化与标准化 - 简书</a></p>
+<p>attention机制：<br><a href="https://www.jianshu.com/p/c94909b835d6">机器学习面试之Attention - 简书</a></p>
+<h2 id="AI模型"><a href="#AI模型" class="headerlink" title="AI模型"></a>AI模型</h2><p>CRF模型：<br><a href="https://zhuanlan.zhihu.com/p/44042528">最通俗易懂的BiLSTM-CRF模型中的CRF层介绍 - 知乎</a></p>
+<p>最大熵模型：<br><a href="https://www.jianshu.com/p/e7c13002440d">机器学习面试之最大熵模型 - 简书</a></p>
+<p>LR算法：<br><a href="https://www.jianshu.com/p/f86de852ee96">数据挖掘面试题之SVM和LR的不同 - 简书</a></p>
+<p>SVM算法：<br><a href="https://www.jianshu.com/p/f4c7bc6c4ce2">机器学习面试之有必要手推SVM吗（1）？ - 简书</a><br><a href="https://www.jianshu.com/p/bce3b2850406">机器学习面试之有必要手推SVM吗(2)? - 简书</a></p>
+<p>SMO算法：<br><a href="https://www.jianshu.com/p/55458caf0814">用讲故事的办法帮你理解SMO算法 - 简书</a></p>
+<p>决策树：<br><a href="https://www.jianshu.com/p/fb97b21aeb1d">数据挖掘面试题之决策树必知必会 - 简书</a></p>
+<p>梯度提升树：<br><a href="https://www.jianshu.com/p/0e5ccc88d2cb">数据挖掘面试题之梯度提升树 - 简书</a></p>
+<p>梯度上升算法：<br><a href="https://www.jianshu.com/p/eb94c60015c7">《机器学习实战》第五章梯度上升算法的直观理解 - 简书</a></p>
+<p>生成模型、判别模型：<br><a href="https://www.jianshu.com/p/4ef549eb0ad4">机器学习面试之生成模型VS判别模型 - 简书</a></p>
+<p>LDA主题模型：<br><a href="https://blog.csdn.net/v_july_v/article/details/41209515">通俗理解LDA主题模型_网络_结构之法 算法之道-CSDN博客</a><br><a href="https://blog.csdn.net/a358463121/article/details/52562940">带你理解beta分布_人工智能_Jie Qiao的专栏-CSDN博客</a><br><a href="http://bloglxm.oss-cn-beijing.aliyuncs.com/lda-LDA数学八卦.pdf">http://bloglxm.oss-cn-beijing.aliyuncs.com/lda-LDA数学八卦.pdf</a></p>
+<p>LSTM：<br><a href="https://www.jianshu.com/p/d6714b732927">机器学习面试之LSTM - 简书</a></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2020/03/23/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9F%A5%E8%AF%86%E5%9B%BE%E8%B0%B1/" title="机器学习知识图谱">http://alfredchen.cn/2020/03/23/机器学习知识图谱/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/06/%E4%BA%A7%E5%93%81%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%E4%B9%8B%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9E%8B/" rel="prev" title="产品模型思维之系统模型">
+      <i class="fa fa-chevron-left"></i> 产品模型思维之系统模型
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/23/%E5%BE%AE%E4%BF%A1%E6%94%AF%E4%BB%98%E6%A1%86%E6%9E%B6%E5%9B%BE/" rel="next" title="微信支付框架图">
+      微信支付框架图 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#知识图谱"><span class="nav-number">1.</span> <span class="nav-text">知识图谱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#大类集合"><span class="nav-number">2.</span> <span class="nav-text">大类集合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#深度学习"><span class="nav-number">2.1.</span> <span class="nav-text">深度学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#机器学习"><span class="nav-number">2.2.</span> <span class="nav-text">机器学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NLP"><span class="nav-number">2.3.</span> <span class="nav-text">NLP</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#辅助算法"><span class="nav-number">3.</span> <span class="nav-text">辅助算法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AI模型"><span class="nav-number">4.</span> <span class="nav-text">AI模型</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

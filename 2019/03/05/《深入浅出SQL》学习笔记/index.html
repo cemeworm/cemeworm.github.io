@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="SQL的主要语句及注意事项">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《深入浅出SQL》学习笔记">
+<meta property="og:url" content="http://alfredchen.cn/2019/03/05/%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BASQL%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="SQL的主要语句及注意事项">
+<meta property="article:published_time" content="2019-03-05T13:30:07.000Z">
+<meta property="article:modified_time" content="2020-02-04T02:56:06.767Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://alfredchen.cn/2019/03/05/%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BASQL%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>《深入浅出SQL》学习笔记 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2019/03/05/%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BASQL%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《深入浅出SQL》学习笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-03-05 21:30:07" itemprop="dateCreated datePublished" datetime="2019-03-05T21:30:07+08:00">2019-03-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">产品方法</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81/" itemprop="url" rel="index">
+                    <span itemprop="name">策略产品</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/03/05/%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BASQL%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/03/05/%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BASQL%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>SQL的主要语句及注意事项</p>
+<a id="more"></a>
+
+<p>进入mysql：mysql -h localhost -u root -p</p>
+<h1 id="第一章：数据和表"><a href="#第一章：数据和表" class="headerlink" title="第一章：数据和表"></a>第一章：数据和表</h1><p>主要讲了如何创建数据库、数据表，知道如何在表中插入适合的数据类型的同时保证需要值的列有值。</p>
+<h2 id="SQL语句"><a href="#SQL语句" class="headerlink" title="SQL语句"></a>SQL语句</h2><ul>
+<li><p>CREATE DATABASE：创建数据库，数据库是SQL操作的基础</p>
+</li>
+<li><p>SHOW DATABASES：查看数据库</p>
+</li>
+<li><p>USE DATABASE:进入数据库，以数据库为管理单位</p>
+</li>
+<li><p>CREATE TABLE：创建数据表，需要知道COLUMN NAMES和DATA TYPES</p>
+</li>
+<li><p>NULL与NOT NULL：NULL是未定义的值，需要提前清楚哪些列不能接受NULL值，在创建数据表时即设置为NOT NULL</p>
+</li>
+<li><p>DEFAULT：指定列的默认值，若不对该列赋值，则该列自动录入默认值，需要在创建数据表时即设置</p>
+</li>
+<li><p>DESC：查看表的结构</p>
+</li>
+<li><p>INSERT：配合VALUE 使用插入数据，插入数据时数据值的顺序必须与列名的顺序完全一致，三种语句形式分别为改变列顺序、省略列名、省略部分列（省略部分默认为NULL）</p>
+</li>
+<li><p>DROP TABLE：删除数据表，最好是在没有使用INSERT插入数据前使用</p>
+</li>
+</ul>
+<h1 id="第二章：SELECT语句"><a href="#第二章：SELECT语句" class="headerlink" title="第二章：SELECT语句"></a>第二章：SELECT语句</h1><p>主要讲了SELECT语句， 学会利用WHERE、AND、OR选择数据，或者过滤掉不想选择的数据。</p>
+<h2 id="SQL语句-1"><a href="#SQL语句-1" class="headerlink" title="SQL语句"></a>SQL语句</h2><ul>
+<li><p>SELECT (*或列名) FROM (表明）WHERE(特殊条件)：根据特殊条件从数据表中选择需要的数据，其中特殊条件有很多种类型</p>
+</li>
+<li><p>LIKE+通配符：查找部分文本字符串返回所有符合匹配条件的行，其中%匹配多个，_匹配一个</p>
+</li>
+<li><p>BETWEEN ()  AND ()：取范围内的值</p>
+</li>
+<li><p>IN(‘ ‘,…)：取括号内的值，反过来可以用NOT IN</p>
+</li>
+</ul>
+<h2 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h2><ul>
+<li><p>文本类的数据类型需要单引号，数字类的不需要，并且不能使用双引号，包含单引号的数据要用\或‘进行处理</p>
+</li>
+<li><p>使用AND或OR进行结合查询</p>
+</li>
+<li><p>使用比较运算符进行选择</p>
+</li>
+<li><p>要用IS NULL来找到NULL</p>
+</li>
+</ul>
+<h1 id="第三章：DELETE和UPDATE"><a href="#第三章：DELETE和UPDATE" class="headerlink" title="第三章：DELETE和UPDATE"></a>第三章：DELETE和UPDATE</h1><p>通过UPDATE可以改变数据，而DELETE则可删除不需要的数据</p>
+<h2 id="SQL语句-2"><a href="#SQL语句-2" class="headerlink" title="SQL语句"></a>SQL语句</h2><ul>
+<li><p>DELETE FROM (数据表) WHERE (特殊条件)：将符合WHERE条件的记录从数据表中删除，可以删除单行或多行，不可以删除列</p>
+</li>
+<li><p>UPDATE (数据表) SET (要改变的记录) WHERE (特殊条件)：不删除内容，把旧记录回收并替换为新记录，可以同时替换多行，并且可以和基础的数学运算符一起使用</p>
+</li>
+</ul>
+<h1 id="第四章：聪明的表设计"><a href="#第四章：聪明的表设计" class="headerlink" title="第四章：聪明的表设计"></a>第四章：聪明的表设计</h1><p>随着数据越来越多，我们希望让表更正常、更规范</p>
+<h2 id="SQL语句-3"><a href="#SQL语句-3" class="headerlink" title="SQL语句"></a>SQL语句</h2><ul>
+<li><p>SHOW CREATE TABLE (数据表)：呈现创建现有表的正确语法</p>
+</li>
+<li><p>PRIMARY KEY (主键名)：设置某一列为主键</p>
+</li>
+<li><p>AUTO_INCREMENT：每次执行INSERT命令插入数据时，它会自动给列赋予唯一的递增整数值，并且忽视NULL</p>
+</li>
+</ul>
+<h2 id="注意-1"><a href="#注意-1" class="headerlink" title="注意"></a>注意</h2><h3 id="数据原子性"><a href="#数据原子性" class="headerlink" title="数据原子性"></a>数据原子性</h3><ul>
+<li><p>列中的数据已经拆解为查询所需的最小单位</p>
+</li>
+<li><p>规则一：在同一列中不存储多个类型相同的数据</p>
+</li>
+<li><p>规则二：不会用多个列来存储类型相同的数据</p>
+</li>
+</ul>
+<h3 id="第一范式"><a href="#第一范式" class="headerlink" title="第一范式"></a>第一范式</h3><p>每个数据行均需包含原子性数据，而且每一个数据行均需具有唯一的识别方法</p>
+<h1 id="第五章：ALTER"><a href="#第五章：ALTER" class="headerlink" title="第五章：ALTER"></a>第五章：ALTER</h1><p>学习使用ALTER语句，并且学到规范化的真正意义</p>
+<h2 id="SQL语句-4"><a href="#SQL语句-4" class="headerlink" title="SQL语句"></a>SQL语句</h2><ul>
+<li><p>ALTER TABLE (表名)：声明要改变的数据表</p>
+</li>
+<li><p>ADD COLUMN (列名) (定义) (关键字)：向数据表中添加新的列,关键字包括FIRST、AFTER、BEFORE、LAST、SECOND…设定新增列的位置</p>
+</li>
+<li><p>CHANGE COLUMN (原列名) (新列名) …（必须加上数据类型）：可同时改变现有列的名称和数据类型</p>
+</li>
+<li><p>MODIFY COLUMN (列名) …：修改现有列的数据类型或位置</p>
+</li>
+<li><p>DROP COLUMN (列名)：从表中删除列</p>
+</li>
+<li><p>RENAME TO (新表名)：修改现有表的名称</p>
+</li>
+<li><p>RIGHT(列名，指定数量的字符)、LEFT()：从列左右两边开始数选出指定数量的字符</p>
+</li>
+<li><p>SUBSTRING_INDEX(列名，指定字符或字符串，指定字符或字符串出现的顺序（如1、2）)：找出列中指定字符或字符串前的所有内容，这些操作不会改变存储在表中的内容</p>
+</li>
+<li><p>UPDATE (表名) SET (特殊条件)：为表中的每一行都填上相同的新值</p>
+</li>
+</ul>
+<h2 id="注意-2"><a href="#注意-2" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>ALTER用于修改表结构，UPDATE用于修改表数据</li>
+</ul>
+<h1 id="第六章-SELECT进阶"><a href="#第六章-SELECT进阶" class="headerlink" title="第六章:SELECT进阶"></a>第六章:SELECT进阶</h1><p>学习如何给数据排序和归组，还有如何对查询结果套用数学运算</p>
+<h2 id="SQL语句-5"><a href="#SQL语句-5" class="headerlink" title="SQL语句"></a>SQL语句</h2><ul>
+<li>UPDATE (表名) SET (列名) = CASE WHEN (特殊条件) (ELSE) END：使用CASE表达式来UPDATE</li>
+<li>ORDER BY (列名) (列名) (DESC)：可以根据多个列进行以此排序，可以用DESC反转，列内排序顺序优先级：部分符号（！”#￥%&amp;‘()*+,-./）——数字——部分符号（:;&lt;=&gt;?@）——大写字母——部分符号（[]^_`）——小写字母——部分符号（{|}~）</li>
+<li>SELECT SUM(列名)、AVG(列名)、MIN/MAX(列名)、COUNT(列名)：SUM()为<strong>函数</strong>，可对数据值执行操作</li>
+<li>GROUP BY (列名)：根据列中相同部分进行分组</li>
+<li>SELECT DISTINCT (列名)：DISTINCT是关键字，不用加括号，不取重复值</li>
+<li>LIMIT (列数),(列数)：限制呈现的列数，可以取指定的范围</li>
+<li>WHERE … HAVING …：在 SQL 中增加 HAVING 子句原因是，WHERE 关键字无法与聚合函数一起使用。HAVING 子句可以让我们筛选分组后的各组数据。</li>
+</ul>
+<h2 id="注意-3"><a href="#注意-3" class="headerlink" title="注意"></a>注意</h2><ul>
+<li>两个UPDATE语句可能修改了相同列的值，要注意顺序</li>
+</ul>
+<h1 id="第七章：多张表的数据库设计"><a href="#第七章：多张表的数据库设计" class="headerlink" title="第七章：多张表的数据库设计"></a>第七章：多张表的数据库设计</h1><p>数据变得越来越复杂，我们需要从使用一张数据表升级到到多张数据表的数据库</p>
+<h2 id="注意-4"><a href="#注意-4" class="headerlink" title="注意"></a>注意</h2><ul>
+<li><p>对数据库内的数据描述（列和表），以及任何相关对象和各种连接方式的描述就成为SCHEMA模式</p>
+</li>
+<li><p>外键能用于确认一张表中的行与另一张表中的行相对应，外键的值可以是NULL，但必须已经存在于父表的来源列，通常没有唯一性</p>
+</li>
+<li><p>数据模式：一对一、一对多、多对多，一对一的数据通常留在主表，数据模式的区分主要是用于主表的数据和数据来源的数量比</p>
+</li>
+<li><p>多对多的相关表通常用一个中间桥梁来存储两个相关表的主键，即junction table（连接表）</p>
+</li>
+<li><p>由两列以上组成的键称为组合键，是自然键的一种</p>
+</li>
+</ul>
+<h3 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h3><ul>
+<li><p>函数依赖：某列的数据必须随着另一列的数据的改变而改变</p>
+</li>
+<li><p>部分函数依赖：非主键的列依赖于组合主键的某个部分（但不是完全依赖于组合主键）</p>
+</li>
+<li><p>传递依赖：如果改变任何非键列可能造成其他列的改变</p>
+</li>
+<li><p>传递函数依赖：任何非键列与另一个非键列有关联</p>
+</li>
+</ul>
+<h3 id="第一范式-1"><a href="#第一范式-1" class="headerlink" title="第一范式"></a>第一范式</h3><ul>
+<li><p>规则一：数据列只包含具有原子性的值</p>
+</li>
+<li><p>规则二：没有重复的数据组</p>
+</li>
+</ul>
+<h3 id="第二范式"><a href="#第二范式" class="headerlink" title="第二范式"></a>第二范式</h3><ul>
+<li><p>规则一：先符合第一范式</p>
+</li>
+<li><p>规则二：没有部分函数依赖性</p>
+</li>
+</ul>
+<h3 id="第三范式"><a href="#第三范式" class="headerlink" title="第三范式"></a>第三范式</h3><ul>
+<li><p>规则一：符合第二范式</p>
+</li>
+<li><p>规则二：没有传递函数依赖性</p>
+</li>
+</ul>
+<h1 id="第八章：联接与多张表的操作"><a href="#第八章：联接与多张表的操作" class="headerlink" title="第八章：联接与多张表的操作"></a>第八章：联接与多张表的操作</h1><p>混乱状态与多张表一起出现，所以你需要别名来让表更简单清楚。联接则有助于联系表，取得分布在各张表里的内容</p>
+<h2 id="SQL语句-6"><a href="#SQL语句-6" class="headerlink" title="SQL语句"></a>SQL语句</h2><ul>
+<li><p>SUBSTR((列名),LENGTH(列名)+2(逗号+空格的长度))：SUBSTR返回本列内原始字符串的一部分，他接受字符串并切除我们用括号指定的第一部分，然后返回剩下的部分</p>
+</li>
+<li><p>(CREATE TABLE …) AS (SELECT …)：AS能把SELECT的查询结果填入新表，还能在查询中首次使用原始列名的地方后接AS并设定采用的别名（或者直接后接别名）</p>
+</li>
+<li><p>FROM (表名) CLOSS JOIN (表名)：把第一张表的每一个值都与第二张表的每个值配成对，可以将CLOSS JOIN换成,号</p>
+</li>
+<li><p>FROM (表名) INNER JOIN (表名) ON (…=/&lt;&gt;…)：利用条件式里的比较运算符结合两张表</p>
+</li>
+<li><p>FROM (表名) NATURAL JOIN (表名)：识别出每个表里的相同名称并返回相符的结果</p>
+</li>
+</ul>
+<h1 id="第九章：子查询"><a href="#第九章：子查询" class="headerlink" title="第九章：子查询"></a>第九章：子查询</h1><p>有时要问数据库的问题不止一个，或者需要把甲查询的结果作为乙查询的输入。子查询有助于避免数据重复，让查询更加动态灵活</p>
+<h2 id="SQL语句-7"><a href="#SQL语句-7" class="headerlink" title="SQL语句"></a>SQL语句</h2><ul>
+<li>WHERE EXISTS：存在的判定，反之为NOT EXISTS</li>
+</ul>
+<h2 id="注意-5"><a href="#注意-5" class="headerlink" title="注意"></a>注意</h2><ul>
+<li><p>子查询都是单一SELECT语句</p>
+</li>
+<li><p>子查询总是位于括弧里</p>
+</li>
+<li><p>子查询没有属于自己的分号</p>
+</li>
+<li><p>子查询可以出现在：SELECT子句、选出COLUMN LIST作为其中一列、FROM子句与HAVING子句中</p>
+</li>
+<li><p>子查询能与INSERT、DELETE、UPDATE、SELECT一起使用</p>
+</li>
+<li><p>子查询必须返回一个值。使用IN是例外情况。大部分时候，子查询只需要返回单一值</p>
+</li>
+<li><p>联接比子查询更有效率</p>
+</li>
+<li><p>如果子查询可以独立运行且不会引用外层查询的任何结果，即称为非关联子查询，反之则为关联子查询</p>
+</li>
+</ul>
+<h1 id="第十章：外联接、自联接与联合"><a href="#第十章：外联接、自联接与联合" class="headerlink" title="第十章：外联接、自联接与联合"></a>第十章：外联接、自联接与联合</h1><p>外联接可以在表中没有匹配记录的情况下返回记录；自联接可以联接表本身；联合可以合并查询结果</p>
+<h2 id="SQL语句-8"><a href="#SQL语句-8" class="headerlink" title="SQL语句"></a>SQL语句</h2><ul>
+<li><p>FROM (表名) LEFT OUTER JOIN (表名)：接收左表的所有行，并用这些行与右表中的行匹配，其中紧跟FROM的左表，如果右表没有相匹配的行则返回NULL，如果有多个相匹配的行则返回多个值，右联接则相反</p>
+</li>
+<li><p>(…) UNION (…)：将多张表的查询结果联合，并且没有重复记录，每个SELECT语句中列的数量必须一致，列的数据必须相同或者可以相互转换</p>
+</li>
+<li><p>INTERSECT与EXCRPT：分别取交集和差集</p>
+</li>
+</ul>
+<h2 id="注意-6"><a href="#注意-6" class="headerlink" title="注意"></a>注意</h2><ul>
+<li><p>自引用外键：自引用外键是个出于其他目的而用于同一张表的主键</p>
+</li>
+<li><p>自联接能把单一表当成两张具有完全相同的信息的表来进行查询</p>
+</li>
+</ul>
+<h1 id="第十一章：约束、视图与事务"><a href="#第十一章：约束、视图与事务" class="headerlink" title="第十一章：约束、视图与事务"></a>第十一章：约束、视图与事务</h1><p>当出现了其他需要使用数据库的人，我们需要防止其他人输入错误的数据，需要让其他人只看到部分数据的技术，还需要防止大家同时输入数据时互相才到别人的地盘</p>
+<h2 id="SQL语句-9"><a href="#SQL语句-9" class="headerlink" title="SQL语句"></a>SQL语句</h2><ul>
+<li><p>CREATE VIEW (视图名称) AS (SQL代码)：相当于封装了一段代码，可以让别人只看到这段代码显示的数据</p>
+</li>
+<li><p>START TRANSACTION、COMMIT、ROLLBACK：事务的三部，开始、提交和回滚</p>
+</li>
+</ul>
+<h2 id="注意-7"><a href="#注意-7" class="headerlink" title="注意"></a>注意</h2><h3 id="事务的性质"><a href="#事务的性质" class="headerlink" title="事务的性质"></a>事务的性质</h3><ul>
+<li><p>原子性</p>
+</li>
+<li><p>一致性</p>
+</li>
+<li><p>隔离性</p>
+</li>
+<li><p>持久性</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2019/03/05/%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BASQL%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" title="《深入浅出SQL》学习笔记">http://alfredchen.cn/2019/03/05/《深入浅出SQL》学习笔记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/" rel="prev" title="广告产品知识进阶">
+      <i class="fa fa-chevron-left"></i> 广告产品知识进阶
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/03/09/Numpy%E5%BA%93%E5%92%8CPandas%E5%BA%93/" rel="next" title="Numpy库和Pandas库">
+      Numpy库和Pandas库 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#第一章：数据和表"><span class="nav-number">1.</span> <span class="nav-text">第一章：数据和表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL语句"><span class="nav-number">1.1.</span> <span class="nav-text">SQL语句</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第二章：SELECT语句"><span class="nav-number">2.</span> <span class="nav-text">第二章：SELECT语句</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL语句-1"><span class="nav-number">2.1.</span> <span class="nav-text">SQL语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意"><span class="nav-number">2.2.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第三章：DELETE和UPDATE"><span class="nav-number">3.</span> <span class="nav-text">第三章：DELETE和UPDATE</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL语句-2"><span class="nav-number">3.1.</span> <span class="nav-text">SQL语句</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第四章：聪明的表设计"><span class="nav-number">4.</span> <span class="nav-text">第四章：聪明的表设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL语句-3"><span class="nav-number">4.1.</span> <span class="nav-text">SQL语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意-1"><span class="nav-number">4.2.</span> <span class="nav-text">注意</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据原子性"><span class="nav-number">4.2.1.</span> <span class="nav-text">数据原子性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一范式"><span class="nav-number">4.2.2.</span> <span class="nav-text">第一范式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第五章：ALTER"><span class="nav-number">5.</span> <span class="nav-text">第五章：ALTER</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL语句-4"><span class="nav-number">5.1.</span> <span class="nav-text">SQL语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意-2"><span class="nav-number">5.2.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第六章-SELECT进阶"><span class="nav-number">6.</span> <span class="nav-text">第六章:SELECT进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL语句-5"><span class="nav-number">6.1.</span> <span class="nav-text">SQL语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意-3"><span class="nav-number">6.2.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第七章：多张表的数据库设计"><span class="nav-number">7.</span> <span class="nav-text">第七章：多张表的数据库设计</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#注意-4"><span class="nav-number">7.1.</span> <span class="nav-text">注意</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#依赖"><span class="nav-number">7.1.1.</span> <span class="nav-text">依赖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一范式-1"><span class="nav-number">7.1.2.</span> <span class="nav-text">第一范式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二范式"><span class="nav-number">7.1.3.</span> <span class="nav-text">第二范式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三范式"><span class="nav-number">7.1.4.</span> <span class="nav-text">第三范式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第八章：联接与多张表的操作"><span class="nav-number">8.</span> <span class="nav-text">第八章：联接与多张表的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL语句-6"><span class="nav-number">8.1.</span> <span class="nav-text">SQL语句</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第九章：子查询"><span class="nav-number">9.</span> <span class="nav-text">第九章：子查询</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL语句-7"><span class="nav-number">9.1.</span> <span class="nav-text">SQL语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意-5"><span class="nav-number">9.2.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第十章：外联接、自联接与联合"><span class="nav-number">10.</span> <span class="nav-text">第十章：外联接、自联接与联合</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL语句-8"><span class="nav-number">10.1.</span> <span class="nav-text">SQL语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意-6"><span class="nav-number">10.2.</span> <span class="nav-text">注意</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#第十一章：约束、视图与事务"><span class="nav-number">11.</span> <span class="nav-text">第十一章：约束、视图与事务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL语句-9"><span class="nav-number">11.1.</span> <span class="nav-text">SQL语句</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注意-7"><span class="nav-number">11.2.</span> <span class="nav-text">注意</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#事务的性质"><span class="nav-number">11.2.1.</span> <span class="nav-text">事务的性质</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

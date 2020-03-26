@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="策略产品工作的通用方法论是定义理想态——拆解未达到理想态的情况——提出解决方案——验证是否解决，具体到工作的每一个环节是发现问题——撰写需求、发起项目——跟进开发评估——上线后效果回归">
+<meta property="og:type" content="article">
+<meta property="og:title" content="策略产品工作的通用方法论">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="策略产品工作的通用方法论是定义理想态——拆解未达到理想态的情况——提出解决方案——验证是否解决，具体到工作的每一个环节是发现问题——撰写需求、发起项目——跟进开发评估——上线后效果回归">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/1.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/2.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/3.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/4.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/5.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/6.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/7.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/8.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/9.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/10.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/11.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/12.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/13.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/14.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/15.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/16.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/17.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/18.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/19.jpg">
+<meta property="article:published_time" content="2018-12-18T02:26:17.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:06:40.044Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/1.jpg">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>策略产品工作的通用方法论 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          策略产品工作的通用方法论
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-18 10:26:17" itemprop="dateCreated datePublished" datetime="2018-12-18T10:26:17+08:00">2018-12-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">产品方法</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81/" itemprop="url" rel="index">
+                    <span itemprop="name">策略产品</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>策略产品工作的通用方法论是定义理想态——拆解未达到理想态的情况——提出解决方案——验证是否解决，具体到工作的每一个环节是发现问题——撰写需求、发起项目——跟进开发评估——上线后效果回归</p>
+<a id="more"></a>
+
+<h1 id="策略需求的不同及简单策略的文档撰写"><a href="#策略需求的不同及简单策略的文档撰写" class="headerlink" title="策略需求的不同及简单策略的文档撰写"></a>策略需求的不同及简单策略的文档撰写</h1><h2 id="需求文档"><a href="#需求文档" class="headerlink" title="需求文档"></a>需求文档</h2><p>让项目参与方和其他对项目感兴趣的角色更好地理解需求的来龙去脉</p>
+<p>包括：项目背景、项目目标、<strong>需求概述</strong>、<strong>需求详述</strong>、（统计需求、监控需求）</p>
+<h2 id="策略四要素"><a href="#策略四要素" class="headerlink" title="策略四要素"></a>策略四要素</h2><ul>
+<li><p>待解决问题</p>
+</li>
+<li><p>输入：影响解决方案的因素</p>
+</li>
+<li><p>计算逻辑：将输入转换成输出的规则</p>
+</li>
+<li><p>输出：具体的解决方案</p>
+</li>
+</ul>
+<h2 id="策略分类"><a href="#策略分类" class="headerlink" title="策略分类"></a>策略分类</h2><h3 id="简单策略"><a href="#简单策略" class="headerlink" title="简单策略"></a>简单策略</h3><p>逻辑简单直接的需求，通常开发成本较小，PM可以直接给出策略规则（包括待解决问题、输入、计算逻辑、输出四要素的部分或全部）</p>
+<p><strong>案例</strong></p>
+<p>屏幕亮度</p>
+<p>简单策略：背光亮度受环境亮度影响</p>
+<p>需求描述：屏幕亮度=外部亮度+5</p>
+<hr>
+<p>PM直接给出策略规则</p>
+<ul>
+<li><p>基于历史数据给出（已有一定数据积累的情况下）</p>
+</li>
+<li><p>参照竞品给出（多用在产品从0到1搭建，没有数据积累的时候）</p>
+</li>
+</ul>
+<p><strong>案例</strong></p>
+<p>微众银行APP在用户超过3分钟无任何活动时再次打开APP需输入登录密码，为什么是3分钟？</p>
+<p>【输入密码】产品的目标：保障安全性，同时不影响用户正常操作体验</p>
+<p>【输入密码间隔】策略的目标：找到那个不影响用户体验的最短的时间间隔</p>
+<p>基于历史数据：定义完整使用流程——统计流程中间隔——找到目标间隔时间</p>
+<p>定义完成使用流程：</p>
+<ul>
+<li><p>抽样分析用户全天的行为记录，得到一次完成使用流程的定义</p>
+</li>
+<li><p>任意两个动作间隔小于30分钟的动作序列</p>
+</li>
+</ul>
+<p>统计流程中间隔：</p>
+<ul>
+<li>抽样1k个用户完整使用流程，统计流程中所有动作间间隔</li>
+</ul>
+<p>找到目标间隔时间：</p>
+<p>​         <img src="1.jpg" alt="img">       </p>
+<p>参照竞品：经过多次重复尝试，确认竞品定义了超过3分钟用户就要再次输入密码，那自己的产品也可以暂定为3分钟</p>
+<h3 id="复杂策略"><a href="#复杂策略" class="headerlink" title="复杂策略"></a>复杂策略</h3><p>逻辑复杂的需求，通常开发成本较大</p>
+<p>PM详细描述待解决问题、输入因素、输出效果，包括总结性的概述和实例case（来源于问题调研）</p>
+<p>计算逻辑由策略工程师开发实现</p>
+<p>实际工作中的两类项目</p>
+<ul>
+<li><p>从0到1的项目：更多描述理想态，在怎样的输入下要达成怎样的输出效果</p>
+</li>
+<li><p>策略迭代的项目：更多描述策略现状，待解决的问题是什么，针对这些问题，理想输出结果该是怎样的</p>
+</li>
+</ul>
+<p>案例：</p>
+<p><strong>从0到1：电子书阅读器的屏幕阅读体验不佳如何解决？</strong></p>
+<p>需求概述：待解决问题</p>
+<p>需求详述：</p>
+<ul>
+<li><p>输入因素和输出结果的概述：触发条件、考虑因素</p>
+</li>
+<li><p>各类特殊情况下的计算逻辑补充</p>
+</li>
+<li><p>输入因素和输出效果的详述（case示例）</p>
+</li>
+</ul>
+<p>​         <img src="2.jpg" alt="img">       </p>
+<p>​         <img src="3.jpg" alt="img">       </p>
+<p><strong>策略迭代：滴滴拼车策略优化</strong></p>
+<p>​         <img src="4.jpg" alt="img">       </p>
+<h2 id="需求文档的自检清单"><a href="#需求文档的自检清单" class="headerlink" title="需求文档的自检清单"></a>需求文档的自检清单</h2><ul>
+<li><p>结构：逻辑清晰，层次分明</p>
+</li>
+<li><p>背景：需求背景描述清楚，待解决问题一目了然</p>
+</li>
+<li><p>目标：产品理想态或考核指标是什么</p>
+</li>
+<li><p>示例：通过示例辅助，让问题更明确和清晰</p>
+</li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><p>策略需求文档的核心是将策略的四要素描述清楚</p>
+<p>其中针对复杂策略，可以跳过计算逻辑这个要素，但是需要通过具体的case示例将问题和产品实现效果更清晰地表达出来</p>
+<h1 id="跟进开发评估基本方法"><a href="#跟进开发评估基本方法" class="headerlink" title="跟进开发评估基本方法"></a>跟进开发评估基本方法</h1><h2 id="策略类项目的流程"><a href="#策略类项目的流程" class="headerlink" title="策略类项目的流程"></a>策略类项目的流程</h2><p>​         <img src="5.jpg" alt="img">       </p>
+<h2 id="评估类型"><a href="#评估类型" class="headerlink" title="评估类型"></a>评估类型</h2><ul>
+<li><p>策略质量评估：关注每个策略的质量（军事类新闻的识别策略，看识别的效果如何）</p>
+</li>
+<li><p>Diff评估：关注复杂系统中的某个策略上线后，对用户体验的真正影响（新军事识别策略上线后，用户感知到的推荐结果是否真的变好）</p>
+</li>
+</ul>
+<h2 id="策略质量评估"><a href="#策略质量评估" class="headerlink" title="策略质量评估"></a>策略质量评估</h2><ul>
+<li><p>策略质量评估：用来说明策略本身的质量</p>
+</li>
+<li><p>输出结论：该策略的召回率&amp;准确率</p>
+</li>
+</ul>
+<p>召回率=希望被覆盖的案例中，策略实际覆盖到的案例/理想态下希望策略覆盖的案例（代表策略对问题的解决程度）</p>
+<p>准确率=策略覆盖的案例中，真正希望被覆盖的/策略覆盖的所有案例（代表策略有没有带来其他伤害）</p>
+<h3 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h3><p>​         <img src="6.jpg" alt="img">       </p>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>​         <img src="7.jpg" alt="img">       </p>
+<h3 id="案例：性别识别策略"><a href="#案例：性别识别策略" class="headerlink" title="案例：性别识别策略"></a>案例：性别识别策略</h3><p>​         <img src="8.jpg" alt="img">       </p>
+<h1 id="通过Diff评估来进行开发评估"><a href="#通过Diff评估来进行开发评估" class="headerlink" title="通过Diff评估来进行开发评估"></a>通过Diff评估来进行开发评估</h1><h2 id="Diff评估"><a href="#Diff评估" class="headerlink" title="Diff评估"></a>Diff评估</h2><p>在一个复杂的策略体系中，各种策略会互相作用，共同影响最终效果，比如搜索、推荐。</p>
+<p>在迭代其中某条策略时，除了评估策略本身的召回和准确，还要关注策略变化前后，用户视角直接感受到的产品效果变化是怎样的。</p>
+<p>输出结论：diff影响面、good：same：bad</p>
+<p>Diff影响面：策略调整前后，用户感知发生变化的比例，通常要小于策略影响面（两类情况分数增加5分，用户感知没变：每一条结果都包含这个特征、结果之间的差距大于5）</p>
+<p>good：same：bad（简称g:s:d）：随机抽样有变化的case，站在用户体验角度评估效果是变好了、无变化还是变差了（可以分为3/5/7档）</p>
+<h2 id="案例-1"><a href="#案例-1" class="headerlink" title="案例"></a>案例</h2><p>​         <img src="9.jpg" alt="img">       </p>
+<h2 id="案例：性别识别策略-1"><a href="#案例：性别识别策略-1" class="headerlink" title="案例：性别识别策略"></a>案例：性别识别策略</h2><p>​         <img src="10.jpg" alt="img">       </p>
+<p>（关于判断不出性别的，可以增加男+女标签）</p>
+<p>（性别标签为空可以不用关于性别维度的推荐策略，策略是为了结果和目标服务的，不是为了搭建一个符合常识的知识库）</p>
+<h2 id="如何做评估"><a href="#如何做评估" class="headerlink" title="如何做评估"></a>如何做评估</h2><p>定义理想态——拆解未达理想态的情况——提出解决方案——验证是否解决</p>
+<p>具体到如何做评估，更关注方法论的后三个环节，具体包括三个步骤</p>
+<h3 id="基于理想态，找到问题"><a href="#基于理想态，找到问题" class="headerlink" title="基于理想态，找到问题"></a>基于理想态，找到问题</h3><p>策略召回率理想是100%，目前只有60%，剩余40%没被策略召回</p>
+<p>策略diff评估中有占比10%的bad case</p>
+<h3 id="汇总和抽象问题，提出解决问题or方向"><a href="#汇总和抽象问题，提出解决问题or方向" class="headerlink" title="汇总和抽象问题，提出解决问题or方向"></a>汇总和抽象问题，提出解决问题or方向</h3><p>40%未找回case主要是3类问题，分别应该通过XX思路解决</p>
+<p>目前占比10%的badcase主要是XX原因，需要解决</p>
+<h3 id="给出结论"><a href="#给出结论" class="headerlink" title="给出结论"></a>给出结论</h3><p>问题依然很严重、需要继续优化or问题可接受、策略可以上线了</p>
+<p>老问题：以投入产出比为主要考虑因素，通常以项目预期为终止点</p>
+<p>新问题：通常容忍度较低。以PM认为的不可忍受的体验为标准</p>
+<h2 id="典型评估循环"><a href="#典型评估循环" class="headerlink" title="典型评估循环"></a>典型评估循环</h2><p>​         <img src="11.jpg" alt="img">                <img src="12.jpg" alt="img">       </p>
+<p>​         <img src="13.jpg" alt="img">       </p>
+<h2 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h2><p>开发过程中的评估是策略PM的必经之路，是PM和RD通过深度配合在黑暗中找到道路的重要环节。</p>
+<p>召回率、准确率、diff影响面、g:s:d四个指标是策略评估的主心骨，所有评估都是围绕他们发现和抽象问题的过程</p>
+<h1 id="了解什么是效果回归"><a href="#了解什么是效果回归" class="headerlink" title="了解什么是效果回归"></a>了解什么是效果回归</h1><h2 id="什么是效果回归"><a href="#什么是效果回归" class="headerlink" title="什么是效果回归"></a>什么是效果回归</h2><p><strong>回答三个问题</strong></p>
+<p>有没有解决问题or达到目标</p>
+<ul>
+<li><p>如果有：有没有进一步优化空间、有没有引入新问题，优化/解决手段是什么</p>
+</li>
+<li><p>如果没有：是为什么，如果要达到目标、接下来要做什么</p>
+</li>
+</ul>
+<p>定义理想态——拆解未达理想态的情况——提出解决方案——验证是否解决</p>
+<p>主要关注前两个</p>
+<h2 id="如果做效果回归"><a href="#如果做效果回归" class="headerlink" title="如果做效果回归"></a>如果做效果回归</h2><h3 id="项目启动前"><a href="#项目启动前" class="headerlink" title="项目启动前"></a><strong>项目启动前</strong></h3><p>第一步：明确预期：产品/项目目标是什么</p>
+<p>第二步：指标体系：该目标可以用哪些数据指标来衡量</p>
+<p><strong>建立指标体系</strong></p>
+<p>回答三个问题</p>
+<p>问题和目标是什么：找到核心指标</p>
+<p>解决问题和实现目标的关键路径是什么：找到过程指标</p>
+<p>新的路径伤害了谁：找到观察指标</p>
+<p>（如果需要新埋点，需要先和RD说明，并在文档写清楚）</p>
+<h3 id="开发上线"><a href="#开发上线" class="headerlink" title="开发上线"></a>开发上线</h3><p>第三步：确定上线方式</p>
+<ul>
+<li><p>全流量上线：如果核心/过程/观察指标仅与本项目有关，评估效果很好、希望尽快上线拿到收益时，可选择全流量上线（回归方法：实验期同比上个时间周期，变化了xx%）</p>
+</li>
+<li><p>小流量上线：如果核心/过程/观察指标变化可能受项目外的因素影响，或者项目效果存在一定不确定性时，尽量选择AB test（回归方法：实验流量比基线，变化了xx%）（注意：抽样方法是否足够随机。样本集合是否有天然差异。先进行流量空跑，避免问题）</p>
+</li>
+</ul>
+<h3 id="上线后"><a href="#上线后" class="headerlink" title="上线后"></a>上线后</h3><p>第四步：收集第二步中指标，看是否达到第一步的预期</p>
+<p>第五步：分析问题产出结论（符合预期：产品循环暂时中止，不合预期：新的产品循环开始）</p>
+<p>​         <img src="14.jpg" alt="img">       </p>
+<h1 id="案例-2"><a href="#案例-2" class="headerlink" title="案例"></a>案例</h1><h2 id="百度搜索【搜索建议】（sug）的效果回归"><a href="#百度搜索【搜索建议】（sug）的效果回归" class="headerlink" title="百度搜索【搜索建议】（sug）的效果回归"></a>百度搜索【搜索建议】（sug）的效果回归</h2><h3 id="项目启动前指标拆分——核心指标"><a href="#项目启动前指标拆分——核心指标" class="headerlink" title="项目启动前指标拆分——核心指标"></a>项目启动前指标拆分——核心指标</h3><p>产品目标：降低用户输入成本</p>
+<p>核心指标：用户输入时间，预期降低2秒</p>
+<h3 id="项目启动前指标拆分——过程指标"><a href="#项目启动前指标拆分——过程指标" class="headerlink" title="项目启动前指标拆分——过程指标"></a>项目启动前指标拆分——过程指标</h3><p>​         <img src="15.jpg" alt="img">       </p>
+<p>用户输入效率的影响因素：sug展现的比例，在哪个输入长度下展现，是否被用户点击</p>
+<p>过程指标：sug展现率、平均输入长度、sug点击率</p>
+<h3 id="项目启动前指标拆分——观察指标"><a href="#项目启动前指标拆分——观察指标" class="headerlink" title="项目启动前指标拆分——观察指标"></a>项目启动前指标拆分——观察指标</h3><p>sug改动对输入流程的影响是可控的，对输入后搜索体验的影响是不确定的。（某种意义上，sug起到了推荐效果）</p>
+<p>观察指标：sug输入query的搜索结果满意度</p>
+<h3 id="选择上线方式"><a href="#选择上线方式" class="headerlink" title="选择上线方式"></a>选择上线方式</h3><p>小流量上线：实验组、对照组各10%流量</p>
+<h3 id="上线后回归"><a href="#上线后回归" class="headerlink" title="上线后回归"></a>上线后回归</h3><p>核心指标：降低了1.2秒，有收益，但是低于预期</p>
+<p>过程指标和观察指标：</p>
+<ul>
+<li><p>平均输入长度变短，符合预期</p>
+</li>
+<li><p>sug展现率变低，点击率没变化，与预期不符；</p>
+</li>
+<li><p>并且sug输入query的搜索满足度降低，用户体验差</p>
+</li>
+</ul>
+<h3 id="分析后结论"><a href="#分析后结论" class="headerlink" title="分析后结论"></a>分析后结论</h3><p>性能有问题，导致长词汇（多term）sug的加载过慢、拉低了平均展现率和使用率——启动性能优化项目</p>
+<p>在一些热门候选词上做了需求拓展（欢乐颂2剧情介绍），对应的搜索结果质量较差——需要联合搜索排序（基础rank）部门优化效果</p>
+<h3 id="小结-2"><a href="#小结-2" class="headerlink" title="小结"></a>小结</h3><p>效果回归是决定一个产品循环终止或再开始的枢纽。</p>
+<p>整个工作贯穿项目前中后三个阶段；项目启动前对策略目标和过程的深刻剖析是效果回归工作最关键和重要的部分</p>
+<h1 id="回顾策略工作的思考方法"><a href="#回顾策略工作的思考方法" class="headerlink" title="回顾策略工作的思考方法"></a>回顾策略工作的思考方法</h1><h2 id="通用方法论"><a href="#通用方法论" class="headerlink" title="通用方法论"></a>通用方法论</h2><p>定义理想态——拆解未达理想态的情况——提出解决方案——验证是否解决</p>
+<p>（发现问题——解决问题循环）</p>
+<h2 id="具体到工作的每个环节"><a href="#具体到工作的每个环节" class="headerlink" title="具体到工作的每个环节"></a>具体到工作的每个环节</h2><p>发现问题——撰写需求、发起项目——跟进开发评估——上线后效果回归</p>
+<p><strong>发现问题：对问题的分析更宏观，产出可能是一系列项目计划</strong></p>
+<ul>
+<li><p>定义理想态</p>
+</li>
+<li><p>抽样分析未达理想态的问题是什么</p>
+</li>
+<li><p>对所有问题进行归类统计，确定优化方向和项目优先级</p>
+</li>
+</ul>
+<p><strong>撰写需求、发起项目：提出解决方案，承上启下的环节</strong></p>
+<ul>
+<li>以逻辑描述和case示例的方式描述待解决问题和解决后的效果期望</li>
+</ul>
+<p><strong>跟进开发评估：对问题的分析更具体，直接指导具体策略的优化逻辑</strong></p>
+<ul>
+<li>验证每一版策略是否解决了所有问题</li>
+</ul>
+<p><strong>上线后效果回归：结论得出首先依赖指标的统计性分析，未达目标时才进行【发现问题】的拆解</strong></p>
+<ul>
+<li>验证是否符合上线前预期（贯穿前中后）</li>
+</ul>
+<h1 id="进阶：策略的产品循环"><a href="#进阶：策略的产品循环" class="headerlink" title="进阶：策略的产品循环"></a>进阶：策略的产品循环</h1><p>以一个小的策略为例，看看在完整的产品循环下策略的通用方法论是如何应用的——京东到家的消息推送策略</p>
+<h2 id="理解产品目标"><a href="#理解产品目标" class="headerlink" title="理解产品目标"></a>理解产品目标</h2><p>产品目标：通过消息触达用户，实现相应的转化目的</p>
+<p>核心指标：消息点击率</p>
+<p>本案例覆盖的消息仅指活动类消息，不包括各类业务消息（比如订单发货、退款、订阅更新等业务环节的提醒）</p>
+<h2 id="版本0-0：人工推送"><a href="#版本0-0：人工推送" class="headerlink" title="版本0.0：人工推送"></a>版本0.0：人工推送</h2><p>产品方案：运营同学写好文案，通过简易的消息推送工具给全部注册用户发送消息</p>
+<p>推送效果：点击率只有0.5%</p>
+<h2 id="发现问题方法论"><a href="#发现问题方法论" class="headerlink" title="发现问题方法论"></a>发现问题方法论</h2><p>定义理想态以数字指标衡量——未达理想态的情况抽样分析——给出各类问题优先级排序</p>
+<h2 id="版本0-0——问题分析"><a href="#版本0-0——问题分析" class="headerlink" title="版本0.0——问题分析"></a>版本0.0——问题分析</h2><p>理想态：所有人都点击</p>
+<p>未达理想态：有99.5%的人没有点击，怎么拆解？</p>
+<p>提出新的分析思路：反向看点击的人，对比点击的人和每点击的人有什么差异，试着分析其中规律</p>
+<p>​         <img src="16.jpg" alt="img">       </p>
+<p>进一步优化：</p>
+<ul>
+<li><p>这次推送对活跃用户的效果更好，点击率大概7.4%，非活跃用户只有0.1%。虽然预期会有差异，但是差距太大，需要试着优化针对不活跃用户的推送内容</p>
+</li>
+<li><p>活跃用户中，安卓点击率23%、iPhone点击率3.5%。差异非常大，不符合认知，猜测可能大量iPhone关掉了app推送</p>
+</li>
+</ul>
+<h2 id="版本1-0：增加基于用户分层的推送"><a href="#版本1-0：增加基于用户分层的推送" class="headerlink" title="版本1.0：增加基于用户分层的推送"></a>版本1.0：增加基于用户分层的推送</h2><p>产品方案：</p>
+<ul>
+<li><p>基于用户基础信息和历史行为挖掘用户标签：活跃程度、手机平台6</p>
+</li>
+<li><p>运营可根据标签配置不同的文案和推送通道</p>
+</li>
+<li><p>增加短信推送渠道</p>
+</li>
+</ul>
+<p>​         <img src="17.jpg" alt="img">       </p>
+<h2 id="版本1-0：效果回归"><a href="#版本1-0：效果回归" class="headerlink" title="版本1.0：效果回归"></a>版本1.0：效果回归</h2><p>推送效果：点击率提升至1.5%</p>
+<ul>
+<li><p>活跃用户点击率提升至11%，其他用户点击率0.5%，都提升明显</p>
+</li>
+<li><p>iPhone点击率0.7%，安卓用户点击率2.4%，iPhone转化率依然不高</p>
+</li>
+</ul>
+<p>结论：短信通道的效果不好，需要分析问题。另外，可以进一步分析其他待优化点</p>
+<h2 id="版本1-0：问题分析"><a href="#版本1-0：问题分析" class="headerlink" title="版本1.0：问题分析"></a>版本1.0：问题分析</h2><p>首先分析短信通道问题，发现：</p>
+<ul>
+<li><p>app中没有埋点，所以点击短信短连接后无法调起app</p>
+</li>
+<li><p>而且短信中的短连接没有加统计标识，打开的移动端网页不知道这是短信带来的流量</p>
+</li>
+</ul>
+<p>对没有点击的各用户群各自抽样分析，发现：</p>
+<p>没有点的用户都是曾经很少或者没有买过肉蛋奶类商品的用户</p>
+<h2 id="版本2-0：个性化的内容推送"><a href="#版本2-0：个性化的内容推送" class="headerlink" title="版本2.0：个性化的内容推送"></a>版本2.0：个性化的内容推送</h2><p>产品方案：</p>
+<ul>
+<li><p>收集更多用户历史行为（订单、收藏、搜索、浏览）等，建立更加细化的用户标签，用于内容推荐</p>
+</li>
+<li><p>收集平台商品上架和价格等信息的变化和常规活动信息，作为待推送内容集合</p>
+</li>
+<li><p>根据用户标签和候选内容，生成基于每个用户兴趣的内容</p>
+</li>
+<li><p>设置推送频率限制，在允许频率内，当某用户存在可推内容时，自动进行推送</p>
+</li>
+</ul>
+<p>​         <img src="18.jpg" alt="img">       </p>
+<h2 id="版本2-0：效果回归"><a href="#版本2-0：效果回归" class="headerlink" title="版本2.0：效果回归"></a>版本2.0：效果回归</h2><p>推送效果：点击率提升至2.5%</p>
+<ul>
+<li><p>iPhone点击率2.1%，安卓用户2.6%，两者非常接近了，符合预期</p>
+</li>
+<li><p>优化内容后，各类用户的点击率均有可以明显提升</p>
+</li>
+</ul>
+<p>结论：比较符合预期，可以进一步分析其他待优化点</p>
+<h2 id="版本2-0：问题分析"><a href="#版本2-0：问题分析" class="headerlink" title="版本2.0：问题分析"></a>版本2.0：问题分析</h2><p>继续对比点击和未点击用户差异，并随机抽取用户详细分析，发现：</p>
+<ul>
+<li><p>各推荐维度在不同品类上有不同表现</p>
+</li>
+<li><p>不同用户对同一种推荐维度的点击率也差异较大</p>
+</li>
+<li><p>同一用户在不同时间段的点击率有比较明显的差异</p>
+</li>
+</ul>
+<h2 id="版本3-0：基于反馈的推荐系统"><a href="#版本3-0：基于反馈的推荐系统" class="headerlink" title="版本3.0：基于反馈的推荐系统"></a>版本3.0：基于反馈的推荐系统</h2><p>产品方案：</p>
+<ul>
+<li><p>将推送时间纳入推送控制</p>
+</li>
+<li><p>继续丰富推荐使用的标签数据</p>
+</li>
+<li><p>将每个人的点击行为作为推荐优化的重要依据，不停迭代</p>
+</li>
+</ul>
+<p>​         <img src="19.jpg" alt="img">       </p>
+<h2 id="小结-3"><a href="#小结-3" class="headerlink" title="小结"></a>小结</h2><p>消息推送的效率本质：</p>
+<ul>
+<li>给合适的用户在合适的时间点发送合适的消息（【合适】最初由PM定义，最终根据数据反馈确定）</li>
+</ul>
+<p>这个完整的案例中，产品一步步进化，从功能到策略、从简单策略到复杂策略，我们一次优化了消息推送的四个要素，达到了相对理想的状态</p>
+<p>在这个过程中，我们仅以问题驱动，并未加入优先级判断的分析</p>
+<p>而在实际项目中，限于成本收益和平台数据的积累程度，很多消息推送策略停留在1.0或2.0版本即中止进化了</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/18/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%B7%A5%E4%BD%9C%E7%9A%84%E9%80%9A%E7%94%A8%E6%96%B9%E6%B3%95%E8%AE%BA/" title="策略产品工作的通用方法论">http://alfredchen.cn/2018/12/18/策略产品工作的通用方法论/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/13/%E7%AD%96%E7%95%A5%E4%BA%A7%E5%93%81%E5%8F%91%E7%8E%B0%E9%97%AE%E9%A2%98%E7%9A%84%E5%9B%9B%E4%B8%AA%E6%96%B9%E6%B3%95/" rel="prev" title="策略产品发现问题的四个方法">
+      <i class="fa fa-chevron-left"></i> 策略产品发现问题的四个方法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/21/%E7%AD%96%E7%95%A5%E5%9C%A8%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8/" rel="next" title="策略在核心业务上的应用">
+      策略在核心业务上的应用 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#策略需求的不同及简单策略的文档撰写"><span class="nav-number">1.</span> <span class="nav-text">策略需求的不同及简单策略的文档撰写</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#需求文档"><span class="nav-number">1.1.</span> <span class="nav-text">需求文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#策略四要素"><span class="nav-number">1.2.</span> <span class="nav-text">策略四要素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#策略分类"><span class="nav-number">1.3.</span> <span class="nav-text">策略分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单策略"><span class="nav-number">1.3.1.</span> <span class="nav-text">简单策略</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#复杂策略"><span class="nav-number">1.3.2.</span> <span class="nav-text">复杂策略</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#需求文档的自检清单"><span class="nav-number">1.4.</span> <span class="nav-text">需求文档的自检清单</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">1.5.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#跟进开发评估基本方法"><span class="nav-number">2.</span> <span class="nav-text">跟进开发评估基本方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#策略类项目的流程"><span class="nav-number">2.1.</span> <span class="nav-text">策略类项目的流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#评估类型"><span class="nav-number">2.2.</span> <span class="nav-text">评估类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#策略质量评估"><span class="nav-number">2.3.</span> <span class="nav-text">策略质量评估</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#案例"><span class="nav-number">2.3.1.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#验证"><span class="nav-number">2.3.2.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例：性别识别策略"><span class="nav-number">2.3.3.</span> <span class="nav-text">案例：性别识别策略</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#通过Diff评估来进行开发评估"><span class="nav-number">3.</span> <span class="nav-text">通过Diff评估来进行开发评估</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Diff评估"><span class="nav-number">3.1.</span> <span class="nav-text">Diff评估</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例-1"><span class="nav-number">3.2.</span> <span class="nav-text">案例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#案例：性别识别策略-1"><span class="nav-number">3.3.</span> <span class="nav-text">案例：性别识别策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何做评估"><span class="nav-number">3.4.</span> <span class="nav-text">如何做评估</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基于理想态，找到问题"><span class="nav-number">3.4.1.</span> <span class="nav-text">基于理想态，找到问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#汇总和抽象问题，提出解决问题or方向"><span class="nav-number">3.4.2.</span> <span class="nav-text">汇总和抽象问题，提出解决问题or方向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#给出结论"><span class="nav-number">3.4.3.</span> <span class="nav-text">给出结论</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#典型评估循环"><span class="nav-number">3.5.</span> <span class="nav-text">典型评估循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-1"><span class="nav-number">3.6.</span> <span class="nav-text">小结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#了解什么是效果回归"><span class="nav-number">4.</span> <span class="nav-text">了解什么是效果回归</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是效果回归"><span class="nav-number">4.1.</span> <span class="nav-text">什么是效果回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如果做效果回归"><span class="nav-number">4.2.</span> <span class="nav-text">如果做效果回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目启动前"><span class="nav-number">4.2.1.</span> <span class="nav-text">项目启动前</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开发上线"><span class="nav-number">4.2.2.</span> <span class="nav-text">开发上线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上线后"><span class="nav-number">4.2.3.</span> <span class="nav-text">上线后</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例-2"><span class="nav-number">5.</span> <span class="nav-text">案例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#百度搜索【搜索建议】（sug）的效果回归"><span class="nav-number">5.1.</span> <span class="nav-text">百度搜索【搜索建议】（sug）的效果回归</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#项目启动前指标拆分——核心指标"><span class="nav-number">5.1.1.</span> <span class="nav-text">项目启动前指标拆分——核心指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目启动前指标拆分——过程指标"><span class="nav-number">5.1.2.</span> <span class="nav-text">项目启动前指标拆分——过程指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#项目启动前指标拆分——观察指标"><span class="nav-number">5.1.3.</span> <span class="nav-text">项目启动前指标拆分——观察指标</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#选择上线方式"><span class="nav-number">5.1.4.</span> <span class="nav-text">选择上线方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#上线后回归"><span class="nav-number">5.1.5.</span> <span class="nav-text">上线后回归</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析后结论"><span class="nav-number">5.1.6.</span> <span class="nav-text">分析后结论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-2"><span class="nav-number">5.1.7.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#回顾策略工作的思考方法"><span class="nav-number">6.</span> <span class="nav-text">回顾策略工作的思考方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#通用方法论"><span class="nav-number">6.1.</span> <span class="nav-text">通用方法论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#具体到工作的每个环节"><span class="nav-number">6.2.</span> <span class="nav-text">具体到工作的每个环节</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#进阶：策略的产品循环"><span class="nav-number">7.</span> <span class="nav-text">进阶：策略的产品循环</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#理解产品目标"><span class="nav-number">7.1.</span> <span class="nav-text">理解产品目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本0-0：人工推送"><span class="nav-number">7.2.</span> <span class="nav-text">版本0.0：人工推送</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#发现问题方法论"><span class="nav-number">7.3.</span> <span class="nav-text">发现问题方法论</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本0-0——问题分析"><span class="nav-number">7.4.</span> <span class="nav-text">版本0.0——问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本1-0：增加基于用户分层的推送"><span class="nav-number">7.5.</span> <span class="nav-text">版本1.0：增加基于用户分层的推送</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本1-0：效果回归"><span class="nav-number">7.6.</span> <span class="nav-text">版本1.0：效果回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本1-0：问题分析"><span class="nav-number">7.7.</span> <span class="nav-text">版本1.0：问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本2-0：个性化的内容推送"><span class="nav-number">7.8.</span> <span class="nav-text">版本2.0：个性化的内容推送</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本2-0：效果回归"><span class="nav-number">7.9.</span> <span class="nav-text">版本2.0：效果回归</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本2-0：问题分析"><span class="nav-number">7.10.</span> <span class="nav-text">版本2.0：问题分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#版本3-0：基于反馈的推荐系统"><span class="nav-number">7.11.</span> <span class="nav-text">版本3.0：基于反馈的推荐系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结-3"><span class="nav-number">7.12.</span> <span class="nav-text">小结</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="系统的确定性、世界观与迭代">
+<meta property="og:type" content="article">
+<meta property="og:title" content="梁宁·产品思维30讲学习笔记：系统能力">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%B3%BB%E7%BB%9F%E8%83%BD%E5%8A%9B/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="系统的确定性、世界观与迭代">
+<meta property="article:published_time" content="2018-12-11T03:22:47.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:30:14.830Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%B3%BB%E7%BB%9F%E8%83%BD%E5%8A%9B/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>梁宁·产品思维30讲学习笔记：系统能力 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%B3%BB%E7%BB%9F%E8%83%BD%E5%8A%9B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          梁宁·产品思维30讲学习笔记：系统能力
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-11 11:22:47" itemprop="dateCreated datePublished" datetime="2018-12-11T11:22:47+08:00">2018-12-11</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B4/" itemprop="url" rel="index">
+                    <span itemprop="name">产品思维</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%B3%BB%E7%BB%9F%E8%83%BD%E5%8A%9B/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%B3%BB%E7%BB%9F%E8%83%BD%E5%8A%9B/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>系统的确定性、世界观与迭代</p>
+<a id="more"></a>
+
+<h1 id="怎样用系统能力给人提供确定性"><a href="#怎样用系统能力给人提供确定性" class="headerlink" title="怎样用系统能力给人提供确定性"></a>怎样用系统能力给人提供确定性</h1><h2 id="整体流程与确定性"><a href="#整体流程与确定性" class="headerlink" title="整体流程与确定性"></a>整体流程与确定性</h2><ul>
+<li><p>其实用户不需要一台打孔机，用户需要的是墙上有一个洞</p>
+</li>
+<li><p>以用户得到这个孔为目的去提供服务，而不是想着我要做一个打孔机，然后卖出去，这就是产品和服务的区别</p>
+</li>
+</ul>
+<h2 id="ATM机的确定性"><a href="#ATM机的确定性" class="headerlink" title="ATM机的确定性"></a>ATM机的确定性</h2><p>基于这个服务本质我们需要有几个流程</p>
+<ul>
+<li><p>第一步，首先需要有一个战略判断，战略部门需要做出一个决策，为什么要提供这个服务？提供这个服务对于企业，对于用户的价值是什么？</p>
+</li>
+<li><p>ATM机有两个价值点</p>
+</li>
+<li><p>第一个是放在营业网点的旁边，分流取钱的压力</p>
+</li>
+<li><p>第二个价值点是放在人流密集的地方，可以服务用户，增加企业的曝光，增强用户的黏性，提高好感度</p>
+</li>
+<li><p>第二步，营运部门要对每一台ATM机有没有实现战略诉求来做价值评估</p>
+</li>
+<li><p>第三步，在运营部门对每个点的战略价值做完数据分析和价值评估之后，需要哪个点存在，我就要保证它的服务可用</p>
+</li>
+<li><p>第四步，维护ATM机还要做很多其他事，比如说硬件管理。要保障ATM机不能间断电源，打印机要能打印凭条，还得有油墨、纸张，打印机的硬件不能坏掉</p>
+</li>
+<li><p>第五步，要有客服管理。比如及其突然吞卡了，出钞出现问题了，用户要投诉，这得有人处理</p>
+</li>
+<li><p>持续地提供用户可以依赖的确定性，这个是关键</p>
+</li>
+</ul>
+<h2 id="当你准备做一个产品时，你可以把ATM机这个最简单的产品拿出来对照一下"><a href="#当你准备做一个产品时，你可以把ATM机这个最简单的产品拿出来对照一下" class="headerlink" title="当你准备做一个产品时，你可以把ATM机这个最简单的产品拿出来对照一下"></a>当你准备做一个产品时，你可以把ATM机这个最简单的产品拿出来对照一下</h2><ul>
+<li><p>第一，你的产品在“点线面体”的什么位置？</p>
+</li>
+<li><p>第二，你提供的是一个什么样的确定性？</p>
+</li>
+<li><p>第三，为了保证确定性的稳定提供，你需要的系统能力都要包括哪些环节？你有足够的资本和能力来支撑所有的环节吗？</p>
+</li>
+</ul>
+<h1 id="案例：小米的效率革命"><a href="#案例：小米的效率革命" class="headerlink" title="案例：小米的效率革命"></a>案例：小米的效率革命</h1><p>做产品是建设一套系统能力，提高并确保正确性，而效率则是这个系统能力的一个核心指标</p>
+<h2 id="小米的护城河是效率"><a href="#小米的护城河是效率" class="headerlink" title="小米的护城河是效率"></a>小米的护城河是效率</h2><ul>
+<li>雷军说过：“互联网思维里最关键的是两个点：第一是用户体验，第二是效率。”他还说过：“小米真正的护城河就是效率，小米真正要做的就是效率革命。”</li>
+</ul>
+<h2 id="三浪并发，推动小米崛起"><a href="#三浪并发，推动小米崛起" class="headerlink" title="三浪并发，推动小米崛起"></a>三浪并发，推动小米崛起</h2><ul>
+<li><p>2011年到2012年这个时间节点，是一个三浪并发的时刻，智能手机大换代、消费升级、网红电商的流量红利</p>
+</li>
+<li><p>产品的新需求、用户的变化、流量的变化，这三个时代级的红利一起撑起了小米手机</p>
+</li>
+</ul>
+<h2 id="小米快速逆转的法门，还是效率"><a href="#小米快速逆转的法门，还是效率" class="headerlink" title="小米快速逆转的法门，还是效率"></a>小米快速逆转的法门，还是效率</h2><ul>
+<li><p>当一个手机品牌进入下滑周期时，容易导致整个价值网都不看好你，也就意味着来自价值网的支持会减少，这势必会加剧这家公司一步一步滑向深渊</p>
+</li>
+<li><p>目前，小米的线下零售做到了27万的坪效，排在全球第二，并且小米还打算开1000个小米之家</p>
+</li>
+</ul>
+<h2 id="利用个人流量，快速拓展小米小店"><a href="#利用个人流量，快速拓展小米小店" class="headerlink" title="利用个人流量，快速拓展小米小店"></a>利用个人流量，快速拓展小米小店</h2><ul>
+<li><p>小米利用他的大数据来做审核，比如这个人必须在这个县和镇的地理位置上生活，根据手机定位的活动区域可以做判断</p>
+</li>
+<li><p>便捷的审核后，小米小店就能快速聚集大量的店主，他们很容易就可以把店开起来</p>
+</li>
+<li><p>接着这些小米小店的店主，就用自己的模式拓展流量</p>
+</li>
+</ul>
+<h2 id="小米的三级火箭模式"><a href="#小米的三级火箭模式" class="headerlink" title="小米的三级火箭模式"></a>小米的三级火箭模式</h2><ul>
+<li><p>一级火箭：小米手机，也是头部流量。我们都知道一级火箭是不挣钱的，所以小米手机的利润极其低</p>
+</li>
+<li><p>二级火箭：小米手机拉动的立体化零售渠道</p>
+</li>
+<li><p>三级火箭：未来MIUI、小米云等互联网业务，才真正支撑起小米的利润以及它的智能化未来</p>
+</li>
+<li><p>OPPO和vivo当然是非常强悍的“点”，但是小米使用了几个“面”，建立起了一个复杂的“体”来打这个“点”，并且几个“面”彼此借力。这个战术有非常强的周转空间</p>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>小米展现的至少是两方面的效率：一个是小米组织里个人的特殊效率；另一个是小米系统性地搭建了智能效率</li>
+</ul>
+<h1 id="系统世界观：微信、米聊、陌陌"><a href="#系统世界观：微信、米聊、陌陌" class="headerlink" title="系统世界观：微信、米聊、陌陌"></a>系统世界观：微信、米聊、陌陌</h1><h2 id="产品设计要直指人心"><a href="#产品设计要直指人心" class="headerlink" title="产品设计要直指人心"></a>产品设计要直指人心</h2><ul>
+<li><p>为什么很多产品经理要把产品的第一个版本设计的那么复杂？因为他们不自信</p>
+</li>
+<li><p>他们对“我只要做强哪个点，用户就必然买账”没把握，而希望在一些附加的功能点上，寻找心理依靠</p>
+</li>
+</ul>
+<h2 id="系统能力让微信赢了米聊"><a href="#系统能力让微信赢了米聊" class="headerlink" title="系统能力让微信赢了米聊"></a>系统能力让微信赢了米聊</h2><ul>
+<li><p>微信是腾讯在2011年1月发布的一款产品，比小米公司的米聊晚了两个月。</p>
+</li>
+<li><p>微信的1.0版本基本和米聊一样，应用场景定义为熟人间的通讯工具</p>
+</li>
+<li><p>导入通讯录</p>
+</li>
+<li><p>发送信息</p>
+</li>
+<li><p>发送图片</p>
+</li>
+<li><p>设置头像和微信名</p>
+</li>
+<li><p>微信1.2版本</p>
+</li>
+<li><p>备注</p>
+</li>
+<li><p>黑名单</p>
+</li>
+<li><p>微信2.0版本</p>
+</li>
+<li><p>语音通讯功能</p>
+</li>
+</ul>
+<h2 id="微信、陌陌、米聊的不同路径"><a href="#微信、陌陌、米聊的不同路径" class="headerlink" title="微信、陌陌、米聊的不同路径"></a>微信、陌陌、米聊的不同路径</h2><ul>
+<li><p>微信2.1版本</p>
+</li>
+<li><p>好友验证</p>
+</li>
+<li><p>微信2.2版本</p>
+</li>
+<li><p>查看附近的人</p>
+</li>
+</ul>
+<h3 id="微观体感不同"><a href="#微观体感不同" class="headerlink" title="微观体感不同"></a>微观体感不同</h3><ul>
+<li><p>在米聊上，你发了一个信息会有信息状态，如果对方读了就会从“已发送”改为“已读”。而微信没有这个设置，为什么？腾讯的高层为了这个点，讨论了好几天，租后还是觉得，这一点点功能会给对方心理压力太大，还是决定不放</p>
+</li>
+<li><p>微信3.0版本</p>
+</li>
+<li><p>摇一摇</p>
+</li>
+<li><p>在万物互联的未来，到处都是屏幕，到处都是网络连接的入口。入口不是场景，能触发情绪才是</p>
+</li>
+<li><p>微信3.5版本</p>
+</li>
+<li><p>扫描二维码</p>
+</li>
+<li><p>微信3.6版本</p>
+</li>
+<li><p>微信公众号</p>
+</li>
+<li><p>微信的迭代其实有两个价值</p>
+</li>
+<li><p>对外部，可以快速得到用户的反馈，让用户反馈去驱动产品</p>
+</li>
+<li><p>对内部，建立了开发团队的节奏感和确定性，每周都有新版本</p>
+</li>
+</ul>
+<h1 id="系统迭代：微信红包的意外与刻意"><a href="#系统迭代：微信红包的意外与刻意" class="headerlink" title="系统迭代：微信红包的意外与刻意"></a>系统迭代：微信红包的意外与刻意</h1><h2 id="迭代中，核心功能最重要"><a href="#迭代中，核心功能最重要" class="headerlink" title="迭代中，核心功能最重要"></a>迭代中，核心功能最重要</h2><ul>
+<li><p>微信4.0版本</p>
+</li>
+<li><p>朋友圈</p>
+</li>
+<li><p>微信在推出“朋友圈”功能之前，做了两个前置工作：3.5版本加入了扫描二维码；3.6版本加入了微信公众号</p>
+</li>
+<li><p>这两个动作的价值在于，一个普通人的生活没有那么多可供朋友消费的内容，如果没有这两个前置功能，我们就直接打开朋友圈，会很难看</p>
+</li>
+<li><p>4.0版本时，你在朋友圈发照片，如果朋友评论，你是没有办法回复评论的。回复评论的功能，直到4.2版本才做出来</p>
+</li>
+<li><p>这说明什么呢？没有必要憋大招，没有必要把所有功能全都做好再放出来</p>
+</li>
+<li><p>微信4.5版本</p>
+</li>
+<li><p>内容公众号</p>
+</li>
+</ul>
+<h2 id="微信红包的发布"><a href="#微信红包的发布" class="headerlink" title="微信红包的发布"></a>微信红包的发布</h2><ul>
+<li><p>微信5.0版本</p>
+</li>
+<li><p>绑定银行卡</p>
+</li>
+<li><p>怎么让大家升级成5.0版本呢？这个时候微信做了一个非常漂亮的运营，而这个运营是通过产品来完成的。它推出了一个小产品，我想你还有印象，就是“打飞机”。</p>
+</li>
+<li><p>微信就在不知不觉中，完成了5亿用户的升级</p>
+</li>
+<li><p>直到今天，我们经常看到一些APP拉用户升级，还是会非常傻大粗黑地吆喝一下：“你的版本过低，建议升级”。甚至更讨厌的就是直接闪退，不升级不让用，这就是产品的高低段位的差别</p>
+</li>
+</ul>
+<h2 id="圈层与圈层壁"><a href="#圈层与圈层壁" class="headerlink" title="圈层与圈层壁"></a>圈层与圈层壁</h2><h2 id="为什么200块钱还要贷款？"><a href="#为什么200块钱还要贷款？" class="headerlink" title="为什么200块钱还要贷款？"></a>为什么200块钱还要贷款？</h2><ul>
+<li>这就是圈层，是有这样的圈层存在的。你去关注一下这群找我贷款的人的关系链，你会发现，几乎是同一时间，这个人的整条关系链都在借钱</li>
+</ul>
+<h2 id="2014年春节，微信红包就达到了它的第一个用户峰值，458万人，这之后的几个月时间里，微信红包的用户数就再也没有突破过这个数字。"><a href="#2014年春节，微信红包就达到了它的第一个用户峰值，458万人，这之后的几个月时间里，微信红包的用户数就再也没有突破过这个数字。" class="headerlink" title="2014年春节，微信红包就达到了它的第一个用户峰值，458万人，这之后的几个月时间里，微信红包的用户数就再也没有突破过这个数字。"></a>2014年春节，微信红包就达到了它的第一个用户峰值，458万人，这之后的几个月时间里，微信红包的用户数就再也没有突破过这个数字。</h2><ul>
+<li><p>这叫什么？这就叫遇到了圈层壁垒。所以每次有人问我说互联网圈的核心活跃人数有多少？我就跟他说，有458万。因为这是微信红包按照它的自然能量达到的极限值</p>
+</li>
+<li><p>实际上，互联网的尝鲜爱好者就这么多，他的自然传播极限大概也就是这样了</p>
+</li>
+<li><p>这个圈层壁是怎么被打破的呢？春晚，就是摇一摇红包。从400万用户到一亿用户，靠春节这样一个核心场景的触发完成</p>
+</li>
+</ul>
+<h2 id="支付宝红包有什么不同"><a href="#支付宝红包有什么不同" class="headerlink" title="支付宝红包有什么不同"></a>支付宝红包有什么不同</h2><ul>
+<li><p>微信红包简简单单，发的就是红包，点开就是钱，再没有其他的东西了，拿到就很爽</p>
+</li>
+<li><p>支付宝红包上面则是放了一堆广告。我收发一个红包，还得给淘宝打广告，点红包没有瞄准，可能还点到广告上。这是什么呢？就是不爽。</p>
+</li>
+<li><p>2016年春晚的“集齐五福，分两亿红包”</p>
+</li>
+<li><p>一堆人都集齐了四福，就差最后一张敬业福，肯定不爽</p>
+</li>
+<li><p>从一个最好的内核开始，一个一个动作地持续迭代和一次一次微小的选择，就会成就你的产品以及你的人生</p>
+</li>
+<li><p>今天你在一个什么样的点位上没有那么重要，重要的是在未来的几年里，你会用什么样的方式持续迭代</p>
+</li>
+</ul>
+<h1 id="案例：猎豹如何找准关键任务"><a href="#案例：猎豹如何找准关键任务" class="headerlink" title="案例：猎豹如何找准关键任务"></a>案例：猎豹如何找准关键任务</h1><h2 id="阿里巴巴怎么定义领导力？"><a href="#阿里巴巴怎么定义领导力？" class="headerlink" title="阿里巴巴怎么定义领导力？"></a>阿里巴巴怎么定义领导力？</h2><ul>
+<li><p>在日常状态下，大家做流程、分工、项目进度、质量评估，这个叫项目管理</p>
+</li>
+<li><p>但是，在面对巨大压力，甚至是生死存亡的时间点时，在一大堆事情里找到关键任务，带领所有人穿越生死，这个就是领导力</p>
+</li>
+<li><p>朝鲜商人的生死线——林尚沃烧人参</p>
+</li>
+<li><p>这就是生死线，这就是别人不敢玩、不敢拼的风险，就是壁垒。在生死线之外是安全区，安全区是没有壁垒的</p>
+</li>
+</ul>
+<h2 id="腾讯用风控能力区分职级"><a href="#腾讯用风控能力区分职级" class="headerlink" title="腾讯用风控能力区分职级"></a>腾讯用风控能力区分职级</h2><ul>
+<li>平原地带的竞争，一定是体量大的赢，先到的赢，不要命的赢</li>
+</ul>
+<h2 id="傅盛带领金山，跨越生死线"><a href="#傅盛带领金山，跨越生死线" class="headerlink" title="傅盛带领金山，跨越生死线"></a>傅盛带领金山，跨越生死线</h2><ul>
+<li><p>死法有三种，而活路只有一条，就是跨越非连续</p>
+</li>
+<li><p>傅盛在决定接手金山的48小时之内就做了几个决定</p>
+</li>
+<li><p>第一，我们不能够做一个全新的创业公司，我们需要先守住根基——安全</p>
+</li>
+<li><p>第二件事就是砍产品，All in</p>
+</li>
+<li><p>第三件事就是砍组织结构，把整个公司从十来个层级砍到只剩三层：管理层、骨干层、执行层。管理层一竿子扎到底，就像指挥打仗一样，直接过问产品细节，直接跟一线员工和用户沟通</p>
+</li>
+<li><p>第四件事，做个野蛮人</p>
+</li>
+<li><p>领导力的核心，是甄别关键任务</p>
+</li>
+<li><p>面对生死考验的时候，你能依靠的不是管理能力，而是领导力</p>
+</li>
+<li><p>领导力的核心，是甄别“关键任务”然后动员大家穿越生死</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%B3%BB%E7%BB%9F%E8%83%BD%E5%8A%9B/" title="梁宁·产品思维30讲学习笔记：系统能力">http://alfredchen.cn/2018/12/11/梁宁·产品思维30讲学习笔记：系统能力/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E6%9C%BA%E4%BC%9A%E5%88%A4%E6%96%AD/" rel="prev" title="梁宁·产品思维30讲学习笔记：机会判断">
+      <i class="fa fa-chevron-left"></i> 梁宁·产品思维30讲学习笔记：机会判断
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/11/%E6%A2%81%E5%AE%81%C2%B7%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B430%E8%AE%B2%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%EF%BC%9A%E7%94%A8%E6%88%B7%E4%BD%93%E9%AA%8C/" rel="next" title="梁宁·产品思维30讲学习笔记：用户体验">
+      梁宁·产品思维30讲学习笔记：用户体验 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#怎样用系统能力给人提供确定性"><span class="nav-number">1.</span> <span class="nav-text">怎样用系统能力给人提供确定性</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#整体流程与确定性"><span class="nav-number">1.1.</span> <span class="nav-text">整体流程与确定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ATM机的确定性"><span class="nav-number">1.2.</span> <span class="nav-text">ATM机的确定性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#当你准备做一个产品时，你可以把ATM机这个最简单的产品拿出来对照一下"><span class="nav-number">1.3.</span> <span class="nav-text">当你准备做一个产品时，你可以把ATM机这个最简单的产品拿出来对照一下</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例：小米的效率革命"><span class="nav-number">2.</span> <span class="nav-text">案例：小米的效率革命</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#小米的护城河是效率"><span class="nav-number">2.1.</span> <span class="nav-text">小米的护城河是效率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三浪并发，推动小米崛起"><span class="nav-number">2.2.</span> <span class="nav-text">三浪并发，推动小米崛起</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小米快速逆转的法门，还是效率"><span class="nav-number">2.3.</span> <span class="nav-text">小米快速逆转的法门，还是效率</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#利用个人流量，快速拓展小米小店"><span class="nav-number">2.4.</span> <span class="nav-text">利用个人流量，快速拓展小米小店</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小米的三级火箭模式"><span class="nav-number">2.5.</span> <span class="nav-text">小米的三级火箭模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">2.6.</span> <span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统世界观：微信、米聊、陌陌"><span class="nav-number">3.</span> <span class="nav-text">系统世界观：微信、米聊、陌陌</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#产品设计要直指人心"><span class="nav-number">3.1.</span> <span class="nav-text">产品设计要直指人心</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#系统能力让微信赢了米聊"><span class="nav-number">3.2.</span> <span class="nav-text">系统能力让微信赢了米聊</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信、陌陌、米聊的不同路径"><span class="nav-number">3.3.</span> <span class="nav-text">微信、陌陌、米聊的不同路径</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#微观体感不同"><span class="nav-number">3.3.1.</span> <span class="nav-text">微观体感不同</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#系统迭代：微信红包的意外与刻意"><span class="nav-number">4.</span> <span class="nav-text">系统迭代：微信红包的意外与刻意</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代中，核心功能最重要"><span class="nav-number">4.1.</span> <span class="nav-text">迭代中，核心功能最重要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#微信红包的发布"><span class="nav-number">4.2.</span> <span class="nav-text">微信红包的发布</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#圈层与圈层壁"><span class="nav-number">4.3.</span> <span class="nav-text">圈层与圈层壁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么200块钱还要贷款？"><span class="nav-number">4.4.</span> <span class="nav-text">为什么200块钱还要贷款？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2014年春节，微信红包就达到了它的第一个用户峰值，458万人，这之后的几个月时间里，微信红包的用户数就再也没有突破过这个数字。"><span class="nav-number">4.5.</span> <span class="nav-text">2014年春节，微信红包就达到了它的第一个用户峰值，458万人，这之后的几个月时间里，微信红包的用户数就再也没有突破过这个数字。</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#支付宝红包有什么不同"><span class="nav-number">4.6.</span> <span class="nav-text">支付宝红包有什么不同</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#案例：猎豹如何找准关键任务"><span class="nav-number">5.</span> <span class="nav-text">案例：猎豹如何找准关键任务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#阿里巴巴怎么定义领导力？"><span class="nav-number">5.1.</span> <span class="nav-text">阿里巴巴怎么定义领导力？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#腾讯用风控能力区分职级"><span class="nav-number">5.2.</span> <span class="nav-text">腾讯用风控能力区分职级</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#傅盛带领金山，跨越生死线"><span class="nav-number">5.3.</span> <span class="nav-text">傅盛带领金山，跨越生死线</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

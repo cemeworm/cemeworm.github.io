@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="python的Numpy库和Pandas库主要内容">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Numpy库和Pandas库">
+<meta property="og:url" content="http://alfredchen.cn/2019/03/09/Numpy%E5%BA%93%E5%92%8CPandas%E5%BA%93/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="python的Numpy库和Pandas库主要内容">
+<meta property="article:published_time" content="2019-03-09T09:11:37.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:32:48.230Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://alfredchen.cn/2019/03/09/Numpy%E5%BA%93%E5%92%8CPandas%E5%BA%93/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>Numpy库和Pandas库 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2019/03/09/Numpy%E5%BA%93%E5%92%8CPandas%E5%BA%93/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Numpy库和Pandas库
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-03-09 17:11:37" itemprop="dateCreated datePublished" datetime="2019-03-09T17:11:37+08:00">2019-03-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">产品方法</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/AI%E4%BA%A7%E5%93%81/" itemprop="url" rel="index">
+                    <span itemprop="name">AI产品</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2019/03/09/Numpy%E5%BA%93%E5%92%8CPandas%E5%BA%93/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2019/03/09/Numpy%E5%BA%93%E5%92%8CPandas%E5%BA%93/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>python的Numpy库和Pandas库主要内容</p>
+<a id="more"></a>
+
+<h1 id="Numpy库"><a href="#Numpy库" class="headerlink" title="Numpy库"></a>Numpy库</h1><h2 id="创建数组"><a href="#创建数组" class="headerlink" title="创建数组"></a>创建数组</h2><ul>
+<li><p>array()：一维：np.array([1,2])、二维：np.array([1,2],[1,2])、多维</p>
+</li>
+<li><p>zeros()：元素全为0：一维：np.zeros(9)、二维：np.zeros((3,3))</p>
+</li>
+<li><p>ones()：元素全为1</p>
+</li>
+<li><p>eye()：对角线元素为1，其余元素为0的方阵</p>
+</li>
+<li><p>arange()：创建一维数组</p>
+</li>
+<li><p>linespace()</p>
+</li>
+</ul>
+<h2 id="数组操作"><a href="#数组操作" class="headerlink" title="数组操作"></a>数组操作</h2><ul>
+<li><p>shape()：查看数组结构</p>
+</li>
+<li><p>reshape():改变数组的形状但不改变数据</p>
+</li>
+<li><p>dtype：该属性查看数组元素的类型</p>
+</li>
+<li><p>astype：改变数组元素的类型</p>
+</li>
+<li><p>[]：对数组的元素进行索引与切片</p>
+</li>
+</ul>
+<h2 id="数组运算"><a href="#数组运算" class="headerlink" title="数组运算"></a>数组运算</h2><ul>
+<li><p>np.max(a)：返回数组a中最大的元素</p>
+</li>
+<li><p>np.min(a)：返回数组a中最小的元素</p>
+</li>
+<li><p>np.argmax(a)：返回数组a中最大元素的索引</p>
+</li>
+<li><p>np.argmin(a)：返回数组a中最小元素的索引</p>
+</li>
+<li><p>np.sum(a)：对数组a的所有元素求和</p>
+</li>
+<li><p>np.sum(a,axis=1)：对数组a按行求和</p>
+</li>
+<li><p>np.sum(a,axis=0)：对数组a按列求和</p>
+</li>
+<li><p>np.mean(a)：对数组a的所有元素求算数平均值</p>
+</li>
+<li><p>np.dot(a1,a2)：得到两个矩阵a1、a2的乘积，要求a1的列数等于a2的行数</p>
+</li>
+</ul>
+<h2 id="数组元素运算"><a href="#数组元素运算" class="headerlink" title="数组元素运算"></a>数组元素运算</h2><ul>
+<li><p>np.add(a,n)：数组a的每个元素加上n</p>
+</li>
+<li><p>np.subtract(a,n)：数组a的每个元素减去n</p>
+</li>
+<li><p>np.multiply(a,n)：数组a的每个元素乘以n</p>
+</li>
+<li><p>np.divide(a,n)：数组a的每个元素除以n</p>
+</li>
+<li><p>np.mod(a,n)：数组a的每个元素对n求余</p>
+</li>
+<li><p>np.power(a,n)：数组a的每个元素进行n次乘方</p>
+</li>
+<li><p>np.sqrt(a)：数组a的每个元素开平方根</p>
+</li>
+<li><p>比较</p>
+</li>
+</ul>
+<h1 id="Pandas库"><a href="#Pandas库" class="headerlink" title="Pandas库"></a>Pandas库</h1><h2 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h2><h3 id="Series"><a href="#Series" class="headerlink" title="Series"></a>Series</h3><ul>
+<li><p>带索引的一位数组</p>
+</li>
+<li><p>values和index属性</p>
+</li>
+<li><p>可看作是定长的有序字典，可用在需要字典参数的函数（如in），可直接通过字典来创建</p>
+</li>
+<li><p>name属性：Series对象本身、索引</p>
+</li>
+<li><p>索引可以通过赋值的方式直接修改</p>
+</li>
+</ul>
+<p>DataFrame</p>
+<ul>
+<li><p>表格型的数据结构：一组有序的列，每列可以是不同的值类型</p>
+</li>
+<li><p>构建方法：传入一个由等长列表或NumPy数组组成的字典</p>
+</li>
+<li><p>获取行/列为一个Series：行用dataframe[‘colname’]，列用索引字段ix</p>
+</li>
+<li><p>可以通过赋值的方式直接修改数据：用来赋值的对象可以是单个值、列表或数组（长度必须匹配）、Series（精确匹配Dataframe的索引，空位填充NaN）</p>
+</li>
+<li><p>为不存在的列赋值会创建出一个新列：关键字del用于删除列</p>
+</li>
+<li><p>copy方法即可显式地复制列，否则只是数据的视图而已</p>
+</li>
+<li><p>name属性：index、columns</p>
+</li>
+</ul>
+<h2 id="索引对象"><a href="#索引对象" class="headerlink" title="索引对象"></a>索引对象</h2><ul>
+<li><p>index对象是不可修改的：注意与索引区分，索引是可以一次全部更改的</p>
+</li>
+<li><p>多种类别：比如index（最泛化）</p>
+</li>
+<li><p>方法和属性：unique、is_unique</p>
+</li>
+</ul>
+<h2 id="基本功能"><a href="#基本功能" class="headerlink" title="基本功能"></a>基本功能</h2><h3 id="重新索引：reindex方法"><a href="#重新索引：reindex方法" class="headerlink" title="重新索引：reindex方法"></a>重新索引：reindex方法</h3><ul>
+<li><p>根据新索引重排：Series/DataFrame</p>
+</li>
+<li><p>用x填充缺失值：fill_value=x</p>
+</li>
+<li><p>前向填充/后向填充：method=’ffill’/‘bfill’</p>
+</li>
+</ul>
+<h3 id="丢弃指定轴上的项：drop方法"><a href="#丢弃指定轴上的项：drop方法" class="headerlink" title="丢弃指定轴上的项：drop方法"></a>丢弃指定轴上的项：drop方法</h3><ul>
+<li><p>Series直接传入索引列表</p>
+</li>
+<li><p>DF传入索引列表（列上索引加参数axis=1）</p>
+</li>
+</ul>
+<h3 id="索引、选取和过滤"><a href="#索引、选取和过滤" class="headerlink" title="索引、选取和过滤"></a>索引、选取和过滤</h3><p>索引值可以为标签或数字</p>
+<ul>
+<li><p>单值，数字切片，标签切片，花式索引，布尔</p>
+</li>
+<li><p>标签的切片运算末端是包含的</p>
+</li>
+</ul>
+<p>Series</p>
+<ul>
+<li>几乎等同于Numpy</li>
+</ul>
+<p>Dataframe</p>
+<ul>
+<li><p>选取列：可以直接索引列标签</p>
+</li>
+<li><p>选取行：</p>
+</li>
+</ul>
+<blockquote>
+<p>数字切片</p>
+</blockquote>
+<blockquote>
+<p>布尔型数组</p>
+</blockquote>
+<blockquote>
+<p>——（得到DataFrame）</p>
+</blockquote>
+<blockquote>
+<p>索引字段 ix</p>
+</blockquote>
+<blockquote>
+<p>- 在行上进行标签索引</p>
+</blockquote>
+<blockquote>
+<p>- 可用于重新索引</p>
+</blockquote>
+<blockquote>
+<p>- DF.ix[行选择（可用：代表所有行）,烈选择（可忽略）]</p>
+</blockquote>
+<blockquote>
+<p>- 与上面两种选取方法不同，一维时得到Series</p>
+</blockquote>
+<h3 id="算数运算和数据对齐"><a href="#算数运算和数据对齐" class="headerlink" title="算数运算和数据对齐"></a>算数运算和数据对齐</h3><ul>
+<li><p>不同索引的对象进行算术运算：结果的索引就是该索引对的并集，在不重叠的索引出引入NA值</p>
+</li>
+<li><p>对于DataFrame，对齐操作会同时作用在行和列上</p>
+</li>
+<li><p>用DF的add，sub，div，mul算数运算方法：如果希望匹配行且在列上广播——参数：axis=0（希望匹配的轴号）</p>
+</li>
+<li><p>DataFrame和Series之间的运算：广播，正常时是匹配列按行广播的</p>
+</li>
+</ul>
+<h3 id="函数应用和映射"><a href="#函数应用和映射" class="headerlink" title="函数应用和映射"></a>函数应用和映射</h3><ul>
+<li><p>Numpy的ufuncs</p>
+</li>
+<li><p>Python元素级的函数：DF的applymap方法、Series的map方法</p>
+</li>
+<li><p>DataFrame的apply方法：将函数应用到由各列或行所形成的一维数组上</p>
+</li>
+</ul>
+<h3 id="排序和排名"><a href="#排序和排名" class="headerlink" title="排序和排名"></a>排序和排名</h3><p>排序（sorting）</p>
+<ul>
+<li><p>对行或列索引进行排序：sort_index方法，DF默认axis为0</p>
+</li>
+<li><p>按值排序：Series用order方法，NaN排到最后，DF用sort_index方法，将一个或多个列的名字传递给by选项</p>
+</li>
+</ul>
+<p>排名（ranking）</p>
+<ul>
+<li><p>在排序上增设一个排名值，从1到有效的数量值</p>
+</li>
+<li><p>rank方法：破坏平级关系，method选项中有average、min/max和first（在原始数据的出现顺序分配）</p>
+</li>
+</ul>
+<h3 id="带有重复值的轴索引"><a href="#带有重复值的轴索引" class="headerlink" title="带有重复值的轴索引"></a>带有重复值的轴索引</h3><ul>
+<li><p>is_unique属性来判断是否唯一</p>
+</li>
+<li><p>索引对应多个值则返回Series或者DF</p>
+</li>
+</ul>
+<h3 id="面板数据"><a href="#面板数据" class="headerlink" title="面板数据"></a>面板数据</h3><ul>
+<li><p>三维版的DataFrame</p>
+</li>
+<li><p>Panel中的每一项（类似于DataFrame的列）都是一个DataFrame</p>
+</li>
+<li><p>基于ix的标签索引被推广到了三个维度</p>
+</li>
+<li><p>DF的to_panel方法：to_frame的逆运算</p>
+</li>
+</ul>
+<h3 id="整数索引"><a href="#整数索引" class="headerlink" title="整数索引"></a>整数索引</h3><ul>
+<li><p>对于非整数索引可以随意：基于位置</p>
+</li>
+<li><p>如果轴索引含有索引器（即自动递增的数字索引）：（1）有歧义：不能决定是基于标签还是位置；（2）根据整数进行数据选取的操作将总是面向标签：包括用ix进行切片</p>
+</li>
+<li><p>可靠地、不考虑索引类型的、基于位置的索引：Series：iget_value方法、DataFrame：irow和icol方法</p>
+</li>
+</ul>
+<h3 id="层次化索引"><a href="#层次化索引" class="headerlink" title="层次化索引"></a>层次化索引</h3><ul>
+<li><p>说明：（1）在一个轴上拥有多个（两个以上）索引级别：以低维度形式处理高维度数据；（2）每条轴都可以有分层索引：注意区分索引名称跟轴标签</p>
+</li>
+<li><p>重排分级顺序：swaplevel：互换两个级别的顺序、sortlevel：根据单个级别中的值对数据进行排序</p>
+</li>
+<li><p>根据级别汇总统计：level选项：选取列索引名时必须加上axis=1</p>
+</li>
+<li><p>使用DataFrame的列：使用DF的某一/几列作为行索引：set_index、将行索引变成DF的列：reset_index</p>
+</li>
+</ul>
+<h3 id="汇总和计算描述统计"><a href="#汇总和计算描述统计" class="headerlink" title="汇总和计算描述统计"></a>汇总和计算描述统计</h3><ul>
+<li>描述和汇总统计</li>
+</ul>
+<blockquote>
+<p>简约方法：类似于sum，mean</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>选项：</p>
+</blockquote>
+<blockquote>
+<p>- axis：DF行0，列1</p>
+</blockquote>
+<blockquote>
+<p>- skipna：排除缺失值</p>
+</blockquote>
+<blockquote>
+<p>- level：根据层次化索引level分组</p>
+</blockquote>
+<blockquote>
+<p>累计方法：如cumsum</p>
+</blockquote>
+<blockquote>
+<p>其他：如describe</p>
+</blockquote>
+<ul>
+<li>相关系数与协方差</li>
+</ul>
+<blockquote>
+<p>corr方法：相关系数</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>cov方法：协方差</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>注意：</p>
+</blockquote>
+<blockquote>
+<p>- Series：两个Series中重叠的、非NA的、按索引对齐的值</p>
+</blockquote>
+<blockquote>
+<p>- DF：</p>
+</blockquote>
+<blockquote>
+<p>- - 以DataFrame的形式返回完整的相关系数或协方差矩阵</p>
+</blockquote>
+<blockquote>
+<p>- -  corrwith方法：计算其列或行跟另一个Series或DataFrame之间的相关系数</p>
+</blockquote>
+<blockquote>
+<p>- 无论如何，在计算相关系数之前，所有的数据项都会按标签对齐</p>
+</blockquote>
+<ul>
+<li>唯一值、值计数以及成员资格</li>
+</ul>
+<blockquote>
+<p>Series：</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>- unique：Series中的唯一值数组</p>
+</blockquote>
+<blockquote>
+<p>- value_counts：Series中各值出现的频率</p>
+</blockquote>
+<blockquote>
+<p>- isin：判断矢量化集合的成员资格</p>
+</blockquote>
+<h3 id="处理缺失数据"><a href="#处理缺失数据" class="headerlink" title="处理缺失数据"></a>处理缺失数据</h3><ul>
+<li>滤除缺失数据</li>
+</ul>
+<blockquote>
+<p>dropna：</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>Series：返回一个仅含非空数据和索引值的Series</p>
+</blockquote>
+<blockquote>
+<p>DF：</p>
+</blockquote>
+<blockquote>
+<p>- 默认丢弃任何含有缺失值的行</p>
+</blockquote>
+<blockquote>
+<p>- how=’all’：只丢弃全为NA的那些行</p>
+</blockquote>
+<blockquote>
+<p>- axis=1：丢弃列</p>
+</blockquote>
+<blockquote>
+<p>- thresh参数：设定非NaN的数量</p>
+</blockquote>
+<ul>
+<li>填充缺失数据</li>
+</ul>
+<blockquote>
+<p>fillna：</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>填充值：</p>
+</blockquote>
+<blockquote>
+<p>- 常数</p>
+</blockquote>
+<blockquote>
+<p>- 字典：匹配列标签</p>
+</blockquote>
+<blockquote>
+<p>- 可以很灵活：比如平均值、中位数</p>
+</blockquote>
+<blockquote>
+</blockquote>
+<blockquote>
+<p>默认会返回新对象（inplace=True来反转）</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2019/03/09/Numpy%E5%BA%93%E5%92%8CPandas%E5%BA%93/" title="Numpy库和Pandas库">http://alfredchen.cn/2019/03/09/Numpy库和Pandas库/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/03/05/%E3%80%8A%E6%B7%B1%E5%85%A5%E6%B5%85%E5%87%BASQL%E3%80%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="《深入浅出SQL》学习笔记">
+      <i class="fa fa-chevron-left"></i> 《深入浅出SQL》学习笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/03/10/%E5%87%86%E7%A1%AE%E7%8E%87%E3%80%81%E7%B2%BE%E7%A1%AE%E7%8E%87%E3%80%81%E5%8F%AC%E5%9B%9E%E7%8E%87%E3%80%81F1%E5%80%BC%E8%A7%A3%E6%9E%90/" rel="next" title="准确率、精确率、召回率、F1值解析">
+      准确率、精确率、召回率、F1值解析 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Numpy库"><span class="nav-number">1.</span> <span class="nav-text">Numpy库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#创建数组"><span class="nav-number">1.1.</span> <span class="nav-text">创建数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组操作"><span class="nav-number">1.2.</span> <span class="nav-text">数组操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组运算"><span class="nav-number">1.3.</span> <span class="nav-text">数组运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组元素运算"><span class="nav-number">1.4.</span> <span class="nav-text">数组元素运算</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas库"><span class="nav-number">2.</span> <span class="nav-text">Pandas库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据结构"><span class="nav-number">2.1.</span> <span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Series"><span class="nav-number">2.1.1.</span> <span class="nav-text">Series</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引对象"><span class="nav-number">2.2.</span> <span class="nav-text">索引对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本功能"><span class="nav-number">2.3.</span> <span class="nav-text">基本功能</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#重新索引：reindex方法"><span class="nav-number">2.3.1.</span> <span class="nav-text">重新索引：reindex方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#丢弃指定轴上的项：drop方法"><span class="nav-number">2.3.2.</span> <span class="nav-text">丢弃指定轴上的项：drop方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#索引、选取和过滤"><span class="nav-number">2.3.3.</span> <span class="nav-text">索引、选取和过滤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算数运算和数据对齐"><span class="nav-number">2.3.4.</span> <span class="nav-text">算数运算和数据对齐</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数应用和映射"><span class="nav-number">2.3.5.</span> <span class="nav-text">函数应用和映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#排序和排名"><span class="nav-number">2.3.6.</span> <span class="nav-text">排序和排名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#带有重复值的轴索引"><span class="nav-number">2.3.7.</span> <span class="nav-text">带有重复值的轴索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#面板数据"><span class="nav-number">2.3.8.</span> <span class="nav-text">面板数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整数索引"><span class="nav-number">2.3.9.</span> <span class="nav-text">整数索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#层次化索引"><span class="nav-number">2.3.10.</span> <span class="nav-text">层次化索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#汇总和计算描述统计"><span class="nav-number">2.3.11.</span> <span class="nav-text">汇总和计算描述统计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#处理缺失数据"><span class="nav-number">2.3.12.</span> <span class="nav-text">处理缺失数据</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

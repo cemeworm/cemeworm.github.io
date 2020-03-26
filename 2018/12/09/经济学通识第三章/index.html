@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="在市场经济中，没有一个角色是一座孤岛">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《经济学通识》第三章：相互依赖">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%B8%89%E7%AB%A0/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="在市场经济中，没有一个角色是一座孤岛">
+<meta property="article:published_time" content="2018-12-09T14:30:14.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:16:42.800Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%B8%89%E7%AB%A0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>《经济学通识》第三章：相互依赖 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%B8%89%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《经济学通识》第三章：相互依赖
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-09 22:30:14" itemprop="dateCreated datePublished" datetime="2018-12-09T22:30:14+08:00">2018-12-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%80%9A%E8%AF%86/" itemprop="url" rel="index">
+                    <span itemprop="name">通识</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%80%9A%E8%AF%86/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">经济学</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%B8%89%E7%AB%A0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%B8%89%E7%AB%A0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在市场经济中，没有一个角色是一座孤岛</p>
+<a id="more"></a>
+
+<h1 id="1：信息不对称与市场的应对"><a href="#1：信息不对称与市场的应对" class="headerlink" title="1：信息不对称与市场的应对"></a>1：信息不对称与市场的应对</h1><h2 id="医患之间的信任"><a href="#医患之间的信任" class="headerlink" title="医患之间的信任"></a>医患之间的信任</h2><p>坊间流传一套叫做”诱导性需求“的理论。该理论认为，有大量医疗服务，其实是病人不必要的，医生之所以诱导病人购买这些服务，只不过是在利用医患之间的信息不对称来赚钱。</p>
+<p>医生故意向病人提供不必要的服务，就是典型的“搭售”，或曰“捆绑销售”。其主要成因有两个</p>
+<ul>
+<li>一是政府对诊金实行的价格管制</li>
+<li>二是公费报销制度诱发的浪费</li>
+</ul>
+<p>法律经济学之父迪瑞特，其开山之作就是关于捆绑销售的研究。他指出，一个能在市场上靠其产品获利的卖家，不可能通过搭售其他产品，来获取超额利润            </p>
+<p>市场上常见的捆绑销售现象，都是出于其他的原因，而其一就是“规避价格管制”，即通过强行搭配其他商品或服务，把被价格管制压下去的差价补回来            </p>
+<p>市场的解决之道，就是“内化”外部性，即要么让今天的医生同时也成为明天的医生，即形成长期专项服务的家庭医生制度；要么让今天的医生和明天的医生同属一个大的连锁医院，以品牌作为约束，一直医生们会主动地在今天和明天之间平衡边际损益，提出恰如其分的医疗方案</p>
+<h2 id="何谓优质"><a href="#何谓优质" class="headerlink" title="何谓优质"></a>何谓优质</h2><p>“优质”的第一层经济学含义，是指“匀质”</p>
+<ul>
+<li>换言之，不是说厂商能把产品的品质做到“多好”，而是他们能把同类产品之间的“差异控制到多小”，就会被认为其品质有“多高”</li>
+<li>不高不低，毫无意外，是衡量产品“品质”的准绳之一</li>
+</ul>
+<p>“优质”的第二层经济学含义，是指这么一种状态，即厂商改善产品品质所需投入的“边际成本”，恰好等于他带来的“边际收益”</p>
+<ul>
+<li>厂商利润最大化原则就是产量的边际收益等于边际成本的原则。边际收益是最后增加一单位销售量所增加的收益，边际成本是最后增加一单位产量所增加的成本。如果最后增加一单位产量的边际收益大于边际成本，就意味着增加产量可以增加总利润，于是厂商会继续增加产量，以实现最大利润目标。</li>
+<li>产品质量是负载的问题，讨论的起点是弄清楚我们要的是什么：究竟是放置“伪造”（事关诚信），还是防止“劣质”（事关技术和生产条件的进步）；究竟是要“匀质”（事关预期），还是要”高质”（事关成本），还是要“高性价比”（事关边际收益与边际成本的均衡），不从这个框架去看，结论难免偏颇</li>
+</ul>
+<h2 id="缺奶、淡奶、浓奶和毒奶"><a href="#缺奶、淡奶、浓奶和毒奶" class="headerlink" title="缺奶、淡奶、浓奶和毒奶"></a>缺奶、淡奶、浓奶和毒奶</h2><p>适当放宽生乳国标，加重对造假者的惩罚，均有助于减少造假和投毒的悲剧；至于从“淡奶”到“浓奶”的过度，最好还是交给企业，让他们在诚实的竞争中按消费者投钞票的意愿，水到渠成式地进步为宜</p>
+<h2 id="信息不对称与市场解决之道"><a href="#信息不对称与市场解决之道" class="headerlink" title="信息不对称与市场解决之道"></a>信息不对称与市场解决之道</h2><p>所谓“信息不对称”，指的是这么一种场景：买方可以控制产品的质量，要么提供高质产品以求高价，要么提供低质产品以求低价；买方无法确知卖方究竟提交哪种产品，所以只愿出一个中间价；卖方见只能赚取中间价，便拒绝提交高质产品，而止提交低质产品；买房于是进一步将出价压低······买卖双方经过多次博弈，以无法成交、双输离场告终</p>
+<p>在具有人文背景的社会中，在交易重复进行的市场上，人们逐步建立了种种精妙的机制，克服了阿克罗夫困境，是大量交易成为可能</p>
+<ul>
+<li>第一类办法是他人担保，美国最大的二手车商“CarMax”</li>
+<li>第二类办法是签订“同舟共济”合约，合伙制公司</li>
+<li>第三类办法是企业的垂直整合，牛奶加工厂和奶农</li>
+<li>第四类办法，是卖主替自己担保，办公楼的专用装修、明星代言</li>
+<li>第五类办法，是请保险公司替商人担保，投保企业为了享受较低的保费，会主动遵守适当的安全生产准则</li>
+</ul>
+<h2 id="共享经济不可挡"><a href="#共享经济不可挡" class="headerlink" title="共享经济不可挡"></a>共享经济不可挡</h2><p>未来会怎么样？未来是”共享经济“。过去也是因为信息不对称，许多资源难以共享，只能闲置，所以闲置不算是成本。今天所有的资源都可以在互联网实现共享。不是说所有权不重要，而是使用权变得碎片化了，资源的使用效率提高了。既然有这个选择，能增加效益，能提高收入，那么闲置的成本就变得很高，而共享经济就会变成无法阻挡的潮流</p>
+<h1 id="2：劳动力的权利与福利"><a href="#2：劳动力的权利与福利" class="headerlink" title="2：劳动力的权利与福利"></a>2：劳动力的权利与福利</h1><h2 id="失业不是浪费"><a href="#失业不是浪费" class="headerlink" title="失业不是浪费"></a>失业不是浪费</h2><h3 id="失业都是自愿的"><a href="#失业都是自愿的" class="headerlink" title="失业都是自愿的"></a>失业都是自愿的</h3><p>当报酬太低时，人们就宁愿失业，因为失业更合算<br>​        </p>
+<h3 id="失业是果不是因"><a href="#失业是果不是因" class="headerlink" title="失业是果不是因"></a>失业是果不是因</h3><p>失业的原因，是市场对劳动力的需求发生了改变<br>是“过去的决策”造成了损失，所以现在才会裁员。“现在的裁员”，只是在矫正“过去的决策”</p>
+<h3 id="失业是一种矫正过程"><a href="#失业是一种矫正过程" class="headerlink" title="失业是一种矫正过程"></a>失业是一种矫正过程</h3><p>如果硬要消灭失业现象，那么一遇到工作就干好了。但这样就很难碰上合适的工作，大家的潜质就很可能被埋没。一遇到工作就干，那才是浪费<br>生病是不好的，但住院是为了治病；我们要防止生病，而不是防止住院。要病人48小时内出院，一定做得到，但那没有意义，病人不接受。大家想一想，要消灭“失业现象”，就跟要消灭“住院现象”一样荒谬</p>
+<h3 id="“失业救济”有别于“创造就业”"><a href="#“失业救济”有别于“创造就业”" class="headerlink" title="“失业救济”有别于“创造就业”"></a>“失业救济”有别于“创造就业”</h3><p>政府对失业者发放救济，有助于人们“失得起业”，失业者可以靠这笔投资来寻找更好的工作，并靠这份好工作来偿还失业救济的成本</p>
+<h3 id="价格战减少了失业"><a href="#价格战减少了失业" class="headerlink" title="价格战减少了失业"></a>价格战减少了失业</h3><p>企业入不敷出和职工下岗，不是价格战造成的，而是当初企业投产的决策造成的</p>
+<h3 id="出卖劳动是基本权利"><a href="#出卖劳动是基本权利" class="headerlink" title="出卖劳动是基本权利"></a>出卖劳动是基本权利</h3><p>“本着双方自愿的原则，诚实地出卖自己的劳动换取酬劳来养家糊口”的行为，就是当时社会所默认的、人民所普遍保有的基本权力<br>小面包作坊工人自愿加班工作-&gt;一位商人违反奶制品最低保护价的规定<br>自此以后，大量政府出台经济管制和证政策（如最低工资发），便假“公共福利”之名，排挤甚至取代了私人自由缔结劳动契约的权利<br>与此同时，另外一些并行发生的事件，也在威胁着工人和雇主自由缔约的基本权利，其中相当有代表性的，是“黄犬合同”的消失（放弃罢工但工资较高的合约，俗称“黄犬合同”）</p>
+<h3 id="最低工资法不可取"><a href="#最低工资法不可取" class="headerlink" title="最低工资法不可取"></a>最低工资法不可取</h3><p>工资是由什么确定的<br>市场的“供需”是劳动力价格的唯一决定因素<br>​            </p>
+<p>最低工资发的恶果<br>“最低工资法”规定的只是货币工资，而货币工资仅仅是“全部报酬”的一部分<br>如果用法律来硬性规定其中的货币工资，那么雇主就会在长期内调整其他报酬，使”全部报酬“回落到本来的水平，使法律失效<br>有些人则是别有用心，因为强制性地提高工资，会产生极为微妙的后果</p>
+<ul>
+<li>美国南北工资</li>
+<li>制衣工会要求提高新移民和年轻人的最低工资</li>
+</ul>
+<p>苦难不是因为规定不力<br>不要因为自己看不惯，就阻止他们以不体面的方式谋生</p>
+<h3 id="工资是如何被决定的"><a href="#工资是如何被决定的" class="headerlink" title="工资是如何被决定的"></a>工资是如何被决定的</h3><p>让我们考虑一个并不容易回答的问题，即“团队的成员之间，是如何分配共同创造的收入的？”<br>营养学教授的“肥猪丸”</p>
+<ul>
+<li>在竞争之下，任何团队或企业，其内部各种要素所得的报酬，都将趋向于他们各自给团队或企业带来的边际贡献</li>
+</ul>
+<p>高额垄断收入，究竟是“出租车服务”中的哪种要素带来的呢？显然，不是汽车、不是汽油，也不是司机的劳动，而是牌照。既然如此，那么超出市场竞争价格部分的垄断收入，就应该且只会归牌照的所有人所得            </p>
+<p>巴西“血汗工厂”中的工人的工资，不是有ZARA老板的贪婪或ZARA消费者的无良决定的，而是由千千万万和这些巴西工人的情况相近的越南工人、印度工人或墨西哥工人决定的</p>
+<h3 id="争取福利不易越俎代怕"><a href="#争取福利不易越俎代怕" class="headerlink" title="争取福利不易越俎代怕"></a>争取福利不易越俎代怕</h3><p>“社会责任8000”是一种国际上新兴的企业认证体系<br>对于争取福利的两个观点 </p>
+<ul>
+<li>一、工人的福利高低，最终取决于生产力水平和劳动力供求状况，单靠良好的愿望和高喊口号无济于事</li>
+<li>二、工人向雇主争取福利，应该由工人自己量力而为，不宜由外人越俎代庖</li>
+</ul>
+<p>英国空想社会主义者欧文曾创办过一间“文明工厂”，最后倒闭的原因是工厂的福利模式不切实际。然而当初不求实际的福利，在今天看来，是远远不及格的</p>
+<h3 id="从经济学角度看剥削"><a href="#从经济学角度看剥削" class="headerlink" title="从经济学角度看剥削"></a>从经济学角度看剥削</h3><p>劳动经济学，是一门根据经济规律考察劳资关系的经济学分支。其最核心的发现之一，是大规模地靠剥削来牟利并不可能</p>
+<ul>
+<li>首先，我们找不到“剥削的证据”<br>随便截取一段时期跨行业和跨地的收入数据，只要把教育、资历、生育、体能、行业风险等因素考虑进去，我们就能把收入差异解释清楚，而看不到哪些人是特别容易受剥削的</li>
+<li>其次，要“试行剥削”更困难<br>“支付低薪”和“进行剥削”是两回事</li>
+<li>再有，“策略性剥削“时可能存在的<br>教会徒弟饿死师傅，就是一种可能的策略性剥削。方法是让师傅先取得补偿<br>大学教授终身制，则是防止大学对教授进行策略性剥削的制度安排</li>
+</ul>
+<h2 id="罢工的性质"><a href="#罢工的性质" class="headerlink" title="罢工的性质"></a>罢工的性质</h2><h3 id="一、罢工的行为特征"><a href="#一、罢工的行为特征" class="headerlink" title="一、罢工的行为特征"></a>一、罢工的行为特征</h3><p>在关键时刻忽然停止工作、使得雇主临时无法找到别人替代<br>占着工作岗位不工作，并且设法阻止别人代替自己工作，来要挟雇主增加工资或福利的行为<br>方法：</p>
+<ul>
+<li>准备好替代品，一旦再遇到罢工，就用上替代品，英国煤矿工人大罢工</li>
+<li>在劳动合同中增加“不罢工”条款，从而增加合同的确定性</li>
+</ul>
+<h3 id="二、罢工的经济特征"><a href="#二、罢工的经济特征" class="headerlink" title="二、罢工的经济特征"></a>二、罢工的经济特征</h3><p>罢工的经济后果，是虽然罢工者的工资提高了，但生产力较弱故要价本来就较低的工人，却被赶出了就业大军<br>已经进入工会的外来人，会逐渐提高门槛，组织外部人的进入<br>与工会和罢工密切相关的是最低工资制度</p>
+<ul>
+<li>在南非由清一色白人组成的工会，其章程白纸黑字写明，工会要积极支持针对黑人的最低工资制度，因为那是保证白人不丢饭碗的重要手段</li>
+</ul>
+<h3 id="三、是否应该通过罢工来消除剥削，以及世界上是否存在剥削"><a href="#三、是否应该通过罢工来消除剥削，以及世界上是否存在剥削" class="headerlink" title="三、是否应该通过罢工来消除剥削，以及世界上是否存在剥削"></a>三、是否应该通过罢工来消除剥削，以及世界上是否存在剥削</h3><p>即使在不完备的市场条件下，企业给工人的价格，都不可能持久而普遍地低于工人的边际生产率。这个边际生产率不是谁用什么模型算出来的，而是市场结合所有因素后自然产生的。经济规律恰恰不是只在“完美市场”和“充分自由”状态下才起作用，它在任何条件下都起作用</p>
+<h2 id="3：收入与公平"><a href="#3：收入与公平" class="headerlink" title="3：收入与公平"></a>3：收入与公平</h2><h3 id="收入如何分配"><a href="#收入如何分配" class="headerlink" title="收入如何分配"></a>收入如何分配</h3><p>收入的“分布”由经济规律决定，若做硬性“分配”，则会违背经济规律，经济效率会打折扣，结果往往是穷者更穷，不该得益者更富</p>
+<ul>
+<li><p>一，人为干扰分配会直接损害市场机制<br>​    市场机制的核心在于价格自由浮动</p>
+<ul>
+<li>“传递”关于资源稀缺的信号</li>
+<li>“指导”人们以最有效的方式进行生产</li>
+<li>“影响“商品和财富的分配</li>
+</ul>
+<p>价格的“影响分配”功能，受到强力干扰，那么前两项，即“传递信号”和“指导生产”的功能，就不可能发挥作用</p>
+</li>
+<li><p>二，各种资本——包括劳动力资本——的收入水平，都是由市场力量决定的<br>这种分配不是由任何个人决定的，当然也不是由那些缺乏同情心的坏人决定的；相反，它是由全球市场上无数的人所共同决定的。具体而言，工人的工资水平总是其边际贡献率来决定的</p>
+</li>
+<li><p>三，调节收入分配会堕入“戴瑞德定律”的陷阱<br>戴瑞德定律：任何政府针对穷人的补贴措施，最终都会让中产阶级得益，而由极穷者和极富者付账</p>
+</li>
+<li><p>四，扶贫不应该采用实物补贴或价格管制，而应该采用“负所得税”办法<br>这种方法的好处，是既保证了最穷的人能够得到基本的货币收入，又维护了他们按自己偏好分配收入的权利，还消除了他们力争下游的动力，最重要的是保证了市场机制的正常运行</p>
+</li>
+</ul>
+<h3 id="中国的基尼国际警戒线"><a href="#中国的基尼国际警戒线" class="headerlink" title="中国的基尼国际警戒线"></a>中国的基尼国际警戒线</h3><p>目前各种基尼指数的计算方法，都是以人群的”即时收入“为基准。但事实上，收入的差异应该以”终身收入“为基准去考察</p>
+<p>中国在发展，大部分人的处境都在改善，收入中位者的处境在改善，即使贫富更加悬殊，也比三十年前人人都穷当当强</p>
+<h3 id="基尼系数信不过，劫富济贫有问题"><a href="#基尼系数信不过，劫富济贫有问题" class="headerlink" title="基尼系数信不过，劫富济贫有问题"></a>基尼系数信不过，劫富济贫有问题</h3><p>基尼系数信不过</p>
+<ul>
+<li>基尼系数的计算角度有结构性缺陷</li>
+<li>中国的统计数据不可靠</li>
+<li>很多隐性收入、福利或灾难根本无法量化</li>
+<li>即使不管三七二十一，把基尼系数算出来，它本身缺乏清楚的现实含义，因为贫富差距拉大未必不好</li>
+<li>很多人硬要从不知反映何物的基尼系数中推出“必须立即劫富济贫”的结论，这现象值得警惕<br>​    </li>
+</ul>
+<p>我们必须首先去探究造成贫富分化的成因，在有的放矢的去调整那些成因，而不是只拿基尼系数说事，自欺欺人地认为改造社会的指南针已经捧在手上</p>
+<h3 id="从明星现象看收入不均"><a href="#从明星现象看收入不均" class="headerlink" title="从明星现象看收入不均"></a>从明星现象看收入不均</h3><p>从经济分析的角度看，“赢者通吃”现象的根源，在于竞争者们提供的服务是“共用品”。所谓“共用品”，就是可以让许多人共同享受，而不会互相排斥的“物品”（包括服务）。凡是提供“共用品”的行业，其内部的收入分配，就往往会出现严重不均</p>
+<h3 id="最多数人的最大幸福"><a href="#最多数人的最大幸福" class="headerlink" title="最多数人的最大幸福"></a>最多数人的最大幸福</h3><p>英国哲学家边沁认为，“幸福”或“功利“是可以衡量的。他进而推断，改进社会的原则应该是谋求”最多数人的最大幸福“</p>
+<p>昨天的”结果“影响今天的”机会“，今天的”机会“有影响明天的”结果“，这样环环相扣，谁能分辨”结果平等“和”机会平等“呢？同样，“幸福程度”和“幸福人数”是不同的目标，而不同目标不能同时追求最大化，因此“最多数人的最大幸福”注定是句空洞口号。若依空洞口号作为社会改革的准绳，就是哈耶克所说的“致命的自负”了</p>
+<h3 id="从赌性不同看公平之困难"><a href="#从赌性不同看公平之困难" class="headerlink" title="从赌性不同看公平之困难"></a>从赌性不同看公平之困难</h3><p>罗尔斯的“无知之幕”<br>由于每个人都对自己将来的命运懵懂不知，为了规避风险，即使每个人都出于自私，他们也必定会达成一个“公平公约”，即在出生后趋向于“均分”每个人与生俱来的一切，因为这样能使每个人的平均幸福程度达到最大</p>
+<p>只要他们当中有些是”风险爱好者”，那么后者就一定宁愿铤而走险，不会接受“结果公平”的方案</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%B8%89%E7%AB%A0/" title="《经济学通识》第三章：相互依赖">http://alfredchen.cn/2018/12/09/经济学通识第三章/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%BA%8C%E7%AB%A0/" rel="prev" title="《经济学通识》第二章：生命有限">
+      <i class="fa fa-chevron-left"></i> 《经济学通识》第二章：生命有限
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/" rel="next" title="《经济学通识》第四章：需要协调">
+      《经济学通识》第四章：需要协调 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1：信息不对称与市场的应对"><span class="nav-number">1.</span> <span class="nav-text">1：信息不对称与市场的应对</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#医患之间的信任"><span class="nav-number">1.1.</span> <span class="nav-text">医患之间的信任</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#何谓优质"><span class="nav-number">1.2.</span> <span class="nav-text">何谓优质</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#缺奶、淡奶、浓奶和毒奶"><span class="nav-number">1.3.</span> <span class="nav-text">缺奶、淡奶、浓奶和毒奶</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#信息不对称与市场解决之道"><span class="nav-number">1.4.</span> <span class="nav-text">信息不对称与市场解决之道</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#共享经济不可挡"><span class="nav-number">1.5.</span> <span class="nav-text">共享经济不可挡</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2：劳动力的权利与福利"><span class="nav-number">2.</span> <span class="nav-text">2：劳动力的权利与福利</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#失业不是浪费"><span class="nav-number">2.1.</span> <span class="nav-text">失业不是浪费</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#失业都是自愿的"><span class="nav-number">2.1.1.</span> <span class="nav-text">失业都是自愿的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#失业是果不是因"><span class="nav-number">2.1.2.</span> <span class="nav-text">失业是果不是因</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#失业是一种矫正过程"><span class="nav-number">2.1.3.</span> <span class="nav-text">失业是一种矫正过程</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#“失业救济”有别于“创造就业”"><span class="nav-number">2.1.4.</span> <span class="nav-text">“失业救济”有别于“创造就业”</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#价格战减少了失业"><span class="nav-number">2.1.5.</span> <span class="nav-text">价格战减少了失业</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#出卖劳动是基本权利"><span class="nav-number">2.1.6.</span> <span class="nav-text">出卖劳动是基本权利</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最低工资法不可取"><span class="nav-number">2.1.7.</span> <span class="nav-text">最低工资法不可取</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#工资是如何被决定的"><span class="nav-number">2.1.8.</span> <span class="nav-text">工资是如何被决定的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#争取福利不易越俎代怕"><span class="nav-number">2.1.9.</span> <span class="nav-text">争取福利不易越俎代怕</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从经济学角度看剥削"><span class="nav-number">2.1.10.</span> <span class="nav-text">从经济学角度看剥削</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#罢工的性质"><span class="nav-number">2.2.</span> <span class="nav-text">罢工的性质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、罢工的行为特征"><span class="nav-number">2.2.1.</span> <span class="nav-text">一、罢工的行为特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、罢工的经济特征"><span class="nav-number">2.2.2.</span> <span class="nav-text">二、罢工的经济特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、是否应该通过罢工来消除剥削，以及世界上是否存在剥削"><span class="nav-number">2.2.3.</span> <span class="nav-text">三、是否应该通过罢工来消除剥削，以及世界上是否存在剥削</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3：收入与公平"><span class="nav-number">2.3.</span> <span class="nav-text">3：收入与公平</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#收入如何分配"><span class="nav-number">2.3.1.</span> <span class="nav-text">收入如何分配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#中国的基尼国际警戒线"><span class="nav-number">2.3.2.</span> <span class="nav-text">中国的基尼国际警戒线</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基尼系数信不过，劫富济贫有问题"><span class="nav-number">2.3.3.</span> <span class="nav-text">基尼系数信不过，劫富济贫有问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从明星现象看收入不均"><span class="nav-number">2.3.4.</span> <span class="nav-text">从明星现象看收入不均</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最多数人的最大幸福"><span class="nav-number">2.3.5.</span> <span class="nav-text">最多数人的最大幸福</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从赌性不同看公平之困难"><span class="nav-number">2.3.6.</span> <span class="nav-text">从赌性不同看公平之困难</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="系统动力图是管理学上非常有名的模型，将之迁移至产品分析中也是非常有效的方法论">
+<meta property="og:type" content="article">
+<meta property="og:title" content="产品模型思维之系统动力图">
+<meta property="og:url" content="http://alfredchen.cn/2020/02/02/%E4%BA%A7%E5%93%81%E6%A8%A1%E5%9E%8B%E6%80%9D%E8%80%83%E4%B9%8B%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%9B%BE/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="系统动力图是管理学上非常有名的模型，将之迁移至产品分析中也是非常有效的方法论">
+<meta property="og:image" content="http://alfredchen.cn/2020/02/02/%E4%BA%A7%E5%93%81%E6%A8%A1%E5%9E%8B%E6%80%9D%E8%80%83%E4%B9%8B%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%9B%BE/1.png">
+<meta property="og:image" content="http://alfredchen.cn/2020/02/02/%E4%BA%A7%E5%93%81%E6%A8%A1%E5%9E%8B%E6%80%9D%E8%80%83%E4%B9%8B%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%9B%BE/2.png">
+<meta property="og:image" content="http://alfredchen.cn/2020/02/02/%E4%BA%A7%E5%93%81%E6%A8%A1%E5%9E%8B%E6%80%9D%E8%80%83%E4%B9%8B%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%9B%BE/3.png">
+<meta property="article:published_time" content="2020-02-02T11:29:11.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:10:22.746Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://alfredchen.cn/2020/02/02/%E4%BA%A7%E5%93%81%E6%A8%A1%E5%9E%8B%E6%80%9D%E8%80%83%E4%B9%8B%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%9B%BE/1.png">
+
+<link rel="canonical" href="http://alfredchen.cn/2020/02/02/%E4%BA%A7%E5%93%81%E6%A8%A1%E5%9E%8B%E6%80%9D%E8%80%83%E4%B9%8B%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%9B%BE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>产品模型思维之系统动力图 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2020/02/02/%E4%BA%A7%E5%93%81%E6%A8%A1%E5%9E%8B%E6%80%9D%E8%80%83%E4%B9%8B%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%9B%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          产品模型思维之系统动力图
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-02-02 19:29:11" itemprop="dateCreated datePublished" datetime="2020-02-02T19:29:11+08:00">2020-02-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%80%9D%E7%BB%B4/" itemprop="url" rel="index">
+                    <span itemprop="name">产品思维</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/02/02/%E4%BA%A7%E5%93%81%E6%A8%A1%E5%9E%8B%E6%80%9D%E8%80%83%E4%B9%8B%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%9B%BE/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/02/02/%E4%BA%A7%E5%93%81%E6%A8%A1%E5%9E%8B%E6%80%9D%E8%80%83%E4%B9%8B%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%9B%BE/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>系统动力图是管理学上非常有名的模型，将之迁移至产品分析中也是非常有效的方法论</p>
+<a id="more"></a>
+
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>前些天，一位做UI设计的朋友跟我说她想自己设计一款产品，希望我帮她把把关，于是把她写的文档发给我看，看完之后让我想到了一个成语造句——小白长得真像大白…</p>
+<p>文档大致内容如下：</p>
+<p><img src="1.png" alt="令人头大的文档"></p>
+<p>原文比这个结构还要乱一些…虽然很绝望，但求生欲让我硬着头皮也得做下去，在这个过程中我摸索出了一些个人觉得非常有效的方法论，或许对大家也有帮助，故以此分享。</p>
+<h3 id="第一步：看清"><a href="#第一步：看清" class="headerlink" title="第一步：看清"></a>第一步：看清</h3><p>为什么需要看清？要看清什么？怎么样做到看清？</p>
+<p>刘润有一句话我很喜欢，“不抽象，就无法深入思考，不还原，就看不到本来面目。”</p>
+<p>在将这个概念用于产品思考之前，我们可以把它放到一个更加抽象的逻辑系统——数学中来理解这三个问题。</p>
+<p>这里引用一个众人皆知的例子，欧几里得从五条基本公理和五条几何公理出发，通过推导论证构建出了一个严密的逻辑体系——几何学，他在构建公理化的几何学时过程是这样的：</p>
+<ul>
+<li>首先，遇到一个具体问题，要做相应的定义，比如什么是夹角；</li>
+<li>其次，从定义和公理出发，得到相关的定理；</li>
+<li>然后，再定义更多的概念，用公理和定理推导出更多的定理。</li>
+</ul>
+<p>我们在其中抽出几个关键词——公理、定义、定理和推导，然后用更为直白的语言进行还原，公理其实就是出发点或者基本盘，定义就是看待问题的视角，定理就是符合出发点的对于问题的解释，推导则说明他们之间是如何进行联系的。</p>
+<p>现在我们再来看一下上面的三个问题：</p>
+<p><strong>为什么需要看清？</strong></p>
+<p>只有当你的出发点是正确的，看待问题的角度是正确的，你提出的观点才是正确的，并且只有当你的观点之间的联系也是正确的，你才能一步一步地往前推去解决问题。</p>
+<p><strong>要看清什么？</strong></p>
+<p>这个问题其实在“为什么需要看清中”已经有答案了，但如果要将它归纳得更精简，我认为可以提取为这两个词：要素和联系。</p>
+<p><strong>那怎么样做到看清呢？</strong></p>
+<p>简单来说就是提取要素、建立联系，但这说了不等于没说嘛，其实这个时候我们可以使用一个非常有效的工具——系统动力图来帮助我们思考，那具体要怎么做呢？</p>
+<p>以我在背景中的例子来讲，我们已经建立了一个认知——这份文档让人看着头大…</p>
+<p>首先，我们要做的就是取其精华去其糟粕，将里面的关键词抽取出来，这些就是我们需要提取的要素（起码让人不那么头大了），于是我替她提取了以下要素：</p>
+<ul>
+<li>背景1</li>
+<li>背景2</li>
+<li>背景3</li>
+<li>需求</li>
+<li>功能1</li>
+<li>功能2</li>
+<li>目标</li>
+</ul>
+<p>其次，我们需要建立起这些要素之间的联系，怎么做呢？拿出一张纸，动动笔、动动脑，根据你的理解将这些要素用带箭头的线连接起来，并写上他们之间的逻辑关系和正负影响（+或者-），于是我让她根据她的理解建立了如下联系：</p>
+<p><img src="2.png" alt="理清想法"></p>
+<p>ok，以上我们算是从一堆让人头大的信息中理清了她的想法，但这还远不算真正的看清，可能细心且有经验的朋友已经发现了这张图透露出的问题，别着急，我们继续往下走。</p>
+<h3 id="第二步：验证"><a href="#第二步：验证" class="headerlink" title="第二步：验证"></a>第二步：验证</h3><p>在第一步中，我们算是画出了系统动力图，但在看清的要求中还有一个非常关键的形容词——正确的，我们建立了联系，但是你在每个要素之间建立的联系都是正确的吗？你的脑子里应该有一个不留情面反驳你的小人：</p>
+<ul>
+<li>有没有可能你所建立的联系只是在部分情况下成立的？那么它成立的条件是什么？</li>
+<li>有没有可能你所建立的联系并不能直接成立，其实是另一个你没想到的要素才是更直接的因素？</li>
+<li>有没有可能你所建立的是一个复合联系，需要好几个要素叠加才成立，而你没有考虑周全，或者是搭配不当，甚至是内部会有矛盾，摁下葫芦起了瓢？</li>
+<li>有没有可能你建立的联系根本就是错误的，其实正好相反？</li>
+<li>…</li>
+</ul>
+<p>他应该一直在你的脑子里唠叨，直到你验证了每一个联系。</p>
+<p>比如本文例子中的”背景1、背景2、背景3「导致」需求“这个联系，它是整个架构的出发点，一旦这个联系出了问题，整个产品大厦就会轰然倒塌，因此需要格外谨慎地把上面提到的这些可能性（或者更多）都想明白。</p>
+<p>那怎么验证呢？这个涉及面太广，没办法一一列出来，或许后续可以再写文章聊一下，目前只能简单地说看你建立的联系是不是能够逻辑自洽，有没有相关的调查、研究或者理论支撑，这就得靠读者朋友见招拆招了。</p>
+<h3 id="第三步：优化"><a href="#第三步：优化" class="headerlink" title="第三步：优化"></a>第三步：优化</h3><p>经过前面一系列的努力，终于到了第三步，一些了解系统动力图的朋友估计已经被上面那个图憋坏了，由于这里不涉及具体的产品信息，所以仅进行系统动力图结构层面的分析。</p>
+<p>原生的系统动力图中各要素之间有正相关(+)或者负相关(-)这两种联系,以下用一个经济发展与碳排放的例子来具体看一下：</p>
+<p><img src="3.png" alt="经济发展与碳排放"></p>
+<p>在这个例子中，我们可以看到各行业产值增加会使GDP也增加，这个就是正相关(+)，减排成本增加会使各行业产值减少，这个就是负相关(-)。</p>
+<p>系统动力图最有意思的地方在于循环，当一个联系链条构成循环之后，整个链条中的要素就会自发地向着某个方向累积影响，根据方向的不同可以分为正反馈循环和负反馈循环。</p>
+<p>「各行业产值+GDP+生活水平+人口+劳动力+各行业产值+…」，这是系统中的一个正反馈循环，各要素会往越来越偏离初始状态的方向进行迭代，在这里是各要素变得越来越好，但正反馈循环还存在另外一种糟糕的情况——各要素变得越来越坏。</p>
+<p>「各行业产值+GDP+能源总量+碳排放量+减排成本-各行业产值+…」，这是系统中的一个负反馈循环，各要素会往回归初始状态的方向进行迭代，在这里各行业产值增加后最终会使减排成本也增加，而减排成本的增加反过来又会使各行业产值减少，最后各要素趋于一个稳定的状态。</p>
+<p>我们在设计产品的时候都希望产品能够建立一个正向的正反馈循环，这样只要系统建立起来之后就会处于一个自增长的状态，用户越多，产品实现用户需求的能力就越强，而产品实现用户需求的能力越强，用户就会越多，如此轻轻松松就能实现用户增长，走上人生巅峰，估计做梦都得笑醒。</p>
+<p>但现实没有那么理想，产品通常会处于一个更为复杂的系统之中，你可能已经构建了一个上述的正反馈循环，但于此同时在你没注意的要素之间却又形成了负向的正反馈循环，比如用户越多，服务器的并发越高，用户使用产品的稳定性就越差。</p>
+<p>这种时候通常需要你先找到循环交错的关键点，生动地说就是齿轮之间咬合的地方，然后对关键点的属性进行权衡，以取得效用和成本的最优解。</p>
+<p>回到本文的例子，我们可以看到在这个系统动力图中产品想要实现的「目标」和产品的出发点「背景」之间是一个负相关关系，整个循环其实是一个负反馈循环，这从逻辑上说明了这个产品不会实现自增长，这对于一个产品来说是致命的，因为无论你怎么努力，它最终都会回归一个平衡态。</p>
+<p>这个时候我们可以考虑以下优化方向：</p>
+<ul>
+<li>通过改变负相关关系中的两个要素，使他们变成正相关关系，这种方法只适用于两个要素不都为客观条件的情况；</li>
+<li>通过增加新要素构建另一个正反馈循环，但这种方式构建的循环通常只能做到局部正反馈。</li>
+</ul>
+<p>如果尝试了各种优化的方向都无法挽回，或者没有办法产生更大的价值，那只能说明这个产品伤太硬，能力有限，爱莫能助。</p>
+<p>如果你成功找到了优化的方法，也先别急着高兴，首先还得回到第二步进行验证，否则最后可能会竹篮打水一场空，让你白高兴一场。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2020/02/02/%E4%BA%A7%E5%93%81%E6%A8%A1%E5%9E%8B%E6%80%9D%E8%80%83%E4%B9%8B%E7%B3%BB%E7%BB%9F%E5%8A%A8%E5%8A%9B%E5%9B%BE/" title="产品模型思维之系统动力图">http://alfredchen.cn/2020/02/02/产品模型思考之系统动力图/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/02/01/%E5%95%86%E4%B8%9A%E5%B7%A5%E5%85%B7%E7%AE%B1/" rel="prev" title="商业工具箱">
+      <i class="fa fa-chevron-left"></i> 商业工具箱
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/06/%E4%BA%A7%E5%93%81%E6%A8%A1%E5%9E%8B%E6%80%9D%E7%BB%B4%E4%B9%8B%E7%B3%BB%E7%BB%9F%E6%A8%A1%E5%9E%8B/" rel="next" title="产品模型思维之系统模型">
+      产品模型思维之系统模型 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#背景"><span class="nav-number">1.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：看清"><span class="nav-number">2.</span> <span class="nav-text">第一步：看清</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：验证"><span class="nav-number">3.</span> <span class="nav-text">第二步：验证</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：优化"><span class="nav-number">4.</span> <span class="nav-text">第三步：优化</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

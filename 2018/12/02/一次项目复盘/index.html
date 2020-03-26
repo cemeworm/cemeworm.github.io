@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="我17年大学入学后加入了某技术团队PM组，到现在也有一年多了，最近一段时间，我负责了一个项目从0到1的产品设计和落地跟进。 由于各种因素的影响，目前项目的结果还没有达到预期，但是在项目过程和复盘中也有一些收获，以此输出记录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一次项目复盘">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/02/%E4%B8%80%E6%AC%A1%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="我17年大学入学后加入了某技术团队PM组，到现在也有一年多了，最近一段时间，我负责了一个项目从0到1的产品设计和落地跟进。 由于各种因素的影响，目前项目的结果还没有达到预期，但是在项目过程和复盘中也有一些收获，以此输出记录。">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/JJZ8hOSAzipN4noPHbY6.jpg">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/18sOhPzSKyj7oBlaMJ2A.jpg">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/k6IJGLbc02bvrUgLVC9b.jpg">
+<meta property="article:published_time" content="2018-12-02T09:36:21.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:32:15.556Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://image.woshipm.com/wp-files/2018/11/JJZ8hOSAzipN4noPHbY6.jpg">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/02/%E4%B8%80%E6%AC%A1%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>一次项目复盘 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/02/%E4%B8%80%E6%AC%A1%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          一次项目复盘
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-02 17:36:21" itemprop="dateCreated datePublished" datetime="2018-12-02T17:36:21+08:00">2018-12-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%80%9D%E8%80%83/" itemprop="url" rel="index">
+                    <span itemprop="name">产品思考</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/02/%E4%B8%80%E6%AC%A1%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/02/%E4%B8%80%E6%AC%A1%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>我17年大学入学后加入了某技术团队PM组，到现在也有一年多了，最近一段时间，我负责了一个项目从0到1的产品设计和落地跟进。</p>
+<p>由于各种因素的影响，目前项目的结果还没有达到预期，但是在项目过程和复盘中也有一些收获，以此输出记录。</p>
+<a id="more"></a>
+
+<h2 id="一、写PRD不要自娱自乐"><a href="#一、写PRD不要自娱自乐" class="headerlink" title="一、写PRD不要自娱自乐"></a>一、写PRD不要自娱自乐</h2><h3 id="1-PRD不是写给自己看的"><a href="#1-PRD不是写给自己看的" class="headerlink" title="1. PRD不是写给自己看的"></a>1. PRD不是写给自己看的</h3><blockquote>
+<p>PRD的主要使用对象有：开发、测试、项目经理、交互设计师、运营及其他业务人员。开发可以根据PRD获知整个产品的逻辑；测试可以根据PRD建用例；项目经理可以根据PRD拆分工作包，并分配开发人员；交互设计师可以通过PRD来设计交互细节。PRD是项目启动之前，必须要通过评审确定的最重要文档。</p>
+</blockquote>
+<p>PRD不是写给产品经理自己看的，这是在初期非常重要的一个认知，不是说在百度上了解到了像上面这些PRD的主要使用对象这么简单。</p>
+<p>说一个我经历的情况，我写完PRD后自己觉得很满意，该说的都说了，而且自觉说得很有道理，很清楚，但是交给开发等对象的时候，他们会吐槽说好复杂，看不懂，这时候我就火了，我辛辛苦苦写的这份PRD你竟然说看不懂，这是你自己的问题吧。</p>
+<p>但是我又考虑了一下，这可能真的是产品经理的问题，理由有三：</p>
+<ol>
+<li>我的脑子里有这个产品完整的样貌，所以我在写的时候会有代入感，这种错觉让内容带有跳跃性，就像教科书上编者知道答案，所以两三个等式就给出了结果，但是学生看得一脸懵逼；</li>
+<li>人总是会习惯从自己的视角出发来看问题，但是每个人的知识框架是不同的；</li>
+<li>写东西的时候人们会很容易不说人话。</li>
+</ol>
+<p>那么我们应该怎么做呢？</p>
+<h3 id="2-换位思考，视目标对象为用户"><a href="#2-换位思考，视目标对象为用户" class="headerlink" title="2. 换位思考，视目标对象为用户"></a>2. 换位思考，视目标对象为用户</h3><p><img src="http://image.woshipm.com/wp-files/2018/11/JJZ8hOSAzipN4noPHbY6.jpg" alt="img"></p>
+<p>明确了目标和问题之后，产品经理需要考虑的是我的目标对象想要在这份PRD中获取哪些信息，如何让他们更好获取信息，以及为什么他们需要这样做来获取这些信息，换句话说，PRD其实就是你的产品，PRD的使用对象就是你的目标用户，那么你该如何考虑呢？</p>
+<ol>
+<li>用户通过什么途径来查看PRD，哪个途径对他们来说最方便？</li>
+<li>用户打开PRD到找到他们想要的信息的路径是怎么样的，如何优化他们找到信息的路径？</li>
+<li>用户如何接受你想要传达的信息，哪种方式对他们来说最高效？</li>
+<li>用户如何向其他人反馈他的看法和疑惑，怎么让反馈被更有效地接受？</li>
+</ol>
+<p>考虑了用户使用PRD的完整流程之后，我们就可以开始进行全流程优化了。</p>
+<ol>
+<li>对于第一个问题，使用Axure写PRD可以生成在线浏览的链接，不再受文档保存的限制。一开始我是用传统的word文档来写PRD，在听了他们的反馈之后，我开始学习用Axure重新写了一版，写对比PRD的工具的文章已经很多了，我不再赘述；</li>
+<li>对于第二个问题，使用Axure写PRD可以自定义一些方便查看的交互，比如全局目录、在修改记录中添加一个可以直接跳转的按钮、可以在PRD和原型间直接跳转等，只要你考虑得足够细，可以让你的用户在获取信息时非常爽；</li>
+<li>对于第三个问题，使用Axure写PRD可以让你非常方便的将内容通过思维导图等方式进行可视化。这一点个人认为非常重要，将你想要传达的信息转化为人们更容易理解的思维导图等结构图，可以极大地降低人们信息交流之间的摩擦，当我在用优化后的PRD跟程序员们讲项目的时候，他们很快就能了解他们要干的事情是什么；</li>
+<li>对于第四个问题，使用Axure写PRD生成的Axshare链接提供评论功能，可以在你想要评论的地方生成一个定位标签，可以直接在评论栏中点击跳转查看。</li>
+</ol>
+<h2 id="二、5WHY法找出问题的根源"><a href="#二、5WHY法找出问题的根源" class="headerlink" title="二、5WHY法找出问题的根源"></a>二、5WHY法找出问题的根源</h2><p><img src="http://image.woshipm.com/wp-files/2018/11/18sOhPzSKyj7oBlaMJ2A.jpg" alt="img"></p>
+<p>这个项目经历了项目延期、寻找外包、最小可行三个阶段，可以说踩了很多产品经理的坑，在项目过程中我也在不断思考并改进，但总感觉没抓到要点，学习了5WHY法思考框架后，才意识到这些问题其实可以从根源解决。以下是我在复盘时的使用5WHY法的思考过程：</p>
+<p>为什么项目会延期？</p>
+<p>因为程序员没有投入时间去做。</p>
+<p>为什么他们没有投入时间去做？</p>
+<p>理由如下：</p>
+<p>\1. 程序员都是学生，在时间和优先级上会有冲突，他们选择优先完成自己的事情</p>
+<p>为什么项目在他们那的优先级不高？</p>
+<p>因为没有给他们明确的重视和压力（程序员们是另一个技术团队的，这个项目是团队老师分配给他们的任务） 。</p>
+<p>为什么没有给他们明确的重视和紧迫的压力？</p>
+<p>因为项目的直接受益者没有真正重视这个项目。</p>
+<p>为什么项目的直接受益者没有真正重视这个项目？</p>
+<p>因为项目的直接受益者不是直接发起人，也不是需求最痛的人，没有体会到项目的价值。</p>
+<p>所以我应该做的是找团队老师，跟她讲明这个项目的意义和对她产生的价值。</p>
+<p>于是我按照这个结论去执行，结果团队真的又平稳地动起来了，比原来催他们进度有效多了</p>
+<p>\2. 程序员看到项目需要实现的功能比较多，觉得要花很多时间，没有干劲。</p>
+<p>为什么他们觉得要花很多时间？因为PRD看起来比较复杂</p>
+<p>为什么PRD看起来比较复杂？</p>
+<p>因为他们在PRD中看到的是项目的完整结果，而不是阶段性可以反馈的目标。所以我应该在开发过程中使用MVP的模式，让他们能得到阶段性的积极反馈 于是我重新设计了产品MVP的形态，尽管和完整版相差较大，不能够彻底实现原先的目的，但是仍仅仅围绕着我们的核心需求，并且程序员们也觉得轻松了。</p>
+<p>因为在信息的呈现方式上太死板。 所以我应该让信息的呈现更加直观 在优化过程中我通过思维导图等形式让重要的信息可视化，让他们能够更容易接收。</p>
+<h2 id="三、MVP的作用不仅体现在成果，还体现在过程"><a href="#三、MVP的作用不仅体现在成果，还体现在过程" class="headerlink" title="三、MVP的作用不仅体现在成果，还体现在过程"></a>三、MVP的作用不仅体现在成果，还体现在过程</h2><h3 id="1-MVP是一个积极反馈"><a href="#1-MVP是一个积极反馈" class="headerlink" title="1. MVP是一个积极反馈"></a>1. MVP是一个积极反馈</h3><p>在做这个项目时，我并没有采取MVP+快速迭代的方式，理由有三：</p>
+<ol>
+<li>项目有非常明确的且固定的用户来源，并不需要投入市场检验产品；</li>
+<li>项目涉及三个用户角色，只有三个角色所涉及功能都完善了，才能达到我们做这个项目的初衷；</li>
+<li>项目安全性要求较高，在所有功能测试完全之前上线可能得不偿失。</li>
+</ol>
+<p>那么我为什么又在复盘时改变了主意呢？因为我认为MVP不只是用来做产品验收的阶段指标，还可以给团队成员一个积极反馈。</p>
+<p>人类的“文科生思维”决定了我们更喜欢得到及时反馈。而对于周期较长的项目开发来说，就是需要给自己一个能跑起来的东西，哪怕这个东西只是给自己看，甚至说为了能让它跑起来，会需要去多弄一些对于迭代来说冗余的东西，但我能换回来的是一个阶段性的积极反馈，这个正反馈循环能让团队成员越来越积极地去给这个东西添砖加瓦来实现下一阶段的目标。</p>
+<h3 id="2-MVP的正确含义"><a href="#2-MVP的正确含义" class="headerlink" title="2. MVP的正确含义"></a>2. MVP的正确含义</h3><blockquote>
+<p>迭代是重复反馈过程的活动，其目的通常是为了接近并到达所需的目标或结果。每一次对过程的重复被称为一次“迭代”，而每一次迭代得到的结果会被用来作为下一次迭代的初始值。</p>
+</blockquote>
+<p><img src="http://image.woshipm.com/wp-files/2018/11/k6IJGLbc02bvrUgLVC9b.jpg" alt="img"></p>
+<p>根据维基百科的解释，其实图片上方的形式才是理论意义上的迭代，因为它每一次迭代的结果都可以直接用来作为下一次迭代的初始值，而MVP的模式还需要去付出一些额外的资源，最后得到的都是一辆车，上方这种成本才是最低的。</p>
+<p>对于我做的这个项目，不需要考虑先发优势、产品验证等维度，MVP其实是一个用户最优的概念，而不是一个成本最优的概念，但是团队成员有三个局限：</p>
+<ul>
+<li>开发者是学生，属于兼职参与做开发，时间和优先级上会有冲突；</li>
+<li>当开发者看到要实现这么多功能时，好像做完遥遥无期，会产生畏难情绪；</li>
+<li>看到产品展示成果的周期太长，做着做着会失去兴趣，消极推脱。</li>
+</ul>
+<p>考虑到这三点，虽然采取MVP的开发模式会增加他们不必要的工作量，但是权衡比较，这部分工作量远小于积极反馈所获得的满足感，毕竟人不是完全理性的动物。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>在学校中做项目，能提升的主要还是作为界面产品经理的能力，几乎不可能养成商业产品经理的意识，界面产品经理和商业产品经理最大的区别是对“成本”概念的理解，而学校会给学生一种成本错觉，让人觉得人力成本、试错成本、技术成本等似乎不太重要。</p>
+<p>我希望能够通过实习去体验真正的成本意识、资源调度以及复杂系统的协作机制，能打破自己的认知局限。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/02/%E4%B8%80%E6%AC%A1%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/" title="一次项目复盘">http://alfredchen.cn/2018/12/02/一次项目复盘/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/11/08/%E4%BB%8E%E5%B0%8F%E7%88%B1%E5%90%8C%E5%AD%A6%E8%B0%88%E5%AF%B9AI%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/" rel="prev" title="从小爱同学谈对AI语音助手的整体认识">
+      <i class="fa fa-chevron-left"></i> 从小爱同学谈对AI语音助手的整体认识
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/02/%E4%BB%8E%E3%80%8A%E5%AD%99%E5%AD%90%E5%85%B5%E6%B3%95%E3%80%8B%E7%9C%8B%E5%AD%90%E5%BC%B9%E7%9F%AD%E4%BF%A1/" rel="next" title="产品模型思维之swot分析：从《孙子兵法》看子弹短信">
+      产品模型思维之swot分析：从《孙子兵法》看子弹短信 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、写PRD不要自娱自乐"><span class="nav-number">1.</span> <span class="nav-text">一、写PRD不要自娱自乐</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-PRD不是写给自己看的"><span class="nav-number">1.1.</span> <span class="nav-text">1. PRD不是写给自己看的</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-换位思考，视目标对象为用户"><span class="nav-number">1.2.</span> <span class="nav-text">2. 换位思考，视目标对象为用户</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、5WHY法找出问题的根源"><span class="nav-number">2.</span> <span class="nav-text">二、5WHY法找出问题的根源</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、MVP的作用不仅体现在成果，还体现在过程"><span class="nav-number">3.</span> <span class="nav-text">三、MVP的作用不仅体现在成果，还体现在过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-MVP是一个积极反馈"><span class="nav-number">3.1.</span> <span class="nav-text">1. MVP是一个积极反馈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-MVP的正确含义"><span class="nav-number">3.2.</span> <span class="nav-text">2. MVP的正确含义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="这篇产品分析报告值得学习的地方在于对产品市场的整体认识和对产品设计的感性认识，同时也颇有文采，有空再拿出来研究一下">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一篇值得学习的产品分析报告之产品背景">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="这篇产品分析报告值得学习的地方在于对产品市场的整体认识和对产品设计的感性认识，同时也颇有文采，有空再拿出来研究一下">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/1.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/2.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/3.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/4.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/5.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/6.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/7.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/8.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/9.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/10.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/11.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/12.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/13.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/14.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/15.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/16.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/17.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/18.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/19.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/20.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/21.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/22.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/23.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/24.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/25.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/26.png">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/27.png">
+<meta property="article:published_time" content="2018-12-07T09:10:01.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:32:21.169Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/1.png">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>一篇值得学习的产品分析报告之产品背景 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          一篇值得学习的产品分析报告之产品背景
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-07 17:10:01" itemprop="dateCreated datePublished" datetime="2018-12-07T17:10:01+08:00">2018-12-07</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%80%9D%E8%80%83/" itemprop="url" rel="index">
+                    <span itemprop="name">产品思考</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>11k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>10 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这篇产品分析报告值得学习的地方在于对产品市场的整体认识和对产品设计的感性认识，同时也颇有文采，有空再拿出来研究一下</p>
+<a id="more"></a>
+
+<blockquote>
+<p>偶然和时差党的聊天中得知了“soul”这个社交软件，对这个app产生了好奇心。在使用的过程中，发现其中一些细节逻辑非常惊艳，就也产生了把思考过程产出的想法，于是也有了这篇测评。</p>
+</blockquote>
+<p><img src="1.png" alt="img"></p>
+<p>2005年，阿北在北京豆瓣胡同附近的星巴克，写出了豆瓣的第一行代码。</p>
+<p><font color=purple>现在流行的代入感叙述方式，适合在文章开头提高读者阅读兴趣</font></p>
+<p>现在的互联网人提到豆瓣，感慨更多的可能是一个典型精英社区的十年起伏兴衰。这个于移动化趋势中错失了发展机遇的文青乌托邦，早些年却是以“吃喝玩乐”小组为代表，在江湖上与“约炮”标签紧紧联系在一起。</p>
+<p>2011年，张小龙带领着程序员团队，在广州寂寥无人的深夜里进行封闭式开发。</p>
+<p>现在的微信早已成为家喻户晓的国民级产品，在pc端转向移动端的那几年，腾讯单是靠着微信这款产品，就抢到了刚刚兴起的移动互联网时代站台票。在随后的六年里，它横扫战场、踏杀天下，硬生生拉扯出一个属于自己的互联网黄金神话。这个神话还将延续下去，并且不断被世人奉为圭臬。</p>
+<p>只是现在的人们已不复记忆，神话的开端——LBS雏形上开发的“摇一摇”，才是微信这个产品第一次迎来爆发式量级用户的功能。</p>
+<blockquote>
+<p>以摇一摇、附近的人等为撬动点，满城的“卡嚓”声响起，无穷尽的寂寞之心和欲望之体才终于有了简单的去处。</p>
+</blockquote>
+<p><font color=purple>体会到了一个PM的感性认识</font></p>
+<p><strong>「始于约炮，盛于炫耀；衰于鸡汤，亡于电商。」</strong></p>
+<p>2014年，当人们还在自作聪明总结互联网社交软件定律时，陌陌CEO唐岩在微博上宣布了陌陌用户量过亿。</p>
+<p>一石激起千层浪——约炮、性、陌生人社交，喷薄而出的欲望撕掉了体面的外衣，五光十色的荷尔蒙涌向都市的角落。这些敏感而难以启齿的元素，通过互联网，第一次如此赤裸裸地展现在光天化日之下，成为人们竞相追逐的猎奇对象。</p>
+<p>而后，人人网的衰落只不过引发了一段对学生时代的集体怀旧，阿里在支付宝锲而不舍的试水只能以铩羽而归告终，不管是基于LBS的社交新秀“探探”、还是瞄准少数体的同性社交“Zank”，社交软件此起彼伏、方兴未艾，借着互联网高速发展的东风，在人类作为群居性动物的本质、对社交想象力的驱动下一路高歌猛进。</p>
+<p>作为一个95后，笔者在逐渐长大的日子里，先后经历了QQ、QQ空间、bbs、贴吧、天涯、人人、微博、豆瓣、知乎、微信等社交产品的洗礼。它们中有的死了，死得悄无声息；有的还在活着，活得生机盎然。</p>
+<p><font color=purple>经历过局内人的参与，才能有更深的局外人的视角</font></p>
+<p>但不管怎样，能够经历20世纪初中国互联网的启蒙，与这些产品陪伴成长，不得不说生在了“最好的时代”。</p>
+<p>偶然和时差党的聊天中得知了“soul”这个社交软件，对这个app产生了好奇心。在使用的过程中，发现其中一些细节逻辑非常惊艳，就也产生了把思考过程产出的想法，于是也有了这篇测评。</p>
+<p>本文大纲如下：</p>
+<ol>
+<li><p>文档概览</p>
+</li>
+<li><p>产品简介</p>
+</li>
+<li><p>产生背景：国内社交产品市场的格局和特性，以及还有哪些未挖掘的社交需求</p>
+</li>
+<li><p>产品分析：细节逻辑和产品设计之美</p>
+<p><font color=purple>从文章的产生背景和产品分析来定义，有一些其他方面的不足之处可以不那么追究</font></p>
+</li>
+<li><p>产品“用户说”</p>
+</li>
+<li><p>“soul”的市场营销手段</p>
+</li>
+<li><p>总结</p>
+</li>
+</ol>
+<h2 id="一、文档概览和分析目的"><a href="#一、文档概览和分析目的" class="headerlink" title="一、文档概览和分析目的"></a>一、文档概览和分析目的</h2><p>体验机型：iPhone SE</p>
+<p>系统版本：iOS10</p>
+<p>APP版本：3.7.4</p>
+<p>体验时间：2018.2.1-2.3</p>
+<h2 id="二、soul产品简介"><a href="#二、soul产品简介" class="headerlink" title="二、soul产品简介"></a>二、soul产品简介</h2><p>产品名称：soul</p>
+<p>产品类型：社交应用</p>
+<p>支持平台：IOS、Android</p>
+<p>产品Logo：</p>
+<p><img src="2.jpg" alt="img"></p>
+<p>产品slogan：跟随灵魂找到你</p>
+<p>产品定位：基于心灵的智能社交APP</p>
+<p>产品介绍：Soul-基于心灵的智能社交APP。功能是寻找最适合自己的灵魂伴侣。 有匿名的私密blog，微信微博上发不出的话，默默记录在案，而恰巧有陌生人在意。</p>
+<p>产品特色：“设计感”、“性格测试”、“matching机器人匹配”、“在线聊天”</p>
+<h2 id="三、soul产生背景"><a href="#三、soul产生背景" class="headerlink" title="三、soul产生背景"></a>三、soul产生背景</h2><h3 id="2-1-微信、qq——为什么它们不叫社交？"><a href="#2-1-微信、qq——为什么它们不叫社交？" class="headerlink" title="2.1 微信、qq——为什么它们不叫社交？"></a>2.1 微信、qq——为什么它们不叫社交？</h3><p>这里涉及到一个陌生人关系和熟人关系的问题，有人做过一个很形象的比喻：</p>
+<blockquote>
+<p>熟人之间就像一桌party，只要搭好了桌子，大家随意吃喝玩乐。</p>
+<p>陌生人之间就像一场游会，只要组织策划好了流程，大家踊跃跟随前进。</p>
+</blockquote>
+<p>之前我的leader说过一句很值得玩味的话：“腾讯的产品都不是社交，<strong>是社交工具</strong>。”</p>
+<p>我们不妨回想一下，在微信进入到大众视野那几年时候的噱头——“免费的短信”。</p>
+<p>QQ和微信都是基于相识的熟人社交，熟人社交最大的需求是「即时通讯（IM）」——将线下人与人之间的连接还原到线上去。所以本质是借着互联网的依托，于现实社会之上的还原了一张虚拟关系网。</p>
+<p><font color=purple>所有让人与人之间产生联系的产品，不论是社交产品还是服务平台，都避不过的一点是如何防止在产品中发生的联系绕过了产品的本身而沉淀到了社交工具上</font></p>
+<blockquote>
+<p>如果把社交比做上层建筑，那么社交工具更像是基础设施。</p>
+<p>微信和QQ是底层的水、电、土壤与空气，当基础设施齐健全时，陌生人关系一定会在其基础上自动生长出来。所以腾讯做的不是社交，做的是原本就存在关系的还原工具，然后让用户在上面自然的拓展社交。</p>
+</blockquote>
+<p>这也就可以很好解释：为什么微信诞生之初的明星产品是“摇一摇”和“附近的人”，而现在的核心功能却变成了“朋友圈”和“聊天”。</p>
+<p><img src="3.png" alt="img"></p>
+<p>画张图来总结一下</p>
+<h3 id="2-2-社交变革——最好还是最坏的年代？"><a href="#2-2-社交变革——最好还是最坏的年代？" class="headerlink" title="2.2 社交变革——最好还是最坏的年代？"></a>2.2 社交变革——最好还是最坏的年代？</h3><p>记得两三年前，有人尖锐地向腾讯的产品经理提出“为什么微信走不出国门”的问题。</p>
+<p>对方出来回应说：国外的即时通讯／社交产品早已被Facebook、Whatsapp占到先机，市场需求已趋向饱和，如果不是哪天facebook作大死自掘坟墓，就很难从中再分得一块蛋糕。</p>
+<p>从中我们可以思考：</p>
+<p><strong>（1）社交产品的一大特性是替换成本大</strong></p>
+<p>微信当年如果不是因为有QQ8亿用户的铺垫，做出了“qq好友一键导入”的功能，就不会这么顺利地迎来用户的爆发级增长（当然，微信成功的一大因素还是因为在互联网革命中先抢到了移动互联网的车票）。</p>
+<p><strong>（2）社交工具的一个核心就是“先发制人”</strong></p>
+<p>佘山如果不像维苏威火山一样发生大爆炸，上海人民就只能在彩虹室内合唱团的演奏中听到《五环之歌》–底层设施就像城市规划一样，一旦在某块土壤上落地生根后就很难发生改变。这也就是那位腾讯产品经理讲的道理。</p>
+<p>所以我们要明确的一点是：在社交工具的江湖上，腾讯系产品占据着无人可撼的地位。不管是探探还是陌陌，<strong>后起之秀的社交产品都只能在底层设施的基础上做上层建筑。</strong></p>
+<p>21世纪初，互联网还是个新兴萌芽的产业。对等、开放、容错、共享、去中心、自组织、非商业–bbs的出现也彰显着海纳百川的互联网精神；而后qq、微信横空出世，互联网搭建起了线下与线上的桥梁；再后来，在社交工具的基础上，社交新秀不断涌现而出。</p>
+<p>回顾整个生命周期，互联网社交像一张漫天布下巨大的网，收敛成一个以熟人关系为焦点的中心化结构，最后积攒能量，又迎来一个宇宙大爆炸。我们暂且把这个爆炸定义为“后社交时代”。</p>
+<p>在后社交时代：</p>
+<ol>
+<li>大众“web端→移动端”使用习惯的切换</li>
+<li>90后、00后一代未来话语权主掌者的冉冉升起</li>
+<li>社会的进步和开放化</li>
+</ol>
+<p>熟人关系已无法满足社交需求。但陌生人社交又从赤裸裸的<strong>谈性说爱</strong>，到现在的<strong>欲说还休</strong>。</p>
+<h3 id="2-3-陌陌、探探——选择or不选择，这是个问题"><a href="#2-3-陌陌、探探——选择or不选择，这是个问题" class="headerlink" title="2.3 陌陌、探探——选择or不选择，这是个问题"></a>2.3 陌陌、探探——选择or不选择，这是个问题</h3><p><strong>①马斯洛需求指出：社交需求是比生理需求高两档的精神层面的需求</strong></p>
+<p>陌陌以“约炮”为切入点，一时风格无限。但却违背了马斯洛需求提到的社交需求定律——以满足生理需求为前提的社交是“低档”需求，终究会被淘汰（原因放在第四点来讲）。</p>
+<p>陌陌后期在面临用户流失时却做了很多尝试，比如加强群组管理、开设陌陌吧、培养红人……甚至为了“洗白”约炮标签又推出了「就这么活着吧」TVC，这支TVC在当年也引起了轰动</p>
+<p>（btw，做这支广告的公司是w+k，我很喜欢的一家创意热店…）</p>
+<p><img src="4.jpg" alt="img"></p>
+<p>点击观看视频：<a href="http://v.youku.com/v_show/id_XNzQyNzU5ODUy.html">2014年超有创意的陌陌广告</a></p>
+<p>2017年3月陌陌发布财报，直播视频DAU呈几何级数增长，利润同比增长524%。这预示着陌陌成功转型视频领域，或者说：<strong>彻底失败社交领域</strong>。</p>
+<p>与此同时，2017年上半年陌陌在北京各大地铁站的地铁投放，噱头焦点也完全变成了「视频」。</p>
+<p><img src="5.jpg" alt="img"></p>
+<p>17年上半年北京地铁（与此同时出现的同类形态还有知乎地铁广告……）</p>
+<!--经常留意并收集相关信息，作者不是社交产品经理，或许这是一种习惯-->
+
+<p><strong>②得女性者得社交</strong></p>
+<p><img src="6.png" alt="img"></p>
+<p>金字塔定律</p>
+<p>社交app一直有个金字塔定律：</p>
+<ul>
+<li>底层由普通用户组成</li>
+<li>中层由优质女性用户组成</li>
+<li>金字塔顶部是「高精尖」用户</li>
+</ul>
+<p>在知乎，底层用户画像是由「0粉丝0回答0赞同」组成的「三零用户」，是构成此社区用户量最大的一个群体；中层用户借着身为「女性」的性别优势，稍微再加一些亮点（有趣的文笔、好玩的经历、不错的颜值），便可摇身跻身中层，享受底层用户的关注、赞美、追求。</p>
+<p>最后，底层用户和中层用户再共同筛选出kol，成为金字塔顶部的高精尖用户。</p>
+<p>当金字塔结构稳定时，它内在的生态是平衡的。而女性用户流失时，顶层小部分高精尖用户满足不了普通用户的大量需求，金字塔开始失去平衡、分崩离析。</p>
+<p>以上论述反映在另外一条社交定律上就是：<strong>“1个优质的女性用户可以带来7个男性用户”</strong>，这也是我们title里说的“得女性者得社交”。</p>
+<p>也许是早就认识到了这一点，社交app“探探”在做社交之初就几乎是如履薄冰、敕始毖终。</p>
+<p>从名字logo、色调使用、宣传推广、推荐算法、社区规范到产品设计，都洋溢着女性关怀和对女性用户重视（举个例子：探探在语言使用方面设置了很多敏感词，如有男生打出类似“约吗”等字眼时，账号可能永久被封）。</p>
+<h3 id="2-4-当我们在谈社交的时候，我们在谈些什么？"><a href="#2-4-当我们在谈社交的时候，我们在谈些什么？" class="headerlink" title="2.4 当我们在谈社交的时候，我们在谈些什么？"></a>2.4 当我们在谈社交的时候，我们在谈些什么？</h3><blockquote>
+<p>整个亚洲由于其农耕文化的渊源，其集体主义的文化更为显著。</p>
+</blockquote>
+<p><font color=purple>谈社交，其实很大程度上是在谈文化</font></p>
+<p>其亚洲的互联网社交比美国更呈现出更为中心化的特点，新浪微博与twitter最大的区别就在于中心化的强度，新浪微博通过明星、公知、段子手建立了一套比twitter更为强大中心化体系。</p>
+<p>这也是为什么，当年新浪能打败腾讯微博，一家独大。</p>
+<p>我们不妨来看一下，时下最热门的抖音app的首页：</p>
+<p>（体验环境：刚下载app还未登陆／注册时的全新用户）</p>
+<p><img src="7.png" alt="img"></p>
+<p>左起：当红明星、斗鱼第一女主播、素人</p>
+<p>纯新人环境体验下：在抖音首页，前七条动态都为明星、网红、段子手等。第七条开始出现素人。不光是抖音，在时下流行的女性美妆社区，首页占据第一眼的也是范冰冰、林允、偶像实习生等名人。</p>
+<p>人与人的连结并不是one-to-one。微信看似是个one-to-one的闭环——不少人认为这是个去中心化的社交工具。但你会发现，在朋友圈，永远是长得漂亮人缘好的姑娘会获得大量的点赞；在微信群，总是经常活跃的那一撮群员会得到最快最多回应。微信也是个中心化的社交场所。</p>
+<p>在我们谈社交时，我们就离不开人与人的连结，离不开社群，离不开内容产业。</p>
+<h3 id="2-5-当下还有哪些没有被满足的社交需求？"><a href="#2-5-当下还有哪些没有被满足的社交需求？" class="headerlink" title="2.5 当下还有哪些没有被满足的社交需求？"></a>2.5 当下还有哪些没有被满足的社交需求？</h3><blockquote>
+<p>当我们去分析一个社交类平台是否有持续价值，主要也看这类社交平台的用户和用户之间，透过这种具体的产品形式，是否能够形成持续的频繁互动，而形成这种互动的本质驱动力，就是用户的内在动机。</p>
+<p>譬如某种满足感、存在感、成就感、虚荣心、安全感，或者多种满足的一个有机混合。</p>
+</blockquote>
+<p><font color=purple>社交类产品要想把用户留在平台上，最重要的是营造一种仪式感，在仪式感下，通过一定的流程产生联系，这种联系是无法通过底层的IM来维持的，而能做到的场景就是用户之间希望彼此永远是最熟悉的陌生人</font></p>
+<p>约炮社交（陌陌）、同性社交（zank）、视频社交（Tiki）、语音社交（啪啪）、图片社交（探探）……..社交软件此起彼伏、方兴未艾，借着互联网高速发展的东风，在人类作为群居性动物的本质、对社交想象力的驱动下一路高歌猛进。</p>
+<p>soul作为一个新兴的社交app，和从前的产品都有着鲜明的不同之处。前面已经废话了这么多，接下来就赶快切入正题吧。</p>
+<h2 id="四、soul产品分析"><a href="#四、soul产品分析" class="headerlink" title="四、soul产品分析"></a>四、soul产品分析</h2><h3 id="3-1-产品基本结构"><a href="#3-1-产品基本结构" class="headerlink" title="3.1 产品基本结构"></a>3.1 产品基本结构</h3><p><img src="8.png" alt="img"></p>
+<p>soul是一个内容+聊天为主的社交类app，主要分为match、内容（他人+自己）、聊天、个人设置四项。</p>
+<h3 id="3-3-产品迭代一览"><a href="#3-3-产品迭代一览" class="headerlink" title="3.3 产品迭代一览"></a>3.3 产品迭代一览</h3><p><img src="9.png" alt="img"></p>
+<p>自2017年起，soul基本上以一周两次的频率进行产品迭代。</p>
+<p>其中最重要的几个更新已用红字标注起来，其中可以看到soul的产品布局方向：</p>
+<ul>
+<li>聊天爱心、社区友善机制、在线匹配、搜索功能：增加用户粘性、提高用户体验、提高社区留存率</li>
+<li>拍摄照片视频／贴纸滤镜人脸特效／广场视频：短视频／直播社交</li>
+<li>附近的帖子：lbs社交</li>
+</ul>
+<p>我在刚开始评测soul的时候，发现这款产品为了差异化探探、陌陌等约炮软件，在很多产品的设计上都有些矫枉过正过犹不及的感觉。12月份的时候我做了30个soul用户的访谈，有将近一半的用户在被问到“你觉得soul有什么需要改进的地方吗”的时候，回答说“希望能找到附近的人”。</p>
+<p>在18年2月3.7.1版本中，lbs功能的上线算是最深得我心的一次迭代：</p>
+<p><img src="10.png" alt="img"></p>
+<p>另外，初期soul只推出了视频和照片拍摄的功能，后来延伸了类陌陌的视频直播功能，并且加入美颜、贴纸、滤镜等人脸美化功能。</p>
+<p>都说春节的阶级流动和家庭场景是互联网争相攻略的蛋糕（比如最有标志性的2015年春节，微信凭着一场红包雨绑定了两亿张银行卡，撼动了支付宝用八年的时间打下的江山），在2018年新春，soul也推出了新春灵魂相机的功能（即用两张真实照片匹配灵魂值），并在微博上大张旗鼓地做了宣传。</p>
+<p><img src="11.png" alt="img"></p>
+<p>虽然一直强调“灵魂”和“内在”，但不管是soul新春的campaign还是不断改进的视频社交体验，在“看脸”这件事情上，soul也给了用户另外一种选择性。</p>
+<h3 id="3-3-产品核心功能分析"><a href="#3-3-产品核心功能分析" class="headerlink" title="3.3 产品核心功能分析"></a>3.3 产品核心功能分析</h3><p><strong>（1）性格测试</strong></p>
+<p><img src="12.png" alt="img"></p>
+<p>“灵魂自测游戏”只有在用户第一次注册app的时候才会出现，以二选一、三选一的问答类形式展现。</p>
+<p>测试分为三个阶段。昨晚第一阶段的六道题即可进入app使用。做完后两阶段的26道题有助于完善性格报告，匹配更为精准的用户。</p>
+<p>社交软件都有基于一个维度的用户匹配：</p>
+<ul>
+<li>基于LBS(即地理位置)／陌生人社交: 探探／陌陌／微信摇一摇</li>
+<li>基于某种目的的工具性／实名社交：Linkedln／早期知乎</li>
+<li>基于兴趣爱好／陌生人社交：百度贴吧／论坛</li>
+</ul>
+<p><strong>而soul是基于性格相似度的匹配</strong>。在用户首次注册完毕后，会生成一个性格测试报告。之后的用户匹配都为基于此性格测试的结果。</p>
+<p><img src="13.png" alt="img"></p>
+<p>在评测soul之前，我从来没有想过交友app敢拿性格来做匹配基准。</p>
+<p>同时，我也向身边的朋友问了几个问题：</p>
+<ul>
+<li>与陌生人交友的时候什么是你最看重的？颜值？三观？学识？共同的兴趣爱好？性格？</li>
+<li>如果你最看重性格的话，你在和陌生人交友的时候prefer相似的性格，还是互补的性格？</li>
+<li>在选择恋人的时候，你注重的维度和陌生人交友时一致吗？</li>
+</ul>
+<p>答案乱象纷纷、因人而异。</p>
+<p>有人颜值唯上论，觉得脸蛋不够漂亮就没有交友的兴致；有人觉得共同兴趣爱好才是陌生社交打开话题的金钥匙；有人认为在三观大体一致的前提下，更希望另一半的性格能与自己互补以增添生活的乐趣；也有人认为性格不一致气场不同，气场不同根本没法聊天…….</p>
+<p>性格的问题属于人格心理学（personality psychology）的研究范畴。研究人格的一种思路是：研究者提出一些不同的人格类型（personality type），通过这些人格类型，就可以将人群划分为不同的类别。</p>
+<p><strong>人类都是有自我认识的本能，和利用标签区别同类抱团的群体意识</strong>。</p>
+<p>近年利用这个概念来取巧的投机者也不在少数：把INTJ／ESFP作为简介的知乎用户、乐嘉出书宣传的色彩性格学、意林读者每期必留两页的性格测试……在职场上，也有凯尔西气质类型测试、MBTI职业性格测试等等。</p>
+<p>企业（特别是外企）愿意花重金充值性格测试网站的会员，来试图了解雇员／求职者的职业性格是否满足要求。</p>
+<p>这些测试有科学也有儿戏，但是不管怎样，<strong>一个社交软件若能满足用户「探索自我」的娱乐性、并且以此为开启陌生人社交的契机</strong>，那么它就是成功的。</p>
+<p>谁还管它到底科学不科学呢╮(╯▽╰)╭</p>
+<p><strong>（2）星球</strong></p>
+<p><img src="14.png" alt="img"></p>
+<ul>
+<li>动态3d球形式展示用户</li>
+<li>“摇一摇”操作换一个星球（即换一批用户）</li>
+<li>放大圆点查看匹配分数</li>
+<li>点击圆点进入和用户match的主页</li>
+<li>点击头像可查看对方性格测试报告和朋友圈</li>
+<li>点击机器人自动匹配</li>
+</ul>
+<p>点击右上的“筛选”按键，可以按照年龄跨度、星座类别、性别属性进行筛选匹配用户。</p>
+<p>好玩的是虽然打着“不约不爱”的名号，soul虽然有“男、女、性别不限”三个选项，但默认的还是异性。</p>
+<p>毕竟异性相吸，要找同性朋友完全可以在线下寻找，线上社交的存在，大部分还是<strong>为异性社交的羞赧、扭捏、畏怯提供了一个名正言顺的平台、打开了一个压抑释放的出口。</strong></p>
+<p><img src="15.png" alt="img"></p>
+<p>总的来说广场分为“感兴趣的陌生人搜寻”和“即时聊天”两个社交功能。</p>
+<p>后者的产品形态类似腾讯微信“摇一摇”的功能——“摇一摇”是基于lbs的陌生人交友，在摇晃手机时能匹配到同时在摇动手机的用户。在线匹配最大的优点是<strong>反馈及时、能迅速满足one-to-one情感联结的社交需求。</strong></p>
+<p>可能是微信在7年的成长和产品迭代中，早已从最初<strong>陌生人社交</strong>的定位转型成为<strong>以熟人关系支撑的社交工具</strong>，现在微信虽然没有完全阉割掉这个功能，但入口已经非常深了（设置-通用-功能-摇一摇），并且在进入功能时会出现防骚扰提示窗口（第三张图）。</p>
+<p><img src="16.png" alt="img"></p>
+<p><strong>（3）广场</strong></p>
+<p>我们在前言里提到过，陌生人社交的前期运营需要运营工具的介入。</p>
+<p>soul的feed流排序方式为：第一条feed为ugc内容，运营通过筛选后推送至首页首条，之后的按照用户发送时间排序。</p>
+<p>在聊天页面最上方置顶位为官方OGC生产内容（每日推送一条），点击进去后：</p>
+<p><img src="17.png" alt="img"></p>
+<p><strong>（4）产品细节亮点</strong></p>
+<p>注册流程：</p>
+<p>soul的注册流程有两大特点</p>
+<ol>
+<li>完全匿名</li>
+<li>不可使用真实头像，可选择系统内的头像库</li>
+</ol>
+<p>第一点可以和当年刚起步的知乎（要求用真名）做对比。早年的知乎偏向一个小众化的精英平台，在注册时需写上学校信息、在职公司信息，此时要求写真名更像是一个用真名给所填信息的真实度做背书。</p>
+<p>在这个平台上社交的“精英”，也会因此对其他用户的信任感增强。</p>
+<p>这其实也涉及到社交的本质。</p>
+<p>有人把社交在本质上分为两种：一种是<strong>共情社交</strong>，一种是<strong>功利社交</strong>。共情社交是指为了获得情感联结与情感体验，打发无聊，或是有共同的兴趣等而产生的社交行为；功利性社交指为了达成某一目的，或是从对方身上获得利益而产生的社交行为。</p>
+<p>很明显知乎属于后者，而soul属于前者。</p>
+<p>第二点可以和另一个基于lbs的陌生人社交软件探探（要求用真实头像）做对比。</p>
+<p>探探从成立到现在，利用技术、人工等手段对用户头像做了极强的管控。</p>
+<p>除了技术自动过滤掉动物、物品等明显非人的头像外，每天还会有专门的工作人员对社区新注册头像做审查，若发现是明星、网红的非素人头像，将不予通过注册。</p>
+<p>这点也很好理解——和tinder一样，这本来就是个看脸的软件嘛！而这一点，也是soul着重强调的产品差异。在产品手段、市场宣传上都有很明显的体现（后续会提到pr手段，也非常高明）。</p>
+<p><img src="18.png" alt="img"></p>
+<h3 id="3-4-聊天界面"><a href="#3-4-聊天界面" class="headerlink" title="3.4 聊天界面"></a>3.4 聊天界面</h3><p><strong>（1）爱心</strong></p>
+<p>之前和探探的pm聊天，他问说：<strong>怎么提高用户在陌生人社交app聊天上面停留的时间？怎么增加用户在聊天中的次数很频率？</strong></p>
+<p>这让我想起了当时在滴滴的时候，和刘飞老师聊天的时候问说：在外界人普遍认为滴滴顺风车具有很大的社交潜力的时候，为什么顺风车不做社交？</p>
+<p>设想场景：家住二环内的王sir是个富二代，平时没事儿干想开着特斯拉去三里屯拉头像漂亮的女乘客。如果此时做一个车主的选单大厅和三里屯美女的候车大厅，并且提供后续用户之间的连接，能否成为一个带有社交属性的产品？</p>
+<p>当时刘飞老师回答说：这样容易诱导用户转移至微信，最后导致流失。</p>
+<p><font color=purple>这个流失应该是说顺风车用户在认识了之后可以直接在微信上联系，这种情况主要在固定时间的上下班顺风车发展出了关系。这样做在获取用户和导致流失之间是怎样的平衡呢？该社交场景应该就像设想的一样，大部分为男性车主和女乘客，对于男性车主自然有吸引力，但是对女性来说未必，最后大概率是会流失</font></p>
+<p>仔细一想确实如此：陌生人社交和熟人社交之间只有一线之差。根据前文提到的「微信是社交工具」理论，当其他社交软件（陌生人社交）完成了一个one-to-one、点对点的基础搭建功能，剩下的加固、就需要微信去做了。</p>
+<p><strong>人类先生产工具，然后利用工具去生产。</strong></p>
+<p>那么回到最开始的问题，当顺风车开始做车主和乘客的社交功能时，就很容易把用户导流到微信，用户在微信上进行交易时，滴滴作为平台就失去了抽取费用、数据搜集的作用。</p>
+<p><font color=purple>在微信上进行交易的设想从交流成本、时间限制和用户安全这三个维度考虑对于用户来说应该不太可能</font></p>
+<p>为什么人人都想做社交？</p>
+<p>因为当社交的房基建造起来之后，不管是打车、购物、外卖，甚至是旅行、约炮，都完全可以在房基上面生长起来。</p>
+<p>在和微信的博弈上，淘宝很早就认识到了自己的劣势–早在 2013 年底，阿里便正式关闭了微信跳转到淘宝商品和店铺的通道。当用户在微信上点击淘宝相关链接时，将会进入到手机淘宝的安装页面。以及所有的店铺简介页、聊天内容中屏蔽“微信”的相关敏感字眼。</p>
+<p>说回soul：</p>
+<p><img src="19.png" alt="img"></p>
+<p>用户在聊天的时候，右上会出现一个爱心池，随着聊天信息的增加，爱心池里的水也会增加。在达到两个爱心的时候，可以解锁更多的聊天内容，比如发送图片。</p>
+<p>回到最开始探探的问题：<strong>怎么提高用户在陌生人社交app聊天上面停留的时间？怎么增加用户在聊天中的次数的频率？</strong></p>
+<p>探探要面对的问题似乎还亟待解决，但soul已经给出了一个，虽然不是完美的，但绝对可以称得上聪明的答案。</p>
+<p><font color=purple>但还是那个问题，如果认识还不够多肯定不会沉淀到微信，但当爱心池足够多的时候，也就是关系可以沉淀到微信上的时候了</font></p>
+<h2 id="四、soul的运营手段"><a href="#四、soul的运营手段" class="headerlink" title="四、soul的运营手段"></a>四、soul的运营手段</h2><p>虽然这是一个产品评测，但是因为soul实在是太有钱，营销买广告位和设计／文案上都做得蛮不错，所以就来闲话一下soul的营销和运营好了。</p>
+<p>先来看一下soul产品周期中的基本大事件：</p>
+<p><img src="20.png" alt="img"></p>
+<p>soul的创始人叫张璐，毕业于中山大学，曾任欧资管理咨询公司中国区负责人。毕业后在上海工作，因与日俱增的孤独感和对“这个看脸的世界”的不满，而去创业做了soul。</p>
+<p>soul早在2017年5月就拿到了晨兴资本的a轮投资，五个月后再获b轮资本注入。2018年2月开始，在豆瓣、知乎疯狂投广告位和开屏广告，同时也迎来了用户指数级的上涨。</p>
+<p>一个产品的健康PCL（产品生命周期）应该符合下面这条s型曲线：</p>
+<p><img src="21.png" alt="img"></p>
+<p>在增长平稳的探索期，用户具有较高的产品敏感，此时应该引导产品氛围，深耕种子用户运营；成长期时以用户增长位导向引爆点，安利包装、模式复制，挖掘用户价值；在进入成熟期后，以活跃度为导向留存。</p>
+<p>soul从2017年9月到2018年3月23日的app store下载量如下图：</p>
+<p><img src="22.png" alt="img"></p>
+<p>从图中可以看到，soul在11月份后稳占社交类下载量第一名，在2月初投放广告之后，用户迎来了一个大的增长。</p>
+<p>互联网运营的逻辑应该是<strong>有节奏、回报后置的逻辑</strong>，soul在成熟期后还能迎来用户大规模的增长，除了遵循这个逻辑之外，在<strong>品牌文化和产品文化</strong>上又下了什么功夫呢？</p>
+<p>我们不妨来看下soul投放的广告：</p>
+<p><strong>豆瓣：</strong></p>
+<p><img src="23.png" alt="img"></p>
+<p><strong>知乎：</strong></p>
+<p><img src="24.png" alt="img"></p>
+<p>soul以“灵魂”为切入点，以“性格测试”为噱头，瞄准20-30代的年轻用户。并且广告的策划人非常了解知乎和豆瓣两个社区的尿性，对广告进行差异化定点投放。</p>
+<p><img src="25.png" alt="img"></p>
+<h2 id="五、总结"><a href="#五、总结" class="headerlink" title="五、总结"></a>五、总结</h2><p>可能是因为创始者身为女性，能更好地共情女士用户的原因。soul不管是从图案设计、产品设计、营销手段上来说，在细节上都称得上是一款精心打磨过的产品，非常讨女性用户的欢心。</p>
+<p>当女性用户抱着好奇心以及被认同感等心态来到平台，男性尝鲜者在原始冲动的刺激和大脑的奖励效应助推下，社区氛围和产品文化开始积淀下来后，增长就是一件自然而然的事情了。</p>
+<p>在陌生人社交蛋糕被探探陌陌平分天下的当下，soul在核心功能、反骚扰机制、UI交互、广告投放都精耕细作，以女性用户作为切入口异军突起，不得不说是一款称得上拥有“逻辑之美”的产品。然而，8个月过去了，产品方向随用户增长不断调整的同时，暴露的问题也日益增长。</p>
+<p>来看下下载趋势和留存趋势：</p>
+<p><img src="26.png" alt="img">)<img src="27.png" alt="img"></p>
+<p>进入今年以来，探探的次月用户留存一直稳定地高于陌陌十个百分点左右，而<strong>soul则是比较稳定地下降。</strong></p>
+<p>原因有很多：比如soul<strong>复杂的冷启动和操作</strong>将大量中老年用户拒之门外（这一点很像国外的fb和sp：现在facebook的日活下降负增长、而snapchat吸引了越来越多年轻人。</p>
+<p>在soul，50%用户为24岁以下年轻群体——为三个产品中年龄层次最低的群体）；还有<strong>社交路径过长</strong>（探探是简单粗暴的右滑左滑，非常快速效率的社交路径；soul不能设置真实头像，且基于性格测试的系统匹配过于被动含蓄）……展开说的话又可以写一篇文章了，暂时不做赘述。</p>
+<p>另外，这篇测评发在网上上以来，也收集了不少值得思考的评论。</p>
+<p>摘录部分如下：</p>
+<h3 id="01"><a href="#01" class="headerlink" title="01"></a>01</h3><p>最开始说好的“不约不恋”，但现在soul的pro版（iOS才有）已经改名为“Soul灵犀－聊天恋爱交友神器”，偏离了他们最开始的主线。</p>
+<p>我关注这个APP有一年以上了，还有一个叫“如故”的，都是需要进行性格测试再匹配，总体感觉如故更好点，但Soul去年融了几轮资，通过烧钱把排名烧上去了，APP使用感觉仍然比较卡顿（iOS版，刷广场的时间）。</p>
+<p>看Soul目前的排名曲线存在比较大的跳跃性，仍然在持续烧钱，不烧马上掉榜。</p>
+<h3 id="02"><a href="#02" class="headerlink" title="02"></a>02</h3><p>额，其实，这篇亲测太多润色的篇章，通篇没有看到什么重点，产品的功能系统分析没有，产品的功能架构没有，这个产品的背后的商业布局也没有。</p>
+<p>可以试试“如故”。陌生人社交两大重点，匹配和破冰我觉得“SOUL”都做的不如“如故”。</p>
+<p>不管是soul还是如故其实在一年前我就用过了，两者业务逻辑都挺像的。</p>
+<p>当时如故的心理学测试和匹配机制真的把我震惊了，UI也漂亮，交互又顺畅。</p>
+<p>当时错觉就觉得这软件要火，认真填完资料之后，发现一个关键性问题，用户基数太小。我非常高兴地和一个匹配度90多的小姐姐打招呼，然而发现似乎并不在线。过了几天发现，虽然很好用，但我还是找不到人啊。</p>
+<h3 id="03"><a href="#03" class="headerlink" title="03"></a>03</h3><p>不管是不是捧soul，写的都很不错，soul作为性格基础社交软件可以说创新，但是也存在向微信流逝用户的现象。就像作者说的陌生—熟悉也就一线之隔，soul—微信也就差个微信号了。</p>
+<h3 id="04"><a href="#04" class="headerlink" title="04"></a>04</h3><p>哈哈，设计和审美，确实要提高女性用户比例可以在这个方面下功夫。</p>
+<h3 id="05"><a href="#05" class="headerlink" title="05"></a>05</h3><p>想起去年用如故的时候有段时间一直吐槽“为什么这么多真人头像”这个点，后来就发现如故上了“脸萌”类型的头像设置并且放在了很明显的位置……</p>
+<p>但似乎“假头像”对于“冲动型用户”（大部分男性用户）来说似乎只是一剂“延时药”……</p>
+<p>以性格测试（或者说不看脸的方式）作为社交出发点的app能否在用户【后“陌生人社交”时期】还留在用户手机里，内容绝对是关键，但是似乎到现在我还没发现比较好的答案……</p>
+<p>从长远来看，“无脸社交”只能是一种引流手段而非留存手段，所以到底问题仍然是“变现”；在这一点上如故比soul走得要远（早）一些。</p>
+<p>无脸社交真的无法激起兴趣啊，但是只看脸就更不好了，不能折中一点么。</p>
+<h3 id="06"><a href="#06" class="headerlink" title="06"></a>06</h3><p>好赞的一篇分析报告，美中不足前半段社交行业的分析还较为透彻，但后半段soul的分析有些过于表面，只停留在表面功能描述和迭代路径，有点虎头蛇尾，soul作为社交行业的一枝独秀很多人性的东西可以深挖一下，期盼可以再出续篇。</p>
+<h3 id="07"><a href="#07" class="headerlink" title="07"></a>07</h3><p>赞，很干货。</p>
+<p>不过没有提到soul的一个核心亮点功能，在聊天过程中，会点亮爱心，三个爱心会出一个字母，一共是soulmate 8个字母。越往后爱心出来的越慢，这点有助于培养用户使用soul的习惯和聊天双方的心理暗示，设计得非常精妙。</p>
+<p>作者：Hayami(18届应届生)，曾于滴滴实习，现任字节跳动产品经理。</p>
+<p>本文由 @ Hayami 原创发布于人人都是产品经理。未经许可，禁止转载。</p>
+<p>题图来源于网络。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/07/%E4%B8%80%E7%AF%87%E5%80%BC%E5%BE%97%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%A7%E5%93%81%E5%88%86%E6%9E%90%E6%8A%A5%E5%91%8A%E4%B9%8B%E4%BA%A7%E5%93%81%E8%83%8C%E6%99%AF/" title="一篇值得学习的产品分析报告之产品背景">http://alfredchen.cn/2018/12/07/一篇值得学习的产品分析报告之产品背景/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/06/%E4%BA%AC%E4%B8%9C%E5%88%B0%E5%AE%B6%E5%8F%8C11%E4%BF%83%E9%94%80%E5%85%A8%E5%A4%8D%E7%9B%98%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" rel="prev" title="京东到家双11促销全复盘学习记录">
+      <i class="fa fa-chevron-left"></i> 京东到家双11促销全复盘学习记录
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/09/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E4%BB%8E0%E5%88%B01/" rel="next" title="商业产品从0到1">
+      商业产品从0到1 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、文档概览和分析目的"><span class="nav-number">1.</span> <span class="nav-text">一、文档概览和分析目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、soul产品简介"><span class="nav-number">2.</span> <span class="nav-text">二、soul产品简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、soul产生背景"><span class="nav-number">3.</span> <span class="nav-text">三、soul产生背景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-微信、qq——为什么它们不叫社交？"><span class="nav-number">3.1.</span> <span class="nav-text">2.1 微信、qq——为什么它们不叫社交？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-社交变革——最好还是最坏的年代？"><span class="nav-number">3.2.</span> <span class="nav-text">2.2 社交变革——最好还是最坏的年代？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-3-陌陌、探探——选择or不选择，这是个问题"><span class="nav-number">3.3.</span> <span class="nav-text">2.3 陌陌、探探——选择or不选择，这是个问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-4-当我们在谈社交的时候，我们在谈些什么？"><span class="nav-number">3.4.</span> <span class="nav-text">2.4 当我们在谈社交的时候，我们在谈些什么？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-5-当下还有哪些没有被满足的社交需求？"><span class="nav-number">3.5.</span> <span class="nav-text">2.5 当下还有哪些没有被满足的社交需求？</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、soul产品分析"><span class="nav-number">4.</span> <span class="nav-text">四、soul产品分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-产品基本结构"><span class="nav-number">4.1.</span> <span class="nav-text">3.1 产品基本结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-产品迭代一览"><span class="nav-number">4.2.</span> <span class="nav-text">3.3 产品迭代一览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-产品核心功能分析"><span class="nav-number">4.3.</span> <span class="nav-text">3.3 产品核心功能分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-聊天界面"><span class="nav-number">4.4.</span> <span class="nav-text">3.4 聊天界面</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#四、soul的运营手段"><span class="nav-number">5.</span> <span class="nav-text">四、soul的运营手段</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#五、总结"><span class="nav-number">6.</span> <span class="nav-text">五、总结</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#01"><span class="nav-number">6.1.</span> <span class="nav-text">01</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#02"><span class="nav-number">6.2.</span> <span class="nav-text">02</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#03"><span class="nav-number">6.3.</span> <span class="nav-text">03</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#04"><span class="nav-number">6.4.</span> <span class="nav-text">04</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#05"><span class="nav-number">6.5.</span> <span class="nav-text">05</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#06"><span class="nav-number">6.6.</span> <span class="nav-text">06</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#07"><span class="nav-number">6.7.</span> <span class="nav-text">07</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

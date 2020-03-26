@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="11月7日，在乌镇第五届世界互联网大会上，小米面向智能家居的人工智能开放平台（即小爱同学）成功入选”世界互联网领先科技成果”，恰好我这几天也在学习AI语音助手相关的知识，借此从时间维度谈谈我的一点认识。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从小爱同学谈对AI语音助手的整体认识">
+<meta property="og:url" content="http://alfredchen.cn/2018/11/08/%E4%BB%8E%E5%B0%8F%E7%88%B1%E5%90%8C%E5%AD%A6%E8%B0%88%E5%AF%B9AI%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="11月7日，在乌镇第五届世界互联网大会上，小米面向智能家居的人工智能开放平台（即小爱同学）成功入选”世界互联网领先科技成果”，恰好我这几天也在学习AI语音助手相关的知识，借此从时间维度谈谈我的一点认识。">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/SU9eiMDFD308uQlJjrqr.jpg">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/uBLtwQqpgXUTNJuPDiND.png">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/bsOD8ydaLpfdOpsdeCDo.png">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/H9EetpUp5vyZUBXlcMEY.jpg">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/Q7sbJJ0EgF85UwnwJ5sb.jpg">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/gZEdE4N03uSR2TQbAAWT.jpg">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/WHU4vVbNPZ59AlGlbp9J.jpg">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/etL9ahXR6aAftztPd5N9.png">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/VZEwH9lZNIAfuWQc9FmQ.jpg">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/23QeE8XL9xnlldr004pT.png">
+<meta property="og:image" content="http://image.woshipm.com/wp-files/2018/11/QcYOy2OfCnmASSQsKqEo.png">
+<meta property="article:published_time" content="2018-11-08T05:46:22.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:10:47.892Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://image.woshipm.com/wp-files/2018/11/SU9eiMDFD308uQlJjrqr.jpg">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/11/08/%E4%BB%8E%E5%B0%8F%E7%88%B1%E5%90%8C%E5%AD%A6%E8%B0%88%E5%AF%B9AI%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>从小爱同学谈对AI语音助手的整体认识 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/11/08/%E4%BB%8E%E5%B0%8F%E7%88%B1%E5%90%8C%E5%AD%A6%E8%B0%88%E5%AF%B9AI%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          从小爱同学谈对AI语音助手的整体认识
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-11-08 13:46:22" itemprop="dateCreated datePublished" datetime="2018-11-08T13:46:22+08:00">2018-11-08</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%80%9D%E8%80%83/" itemprop="url" rel="index">
+                    <span itemprop="name">产品思考</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/11/08/%E4%BB%8E%E5%B0%8F%E7%88%B1%E5%90%8C%E5%AD%A6%E8%B0%88%E5%AF%B9AI%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/11/08/%E4%BB%8E%E5%B0%8F%E7%88%B1%E5%90%8C%E5%AD%A6%E8%B0%88%E5%AF%B9AI%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>11月7日，在乌镇第五届世界互联网大会上，小米面向智能家居的人工智能开放平台（即小爱同学）成功入选”世界互联网领先科技成果”，恰好我这几天也在学习AI语音助手相关的知识，借此从时间维度谈谈我的一点认识。</p>
+<a id="more"></a>
+
+<h2 id="一、AI语音助手的历史大事记"><a href="#一、AI语音助手的历史大事记" class="headerlink" title="一、AI语音助手的历史大事记"></a>一、AI语音助手的历史大事记</h2><ul>
+<li><p>2010年4月28日，苹果公司完成了对Siri公司的收购，Siri从App Store中下架，并取消了所有除iOS平台外的软件研发；</p>
+</li>
+<li><p>2014年4月2日至4日，在美国加利福尼亚州旧金山举行的微软Build开发者大会上，微软全球副总裁乔北峰首度向公众展示了小娜；</p>
+</li>
+<li><p>2014年11月，亚马逊宣布将Alexa与Echo合并；</p>
+</li>
+<li><p>2015年9月9日，百度董事长兼首席执行官李彦宏在百度世界大会中推出度秘（Duer）；</p>
+</li>
+<li><p>2016年5月19日，Google在Google I/O大会上发布了Google Assistant；</p>
+</li>
+<li><p>2017年7月26日，小米发布的首款人工智能（AI）音箱的唤醒词及二次元人物形象小爱同学；</p>
+</li>
+<li><p>2018年5月9日，Google在Google I/O大会上发布了Google Duplex；</p>
+</li>
+<li><p>2018年8月15日，亚马逊和微软联合宣布，双方已完成各自语音助手Alexa和Cortana的整合。</p>
+</li>
+</ul>
+<h2 id="二、AI语音助手的现状——拼场景"><a href="#二、AI语音助手的现状——拼场景" class="headerlink" title="二、AI语音助手的现状——拼场景"></a>二、AI语音助手的现状——拼场景</h2><h3 id="场景一：连接硬件生态"><a href="#场景一：连接硬件生态" class="headerlink" title="场景一：连接硬件生态"></a>场景一：连接硬件生态</h3><p>由于语音交互核心环节上的一系列技术突破及人工智能公司提供的ToB解决方案，AI语音助手开始逐渐在技术层面上满足人们的基本要求。</p>
+<p><img src="http://image.woshipm.com/wp-files/2018/11/SU9eiMDFD308uQlJjrqr.jpg" alt="img"></p>
+<p>以小爱同学为例：它的语音和语义技术主要来自于多家合作伙伴，包括：Nuance、搜狗知音、思必驰、猎户星空、声智科技、海知智能、三角兽等。</p>
+<p>语音识别技术（ASR）的接口，用的是思必驰、Nuance 与搜狗的（现在小米似乎是在自研）。</p>
+<p>自然语言理解（NLP）等关于语义方面的技术，由小米大脑亲自来做。</p>
+<p>前端的麦克风阵列以及降噪方案，是由声智科技提供的。</p>
+<p>语音合成技术，是由猎户星空提供的。</p>
+<p>很大程度上，自然语言解析技术已经逐渐不再成为各家广义智能助理产品的核心竞争力，<strong>识别用户意图之后所提供的服务开始成为对话机器人差异化的核心。</strong>而在这个时候，国内公司中再次抓住头部红利的正是小米。</p>
+<p>不得不说雷军真的是一个非常有大势思维的企业家，总能恰如其分地踩上时代红利，正如他所说：“一个人要做成一件事情，其实本质上不是在于你多强，而是你要顺势而为，于万仞之上推千钧之石”。</p>
+<p>他踩着智能手机大换代、消费升级、网红电商的红利撑起了小米，这次他又抓住了人工智能目前布局最广泛的智能硬件生态。</p>
+<p><img src="http://image.woshipm.com/wp-files/2018/11/uBLtwQqpgXUTNJuPDiND.png" alt="img"></p>
+<p>在评选世界互联网领先科技成果奖的介绍中，小米人工智能开放平台是这么定义的：</p>
+<blockquote>
+<p>小米人工智能开放平台，是一个以智能家居需求场景为出发点，深度整合人工智能和物联网能力，为用户、软硬件厂商和个人开发者提供智能场景及软硬件生态服务的开放创新平台。</p>
+</blockquote>
+<p>著名产品人梁宁在《产品思维三十讲》中分析了小米的三级火箭模式：</p>
+<p><strong>一级火箭：</strong>小米手机，是小米的头部流量，不为挣钱，雷军也承诺小米硬件的综合利润率永远不会超过5%（根据小米的上市招股说明书，雷军在这一块真的没有说谎）。</p>
+<p><strong>二级火箭：</strong>小米手机拉动的一系列零售场景，小米商城、米家、小米之家、小米小店（小米11月18日将会在英国伦敦的Westfield mall落地在英国市场的第一家门店也是用MI8 pro打头阵，并逐步开放其它商品和渠道）。</p>
+<p><strong>三级火箭：</strong>是一个高利润产品，原文说“现在雷总还不愿意说出来”。</p>
+<p>从小米上市招股说明书中的募集资金用途（小米计划将30%募集资金用于研发及开发智能手机、电视、笔记本电脑、人工智能音箱等核心产品；30%用于全球扩展；30%用于扩大投资及强化生活消费品与移动互联网产业链；剩下的10%用作日常经营）。</p>
+<p>从小米高层和雷军的发言中可以知道：小米的三级火箭应该就是AI+IOT，能真正撑起小米的利润以及智能化未来。</p>
+<p>根据世界互联网大会给出的数据：</p>
+<blockquote>
+<p>截至2018年7月，小米投资或孵化了超过220家生态链公司，全球已有超过1.15亿智能设备与小米IoT平台连接，小米的AI语音服务-小爱同学月活跃用户超过3000万，单月唤醒超过10亿次</p>
+</blockquote>
+<p>在与硬件生态的连接上，小爱同学可以说有着得天独厚的先发优势。</p>
+<h3 id="场景二：连接软件生态"><a href="#场景二：连接软件生态" class="headerlink" title="场景二：连接软件生态"></a>场景二：连接软件生态</h3><p><strong>（1）打通操作系统场景</strong></p>
+<p>与手机操作系统MIUI的深度结合使得小爱同学能够实现手机中的通用指令功能，并且在现有技术范围内去发觉一些非常实用的优化功能。对于手机操作系统上的通用功能，小爱同学可以直接调用执行，比如最常见的设定闹钟等。</p>
+<p>而对于不提供接口的手机APP，小爱同学可以通过虚拟按键操作模拟用户执行，个人觉得最有趣的操作就是让小爱打开微信上某人的朋友圈。你可试试对小爱同学说：“打开XXX的朋友圈”，然后可以看到手机在自动一步一步执行以下操作：</p>
+<p><strong>进入微信-&gt;进入搜索页面-&gt;进入聊天页面-&gt;进入聊天信息页面-&gt;进入个人主页-&gt;进入朋友圈</strong></p>
+<p>我在使用其他手机进行对比时是没有办法实现这个功能的，可见小米在打造产品的时候真的是想尽办法在技术边界内尽可能地满足用户需求。</p>
+<p><strong>（2）打通外部软件接口</strong></p>
+<p><img src="http://image.woshipm.com/wp-files/2018/11/bsOD8ydaLpfdOpsdeCDo.png" alt="img"></p>
+<p>你可以试试对小爱同学说：“打开美团点外卖”，你会发现它可以和美团自带的小美智能助理会进行无缝对接，在进入美团后顺利让小美来接管你的后续需求。这是在软件生态中非常和谐的一种合作模式。</p>
+<h2 id="三、AI语音助手的未来"><a href="#三、AI语音助手的未来" class="headerlink" title="三、AI语音助手的未来"></a>三、AI语音助手的未来</h2><h3 id="让形象更可感——Gatebox"><a href="#让形象更可感——Gatebox" class="headerlink" title="让形象更可感——Gatebox"></a>让形象更可感——Gatebox</h3><p><img src="http://image.woshipm.com/wp-files/2018/11/H9EetpUp5vyZUBXlcMEY.jpg" alt="img"></p>
+<p>Gatebox是日本公司vinclu专门为宅男打造的一款全息影像人工智能管家，可以说日本人民是真的会玩，你可以去官网感受一下他们的宣传片</p>
+<p>（<a href="https://gatebox.ai/home/">https://gatebox.ai/home/</a>）：</p>
+<blockquote>
+<p>第一个画面，宅男在公司加班，Hikari Azuma通过Line发去了消息，“你记得今天是什么日子吗？什么时候回来？”宅男说，“马上回来！”Hikari Azuma：“好棒！”，随手打开了家里的灯，等待主人回家。</p>
+<p>宅男回家后，Hikari Azuma立马甜蜜问候：“欢迎回来。”然后羞答答地说：“今天是我们住在一起三个月纪念日，你记得吗？”</p>
+<p>宅男立马拿出了礼物，Hikari Azuma看到之后开心地鼓掌。</p>
+<p>宅男准备好食物和酒，开始庆祝时，Hikari Azuma把家里的灯光系统调节成了温馨浪漫的风格。</p>
+<p>最后，宅男和Hikari Azuma举起酒杯，互相感谢对方的陪伴。视频最后的一句话写着：Living with characters(和二次元老婆一起生活)。</p>
+</blockquote>
+<p>不少中国同胞在youtube上呼吁雷军赶紧把这个公司买下，在中国用感动人心的价格福利大众，哈哈。</p>
+<p>根据梅拉比安模型：感情表达＝内容7%+语调语气38%+表情肢体语言55%，所以仅靠语言文字远远不够，甚至像Google Duplex做到分辨不出说话者是AI还是人也还不够，长期来说，更重要的会是“多模态交互”。</p>
+<p><img src="http://image.woshipm.com/wp-files/2018/11/Q7sbJJ0EgF85UwnwJ5sb.jpg" alt="img"></p>
+<p>在Gatebox的交互中，比如调低灯光亮度时，她会摆出朝灯呼气的动作，询问天气时，她又会做出侧身展示天气预报的动作。小爱同学是首个正式发布人工智能虚拟形象的AI语音助手，“米娘”的形象也受众多米粉们喜爱，如果真的能把成本降下来的话，相信会有蛮多人（尤其是宅男们）入坑的。</p>
+<p><img src="http://image.woshipm.com/wp-files/2018/11/gZEdE4N03uSR2TQbAAWT.jpg" alt="img"><br>退而求其次，就算不做全息影像，做一个平面投影也是可以的嘛。</p>
+<h3 id="让关系更自然——Replika"><a href="#让关系更自然——Replika" class="headerlink" title="让关系更自然——Replika"></a>让关系更自然——Replika</h3><p><img src="http://image.woshipm.com/wp-files/2018/11/WHU4vVbNPZ59AlGlbp9J.jpg" alt="img"></p>
+<p>Replika是Luka Inc.公司开发的一款Chatbot，据说初衷是为了缅怀两位创始人在车祸中失去的挚友，通过搜集他生前的社交聊天预料来创建一位虚拟人。</p>
+<p>抛开它作为一款Chatbot与AI语音助手的需求差别，我觉得它设计得非常好的是被称为“反刍机制”的功能，将你在和它聊天时提到的语料在一段时间间隔之后提取出来，自然地插入到交流当中，感觉就像你跟朋友提起你最近睡眠不好，过了一段时间后朋友会来关心你的近况，感觉非常的贴心。</p>
+<p><img src="http://image.woshipm.com/wp-files/2018/11/etL9ahXR6aAftztPd5N9.png" alt="img"></p>
+<p><img src="http://image.woshipm.com/wp-files/2018/11/VZEwH9lZNIAfuWQc9FmQ.jpg" alt="img"></p>
+<p>真的有一种感觉，就像《小王子》里面有一段，小王子对小狐狸说我们一起玩啊，小狐狸回答说我现在还不能和你一起玩，因为我还没有被驯养。</p>
+<p>驯养是指彼此共同投入一段时间，结成一种关系，人类是AI的训练师，但与此同时，AI其实也在训练你如何与它进行互动。或许只有这样，千禧一代的互联网原住民才能跨过未来与AI原住民之间的鸿沟。小爱同学虽然没有Chatbot的这种天然场景，但还是有很多落地点的：</p>
+<ol>
+<li><p>小爱音箱的对话，由于无法主动开启对话，可以选择在识别到用户当前意图与语料库中的语义信息相关时补充对话，比如用户说：“播放音乐”，小爱会回复：“爱听歌的人运气都不会太差哦”，那么可以再回复“我记得你说你注意力很难集中，要不要听听我给你推荐的轻音乐？”。</p>
+</li>
+</ol>
+<h3 id="让对话更真实——Google-Duplex"><a href="#让对话更真实——Google-Duplex" class="headerlink" title="让对话更真实——Google Duplex"></a>让对话更真实——Google Duplex</h3><p><img src="http://image.woshipm.com/wp-files/2018/11/23QeE8XL9xnlldr004pT.png" alt="img"></p>
+<p>在5月9日的Google I/O大会上，Google Duplex的一句 “umms”着实让人惊艳，5 月 11 日，谷歌母公司 Alphabet 董事长（前斯坦福校长）John Hennessy 表示，他们还达成了一项里程碑成绩 ——Duplex （部分）通过了图灵测试。</p>
+<p>对Google Duplex不了解的朋友，如果能科学上网的话，可以到Google AI Blog上看看Google官方的介绍原文：</p>
+<p><a href="http://webcache.googleusercontent.com/search?q=cache:http://ai.googleblog.com/2018/05/duplex-ai-system-for-natural-conversation.html">http://webcache.googleusercontent.com/search?q=cache:http://ai.googleblog.com/2018/05/duplex-ai-system-for-natural-conversation.html</a></p>
+<p>以下对Google Duplex的技术认知来源于虫门科技郭靖的文章，这是我看到的对Google Duplex最深入的分析，感兴趣的朋友可以点击链接阅读原文：</p>
+<p><a href="http://192.168.73.133/www.sohu.com/a/234314902_744545">http://192.168.73.133/www.sohu.com/a/234314902_744545</a></p>
+<p>Google Duplex让对话如此真实主要是体现在两大块——自然语言理解与对话模块、文本转语音模块。</p>
+<p><strong>（1）文本转语音模块</strong></p>
+<p>文本转语音模块（即语音合成）技术比较明了，在博客中交代得比较清楚，没有什么悬念。</p>
+<blockquote>
+<p>We use a combination of a concatenative text to speech (TTS) engine and a synthesis TTS engine (using Tacotron and WaveNet) to control intonation depending on the circumstance.</p>
+<p>我们结合使用联结式文本到语音（TTS）引擎和综合TTS引擎（使用Tacotron和WaveNet）来控制语调，具体取决于环境。</p>
+</blockquote>
+<p><strong>（2）自然语言理解与对话模块</strong></p>
+<p>在自然语言理解与对话模块的具体实现上Google就不是很老实了，只是给了一些比较宽泛的概念。</p>
+<p>郭靖在他的文章中给出了以下猜想：</p>
+<p>在这个猜想的架构中，用户的语音通过ASR识别为文字后，会通过预设的规则转化为形式语言，将重要实体用形式模板代替。</p>
+<p>这样形式化后的文本与语音、上文的形式文本一起送入一个encoder模型，其将这些原始信息编码成两个语义信息向量，一个代表本轮用户的语言，另一个代表上几轮对话。</p>
+<p>同时，通过ASR识别的文本还会与上几轮对话的文本、通过Google Assistant传来的条件参数（代表对话的目标，用户本身的信息等大前提）一起进入另一个网络，其根据输入的信息输出一个代表当前对话状态信息的向量。</p>
+<p>这一网络很可能具备每一轮对话为一个step的循环结构，意味着这个对话状态信息的更新会参考前一轮对话状态的信息。</p>
+<p><img src="http://image.woshipm.com/wp-files/2018/11/QcYOy2OfCnmASSQsKqEo.png" alt="img"></p>
+<p>当然，在拿着锤子找钉子的当下，这一块就太偏前沿技术了，但是对于AI，对于整个人类历史，技术始终都是推动发展的源动力。</p>
+<p>- </p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/11/08/%E4%BB%8E%E5%B0%8F%E7%88%B1%E5%90%8C%E5%AD%A6%E8%B0%88%E5%AF%B9AI%E8%AF%AD%E9%9F%B3%E5%8A%A9%E6%89%8B%E7%9A%84%E6%95%B4%E4%BD%93%E8%AE%A4%E8%AF%86/" title="从小爱同学谈对AI语音助手的整体认识">http://alfredchen.cn/2018/11/08/从小爱同学谈对AI语音助手的整体认识/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/02/%E4%B8%80%E6%AC%A1%E9%A1%B9%E7%9B%AE%E5%A4%8D%E7%9B%98/" rel="next" title="一次项目复盘">
+      一次项目复盘 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一、AI语音助手的历史大事记"><span class="nav-number">1.</span> <span class="nav-text">一、AI语音助手的历史大事记</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二、AI语音助手的现状——拼场景"><span class="nav-number">2.</span> <span class="nav-text">二、AI语音助手的现状——拼场景</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#场景一：连接硬件生态"><span class="nav-number">2.1.</span> <span class="nav-text">场景一：连接硬件生态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#场景二：连接软件生态"><span class="nav-number">2.2.</span> <span class="nav-text">场景二：连接软件生态</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三、AI语音助手的未来"><span class="nav-number">3.</span> <span class="nav-text">三、AI语音助手的未来</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#让形象更可感——Gatebox"><span class="nav-number">3.1.</span> <span class="nav-text">让形象更可感——Gatebox</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#让关系更自然——Replika"><span class="nav-number">3.2.</span> <span class="nav-text">让关系更自然——Replika</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#让对话更真实——Google-Duplex"><span class="nav-number">3.3.</span> <span class="nav-text">让对话更真实——Google Duplex</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

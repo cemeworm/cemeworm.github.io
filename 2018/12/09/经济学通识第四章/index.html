@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="在计划与自由中选择协调">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《经济学通识》第四章：需要协调">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="在计划与自由中选择协调">
+<meta property="article:published_time" content="2018-12-09T15:00:43.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:19:47.016Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>《经济学通识》第四章：需要协调 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          《经济学通识》第四章：需要协调
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-09 23:00:43" itemprop="dateCreated datePublished" datetime="2018-12-09T23:00:43+08:00">2018-12-09</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%80%9A%E8%AF%86/" itemprop="url" rel="index">
+                    <span itemprop="name">通识</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E9%80%9A%E8%AF%86/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" itemprop="url" rel="index">
+                    <span itemprop="name">经济学</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>在计划与自由中选择协调</p>
+<a id="more"></a>
+
+<h1 id="1：汇率与通胀"><a href="#1：汇率与通胀" class="headerlink" title="1：汇率与通胀"></a>1：汇率与通胀</h1><h2 id="汇率形成的机制"><a href="#汇率形成的机制" class="headerlink" title="汇率形成的机制"></a>汇率形成的机制</h2><p>汇率是由甲国人民对乙国资源的需求，以及乙国人民对甲国资源的需求共同决定的            </p>
+<p>正是每个消费者在购买商品时的钞票投票，表达了他们对商品中所包含的外国资源（自然资源和人力资源）的需求程度，从而通过这种不可抗拒的经济力量，决定了国与国之间的汇率</p>
+<h2 id="稳住了汇率，引入了通胀"><a href="#稳住了汇率，引入了通胀" class="headerlink" title="稳住了汇率，引入了通胀"></a>稳住了汇率，引入了通胀</h2><h3 id="文章大意"><a href="#文章大意" class="headerlink" title="文章大意"></a>文章大意</h3><ul>
+<li><p>一，因为中国是大国，是个蒸蒸日上的大经济体，不是小国如阿根廷、立陶宛，所以中国的中央银行，适宜以稳定物价为己任，而不适宜以稳定汇率为己任</p>
+</li>
+<li><p>二，若非要以稳定汇率为己任，那么被动地“输入”国外的通胀或通缩，就是不可避免的代价</p>
+</li>
+</ul>
+<h3 id="摆在中央银行面前的，有两套好方针"><a href="#摆在中央银行面前的，有两套好方针" class="headerlink" title="摆在中央银行面前的，有两套好方针"></a>摆在中央银行面前的，有两套好方针</h3><ul>
+<li><p>一是盯死外币，这外币可以是美元、欧元或不对外公布的一揽子外币。这样，人民币的货币发行量就跟外币流入量钩死了。流入外币越多，人民币发行量就越多。这是“联系汇率”的一般模式，中央银行实际上丧失了货币发行权</p>
+</li>
+<li><p>二是盯死物价。让国内保持稳定的、接近零的通胀率，好让国内的生产和生活有一个可信赖的价值尺度。这样做的同时，就得让外汇自由流动，让汇率自由浮动。</p>
+</li>
+</ul>
+<h2 id="压低人民币汇率等于供养美国"><a href="#压低人民币汇率等于供养美国" class="headerlink" title="压低人民币汇率等于供养美国"></a>压低人民币汇率等于供养美国</h2><p>有三个因素可以解释欠条激增的现象</p>
+<ul>
+<li><p>一是我们对外国人贡献大，所以换来的欠条多</p>
+</li>
+<li><p>二是我们对外国人的需求与索取少，所以兑出去的欠条少</p>
+</li>
+<li><p>三是人民币汇率过低，所以持美元的人都纷纷跑来换取人民币占便宜</p>
+</li>
+</ul>
+<p>中国如果不按照市场信号而是出于政策倾向过分压低人民币汇率，那么就会同时导致一下几种后果</p>
+<ul>
+<li><p>外国政府在其本国生产商的施压下要求中国提高人民币汇率</p>
+</li>
+<li><p>外国广大消费者占便宜</p>
+</li>
+<li><p>过多外币（欠条）流入中国</p>
+</li>
+<li><p>中国国内通货膨胀势头加剧</p>
+</li>
+<li><p>如果国外——尤其是美国——由于其救市计划产生了其本国货币的通货膨胀，那么中国人持有的欠条的实际购买力将下降，意味着中国人过去白干了</p>
+</li>
+<li><p>中国货过分便宜，导致中国人将来还要白干</p>
+</li>
+</ul>
+<h2 id="是明确货币政策的时候了"><a href="#是明确货币政策的时候了" class="headerlink" title="是明确货币政策的时候了"></a>是明确货币政策的时候了</h2><h3 id="货币中性与人民币升值根源"><a href="#货币中性与人民币升值根源" class="headerlink" title="货币中性与人民币升值根源"></a>货币中性与人民币升值根源</h3><p>因为用人民币标价的那些中国货物和中国服务受欢迎，所以外国人争着拿美元来兑换人民币，以便享受中国的货物和服务。在争夺人民币的过程中，用人民币换取美元的比率就会被抬高，也就是大家说的“人民币的升值压力”</p>
+<h3 id="只有三种货币制度"><a href="#只有三种货币制度" class="headerlink" title="只有三种货币制度"></a>只有三种货币制度</h3><ul>
+<li>“联系汇率”</li>
+</ul>
+<p>本国货币与某国外币按固定汇率进行兑换</p>
+<ul>
+<li>“自主汇率”</li>
+</ul>
+<p>一国的货币当局只盯着本国的物价水平，以维持物价稳定为原则来控制货币流通量，而让本国货币与外币的兑换率自由浮动</p>
+<ul>
+<li>“管制汇率”</li>
+</ul>
+<p>一国通过强行控制进出口商品量和外币兑换量，把本国货币的币值，硬性维持在某个先定的价位上</p>
+<h3 id="加息和调控都不能抑制通胀"><a href="#加息和调控都不能抑制通胀" class="headerlink" title="加息和调控都不能抑制通胀"></a>加息和调控都不能抑制通胀</h3><p>要压制通胀，只有一条路，就是少印钞票和收紧银根</p>
+<p>中国房价的节节攀升，部分是由于人民币钩紧美元造成的</p>
+<h1 id="2：中国经济改革的逻辑和命题"><a href="#2：中国经济改革的逻辑和命题" class="headerlink" title="2：中国经济改革的逻辑和命题"></a>2：中国经济改革的逻辑和命题</h1><h2 id="经济改革就是要落实转让权"><a href="#经济改革就是要落实转让权" class="headerlink" title="经济改革就是要落实转让权"></a>经济改革就是要落实转让权</h2><p>一份资产究竟归谁所有，不能只看文字上的规定，而必须考察其”使用权”“收入分配权”和”转让权“，看这三权究竟归谁掌控</p>
+<p>撇开名义上的规定不说，实际上总有这样或那样的个人，对国有资产行驶着“使用权”和“收入分配权”；问题是第三权，即“转让权”，并没有得到落实。这种”三缺一“的产权结构，是全部问题的症结</p>
+<h2 id="征地还是征税"><a href="#征地还是征税" class="headerlink" title="征地还是征税"></a>征地还是征税</h2><p>让我们约略分析政府的这几种生财之道</p>
+<ul>
+<li>先谈挣钱</li>
+</ul>
+<p>政府官员不是公共资源的私有者，他们对资源利用的决策，只可能顾及任期之内的效果，不可能看到遥远的未来</p>
+<ul>
+<li>再谈借钱</li>
+</ul>
+<p>政府借钱就是发债</p>
+<ul>
+<li><p>二战后，西方国家盛行凯恩斯经济学，信奉政府乱花钱有利于刺激经济的理财哲学</p>
+</li>
+<li><p>目前欧洲的债务危机，不仅印证了政府为了资助刺激经济计划而进行大量举债的倾向，也展现了这种做法的严重后果</p>
+</li>
+<li><p>再谈印钱</p>
+</li>
+</ul>
+<p>政府印钱那就是制造通货膨胀</p>
+<ul>
+<li>再谈卖家当</li>
+</ul>
+<p>文明而有效的做法，是改“实物税”为“货币税”</p>
+<h2 id="征地的权衡"><a href="#征地的权衡" class="headerlink" title="征地的权衡"></a>征地的权衡</h2><p>人民授权一群人来管理，就必须确保这群人不能反过来滥用权力去侵害那些授权者的权利；而这就是基本的“社会契约理论”的核心</p>
+<p>对照中国的情况，假如把美国的征地历史，看做是以私有产权为起点，并不断受到国家经济干预力量侵蚀的过程，那么中国当代的征地历史，则是以国有土地为起点、土地使用权逐渐得到落实和保障、尽管仍不断受到各级政府干预的过程</p>
+<h2 id="合理集资与庞氏骗局"><a href="#合理集资与庞氏骗局" class="headerlink" title="合理集资与庞氏骗局"></a>合理集资与庞氏骗局</h2><h3 id="吴英案"><a href="#吴英案" class="headerlink" title="吴英案"></a>吴英案</h3><p>司法的重点应该从“帮助受害人报复”向“遏制未来犯罪”过度</p>
+<h3 id="一系列合理的信贷行为不属于庞氏骗局"><a href="#一系列合理的信贷行为不属于庞氏骗局" class="headerlink" title="一系列合理的信贷行为不属于庞氏骗局"></a>一系列合理的信贷行为不属于庞氏骗局</h3><ul>
+<li><p>第一，举债本身不是骗局</p>
+</li>
+<li><p>第二，投资失败并不构成庞氏骗局</p>
+</li>
+<li><p>第三，投资回报极高，也不构成庞氏骗局</p>
+</li>
+<li><p>第四，“借新钱来还旧债”也不是诈骗</p>
+</li>
+</ul>
+<h3 id="特征"><a href="#特征" class="headerlink" title="特征"></a>特征</h3><p>举债人刻意、反复、系统地向放贷人谎报其经营所得和还款来源</p>
+<h3 id="甄别的关键"><a href="#甄别的关键" class="headerlink" title="甄别的关键"></a>甄别的关键</h3><ul>
+<li><p>一是举债人的还款究竟来自经营的盈利，还是新的举债</p>
+</li>
+<li><p>二是房贷人在做出放贷决定时，究竟是清楚了解举债人的财务运作模式，还是受到了刻意的蒙骗</p>
+</li>
+</ul>
+<h3 id="站不住脚的辩护理由"><a href="#站不住脚的辩护理由" class="headerlink" title="站不住脚的辩护理由"></a>站不住脚的辩护理由</h3><ul>
+<li><p>一是“集资无罪论”</p>
+</li>
+<li><p>二是“无受害人伦”</p>
+</li>
+<li><p>三是“实业论”</p>
+</li>
+<li><p>四是“利息自由论”</p>
+</li>
+<li><p>五是”没跑论”</p>
+</li>
+<li><p>六是“升值论”</p>
+</li>
+</ul>
+<h2 id="民间金融改革的难点"><a href="#民间金融改革的难点" class="headerlink" title="民间金融改革的难点"></a>民间金融改革的难点</h2><h3 id="民间金融的症状，就是“两多两难”"><a href="#民间金融的症状，就是“两多两难”" class="headerlink" title="民间金融的症状，就是“两多两难”"></a>民间金融的症状，就是“两多两难”</h3><ul>
+<li><p>“民间资金多投资难”</p>
+</li>
+<li><p>“中小企业多融资难”</p>
+</li>
+</ul>
+<p>根本原因在于信息不对称所造成的天然障碍</p>
+<p>要建立这个平台，需要多种要素的配合，包括建立融汇各银行、工商、税务和司法系统的“企业信用数据中心”，包括引进和尝试各种“信用身份识别“技术，也包括更深刻的改革——大幅度替中小企业减税，从而恢复城市纳税的商业风气，为降低”信用身份识别“成本提供必要的制度环境和数据基础</p>
+<h2 id="互联网金融的管理哲学"><a href="#互联网金融的管理哲学" class="headerlink" title="互联网金融的管理哲学"></a>互联网金融的管理哲学</h2><h3 id="如何看待风险"><a href="#如何看待风险" class="headerlink" title="如何看待风险"></a>如何看待风险</h3><p>互联网金融存在五大风险</p>
+<ul>
+<li><p>其一，是欺诈风险，即金融服务提供商挪用存款或卷款潜逃的风险</p>
+</li>
+<li><p>其二，是技术风险，即信息安全、操作流程、金融犯罪以及流动性支撑等环节所存在的风险</p>
+</li>
+<li><p>其三，是投资风险</p>
+</li>
+<li><p>其四，是货币流通量的风险。即由于互联网金融服务带动了货币流动速率的急剧变化，造成了中央银行控制货币流通量失准的风险</p>
+</li>
+<li><p>其五，是利益重新分配的风险</p>
+</li>
+</ul>
+<h3 id="何为合理的监管"><a href="#何为合理的监管" class="headerlink" title="何为合理的监管"></a>何为合理的监管</h3><p>转为奉行“底线式监管”和“园丁式管理”的监管哲学</p>
+<ul>
+<li><p>一方面锁定已经明晰的各种风险的情况</p>
+</li>
+<li><p>另一方面则尽量放开市场，支持数据共享，允许经营越界，鼓励产品演化，让民间互联网企业与传统的金融机构平等地竞争，从而造就一个健康的互联网商业文明</p>
+</li>
+</ul>
+<h2 id="经济发展岂是任务"><a href="#经济发展岂是任务" class="headerlink" title="经济发展岂是任务"></a>经济发展岂是任务</h2><h3 id="全局计划有别于局部计划"><a href="#全局计划有别于局部计划" class="headerlink" title="全局计划有别于局部计划"></a>全局计划有别于局部计划</h3><p>那些知识和经验，只是用于个人或企业，更准确地说，只适用于目标简单的系统；而对于整体经济，或者说目标极其复杂的系统，全局计划是不适用的</p>
+<h3 id="经济指标的片面性"><a href="#经济指标的片面性" class="headerlink" title="经济指标的片面性"></a>经济指标的片面性</h3><p>国民收入的数字，会令人们对“经济结构自然调整”和“政府刺激经济政策”产生双重误解</p>
+<h3 id="经济结构不是浪费"><a href="#经济结构不是浪费" class="headerlink" title="经济结构不是浪费"></a>经济结构不是浪费</h3><p>造成损失的是当初的决策，而不是现在的调整，现在的调整只是在为将来的收益做铺垫。记住，虽然调节是好的，但经济发展将会放缓</p>
+<h3 id="对待经济增长的态度"><a href="#对待经济增长的态度" class="headerlink" title="对待经济增长的态度"></a>对待经济增长的态度</h3><p>把国民收入或经济增长指标，有意识地从每届政府年复一年的任务中永久地剔除出去</p>
+<h1 id="3：民主与自由"><a href="#3：民主与自由" class="headerlink" title="3：民主与自由"></a>3：民主与自由</h1><h2 id="钞票与选票之争"><a href="#钞票与选票之争" class="headerlink" title="钞票与选票之争"></a>钞票与选票之争</h2><p>公共选择学派指出了选票机制对市场机制的危害性</p>
+<p>其基本的结论是：选民关注的事情越广泛，或者选举进行得越频繁，那么市场和效率就会受到越大的伤害</p>
+<p>只有严格限定选民和政客对市场的干预范围，才能防止选票政治侵犯个人产权和违反合约精神</p>
+<h2 id="资源争用不应靠民主解决"><a href="#资源争用不应靠民主解决" class="headerlink" title="资源争用不应靠民主解决"></a>资源争用不应靠民主解决</h2><p>对于社会上普遍的“资源争用”和”社会冲突”问题而言，坚定的“市场经济”拥护者有一个一般化的观点：只要通过“市场”可以解决，就没有理由转交给“民主”来解决。换句话说，只要涉及具有明确产权的交换或争用，就应该通过“投钞票”而不是“投选票”来决定</p>
+<p>种种或明或暗的“投票程序”，至少有三个缺陷或难题</p>
+<ul>
+<li><p>一是“什么人有资格参加投票“</p>
+</li>
+<li><p>二是“投票未必能够反映民意”</p>
+</li>
+<li><p>三是“投票既不能反映代价，也不能刺激生产“</p>
+</li>
+</ul>
+<p>用投票的民主方式来解决“资源争用”的冲突，结果是妨碍了产权的实施和交易，扭曲资源的配置，使馅饼越做越小，最终人人都受到损害。投票越多，浪费越大，所以说他是“反经济”的</p>
+<h2 id="打破对政府和投票的迷信"><a href="#打破对政府和投票的迷信" class="headerlink" title="打破对政府和投票的迷信"></a>打破对政府和投票的迷信</h2><p>“公共选择”理论告诉我们恰恰相反的结论：政府不可能提供绝对公平，也未必比市场更有效率，而投票因其过程充满“猫腻”，所以其结果也绝不是正与邪、黑与白那么简单</p>
+<h2 id="理性胡闹"><a href="#理性胡闹" class="headerlink" title="理性胡闹"></a>理性胡闹</h2><p>理性胡闹是乔治梅森大学经济学教授卡普兰研究民主投票机制的核心问题之一</p>
+<p>人的思维五花八门，而人的行动却大同小异；因为前者不承受代价，而后者承受代价。</p>
+<h2 id="个人选择与公共选择"><a href="#个人选择与公共选择" class="headerlink" title="个人选择与公共选择"></a>个人选择与公共选择</h2><h3 id="一、理性人假定"><a href="#一、理性人假定" class="headerlink" title="一、理性人假定"></a>一、理性人假定</h3><p>经济学假定人是理性的，即人们能在（1）信息不完备和（2）约束条件的变动下，做出使个人利益最大化的决策</p>
+<p>阿尔钦在1950年的《莫测、进化和经济理论》一文的深刻主题：不管人的主观上是否有意识地追求最大化，客观上只有那些成功抵达到了最大化的人或集体才能在竞争中存活</p>
+<h3 id="二、市场结果与民意结果的分歧"><a href="#二、市场结果与民意结果的分歧" class="headerlink" title="二、市场结果与民意结果的分歧"></a>二、市场结果与民意结果的分歧</h3><p>最早是斯密，指出私心能促进公益：“请把我所要的给我，你也会得到你所要的。这句话是交易的通义</p>
+<p>哈耶克把这奇妙的过程，归功于价格。他解释道：价格有三个作用，一是传递信息，而是激励最有效的生产，三是分配产品。市场上每个人都根据价格所蕴含的信息，选择生产方式和调整生产节奏，并以社会成本最低的方式分配产品。用现代经济学的术语来说，就是每个人都时刻进行着“平衡边际”的盘算</p>
+<h3 id="三、“珠宝进、不当加工、垃圾出”之说"><a href="#三、“珠宝进、不当加工、垃圾出”之说" class="headerlink" title="三、“珠宝进、不当加工、垃圾出”之说"></a>三、“珠宝进、不当加工、垃圾出”之说</h3><p>因贸易保护主义政策而得意的国内厂商，则不仅数目少，易沟通，而且获益巨大，所以有很大的积极性通过各种游说的办法来取得对自己有利的经济政策</p>
+<h3 id="四、“珠宝进、适当加工、珠宝出”之说"><a href="#四、“珠宝进、适当加工、珠宝出”之说" class="headerlink" title="四、“珠宝进、适当加工、珠宝出”之说"></a>四、“珠宝进、适当加工、珠宝出”之说</h3><p>威特曼指出，即使民意汇总机制和官僚机制存在缺陷，选民也仍然有充分的办法纠正这一缺陷，从而保证政府机构能产生优良的经济政策</p>
+<p>最简单的办法，就是一经发现就加倍惩罚。越难发现，惩罚倍数就越大。这恰恰就是市场解决信息不对称问题的基本原理</p>
+<h3 id="五、“垃圾进、适当加工、垃圾出”之说"><a href="#五、“垃圾进、适当加工、垃圾出”之说" class="headerlink" title="五、“垃圾进、适当加工、垃圾出”之说"></a>五、“垃圾进、适当加工、垃圾出”之说</h3><p>布伦南和罗马斯基反其道而行，认为人们对公共政策表达意见，是“着眼于当前的精神上的消费行为”，而不是“着眼于未来的事物上的投资行为”</p>
+<p>进一步，卡普兰在2007年出版的《理性选民的神话》中通过实证数据证明，大部分人对经济问题的看法，都与职业经济学家的看法存在显著的差距，大部分人对公共政策所发表的意见，是与其个人在市场上的行为是存在显著差异的</p>
+<p>解释“为什么不良公共经济政策挥之不去”</p>
+<ul>
+<li>人首先是理性的，这个经典假设不需要改动；但要补充的是，人们在市场上做个人选择，由于必须自己付出全部代价，也必须自己承受全部结果，所以他们不得不格外谨慎和克制。然而，人们在公共领域作选择，则由于既不需要付出足够的代价，也完全无力影响公共政策的选择，所以会理性地把“放纵情绪和标榜自我”作为他们在公共生活中的主要追求。这里，“理性人假设”丝毫未改，而只是被深化了——如果无需负责，人们会理性地去随心所欲一番</li>
+</ul>
+<p>由此推断，要减少不良的公共经济政策，最好的办法还不是听取民意，而是一开始就避免把问题交给民意。我们应该先问“市场能不能解决问题”，如果可以，就让市场的“个人选择”来取代社会的“公共选择”</p>
+<h2 id="欧债危机与宪政选择"><a href="#欧债危机与宪政选择" class="headerlink" title="欧债危机与宪政选择"></a>欧债危机与宪政选择</h2><p>“失业”本来是劳动力搜索最高价值岗位的过程，但为了暂时掩盖事实，政府往往会采用所谓“货币政策”，通过超发货币来拔高当前的就业率；另一方面，”衰退“本来可能是生产要素配置错误而导致的结果，但为了延迟纠正错误的痛苦，政府也往往会采用所谓的”财政政策“，通过增加政府支出来刺激本来不可能维持的生产和消费</p>
+<p>在欧元系统启动前，欧盟各国政府可以左右开弓，同时动用“货币政策”和“财政政策”来应付经济周期；但欧元启动后，”货币政策“由欧洲央行统管，欧盟各国政府的武功便被废了一半</p>
+<p>自由和民主，不仅有区别，而且往往有冲突，简单地说，“自由”就是个人的人身、言论、劳动和产业得到法治保护，他们有权与他人缔结契约和进行贸易；而“民主”则是按多数原则，集体商议如何行使国家暴力，来干预人与人之间本来可以缔结的契约、本来可以进行的贸易以及本来可以保有的产业</p>
+<h2 id="民主不是自由"><a href="#民主不是自由" class="headerlink" title="民主不是自由"></a>民主不是自由</h2><p>多数人暴政，从亚里士多德和柏拉图以来，就一直是重要话题</p>
+<p>除非每一个参与者都先有了自己的被明确界定和受到高度尊重的产权，然后又自愿把它们交给“多数人原则”处置，否则在其他任何情况下的民主，都是对个人权力的侵犯</p>
+<h2 id="为自由而进言"><a href="#为自由而进言" class="headerlink" title="为自由而进言"></a>为自由而进言</h2><h3 id="一，宪政的含义"><a href="#一，宪政的含义" class="headerlink" title="一，宪政的含义"></a>一，宪政的含义</h3><p>必须研究市场与民主之间的边界，在诸多公共事务中，分清楚哪些是市场和独立的司法可以解决的，哪些是不得不交给民主解决的， 若混淆了这二者，自由即会遭到破坏</p>
+<h3 id="二、选择与歧视"><a href="#二、选择与歧视" class="headerlink" title="二、选择与歧视"></a>二、选择与歧视</h3><p>选择是一种重要的自由，而选择与歧视不可分；用一刀切的“平权运动”来纠正种种“歧视”，并不能消灭不公，而只能转移不公；只有换个人和用人机构以充分的选择权，并让迁徙、交流、交易和市场竞争发挥作用，从而促使人们逐渐采用更合理的选择标准，才是维护“自由”的正道</p>
+<h3 id="三、竞争与合作"><a href="#三、竞争与合作" class="headerlink" title="三、竞争与合作"></a>三、竞争与合作</h3><p>科斯《企业的本质》：企业的内部结构和外部边界，并非企业家主观决定、天然如此、固定不变的，而是企业家被动决定、为了适应生产和社会的约束条件而形成的</p>
+<h3 id="四、权利与福利"><a href="#四、权利与福利" class="headerlink" title="四、权利与福利"></a>四、权利与福利</h3><p>可以认为抽烟者伤害了非抽烟者，但如果禁止抽烟，那非抽烟者就伤害了抽烟者</p>
+<p>伤害也永远是双向的，不管法律如何规定，都是基于经验的权衡，而非先验的推演</p>
+<p>表面上看，提供福利是政府的天职。但政府是谁？政府只是“甲”和“已”不仅商议让“丙”替“丁”做点什么，而且自己还顺带站点好处的机构而已。揭开面纱后，我们看到的就是对个人权力的保护与对大众福利的许诺之间的冲突和权衡。这里多一点福利，那里就少一点权力</p>
+<h3 id="五、司法要独立"><a href="#五、司法要独立" class="headerlink" title="五、司法要独立"></a>五、司法要独立</h3><p>司法要独立，就是要将司法过程与“颐指气使的行政权力“和”捉摸不定的汹涌民意“隔离开来，并把它尽量交给对司法结果负有长期责任的专业群体来完成</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E5%9B%9B%E7%AB%A0/" title="《经济学通识》第四章：需要协调">http://alfredchen.cn/2018/12/09/经济学通识第四章/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%B8%89%E7%AB%A0/" rel="prev" title="《经济学通识》第三章：相互依赖">
+      <i class="fa fa-chevron-left"></i> 《经济学通识》第三章：相互依赖
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/09/%E7%BB%8F%E6%B5%8E%E5%AD%A6%E9%80%9A%E8%AF%86%E7%AC%AC%E4%BA%94%E7%AB%A0/" rel="next" title="《经济学通识》第五章：经济学随想">
+      《经济学通识》第五章：经济学随想 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1：汇率与通胀"><span class="nav-number">1.</span> <span class="nav-text">1：汇率与通胀</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#汇率形成的机制"><span class="nav-number">1.1.</span> <span class="nav-text">汇率形成的机制</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#稳住了汇率，引入了通胀"><span class="nav-number">1.2.</span> <span class="nav-text">稳住了汇率，引入了通胀</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#文章大意"><span class="nav-number">1.2.1.</span> <span class="nav-text">文章大意</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#摆在中央银行面前的，有两套好方针"><span class="nav-number">1.2.2.</span> <span class="nav-text">摆在中央银行面前的，有两套好方针</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#压低人民币汇率等于供养美国"><span class="nav-number">1.3.</span> <span class="nav-text">压低人民币汇率等于供养美国</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#是明确货币政策的时候了"><span class="nav-number">1.4.</span> <span class="nav-text">是明确货币政策的时候了</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#货币中性与人民币升值根源"><span class="nav-number">1.4.1.</span> <span class="nav-text">货币中性与人民币升值根源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#只有三种货币制度"><span class="nav-number">1.4.2.</span> <span class="nav-text">只有三种货币制度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#加息和调控都不能抑制通胀"><span class="nav-number">1.4.3.</span> <span class="nav-text">加息和调控都不能抑制通胀</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2：中国经济改革的逻辑和命题"><span class="nav-number">2.</span> <span class="nav-text">2：中国经济改革的逻辑和命题</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#经济改革就是要落实转让权"><span class="nav-number">2.1.</span> <span class="nav-text">经济改革就是要落实转让权</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#征地还是征税"><span class="nav-number">2.2.</span> <span class="nav-text">征地还是征税</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#征地的权衡"><span class="nav-number">2.3.</span> <span class="nav-text">征地的权衡</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#合理集资与庞氏骗局"><span class="nav-number">2.4.</span> <span class="nav-text">合理集资与庞氏骗局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#吴英案"><span class="nav-number">2.4.1.</span> <span class="nav-text">吴英案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一系列合理的信贷行为不属于庞氏骗局"><span class="nav-number">2.4.2.</span> <span class="nav-text">一系列合理的信贷行为不属于庞氏骗局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特征"><span class="nav-number">2.4.3.</span> <span class="nav-text">特征</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#甄别的关键"><span class="nav-number">2.4.4.</span> <span class="nav-text">甄别的关键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#站不住脚的辩护理由"><span class="nav-number">2.4.5.</span> <span class="nav-text">站不住脚的辩护理由</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#民间金融改革的难点"><span class="nav-number">2.5.</span> <span class="nav-text">民间金融改革的难点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#民间金融的症状，就是“两多两难”"><span class="nav-number">2.5.1.</span> <span class="nav-text">民间金融的症状，就是“两多两难”</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网金融的管理哲学"><span class="nav-number">2.6.</span> <span class="nav-text">互联网金融的管理哲学</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何看待风险"><span class="nav-number">2.6.1.</span> <span class="nav-text">如何看待风险</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#何为合理的监管"><span class="nav-number">2.6.2.</span> <span class="nav-text">何为合理的监管</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#经济发展岂是任务"><span class="nav-number">2.7.</span> <span class="nav-text">经济发展岂是任务</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#全局计划有别于局部计划"><span class="nav-number">2.7.1.</span> <span class="nav-text">全局计划有别于局部计划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#经济指标的片面性"><span class="nav-number">2.7.2.</span> <span class="nav-text">经济指标的片面性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#经济结构不是浪费"><span class="nav-number">2.7.3.</span> <span class="nav-text">经济结构不是浪费</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对待经济增长的态度"><span class="nav-number">2.7.4.</span> <span class="nav-text">对待经济增长的态度</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3：民主与自由"><span class="nav-number">3.</span> <span class="nav-text">3：民主与自由</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#钞票与选票之争"><span class="nav-number">3.1.</span> <span class="nav-text">钞票与选票之争</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#资源争用不应靠民主解决"><span class="nav-number">3.2.</span> <span class="nav-text">资源争用不应靠民主解决</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#打破对政府和投票的迷信"><span class="nav-number">3.3.</span> <span class="nav-text">打破对政府和投票的迷信</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#理性胡闹"><span class="nav-number">3.4.</span> <span class="nav-text">理性胡闹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#个人选择与公共选择"><span class="nav-number">3.5.</span> <span class="nav-text">个人选择与公共选择</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一、理性人假定"><span class="nav-number">3.5.1.</span> <span class="nav-text">一、理性人假定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、市场结果与民意结果的分歧"><span class="nav-number">3.5.2.</span> <span class="nav-text">二、市场结果与民意结果的分歧</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、“珠宝进、不当加工、垃圾出”之说"><span class="nav-number">3.5.3.</span> <span class="nav-text">三、“珠宝进、不当加工、垃圾出”之说</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、“珠宝进、适当加工、珠宝出”之说"><span class="nav-number">3.5.4.</span> <span class="nav-text">四、“珠宝进、适当加工、珠宝出”之说</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、“垃圾进、适当加工、垃圾出”之说"><span class="nav-number">3.5.5.</span> <span class="nav-text">五、“垃圾进、适当加工、垃圾出”之说</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#欧债危机与宪政选择"><span class="nav-number">3.6.</span> <span class="nav-text">欧债危机与宪政选择</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#民主不是自由"><span class="nav-number">3.7.</span> <span class="nav-text">民主不是自由</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#为自由而进言"><span class="nav-number">3.8.</span> <span class="nav-text">为自由而进言</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#一，宪政的含义"><span class="nav-number">3.8.1.</span> <span class="nav-text">一，宪政的含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二、选择与歧视"><span class="nav-number">3.8.2.</span> <span class="nav-text">二、选择与歧视</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三、竞争与合作"><span class="nav-number">3.8.3.</span> <span class="nav-text">三、竞争与合作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四、权利与福利"><span class="nav-number">3.8.4.</span> <span class="nav-text">四、权利与福利</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#五、司法要独立"><span class="nav-number">3.8.5.</span> <span class="nav-text">五、司法要独立</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

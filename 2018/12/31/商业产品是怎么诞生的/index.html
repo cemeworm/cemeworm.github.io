@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="商业产品需求的来源主要是客户需求分析、数据分析和竞品调研">
+<meta property="og:type" content="article">
+<meta property="og:title" content="有效确认商业产品需求">
+<meta property="og:url" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="商业产品需求的来源主要是客户需求分析、数据分析和竞品调研">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/1.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/2.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/3.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/4.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/5.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/6.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/7.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/8.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/9.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/10.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/11.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/12.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/13.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/14.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/15.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/16.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/17.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/18.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/19.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/20.jpg">
+<meta property="og:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/21.jpg">
+<meta property="article:published_time" content="2018-12-31T01:28:44.000Z">
+<meta property="article:modified_time" content="2020-02-03T06:32:03.153Z">
+<meta property="article:author" content="Alfred Chen">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/1.jpg">
+
+<link rel="canonical" href="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>有效确认商业产品需求 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          有效确认商业产品需求
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-12-31 09:28:44" itemprop="dateCreated datePublished" datetime="2018-12-31T09:28:44+08:00">2018-12-31</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/" itemprop="url" rel="index">
+                    <span itemprop="name">产品方法</span>
+                  </a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E4%BA%A7%E5%93%81%E6%96%B9%E6%B3%95/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81/" itemprop="url" rel="index">
+                    <span itemprop="name">商业产品</span>
+                  </a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>商业产品需求的来源主要是客户需求分析、数据分析和竞品调研</p>
+<a id="more"></a>
+
+<h1 id="商业产品需求从哪来"><a href="#商业产品需求从哪来" class="headerlink" title="商业产品需求从哪来"></a>商业产品需求从哪来</h1><h2 id="客户需求分析"><a href="#客户需求分析" class="headerlink" title="客户需求分析"></a>客户需求分析</h2><p>商业产品也是产品，需求分析是基础，不能解决问题，更不用谈盈利</p>
+<p>案例：福特汽车，一匹更快的马的故事</p>
+<h3 id="如何深度挖掘客户的潜在需求"><a href="#如何深度挖掘客户的潜在需求" class="headerlink" title="如何深度挖掘客户的潜在需求"></a>如何深度挖掘客户的潜在需求</h3><p>分析对象：明确对应的分析对象，找到正确的人</p>
+<ul>
+<li><p>购买“在行”开屏但未买脉脉，有询问但未下单的人</p>
+</li>
+<li><p>明确客户群体，才能收集到“对”的需求反馈</p>
+</li>
+</ul>
+<p>分析目标：有的放矢，需求可以多但不能散</p>
+<ul>
+<li><p>针对性：开屏广告的需求</p>
+</li>
+<li><p>目标：找到提高开屏产品售卖率的方案</p>
+</li>
+<li><p>针对某个点来预设问题，进行需求收集和分析</p>
+</li>
+</ul>
+<p>思考角度：移情，站在客户的角度思考问题</p>
+<ul>
+<li><p>是指用客户的语言来描述产品或需求</p>
+</li>
+<li><p>学会理解客户的身份和价值观，像客户一样去体验</p>
+</li>
+<li><p>感知他们的生活世界，从而理解客户显性需求背后的真正需求</p>
+</li>
+</ul>
+<p>​         <img src="1.jpg" alt="img">       </p>
+<h3 id="常用手段"><a href="#常用手段" class="headerlink" title="常用手段"></a>常用手段</h3><p><strong>问卷</strong></p>
+<ul>
+<li><p>常用于已经有相对成型的方案，切记主要设置为客观选择题</p>
+</li>
+<li><p>主要用以判断客户的满意度/接受度</p>
+</li>
+<li><p>可用于方案的优先级排序或者方案的N选一</p>
+</li>
+</ul>
+<p><strong>电话</strong></p>
+<ul>
+<li><p>可针对某问题进行需求的深入挖掘</p>
+</li>
+<li><p>切记问题不要超过3个，整个时间不要超过30min</p>
+</li>
+<li><p>主要用以对不理解的需求进行深入了解或面谈无法实施时的折中方式</p>
+</li>
+</ul>
+<p><strong>面谈</strong></p>
+<ul>
+<li>可进行开放式问答，常用于对预设问题没有答案/方案时使用，做大而全的需求收集</li>
+</ul>
+<h3 id="案例：婚纱摄影行业广告投放效果优化"><a href="#案例：婚纱摄影行业广告投放效果优化" class="headerlink" title="案例：婚纱摄影行业广告投放效果优化"></a>案例：婚纱摄影行业广告投放效果优化</h3><p>确定调研目标</p>
+<ul>
+<li><p>调研前确认好问题</p>
+</li>
+<li><p>有问题寻求答案：婚纱行业客户订单转化率低，按订单成本来考核成本消耗无法拉升，目前消耗表现低于预期；婚纱行业客单价高，用户决策路径相对较长，用户决策行为链中极少有看到不询单就下单</p>
+</li>
+<li><p>产品初步思考：是否将转化目标从线上订单转变为咨询</p>
+</li>
+<li><p>调研目标：了解婚纱行业客户的生意模式，结合线上推广找到对其效果优化的方法，进而拉升消耗</p>
+</li>
+</ul>
+<p>确定调研对象和方式</p>
+<ul>
+<li><p>调研对象：业务中的婚纱行业客户、可以优先top消耗客户</p>
+</li>
+<li><p>调研方式：可以采用面谈的方式；产品没有肯定答案，希望从客户身上得到启示，开放式回答更合适</p>
+</li>
+</ul>
+<p>完成调研</p>
+<ul>
+<li><p>开始访谈：开场准备有暖场、用尊称、数据准备</p>
+</li>
+<li><p>开始切题：好问题&amp;坏问题，要引导客户多说，但说的是有方向性的</p>
+</li>
+</ul>
+<p>​         <img src="2.jpg" alt="img">       </p>
+<p>根据调研结果找问题分析</p>
+<p>​         <img src="3.jpg" alt="img">       </p>
+<p>​         <img src="4.jpg" alt="img">       </p>
+<p>给出分析结论</p>
+<p>添加到需求池</p>
+<h2 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h2><p>商业产品和钱相关，数据是最能直接体现问题和空间的工具，帮助我们发现产品问题进行迭代</p>
+<h3 id="数据分析关键三要素"><a href="#数据分析关键三要素" class="headerlink" title="数据分析关键三要素"></a>数据分析关键三要素</h3><p><strong>找准指标：</strong>好的数据指标可以用来指导行为</p>
+<p>好的数据指标，具有简单性、可比较性，并与公司目标保持一致</p>
+<p><strong>会读指标：</strong>只有指标和数值无意义，需要参考值</p>
+<ul>
+<li><p>和自己比：同比、环比看异常点、提升/下降幅度</p>
+</li>
+<li><p>跟业内经验值比：增长率、活跃用户数、客户获客成本</p>
+</li>
+<li><p>走出去看：业内平均水平、客户流失原因</p>
+</li>
+</ul>
+<p><strong>指标拆解：</strong>确认唯一优化指标，并能拆解成组合次优化指标</p>
+<ul>
+<li><p>确认主指标：明确当前阶段最有意义的指标，通过试验改善直到满意</p>
+</li>
+<li><p>确认计算公式：按计算逻辑进行拆分</p>
+</li>
+<li><p>多维度拆解：商业产品常从流量和客户两个维度入手</p>
+</li>
+</ul>
+<p>​         <img src="5.jpg" alt="img">       </p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>​         <img src="6.jpg" alt="img">       </p>
+<p>​         <img src="7.jpg" alt="img">       </p>
+<p>本质上相同 ，只是在信息流和搜索的场景下，用户看内容的方式不同产生不同的指标</p>
+<h3 id="从货源角度进行数据分析"><a href="#从货源角度进行数据分析" class="headerlink" title="从货源角度进行数据分析"></a>从货源角度进行数据分析</h3><p><strong>step1：刷新一次看新内容，在文章内容中看到广告的广告总数</strong></p>
+<ul>
+<li><p>Refresh（刷新次数）</p>
+</li>
+<li><p>Asr（每次刷新有广告的概率）</p>
+</li>
+<li><p>Asn（每次刷新有广告的条数）</p>
+</li>
+<li><p>ad-show（广告曝光数=refresh<em>asr</em>asn）</p>
+</li>
+</ul>
+<p><strong>step2：点击了广告，进入了广告详情页进行阅读了解</strong></p>
+<ul>
+<li>ad-click（广告点击数=ad-show*ctr2）</li>
+</ul>
+<p><strong>step3：对广告内容感兴趣，填写了电话，留下了销售线索</strong></p>
+<ul>
+<li>ad-action（转化数=ad-click*cvr）</li>
+</ul>
+<p>​         <img src="8.jpg" alt="img">       </p>
+<p>​         <img src="9.jpg" alt="img">       </p>
+<p>收费方式越靠近用户转化漏斗的下端，相关联的子指标越多</p>
+<p>​         <img src="10.jpg" alt="img">       </p>
+<p>主指标：收入</p>
+<p>目标：20W提升到30W</p>
+<p>收入公式：revenue=refresh<em>asr</em>asn<em>ctr2</em>acp（广告点击价值）</p>
+<p>​         <img src="11.jpg" alt="img">       </p>
+<p>1、利用娱乐频道的500W refresh变现（asr 0%——33%；asn 0——1.6）</p>
+<p>2、优化广告填充率，尤其是新闻频道</p>
+<p>3、提升自然点击率，ctr2有优化空间</p>
+<p>4、acp优化提升，除灌水频道</p>
+<h3 id="从客源角度进行多维度市场细分"><a href="#从客源角度进行多维度市场细分" class="headerlink" title="从客源角度进行多维度市场细分"></a>从客源角度进行多维度市场细分</h3><p>不管什么样的计费方式，从客源角度均是</p>
+<p>revenue=usernum*arpu</p>
+<p>需要注意的是市场细分方式的不同，数据分析的维度也略有差异</p>
+<p>​         <img src="12.jpg" alt="img">       </p>
+<p><strong>市场细分：</strong></p>
+<ul>
+<li><p>可分为新户、老户、流失客户</p>
+</li>
+<li><p>新户数&gt;=流失客户数，保持客源总数是正增长</p>
+</li>
+</ul>
+<p><strong>两个相关指标：</strong></p>
+<ul>
+<li><p>（某周期内的）留存率 = old-usernum / usernum</p>
+</li>
+<li><p>（某周期内的）流失率 = churn-usernum / usernum</p>
+</li>
+</ul>
+<p>​         <img src="13.jpg" alt="img">       </p>
+<p>​         <img src="14.jpg" alt="img">       </p>
+<p>​         <img src="15.jpg" alt="img">       </p>
+<h3 id="小结-1"><a href="#小结-1" class="headerlink" title="小结"></a>小结</h3><p>我们在数据分析时，可以从货源和客源两个维度拆分分析，但这两个维度的数据指标是共存、相互影响的</p>
+<p>​         <img src="16.jpg" alt="img">       </p>
+<p>客户能赚到钱，媒体平台才能赚更多的钱，双赢</p>
+<p>​         <img src="17.jpg" alt="img">       </p>
+<h3 id="数据分析实战"><a href="#数据分析实战" class="headerlink" title="数据分析实战"></a>数据分析实战</h3><p>​         <img src="18.jpg" alt="img">       </p>
+<p>​         <img src="19.jpg" alt="img">       </p>
+<h2 id="竞品调研"><a href="#竞品调研" class="headerlink" title="竞品调研"></a>竞品调研</h2><h3 id="竞品分析三要素"><a href="#竞品分析三要素" class="headerlink" title="竞品分析三要素"></a>竞品分析三要素</h3><ul>
+<li><p>目的：选择分析目标</p>
+</li>
+<li><p>手段：若干维度对比分析</p>
+</li>
+<li><p>结果：讨论和提出解决思路</p>
+</li>
+</ul>
+<h3 id="竞品分析四个问题"><a href="#竞品分析四个问题" class="headerlink" title="竞品分析四个问题"></a>竞品分析四个问题</h3><p>​         <img src="20.jpg" alt="img">       </p>
+<p>对于一家做信息流广告业务的公司，标榜的是Facebook，所以Facebook的产品更新状态要时时关注</p>
+<p>​         <img src="21.jpg" alt="img">       </p>
+<h3 id="调研步骤"><a href="#调研步骤" class="headerlink" title="调研步骤"></a>调研步骤</h3><ul>
+<li><p>为什么做调研——充分了解调研的背景和目的</p>
+</li>
+<li><p>得到什么结论——梳理出最后需要产出的结论</p>
+</li>
+<li><p>列大纲——需要哪些方面的资料</p>
+</li>
+<li><p>都有什么逻辑——通过数据或者资料，推导相关导论</p>
+</li>
+<li><p>对后续的指导——这些结论对后续工作的启发和影响</p>
+</li>
+<li><p>撰写调研报告——简洁&amp;论据充分地向大家阐述，口头或者报告的形式</p>
+</li>
+</ul>
+<h3 id="商业-用户产品竞品分析的异同"><a href="#商业-用户产品竞品分析的异同" class="headerlink" title="商业/用户产品竞品分析的异同"></a>商业/用户产品竞品分析的异同</h3><p>商业产品的竞品分析和用户竞品分析基本是相同的，值得强调的是，商业产品的竞品分析要试图拿到客户视角的产品体验，所以手段上略有差异，可利用联系竞品销售部门沟通或开竞品账户体验的方式来获取信息</p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>采集需求——理解需求——产品需求表</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2018/12/31/%E5%95%86%E4%B8%9A%E4%BA%A7%E5%93%81%E6%98%AF%E6%80%8E%E4%B9%88%E8%AF%9E%E7%94%9F%E7%9A%84/" title="有效确认商业产品需求">http://alfredchen.cn/2018/12/31/商业产品是怎么诞生的/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/12/29/%E3%80%8A%E7%A8%80%E7%BC%BA%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="prev" title="《稀缺》读书笔记">
+      <i class="fa fa-chevron-left"></i> 《稀缺》读书笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/12/31/%E5%B9%BF%E5%91%8A%E4%BA%A7%E5%93%81%E7%9F%A5%E8%AF%86%E8%BF%9B%E9%98%B6/" rel="next" title="广告产品知识进阶">
+      广告产品知识进阶 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#商业产品需求从哪来"><span class="nav-number">1.</span> <span class="nav-text">商业产品需求从哪来</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#客户需求分析"><span class="nav-number">1.1.</span> <span class="nav-text">客户需求分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#如何深度挖掘客户的潜在需求"><span class="nav-number">1.1.1.</span> <span class="nav-text">如何深度挖掘客户的潜在需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用手段"><span class="nav-number">1.1.2.</span> <span class="nav-text">常用手段</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#案例：婚纱摄影行业广告投放效果优化"><span class="nav-number">1.1.3.</span> <span class="nav-text">案例：婚纱摄影行业广告投放效果优化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据分析"><span class="nav-number">1.2.</span> <span class="nav-text">数据分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据分析关键三要素"><span class="nav-number">1.2.1.</span> <span class="nav-text">数据分析关键三要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">1.2.2.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从货源角度进行数据分析"><span class="nav-number">1.2.3.</span> <span class="nav-text">从货源角度进行数据分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从客源角度进行多维度市场细分"><span class="nav-number">1.2.4.</span> <span class="nav-text">从客源角度进行多维度市场细分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结-1"><span class="nav-number">1.2.5.</span> <span class="nav-text">小结</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据分析实战"><span class="nav-number">1.2.6.</span> <span class="nav-text">数据分析实战</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#竞品调研"><span class="nav-number">1.3.</span> <span class="nav-text">竞品调研</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#竞品分析三要素"><span class="nav-number">1.3.1.</span> <span class="nav-text">竞品分析三要素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#竞品分析四个问题"><span class="nav-number">1.3.2.</span> <span class="nav-text">竞品分析四个问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#调研步骤"><span class="nav-number">1.3.3.</span> <span class="nav-text">调研步骤</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#商业-用户产品竞品分析的异同"><span class="nav-number">1.3.4.</span> <span class="nav-text">商业&#x2F;用户产品竞品分析的异同</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">2.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

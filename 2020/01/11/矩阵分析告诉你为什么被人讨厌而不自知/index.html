@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/blog_logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://alfredchen.cn').hostname,
+    root: '/',
+    scheme: 'Muse',
+    version: '7.7.1',
+    exturl: false,
+    sidebar: {"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: false,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: 'CMBVS1RI6H',
+      apiKey: '0af47ecc6edcfb261c0c076706e147bd',
+      indexName: 'blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}
+  };
+</script>
+
+  <meta name="description" content="高智商的讨厌鬼《奇葩说》第六季第一期大王和哲逸辩论「如果给你一个重新选择的机会，你愿意成为一个高智商的讨厌鬼吗？」，哲逸说“高智商的人才可以感知和察觉得到谁讨厌我，为什么讨厌我，从什么时候开始讨厌我”，一开始我对此不以为然，一次偶然的机会我深入去思考其中的逻辑，却发现此言不虚，当然，我们这里将会弱化“高智商”和“讨厌“这两个词的属性。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="矩阵分析告诉你为什么被人讨厌而不自知">
+<meta property="og:url" content="http://alfredchen.cn/2020/01/11/%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E5%91%8A%E8%AF%89%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A2%AB%E4%BA%BA%E8%AE%A8%E5%8E%8C%E8%80%8C%E4%B8%8D%E8%87%AA%E7%9F%A5/index.html">
+<meta property="og:site_name" content="Alfred Chen">
+<meta property="og:description" content="高智商的讨厌鬼《奇葩说》第六季第一期大王和哲逸辩论「如果给你一个重新选择的机会，你愿意成为一个高智商的讨厌鬼吗？」，哲逸说“高智商的人才可以感知和察觉得到谁讨厌我，为什么讨厌我，从什么时候开始讨厌我”，一开始我对此不以为然，一次偶然的机会我深入去思考其中的逻辑，却发现此言不虚，当然，我们这里将会弱化“高智商”和“讨厌“这两个词的属性。">
+<meta property="og:image" content="http://alfredchen.cn/2020/01/11/%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E5%91%8A%E8%AF%89%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A2%AB%E4%BA%BA%E8%AE%A8%E5%8E%8C%E8%80%8C%E4%B8%8D%E8%87%AA%E7%9F%A5/1.png">
+<meta property="og:image" content="http://alfredchen.cn/2020/01/11/%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E5%91%8A%E8%AF%89%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A2%AB%E4%BA%BA%E8%AE%A8%E5%8E%8C%E8%80%8C%E4%B8%8D%E8%87%AA%E7%9F%A5/2.png">
+<meta property="og:image" content="http://alfredchen.cn/2020/01/11/%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E5%91%8A%E8%AF%89%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A2%AB%E4%BA%BA%E8%AE%A8%E5%8E%8C%E8%80%8C%E4%B8%8D%E8%87%AA%E7%9F%A5/3.png">
+<meta property="article:published_time" content="2020-01-11T02:31:56.000Z">
+<meta property="article:modified_time" content="2020-03-17T02:37:07.772Z">
+<meta property="article:author" content="Alfred Chen">
+<meta property="article:tag" content="随笔">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://alfredchen.cn/2020/01/11/%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E5%91%8A%E8%AF%89%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A2%AB%E4%BA%BA%E8%AE%A8%E5%8E%8C%E8%80%8C%E4%B8%8D%E8%87%AA%E7%9F%A5/1.png">
+
+<link rel="canonical" href="http://alfredchen.cn/2020/01/11/%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E5%91%8A%E8%AF%89%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A2%AB%E4%BA%BA%E8%AE%A8%E5%8E%8C%E8%80%8C%E4%B8%8D%E8%87%AA%E7%9F%A5/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
+  };
+</script>
+
+  <title>矩阵分析告诉你为什么被人讨厌而不自知 | Alfred Chen</title>
+  
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?b959ef0097ea2abdf23b5dd4db0f140a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
+
+    <div>
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Alfred Chen</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+  </div>
+
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+</div>
+
+
+<nav class="site-nav">
+  
+  <ul id="menu" class="menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-fw fa-th"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+
+</nav>
+  <div class="site-search">
+    <div class="popup search-popup">
+    <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input" id="search-input"></div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="algolia-results">
+  <div id="algolia-stats"></div>
+  <div id="algolia-hits"></div>
+  <div id="algolia-pagination" class="algolia-pagination"></div>
+</div>
+
+  
+</div>
+<div class="search-pop-overlay"></div>
+
+  </div>
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content">
+            
+
+  <div class="posts-expand">
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="zh-Hans">
+    <link itemprop="mainEntityOfPage" href="http://alfredchen.cn/2020/01/11/%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E5%91%8A%E8%AF%89%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A2%AB%E4%BA%BA%E8%AE%A8%E5%8E%8C%E8%80%8C%E4%B8%8D%E8%87%AA%E7%9F%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Alfred Chen">
+      <meta itemprop="description" content="对不合理之处保持敏感">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alfred Chen">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          矩阵分析告诉你为什么被人讨厌而不自知
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-01-11 10:31:56" itemprop="dateCreated datePublished" datetime="2020-01-11T10:31:56+08:00">2020-01-11</time>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="fa fa-comment-o"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/01/11/%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E5%91%8A%E8%AF%89%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A2%AB%E4%BA%BA%E8%AE%A8%E5%8E%8C%E8%80%8C%E4%B8%8D%E8%87%AA%E7%9F%A5/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/01/11/%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E5%91%8A%E8%AF%89%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A2%AB%E4%BA%BA%E8%AE%A8%E5%8E%8C%E8%80%8C%E4%B8%8D%E8%87%AA%E7%9F%A5/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-file-word-o"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.2k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-clock-o"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="高智商的讨厌鬼"><a href="#高智商的讨厌鬼" class="headerlink" title="高智商的讨厌鬼"></a>高智商的讨厌鬼</h1><p>《奇葩说》第六季第一期大王和哲逸辩论「如果给你一个重新选择的机会，你愿意成为一个高智商的讨厌鬼吗？」，哲逸说“高智商的人才可以感知和察觉得到谁讨厌我，为什么讨厌我，从什么时候开始讨厌我”，一开始我对此不以为然，一次偶然的机会我深入去思考其中的逻辑，却发现此言不虚，当然，我们这里将会弱化“高智商”和“讨厌“这两个词的属性。</p>
+<a id="more"></a>
+
+<h1 id="权衡矩阵"><a href="#权衡矩阵" class="headerlink" title="权衡矩阵"></a>权衡矩阵</h1><p>讨厌是一个指向性的词，是一种人与人之间的互动关系，人不会因为人本身被讨厌，只会因对别人产生的影响而得到一个被讨厌的反馈，而人对他人产生影响的方式就是做事，因此我们将论述的范围从「人被讨厌」限定为「人做事被讨厌」，以下我们将按照这个逻辑进行展开。</p>
+<p>人做事会产生结果，产生的影响可以分为两种，有利和无利，作用的对象可以分为两个，自己和他人，由此我们可以得出一个「结果矩阵」：<br><img src="1.png" alt="结果矩阵"></p>
+<ul>
+<li>对自己有利，且对他人有利的事情</li>
+<li>对自己无利，但对他人有利的事情</li>
+<li>对自己无利，且对他人无利的事情</li>
+<li>对自己有利，但对他人无利的事情</li>
+</ul>
+<p>其中我们会很自然地认为被人讨厌的类型是「对自己有利，但对他人无利的事情」，「对自己无利，且对他人无利的事情」。</p>
+<p>但这是一个过于简化的模型，如果再往里面加入「收益」和「损失」这两个指标和「人是自私的」这个因素，我们可以将「结果矩阵」升级为「权衡矩阵」：<br><img src="2.png" alt="权衡矩阵"></p>
+<ul>
+<li>对自己有利，且对他人有利的事情，是不需要权衡的双赢的结果，尽量去做且个人有意愿去进行</li>
+<li>对自己无利，但对他人有利的事情，是需要权衡的损己利人的结果，权衡的指标是你的直接损失和你因他人的收益而获得的间接收益</li>
+<li>对自己无利，且对他人无利的事情，是不需要权衡的双输的结果，应该避免且个人有意愿去避免</li>
+<li>对自己有利，但对他人无利的事情，是需要权衡的损人利己的结果，权衡的指标是你的直接收益和你因他人的损失而导致的间接损失</li>
+</ul>
+<p>现在我们来看这个更复杂的矩阵会告诉我们什么？</p>
+<p>「对自己有利，但对他人无利的事情」这个类型中，「讨厌」归属于「你因他人的损失而导致的间接损失」，但你会因为做这样的事情而有「直接收益」，当「直接收益」大于「间接损失」时，你明知道会被人讨厌，但你还是会去做。</p>
+<p>「对自己无利，且对他人无利的事情」这个类型中，我们的分析结论是「应该避免且个人有意愿去避免」，我们理所当然地觉得没有人会做这种傻事吧？但问题却恰恰发生在这。</p>
+<h1 id="被人讨厌却不自知"><a href="#被人讨厌却不自知" class="headerlink" title="被人讨厌却不自知"></a>被人讨厌却不自知</h1><p>为了回答这个问题，我们需要将权衡矩阵再进行细分挖掘。</p>
+<p>无利其实还包括了两部分——无影响（=0）和不利（&lt;0），我们可以将「权衡矩阵」中的「对自己无利，且对他人无利的事情」再扩展为一个「无利矩阵」：<br><img src="3.png" alt="无利矩阵"></p>
+<ul>
+<li>对自己无影响，且对他人无影响的事情</li>
+<li>对自己不利，但对他人无影响的事情</li>
+<li>对自己不利，且对他人不利的事情</li>
+<li>对自己无影响，但对他人不利的事情</li>
+</ul>
+<p>这时再回到结论「应该避免且个人有意愿去避免」，我们可以很自然地知道对自己不利的中间两种情况是会避免的，而第一种情况对谁都不产生影响，也即对这个问题没有影响。</p>
+<p>由此我们可以知道被人讨厌但不自知的事情就是「对自己无影响，但对他人不利的事情」，为什么会发生这种事情呢？我们有没有办法去避免？</p>
+<h1 id="为什么？怎么办？"><a href="#为什么？怎么办？" class="headerlink" title="为什么？怎么办？"></a>为什么？怎么办？</h1><p>其实这里可以回到自己和他人这个维度再去分析。</p>
+<p>从自己的维度看，人是自私的，会对与自己有利益关系的事情有生物的应激性，对自己有利的事情会触发正向激励，对自己不利的事情会产生损失厌恶，因此激活判断能力自然而然的，但如果事情对自己没有影响，那么就相当于事件没有产生激活信号，判断也就会终止与此。</p>
+<p>从对他人维度看，这本身就是一个需要换位思考（即如果他是我）的维度，换位思考是一个需要人主动思考（可能是快思考，也可能是慢思考）进行逻辑推理的过程（例：大前提——我们都是人，小前提——我不想被爽约，结论——他也不想被爽约），会消耗更多的心力（能量），这不是生物的本能，如果没有这方面的意识，或者这方面的意识不够强，则不会有这个维度的判断。</p>
+<p>由以上两点可以得出，可知确实是需要有”高智商“才能觉知被讨厌的风险，然后去避免做出对自己不利且被人讨厌的事情，这里的”高智商“其实就是做事时习惯性激活换位思考的能力。</p>
+<p>那么要如何去习得这种能力呢？</p>
+<p>我认为可以通过外部的规则提醒和内心的刻意练习两个方向去共同作用，相信长久的努力可以将之培养成一种习惯。</p>
+<p>这不是一件容易的事情，但绝对值得，共勉~</p>
+<h1 id="后话：对分析的再思考"><a href="#后话：对分析的再思考" class="headerlink" title="后话：对分析的再思考"></a>后话：对分析的再思考</h1><p>在做以上的分析过程后，我又反思了这个分析过程，主要有三个阶段：</p>
+<ul>
+<li>首先用系统思考描述「系统边界、系统角色和互动关系」</li>
+<li>其次用结构化思考对互动关系的因子进行拆解</li>
+<li>最后用矩阵分析将拆解的因子进行组合</li>
+</ul>
+<p>这个过程发生得自然而然，反而让我好奇为什么会这样去分析？</p>
+<p>首先我会将讨厌这个情绪进行抽象处理，讨厌是后置指向性的，因此他不会是一个人自己与自己的关系，应该与刺激源——也就是另一个人的互动关系，这是一个关系系统。</p>
+<p>在这个系统中，后置指向性的关系会需要一个前置刺激，还原到场景中就是做的事情，然而事情本身不会产生作用，产生作用的是事情的结果。</p>
+<p>这时候我想到结果会产生很多维度的影响，我需要把它理清楚，因此我选择对结果的维度进行拆解，得到两个维度——产生的影响和作用的对象，然后又可以继续拆解成有利、无利和自己、他人等MECE元素。</p>
+<p>到了这一步，自然会发现这两个维度中两两独立的因子可以再进行组合，得出「影响」本身，如「对自己有利」，这就是一个二维四象限的矩阵。</p>
+<p>由此往复，即得如此。</p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>Alfred Chen
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://alfredchen.cn/2020/01/11/%E7%9F%A9%E9%98%B5%E5%88%86%E6%9E%90%E5%91%8A%E8%AF%89%E4%BD%A0%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A2%AB%E4%BA%BA%E8%AE%A8%E5%8E%8C%E8%80%8C%E4%B8%8D%E8%87%AA%E7%9F%A5/" title="矩阵分析告诉你为什么被人讨厌而不自知">http://alfredchen.cn/2020/01/11/矩阵分析告诉你为什么被人讨厌而不自知/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%9A%8F%E7%AC%94/" rel="tag"># 随笔</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/06/29/%E3%80%8A%E8%AE%BA%E6%8C%81%E4%B9%85%E6%88%98%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="prev" title="《论持久战》读书笔记">
+      <i class="fa fa-chevron-left"></i> 《论持久战》读书笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/02/01/%E3%80%8A%E5%86%B3%E8%83%9CB%E7%AB%AF%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" rel="next" title="《决胜B端》读书笔记">
+      《决胜B端》读书笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+  </div>
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#高智商的讨厌鬼"><span class="nav-number">1.</span> <span class="nav-text">高智商的讨厌鬼</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#权衡矩阵"><span class="nav-number">2.</span> <span class="nav-text">权衡矩阵</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#被人讨厌却不自知"><span class="nav-number">3.</span> <span class="nav-text">被人讨厌却不自知</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#为什么？怎么办？"><span class="nav-number">4.</span> <span class="nav-text">为什么？怎么办？</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后话：对分析的再思考"><span class="nav-number">5.</span> <span class="nav-text">后话：对分析的再思考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alfred Chen"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Alfred Chen</p>
+  <div class="site-description" itemprop="description">对不合理之处保持敏感</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">53</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/cemeworm" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;cemeworm" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:cemeworm@gmail.com" title="E-Mail → mailto:cemeworm@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.jianshu.com/u/6f99e4cac30a" title="jianshu → https:&#x2F;&#x2F;www.jianshu.com&#x2F;u&#x2F;6f99e4cac30a" rel="noopener" target="_blank"><i class="fa fa-fw fa-map"></i>jianshu</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="http://www.woshipm.com/u/333150" title="woshipm → http:&#x2F;&#x2F;www.woshipm.com&#x2F;u&#x2F;333150" rel="noopener" target="_blank"><i class="fa fa-fw fa-renren"></i>woshipm</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alfred Chen</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">210k</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.css">
+<script src="//cdn.jsdelivr.net/npm/instantsearch.js@2/dist/instantsearch.min.js"></script>
+<script src="/js/algolia-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el: '#valine-comments',
+      verify: false,
+      notify: false,
+      appId: 'frczYHpH6uvUJGbY8QEQcbT0-gzGzoHsz',
+      appKey: 'tnCTL5tBVAVki6JejiSIYqbu',
+      placeholder: "快来评论一下吧~",
+      avatar: 'monsterid',
+      meta: guest,
+      pageSize: '10' || 10,
+      visitor: false,
+      lang: '' || 'zh-cn',
+      path: location.pathname,
+      recordIP: false,
+      serverURLs: ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
